@@ -41,9 +41,5 @@ public class util {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        // 指定maven的本地仓库
-        listDirectory(new File("E:\\maven\\Maven_Repositorydashuju"));
-        listDirectory(new File("E:\\maven\\Maven_Repositorydashuju4"));
-    }
+
 }
