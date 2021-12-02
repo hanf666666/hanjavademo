@@ -7,6 +7,7 @@ package com.it.FunctionalInterface1;
  * @date 2021/12/1
  */
 @FunctionalInterface
-interface Converter<F, T> {
+public interface Converter<F, T> {
     T convert(F from);
+//    T convert2(F from);
 }

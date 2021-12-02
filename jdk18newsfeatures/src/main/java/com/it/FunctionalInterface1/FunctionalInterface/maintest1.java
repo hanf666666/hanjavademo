@@ -1,4 +1,6 @@
-package com.it.FunctionalInterface1;
+package com.it.FunctionalInterface1.FunctionalInterface;
+
+import com.it.FunctionalInterface1.Converter;
 
 /**
  * to do
