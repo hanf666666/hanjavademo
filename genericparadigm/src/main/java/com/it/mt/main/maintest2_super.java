@@ -1,4 +1,4 @@
-package com.it.main;
+package com.it.mt.main;
 
 import com.it.Lev2.Fruit;
 import com.it.Lev3.Apple;

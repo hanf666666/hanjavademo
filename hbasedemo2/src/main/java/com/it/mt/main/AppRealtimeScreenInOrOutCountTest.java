@@ -1,4 +1,4 @@
-package com.it.main;
+package com.it.mt.main;
 
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUnit;
@@ -54,7 +54,7 @@ public class AppRealtimeScreenInOrOutCountTest {
     @Test
     public void getFilterList() {
         final DateTime starttime = DateUtil.date();
-        final ArrayList<Integer> parkidList = new ArrayList<>();
+        final ArrayList<Integer> parkidList = new ArrayList<Integer>();
         for (int i = 19060; i < 19860; i++) {
             parkidList.add(i);
         }

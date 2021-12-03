@@ -1,5 +1,19 @@
 package com.it.utils;
 
+
+import org.apache.commons.io.IOUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.*;
+import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.filter.*;
+import org.apache.hadoop.hbase.util.Bytes;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
 /**
  * to do
  *
@@ -7,73 +21,26 @@ package com.it.utils;
  * @date 2021/8/2
  */
 
-
-import java.io.IOException;
-import java.util.*;
-import java.util.Map.Entry;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.*;
-import org.apache.hadoop.hbase.client.Admin;
-import org.apache.hadoop.hbase.client.Connection;
-import org.apache.hadoop.hbase.client.ConnectionFactory;
-import org.apache.hadoop.hbase.client.Get;
-import org.apache.hadoop.hbase.client.Put;
-import org.apache.hadoop.hbase.client.Result;
-import org.apache.hadoop.hbase.client.ResultScanner;
-import org.apache.hadoop.hbase.client.Scan;
-import org.apache.hadoop.hbase.client.Table;
-import org.apache.hadoop.hbase.filter.*;
-import org.apache.hadoop.hbase.util.Bytes;
-
 public class HBaseUtil {
+
 
     /**
      * 连接池对象
      */
     protected static Connection connection;
-//    private static final String ZK_QUORUM = "hbase.zookeeper.quorum";
-//    private static final String ZK_CLIENT_PORT = "hbase.zookeeper.property.clientPort";
-//    /**
-//     * HBase位置
-//     */
-//    private static final String HBASE_POS = "192.168.1.104";
-//
-//    /**
-//     * ZooKeeper位置
-//     */
-//    private static final String ZK_POS = "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181";
-//
-//    /**
-//     * zookeeper服务端口
-//     */
-//    private final static String ZK_PORT_VALUE = "2181";
 
     /**
      * 静态构造，在调用静态方法时前进行运行
      * 初始化连接对象．
      * */
-    static {
-        Configuration configuration = HBaseConfiguration.create();
-//        configuration.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
-        configuration.set("hbase.zookeeper.quorum", "hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181");
-        configuration.set("hbase.zookeeper.property.clientPort", "2181");
-        try {
-            connection = ConnectionFactory.createConnection(configuration);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }// 创建连接池
-    }
 
     /**
-     * 构造函数，用于初始化内置对象
+     * 设置hbase的配置信息,从yml中获取
      */
-    public HBaseUtil() {
+    public void setHBaseconfig() {
         Configuration configuration = HBaseConfiguration.create();
-//        configuration.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
-        configuration.set("hbase.zookeeper.quorum", "hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181");
-//        configuration.set("hbase.zookeeper.property.clientPort", "2181");
+//        configuration.set("hbase.zookeeper.quorum","172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
+        configuration.set("hbase.zookeeper.quorum","hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181");
         try {
             connection = ConnectionFactory.createConnection(configuration);
         } catch (IOException e) {
@@ -271,55 +238,43 @@ public class HBaseUtil {
         }
     }
 
-    public TableName[] getTables() {
-
-        final Admin admin;
-        try {
-            admin = connection.getAdmin();
-            final TableName[] tableNames = admin.listTableNames();
-            return tableNames;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-
-
-    }
-
-
     /**
      * 根据rowkey前缀获取数据
      */
-//    @SuppressWarnings("unused")
+    @SuppressWarnings("unused")
     public ResultScanner getPrefixFilterGetData(String tableName, String prefixrowkey) {
+        ResultScanner resutScanner=null;
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();
-//            PrefixFilter prefixFilter = new PrefixFilter(Bytes.toBytes(prefixrowkey));
-//            scan.setFilter(prefixFilter);
-            ResultScanner resutScanner = table.getScanner(scan);
-            return resutScanner;
+            PrefixFilter prefixFilter = new PrefixFilter(Bytes.toBytes(prefixrowkey));
+            scan.setFilter(prefixFilter);
+            resutScanner = table.getScanner(scan);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return resutScanner;
     }
 
 
     /**
-     * 根据rowkey前缀获取数据
+     * 根据rowkey前缀的数据范围
      */
-    public ResultScanner getRowData(String tableName) {
-        Table table = null;
+    @SuppressWarnings("unused")
+    public ResultScanner getRowRangeData(String tableName, String startRow,String endRow) {
+        ResultScanner resutScanner=null;
         try {
-            table = connection.getTable(TableName.valueOf(tableName));
-            ResultScanner resutScanner = table.getScanner(new Scan());
-            return resutScanner;
+            Table table = connection.getTable(TableName.valueOf(tableName));
+            Scan scan = new Scan();
+            scan.withStartRow(Bytes.toBytes(startRow));
+            scan.withStopRow(Bytes.toBytes(endRow));
+            resutScanner = table.getScanner(scan);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return resutScanner;
     }
 
 
@@ -339,7 +294,7 @@ public class HBaseUtil {
                         Bytes.toBytes("statistic"),
                         Bytes.toBytes("park_id"),
                         CompareOperator.EQUAL,
-                        new BinaryComparator(Bytes.toBytes(park_id + "")));
+                        new BinaryComparator(Bytes.toBytes(park_id+"")));
                 filterList.addFilter(singleColumnValueFilter);
                 scan.setFilter(filterList);
                 System.out.println(filterList.getFilters().size());
@@ -361,7 +316,7 @@ public class HBaseUtil {
      * 根据rowkey前缀获取数据
      */
     @SuppressWarnings("unused")
-    public void getRegexFilterListData(String tableName, String regex) {
+    public void getRegexFilterListData(String tableName,String regex) {
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();
@@ -401,5 +356,14 @@ public class HBaseUtil {
         System.out.println("INFO:Hbase::  测试结束！共有　" + count + "条数据");
     }
 
+
+    public ResultScanner getAll(String tableName,String family) throws IOException {
+        Table table = null;
+        table = connection.getTable(TableName.valueOf(tableName));
+        Scan scan = new Scan();
+        scan.addFamily(family.getBytes());
+        ResultScanner resultScanner = table.getScanner(scan);
+        return resultScanner;
+    }
 
 }

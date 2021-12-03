@@ -1,4 +1,4 @@
-package com.it.main;
+package com.it.mt.main;
 
 import com.it.container.Plate;
 import com.it.Lev2.Fruit;
