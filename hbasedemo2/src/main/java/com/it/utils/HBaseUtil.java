@@ -135,6 +135,8 @@ public class HBaseUtil {
         return isSuccess;
     }
 
+
+
     /**
      * 向指定表中插入数据
      *
