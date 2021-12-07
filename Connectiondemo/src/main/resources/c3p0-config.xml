@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<c3p0-config>
+    <default-config>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://172.17.134.80/hantest3</property>
+        <property name="user">root</property>
+        <property name="password">A0M2MxMDNlZWZiNDc3MjNkNWUzMjQ3OT</property>
+    </default-config>
+
+
+    <named-config name="web03">
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://172.17.134.80/hantest3</property>
+        <property name="user">root</property>
+        <property name="password">A0M2MxMDNlZWZiNDc3MjNkNWUzMjQ3OT</property>
+    </named-config>
+
+
+</c3p0-config>
