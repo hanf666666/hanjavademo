@@ -42,4 +42,26 @@ public class Test01_操作更新语句 {
             e.printStackTrace();
         }
     }
+
+
+
+
+
+    /**
+     *
+     */
+    @Test
+    public void buduanupdate() {
+        //1. 获取可以执行SQL语句的对象.
+        QueryRunner qr = new QueryRunner();
+        //2. 执行SQL语句, 获取结果集.
+        String sql = "insert into users values(?,?,?);";
+        try {
+            //3. 操作结果集.
+            int num = qr.update(C3P0Utils.getConnection(),sql, null, "admin10", "pwss");
+            System.out.println( num > 0 ? "添加成功" : "添加失败");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
