@@ -16,7 +16,8 @@
         <module>hbasedemo2</module>
         <module>hbasedemo2</module>
         <module>logbackdemo</module>
-        <module>hbasedemo3</module>
+        <module>MultithreadingDemo</module>
+        <module>Connectiondemo</module>
     </modules>
     <build>
         <plugins>
