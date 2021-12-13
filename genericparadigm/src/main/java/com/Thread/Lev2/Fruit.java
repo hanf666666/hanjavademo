@@ -1,0 +1,12 @@
+package com.Thread.Lev2;
+
+import com.Thread.Lev1.Food;
+
+/**
+ * to do
+ * 水果
+ * @author Hj
+ * @date 2021/12/2
+ */
+public class Fruit extends Food {
+}
