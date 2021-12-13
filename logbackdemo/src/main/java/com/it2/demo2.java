@@ -1,6 +1,5 @@
 package com.it2;
 
-import com.it.App;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
