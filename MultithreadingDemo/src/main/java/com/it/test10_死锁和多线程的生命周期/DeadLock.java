@@ -21,12 +21,13 @@ public class DeadLock {
             @Override
             public void run() {
                 while(true) {
+
                     //先A
                     synchronized (LOCKA) {
-                        System.out.println("获取到" + LOCKA + ", 等待" + LOCKB);
+                        System.out.println("1获取到" + LOCKA + ", 等待" + LOCKB);
                         //后B
                         synchronized (LOCKB) {
-                            System.out.println("获取到" + LOCKB + ", 成功进到了小房间");
+                            System.out.println("1获取到" + LOCKB + ", 成功进到了小房间");
                         }
                     }
                 }
@@ -40,10 +41,10 @@ public class DeadLock {
                 while(true) {
                     //先B
                     synchronized (LOCKB) {
-                        System.out.println("获取到" + LOCKB + ", 等待" + LOCKA);
+                        System.out.println("2获取到" + LOCKB + ", 等待" + LOCKA);
                         //后A
                         synchronized (LOCKA) {
-                            System.out.println("获取到" + LOCKA + ", 成功进到了小房间");
+                            System.out.println("2获取到" + LOCKA + ", 成功进到了小房间");
                         }
                     }
                 }

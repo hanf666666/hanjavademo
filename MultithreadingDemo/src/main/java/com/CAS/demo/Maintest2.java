@@ -11,6 +11,11 @@ public class Maintest2 {
             myTheard.start();
 
         }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println(StaticValue.count);
 
 

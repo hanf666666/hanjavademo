@@ -10,11 +10,13 @@ public class MyTheard extends Thread {
 
 
     @Override
-    public synchronized void run() {
-        super.run();
-        StaticValue.reentrantLock.lock();
-        System.out.println( StaticValue.reentrantLock);
-        StaticValue.count += 1;
-        StaticValue.reentrantLock.unlock();
+    public void run() {
+        synchronized (MyTheard.class) {
+            super.run();
+            StaticValue.reentrantLock.lock();
+            System.out.println(StaticValue.reentrantLock);
+            StaticValue.count += 1;
+            StaticValue.reentrantLock.unlock();
+        }
     }
 }
