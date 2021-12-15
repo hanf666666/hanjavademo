@@ -1,4 +1,4 @@
-package com.主线程等子线程.synchronized2;
+package com.Thread.主线程等子线程.synchronized2;
 
 /**
  * 不太明白 Object能锁住

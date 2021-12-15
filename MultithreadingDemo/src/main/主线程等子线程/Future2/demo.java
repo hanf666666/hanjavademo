@@ -1,4 +1,4 @@
-package com.主线程等子线程.Future2;
+package com.Thread.主线程等子线程.Future2;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;

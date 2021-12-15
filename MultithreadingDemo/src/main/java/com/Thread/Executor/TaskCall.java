@@ -16,17 +16,17 @@ class TaskCall implements Callable<String> {
     }
 
     //        @Override
-    //æœ‰è¿”å›å€¼
+    //ÓĞ·µ»ØÖµ
     public String call() throws Exception {
         try {
-            //ä¼‘çœ 10ç§’ä¹‹å†…çš„æ—¶é—´
+            //ĞİÃß10ÃëÖ®ÄÚµÄÊ±¼ä
             TimeUnit.SECONDS.sleep((int)Math.random()*10);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        System.out.println("Callableä»»åŠ¡"+name+"æ‰§è¡Œä¸šåŠ¡é€»è¾‘");
-        return "çº¿ç¨‹è¿”å›å€¼ï¼Œçº¿ç¨‹åç§°ï¼š"+name;
+        System.out.println("CallableÈÎÎñ"+name+"Ö´ĞĞÒµÎñÂß¼­");
+        return "Ïß³Ì·µ»ØÖµ£¬Ïß³ÌÃû³Æ£º"+name;
     }
 
 }

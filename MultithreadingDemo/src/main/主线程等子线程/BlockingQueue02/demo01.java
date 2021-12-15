@@ -1,4 +1,4 @@
-package com.主线程等子线程.BlockingQueue02;
+package com.Thread.主线程等子线程.BlockingQueue02;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

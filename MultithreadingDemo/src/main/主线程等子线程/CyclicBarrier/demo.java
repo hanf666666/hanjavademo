@@ -1,4 +1,4 @@
-package com.主线程等子线程.CyclicBarrier;
+package com.Thread.主线程等子线程.CyclicBarrier;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

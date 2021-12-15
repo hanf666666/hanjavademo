@@ -24,7 +24,11 @@ public class DeleteMain {
     @Test
     public void deleteTable() {
         String[] tableArray={
-                "bigdata003_parking_lot2",
+                "park_duration_rate",
+                "park_duration_rate3",
+                "details",
+                "bigdata003_parking_lot_roadside",
+                "bigdata003_parking_lot_indoor",
 
         };
         for (int i = 0; i < tableArray.length; i++) {

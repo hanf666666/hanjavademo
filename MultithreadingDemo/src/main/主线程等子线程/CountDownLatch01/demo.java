@@ -1,4 +1,4 @@
-package com.主线程等子线程.CountDownLatch01;
+package com.Thread.主线程等子线程.CountDownLatch01;
 
 import java.util.concurrent.CountDownLatch;
 

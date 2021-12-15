@@ -1,4 +1,4 @@
-package com.主线程等子线程.join;
+package com.Thread.主线程等子线程.join;
 
 
 public class MyTheard extends Thread {

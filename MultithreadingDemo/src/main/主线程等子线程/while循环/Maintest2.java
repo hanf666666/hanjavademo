@@ -1,4 +1,4 @@
-package com.主线程等子线程.while循环;
+package com.Thread.主线程等子线程.while循环;
 
 import java.util.ArrayList;
 
