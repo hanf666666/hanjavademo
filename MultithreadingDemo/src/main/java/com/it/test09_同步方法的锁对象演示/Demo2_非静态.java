@@ -1,8 +1,8 @@
-package com.it.test09_åŒæ­¥æ–¹æ³•çš„é”å¯¹è±¡æ¼”ç¤º;
+package com.it.test09_Í¬²½·½·¨µÄËø¶ÔÏóÑİÊ¾;
 
-public class Demo2_éé™æ€ {
+public class Demo2_·Ç¾²Ì¬ {
     public synchronized void method1() {
-        //è¿™ä¸ªç”¨åŒæ­¥æ–¹æ³•
+        //Õâ¸öÓÃÍ¬²½·½·¨
         System.out.print("i");
         System.out.print("t");
         System.out.print("c");
@@ -13,13 +13,13 @@ public class Demo2_éé™æ€ {
     }
 
     public void method2() {
-        //è¿™ä¸ªç”¨åŒæ­¥ä»£ç å—
+        //Õâ¸öÓÃÍ¬²½´úÂë¿é
         synchronized(this) {
-            System.out.print("é»‘");
-            System.out.print("é©¬");
-            System.out.print("ç¨‹");
-            System.out.print("åº");
-            System.out.print("å‘˜");
+            System.out.print("ºÚ");
+            System.out.print("Âí");
+            System.out.print("³Ì");
+            System.out.print("Ğò");
+            System.out.print("Ô±");
             System.out.print("\r\n");
         }
     }

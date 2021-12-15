@@ -1,20 +1,20 @@
-package com.it.test08_åŒ¿åå†…éƒ¨ç±»è®²è§£;
+package com.it.test08_ÄäÃûÄÚ²¿Àà½²½â;
 
 public class Test01 {
-    //æˆå‘˜å˜é‡
+    //³ÉÔ±±äÁ¿
     private int num;
 
-    //æˆå‘˜å†…éƒ¨ç±»
+    //³ÉÔ±ÄÚ²¿Àà
     class Inner{
 
     }
 
-    //æˆå‘˜æ–¹æ³•
+    //³ÉÔ±·½·¨
     public void show() {
-        //å±€éƒ¨å˜é‡
+        //¾Ö²¿±äÁ¿
         int num = 10;
 
-        //å±€éƒ¨å†…éƒ¨ç±»
+        //¾Ö²¿ÄÚ²¿Àà
         class Inner2{
 
         }

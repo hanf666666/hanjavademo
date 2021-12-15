@@ -1,20 +1,20 @@
-package com.it.test08_åŒ¿åå†…éƒ¨ç±»è®²è§£;
+package com.it.test08_ÄäÃûÄÚ²¿Àà½²½â;
 
-public class Test04_ä½¿ç”¨åœºæ™¯æ¼”ç¤º {
+public class Test04_Ê¹ÓÃ³¡¾°ÑİÊ¾ {
     public static void main(String[] args) {
-        //éœ€æ±‚: è°ƒç”¨method().
-        //æ–¹å¼ä¸€: åˆ›å»ºå­ç±»å¯¹è±¡, ç„¶åè°ƒç”¨.
+        //ĞèÇó: µ÷ÓÃmethod().
+        //·½Ê½Ò»: ´´½¨×ÓÀà¶ÔÏó, È»ºóµ÷ÓÃ.
         Student student = new Student();
         method(student);
 
         System.out.println("***********");
 
-        //æ–¹å¼äºŒ: é‡‡ç”¨åŒ¿åå†…éƒ¨ç±»å®ç°.
-        //method(Personç±»å‹çš„å­ç±»å¯¹è±¡);
+        //·½Ê½¶ş: ²ÉÓÃÄäÃûÄÚ²¿ÀàÊµÏÖ.
+        //method(PersonÀàĞÍµÄ×ÓÀà¶ÔÏó);
         method(new Person() {
             @Override
             public void eat() {
-                System.out.println("æˆ‘æ˜¯åŒ¿åå†…éƒ¨ç±»å½¢å¼çš„, Personçš„å­ç±»å¯¹è±¡");
+                System.out.println("ÎÒÊÇÄäÃûÄÚ²¿ÀàĞÎÊ½µÄ, PersonµÄ×ÓÀà¶ÔÏó");
             }
         });
 

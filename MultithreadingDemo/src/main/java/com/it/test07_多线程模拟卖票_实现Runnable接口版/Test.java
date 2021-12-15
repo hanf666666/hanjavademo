@@ -1,19 +1,19 @@
-package com.it.test07_å¤šçº¿ç¨‹æ¨¡æ‹Ÿå–ç¥¨_å®ç°Runnableæ¥å£ç‰ˆ;
+package com.it.test07_¶àÏß³ÌÄ£ÄâÂôÆ±_ÊµÏÖRunnable½Ó¿Ú°æ;
 
 public class Test {
     public static void main(String[] args) {
-        //3. åœ¨æµ‹è¯•ç±»ä¸­åˆ›å»ºå¯¹è±¡, æµ‹è¯•.
-        //åˆ›å»ºRunnableæ¥å£çš„å­ç±»å¯¹è±¡
+        //3. ÔÚ²âÊÔÀàÖĞ´´½¨¶ÔÏó, ²âÊÔ.
+        //´´½¨Runnable½Ó¿ÚµÄ×ÓÀà¶ÔÏó
         MyRunnable mr = new MyRunnable();
-        //å°†å…¶ä½œä¸ºå‚æ•°ä¼ å…¥Threadç±»çš„æ„é€ æ–¹æ³•, åˆ›å»ºçº¿ç¨‹å¯¹è±¡.
+        //½«Æä×÷Îª²ÎÊı´«ÈëThreadÀàµÄ¹¹Ôì·½·¨, ´´½¨Ïß³Ì¶ÔÏó.
         //public Thread(Runnable target);
         //public Thread(Runnable target, String name);
-        Thread th1 = new Thread(mr, "çª—å£1");
-        Thread th2 = new Thread(mr, "çª—å£2");
-        Thread th3 = new Thread(mr, "çª—å£3");
-        Thread th4 = new Thread(mr, "çª—å£4");
+        Thread th1 = new Thread(mr, "´°¿Ú1");
+        Thread th2 = new Thread(mr, "´°¿Ú2");
+        Thread th3 = new Thread(mr, "´°¿Ú3");
+        Thread th4 = new Thread(mr, "´°¿Ú4");
 
-        //å¼€å¯çº¿ç¨‹
+        //¿ªÆôÏß³Ì
         th1.start();
         th2.start();
         th3.start();

@@ -1,4 +1,4 @@
-package com.Thread.mt.main;
+package com.mt.main;
 
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUnit;

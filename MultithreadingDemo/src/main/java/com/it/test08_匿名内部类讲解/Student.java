@@ -1,8 +1,8 @@
-package com.it.test08_åŒ¿åå†…éƒ¨ç±»è®²è§£;
+package com.it.test08_ÄäÃûÄÚ²¿Àà½²½â;
 
 public class Student extends Person {
     @Override
     public void eat() {
-        System.out.println("å­¦ç”Ÿåƒ ç‰›è‚‰");
+        System.out.println("Ñ§Éú³Ô Å£Èâ");
     }
 }

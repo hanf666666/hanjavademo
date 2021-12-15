@@ -1,11 +1,11 @@
-package com.it.test10_æ­»é”å’Œå¤šçº¿ç¨‹çš„ç”Ÿå‘½å‘¨æœŸ;
+package com.it.test10_ËÀËøºÍ¶àÏß³ÌµÄÉúÃüÖÜÆÚ;
 
 import java.util.Scanner;
 
-public class Test01_å¤šçº¿ç¨‹çš„ç”Ÿå‘½å‘¨æœŸ {
+public class Test01_¶àÏß³ÌµÄÉúÃüÖÜÆÚ {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥ä½ çš„å¹´é¾„");
-        System.out.println("å“ˆå“ˆ, è¿™ä¹ˆå·§å•Š, æˆ‘ä¹Ÿ" + sc.nextInt() + "å²äº†, è¿™ä¹ˆå·§, åŠ ä¸ªé£ç§‹å‘—!");
+        System.out.println("ÇëÊäÈëÄãµÄÄêÁä");
+        System.out.println("¹ş¹ş, ÕâÃ´ÇÉ°¡, ÎÒÒ²" + sc.nextInt() + "ËêÁË, ÕâÃ´ÇÉ, ¼Ó¸ö·ÉÇïßÂ!");
     }
 }

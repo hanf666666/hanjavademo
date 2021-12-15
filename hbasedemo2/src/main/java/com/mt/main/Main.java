@@ -1,4 +1,4 @@
-package com.Thread.mt.main;
+package com.mt.main;
 
 import com.Thread.utils.HBaseUtil;
 import org.apache.hadoop.conf.Configuration;

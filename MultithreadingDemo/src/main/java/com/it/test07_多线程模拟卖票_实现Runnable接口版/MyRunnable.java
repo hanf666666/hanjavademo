@@ -1,27 +1,27 @@
-package com.it.test07_å¤šçº¿ç¨‹æ¨¡æ‹Ÿå–ç¥¨_å®ç°Runnableæ¥å£ç‰ˆ;
+package com.it.test07_¶àÏß³ÌÄ£ÄâÂôÆ±_ÊµÏÖRunnable½Ó¿Ú°æ;
 
 public class MyRunnable implements  Runnable{
-    //1. å®šä¹‰å˜é‡,  è®°å½•ç¥¨æ•°.
-    private int tickets = 100;       //staticå¯ä»¥ä¸å¯ä»¥ä¸å†™? å¯ä»¥
+    //1. ¶¨Òå±äÁ¿,  ¼ÇÂ¼Æ±Êı.
+    private int tickets = 100;       //static¿ÉÒÔ²»¿ÉÒÔ²»Ğ´? ¿ÉÒÔ
 
 
-    //2. åœ¨runä¸­æ¨¡æ‹Ÿå–ç¥¨.
+    //2. ÔÚrunÖĞÄ£ÄâÂôÆ±.
     @Override
     public void run() {
         while(true) {
-            //è¯¥ç±»çš„å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡,   è¿™é‡Œçš„thiså…¶å®å°±æ˜¯(mr)
+            //¸ÃÀàµÄ×Ö½ÚÂëÎÄ¼ş¶ÔÏó,   ÕâÀïµÄthisÆäÊµ¾ÍÊÇ(mr)
            synchronized (this) {
                if (tickets < 1) {
                    break;
                }
-               //ä¸ºäº†è®©æ•ˆæœæ›´æ˜æ˜¾.
+               //ÎªÁËÈÃĞ§¹û¸üÃ÷ÏÔ.
                try {
                    Thread.sleep(50);
                } catch (InterruptedException e) {
                    e.printStackTrace();
                }
-               //æ­£å¸¸çš„å–ç¥¨çš„é€»è¾‘
-               System.out.println(Thread.currentThread().getName() + "æ­£åœ¨å‡ºå”®ç¬¬" + tickets-- + "å¼ ç¥¨");
+               //Õı³£µÄÂôÆ±µÄÂß¼­
+               System.out.println(Thread.currentThread().getName() + "ÕıÔÚ³öÊÛµÚ" + tickets-- + "ÕÅÆ±");
            }
         }
     }

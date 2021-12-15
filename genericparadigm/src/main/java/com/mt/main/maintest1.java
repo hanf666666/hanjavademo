@@ -1,4 +1,4 @@
-package com.Thread.mt.main;
+package com.mt.main;
 
 import com.Thread.container.Plate;
 import com.Thread.Lev2.Fruit;

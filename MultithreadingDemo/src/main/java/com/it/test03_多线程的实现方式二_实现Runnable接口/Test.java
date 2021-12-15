@@ -1,16 +1,16 @@
-package com.it.test03_å¤šçº¿ç¨‹çš„å®ç°æ–¹å¼äºŒ_å®ç°Runnableæ¥å£;
+package com.it.test03_¶àÏß³ÌµÄÊµÏÖ·½Ê½¶ş_ÊµÏÖRunnable½Ó¿Ú;
 
 public class Test {
     public static void main(String[] args) {
-        //D: åˆ›å»ºçº¿ç¨‹.
-        //åˆ›å»ºRunnableæ¥å£çš„å­ç±»å¯¹è±¡.
+        //D: ´´½¨Ïß³Ì.
+        //´´½¨Runnable½Ó¿ÚµÄ×ÓÀà¶ÔÏó.
         MyRunnable mr = new MyRunnable();
 
-        //å°†å…¶ä½œä¸ºå‚æ•°ä¼ å…¥Threadç±»çš„æ„é€ , åˆ›å»ºçº¿ç¨‹å¯¹è±¡.
+        //½«Æä×÷Îª²ÎÊı´«ÈëThreadÀàµÄ¹¹Ôì, ´´½¨Ïß³Ì¶ÔÏó.
         //public Thread(Runnable target)
         Thread th = new Thread(mr);
 
-        //E: å¼€å¯çº¿ç¨‹
+        //E: ¿ªÆôÏß³Ì
         th.start();
 
 

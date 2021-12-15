@@ -1,50 +1,50 @@
-package com.it.test10_æ­»é”å’Œå¤šçº¿ç¨‹çš„ç”Ÿå‘½å‘¨æœŸ;
+package com.it.test10_ËÀËøºÍ¶àÏß³ÌµÄÉúÃüÖÜÆÚ;
 
 /**
- * æ­»é”ä»£ç æ¼”ç¤º
+ * ËÀËø´úÂëÑİÊ¾
  */
 public class DeadLock {
-    //ä¸¤æŠŠé”
-    private static final String LOCKA = "é”A";
-    private static final String LOCKB = "é”B";
+    //Á½°ÑËø
+    private static final String LOCKA = "ËøA";
+    private static final String LOCKB = "ËøB";
 
     public static void main(String[] args) {
         /*
-            æ ¸å¿ƒæ€æƒ³:
-                1. ä¸¤ä¸ªçº¿ç¨‹, ä¸¤æŠŠé”.
-                2. ä¸€ä¸ªçº¿ç¨‹å…ˆA,åB,
-                    å¦ä¸€ä¸ªçº¿ç¨‹å…ˆB, åA.
-                3. ä¸ºäº†è®©æ•ˆæœæ›´æ˜æ˜¾, ç”¨while(true)æ”¹è¿›.
+            ºËĞÄË¼Ïë:
+                1. Á½¸öÏß³Ì, Á½°ÑËø.
+                2. Ò»¸öÏß³ÌÏÈA,ºóB,
+                    ÁíÒ»¸öÏß³ÌÏÈB, ºóA.
+                3. ÎªÁËÈÃĞ§¹û¸üÃ÷ÏÔ, ÓÃwhile(true)¸Ä½ø.
          */
-        //çº¿ç¨‹1,  ä¸€ä¸ªçº¿ç¨‹å…ˆA,åB,
+        //Ïß³Ì1,  Ò»¸öÏß³ÌÏÈA,ºóB,
         new Thread(){
             @Override
             public void run() {
                 while(true) {
 
-                    //å…ˆA
+                    //ÏÈA
                     synchronized (LOCKA) {
-                        System.out.println("1è·å–åˆ°" + LOCKA + ", ç­‰å¾…" + LOCKB);
-                        //åB
+                        System.out.println("1»ñÈ¡µ½" + LOCKA + ", µÈ´ı" + LOCKB);
+                        //ºóB
                         synchronized (LOCKB) {
-                            System.out.println("1è·å–åˆ°" + LOCKB + ", æˆåŠŸè¿›åˆ°äº†å°æˆ¿é—´");
+                            System.out.println("1»ñÈ¡µ½" + LOCKB + ", ³É¹¦½øµ½ÁËĞ¡·¿¼ä");
                         }
                     }
                 }
             }
         }.start();
 
-        //çº¿ç¨‹2,  ä¸€ä¸ªçº¿ç¨‹å…ˆB,åA,
+        //Ïß³Ì2,  Ò»¸öÏß³ÌÏÈB,ºóA,
         new Thread(){
             @Override
             public void run() {
                 while(true) {
-                    //å…ˆB
+                    //ÏÈB
                     synchronized (LOCKB) {
-                        System.out.println("2è·å–åˆ°" + LOCKB + ", ç­‰å¾…" + LOCKA);
-                        //åA
+                        System.out.println("2»ñÈ¡µ½" + LOCKB + ", µÈ´ı" + LOCKA);
+                        //ºóA
                         synchronized (LOCKA) {
-                            System.out.println("2è·å–åˆ°" + LOCKA + ", æˆåŠŸè¿›åˆ°äº†å°æˆ¿é—´");
+                            System.out.println("2»ñÈ¡µ½" + LOCKA + ", ³É¹¦½øµ½ÁËĞ¡·¿¼ä");
                         }
                     }
                 }

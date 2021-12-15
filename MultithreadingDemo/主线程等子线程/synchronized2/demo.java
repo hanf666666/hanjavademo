@@ -18,7 +18,7 @@ public class demo {
                 e.printStackTrace();
             }
             System.out.println("t Over");
-            synchronized (demo.class) {
+            synchronized (lock) {
                 System.out.println("我怎么进来了");
                 try {
                     Thread.sleep(10000);
@@ -34,7 +34,7 @@ public class demo {
         //启动子线程
         t.start();
         try {
-            synchronized (demo.class) {
+            synchronized (lock) {
                 System.out.println("锁死======》");
                 lock.wait();//主线程等待
             }

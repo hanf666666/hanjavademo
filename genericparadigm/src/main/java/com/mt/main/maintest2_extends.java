@@ -1,4 +1,4 @@
-package com.Thread.mt.main;
+package com.mt.main;
 
 import com.Thread.Lev2.Fruit;
 import com.Thread.Lev3.Apple;

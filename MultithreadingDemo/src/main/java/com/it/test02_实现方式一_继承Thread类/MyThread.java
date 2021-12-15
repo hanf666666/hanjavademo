@@ -1,16 +1,16 @@
-package com.it.test02_å®ç°æ–¹å¼ä¸€_ç»§æ‰¿Threadç±»;
+package com.it.test02_ÊµÏÖ·½Ê½Ò»_¼Ì³ĞThreadÀà;
 
 /**
- * è¿™ä¸ªæ˜¯è‡ªå®šä¹‰çš„çº¿ç¨‹ç±»: MyThread
+ * Õâ¸öÊÇ×Ô¶¨ÒåµÄÏß³ÌÀà: MyThread
  */
 
-//A: å®šä¹‰ä¸€ä¸ªç±»(MyThread), ç»§æ‰¿Threadç±».
+//A: ¶¨ÒåÒ»¸öÀà(MyThread), ¼Ì³ĞThreadÀà.
 public class MyThread extends Thread{
-    //B: é‡å†™Thread#run().
+    //B: ÖØĞ´Thread#run().
 
     @Override
     public void run() {
-        //C: æŠŠè¦æ‰§è¡Œçš„ä»£ç æ”¾å…¥åˆ°run()ä¸­.
+        //C: °ÑÒªÖ´ĞĞµÄ´úÂë·ÅÈëµ½run()ÖĞ.
         for (int i = 0; i < 200; i++) {
             System.out.println("run...." + i);
         }

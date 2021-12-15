@@ -1,20 +1,20 @@
-package com.it.test04_å¤šçº¿ç¨‹æ¨¡æ‹Ÿå–ç¥¨_åŸºç¡€ç‰ˆæœ¬;
+package com.it.test04_¶àÏß³ÌÄ£ÄâÂôÆ±_»ù´¡°æ±¾;
 
 /**
- * æµ‹è¯•ç±», æ¨¡æ‹Ÿå–ç¥¨
+ * ²âÊÔÀà, Ä£ÄâÂôÆ±
  */
 public class Test {
     public static void main(String[] args) {
-        //3. åœ¨æµ‹è¯•ç±»ä¸­, åˆ›å»º4ä¸ªçº¿ç¨‹, å–ç¥¨.
+        //3. ÔÚ²âÊÔÀàÖĞ, ´´½¨4¸öÏß³Ì, ÂôÆ±.
         /*MyThread mt1 = new MyThread();
-        mt1.setName("çª—å£1");*/
+        mt1.setName("´°¿Ú1");*/
 
-        MyThread mt1 = new MyThread("çª—å£1");
-        MyThread mt2 = new MyThread("çª—å£2");
-        MyThread mt3 = new MyThread("çª—å£3");
-        MyThread mt4 = new MyThread("çª—å£4");
+        MyThread mt1 = new MyThread("´°¿Ú1");
+        MyThread mt2 = new MyThread("´°¿Ú2");
+        MyThread mt3 = new MyThread("´°¿Ú3");
+        MyThread mt4 = new MyThread("´°¿Ú4");
 
-        //å¼€å¯çº¿ç¨‹
+        //¿ªÆôÏß³Ì
         mt1.start();
         mt2.start();
         mt3.start();

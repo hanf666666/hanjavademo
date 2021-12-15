@@ -29,6 +29,7 @@ public class TableMananger {
     }
     @Test
     public void createtable(){
+//         hBaseUtil.createTable("bigdata003_parking_lot2","cf");
          hBaseUtil.createTable("bigdata003_parking_lot2","info");
 
     }

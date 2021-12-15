@@ -1,17 +1,17 @@
-package com.it.test09_åŒæ­¥æ–¹æ³•çš„é”å¯¹è±¡æ¼”ç¤º;
+package com.it.test09_Í¬²½·½·¨µÄËø¶ÔÏóÑİÊ¾;
 
-public class Test2_éé™æ€ {
+public class Test2_·Ç¾²Ì¬ {
     public static void main(String[] args) {
         /*
-        	æ ¸å¿ƒæ€è·¯:
-                1. åˆ›å»ºä¸¤ä¸ªçº¿ç¨‹, ä¸€ä¸ªè°ƒç”¨method1, å¦ä¸€ä¸ªè°ƒç”¨method2().
-                2. å¦‚æœæ‰“å°ç»“æœæ²¡ä¹±åº, å°±è¯´æ˜ä»–ä»¬ä½¿ç”¨çš„æ˜¯åŒä¸€æŠŠé”.
-                3. ä¸ºäº†è®©æ•ˆæœæ›´æ˜æ˜¾, ç”¨while(true)æ”¹è¿›.
+        	ºËĞÄË¼Â·:
+                1. ´´½¨Á½¸öÏß³Ì, Ò»¸öµ÷ÓÃmethod1, ÁíÒ»¸öµ÷ÓÃmethod2().
+                2. Èç¹û´òÓ¡½á¹ûÃ»ÂÒĞò, ¾ÍËµÃ÷ËûÃÇÊ¹ÓÃµÄÊÇÍ¬Ò»°ÑËø.
+                3. ÎªÁËÈÃĞ§¹û¸üÃ÷ÏÔ, ÓÃwhile(true)¸Ä½ø.
          */
-        //åˆ›å»º  Demo2_éé™æ€   ç±»çš„å¯¹æ˜‚
-       final  Demo2_éé™æ€ d = new Demo2_éé™æ€();
+        //´´½¨  Demo2_·Ç¾²Ì¬   ÀàµÄ¶Ô°º
+       final  Demo2_·Ç¾²Ì¬ d = new Demo2_·Ç¾²Ì¬();
 
-        //çº¿ç¨‹1, è°ƒç”¨method1()
+        //Ïß³Ì1, µ÷ÓÃmethod1()
         new Thread(){
             @Override
             public void run() {
@@ -21,7 +21,7 @@ public class Test2_éé™æ€ {
             }
         }.start();
 
-        //çº¿ç¨‹2, è°ƒç”¨method2().
+        //Ïß³Ì2, µ÷ÓÃmethod2().
         new Thread(){
             @Override
             public void run() {
@@ -31,12 +31,12 @@ public class Test2_éé™æ€ {
             }
         }.start();
 
-        //æ–¹å¼ä¸€: ç»§æ‰¿Threadç±».
+        //·½Ê½Ò»: ¼Ì³ĞThreadÀà.
         //new Thread(){
-        //  é‡å†™run();
+        //  ÖØĞ´run();
         // }.start();
 
-        //æ–¹å¼äºŒ: å®ç°Runnableæ¥å£.
+        //·½Ê½¶ş: ÊµÏÖRunnable½Ó¿Ú.
         /*new Thread(new Runnable() {
             @Override
             public void run() {

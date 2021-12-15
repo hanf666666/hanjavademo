@@ -1,21 +1,21 @@
-package com.it.test08_åŒ¿åå†…éƒ¨ç±»è®²è§£;
+package com.it.test08_ÄäÃûÄÚ²¿Àà½²½â;
 
 public class Test03_Player {
     public static void main(String[] args) {
-        //éœ€æ±‚: è°ƒç”¨Player#play();
+        //ĞèÇó: µ÷ÓÃPlayer#play();
 //        new Player() {
 //            @Override
 //            public void play() {
-//                System.out.println("ä¸ºäº†å­¦å¥½å¤§æ•°æ®, å°±ä¸è¦ç©å„¿æ¸¸æˆäº†, ç©å„¿äº†ä½ ä¹Ÿæ˜¯ä¸ªå‘");
+//                System.out.println("ÎªÁËÑ§ºÃ´óÊı¾İ, ¾Í²»ÒªÍæ¶ùÓÎÏ·ÁË, Íæ¶ùÁËÄãÒ²ÊÇ¸ö¿Ó");
 //            }
 //        }.play();
 
-        //å¤šæ€
-        //Player p = Playeræ¥å£çš„å­ç±»å¯¹è±¡;
+        //¶àÌ¬
+        //Player p = Player½Ó¿ÚµÄ×ÓÀà¶ÔÏó;
         Player p =  new Player() {
             @Override
             public void play() {
-                System.out.println("ä¸ºäº†å­¦å¥½å¤§æ•°æ®, å°±ä¸è¦ç©å„¿æ¸¸æˆäº†, ç©å„¿äº†ä½ ä¹Ÿæ˜¯ä¸ªå‘");
+                System.out.println("ÎªÁËÑ§ºÃ´óÊı¾İ, ¾Í²»ÒªÍæ¶ùÓÎÏ·ÁË, Íæ¶ùÁËÄãÒ²ÊÇ¸ö¿Ó");
             }
         };
         p.play();

@@ -1,4 +1,4 @@
-package com.it.test08_åŒ¿åå†…éƒ¨ç±»è®²è§£;
+package com.it.test08_ÄäÃûÄÚ²¿Àà½²½â;
 
 public abstract class Person {
     public abstract void  eat();

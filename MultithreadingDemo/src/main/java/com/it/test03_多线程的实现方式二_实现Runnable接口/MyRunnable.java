@@ -1,14 +1,14 @@
-package com.it.test03_å¤šçº¿ç¨‹çš„å®ç°æ–¹å¼äºŒ_å®ç°Runnableæ¥å£;
+package com.it.test03_¶àÏß³ÌµÄÊµÏÖ·½Ê½¶ş_ÊµÏÖRunnable½Ó¿Ú;
 
-//A: å®šä¹‰ç±»(MyRunnableç±»), å®ç°Runnableæ¥å£
+//A: ¶¨ÒåÀà(MyRunnableÀà), ÊµÏÖRunnable½Ó¿Ú
 public class MyRunnable implements  Runnable {
 
-    //B: é‡å†™æ¥å£ä¸­çš„run()æ–¹æ³•.
+    //B: ÖØĞ´½Ó¿ÚÖĞµÄrun()·½·¨.
     @Override
     public void run() {
-        //C: æŠŠè¦æ‰§è¡Œçš„ä»£ç æ”¾åˆ°run()æ–¹æ³•ä¸­.
+        //C: °ÑÒªÖ´ĞĞµÄ´úÂë·Åµ½run()·½·¨ÖĞ.
         for (int i = 0; i < 200; i++) {
-            System.out.println("å®ç°Runnableæ¥å£çš„æ–¹å¼å®ç°å¤šçº¿ç¨‹..." + i);
+            System.out.println("ÊµÏÖRunnable½Ó¿ÚµÄ·½Ê½ÊµÏÖ¶àÏß³Ì..." + i);
         }
     }
 }

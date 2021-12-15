@@ -1,8 +1,8 @@
-package com.it.test08_åŒ¿åå†…éƒ¨ç±»è®²è§£;
+package com.it.test08_ÄäÃûÄÚ²¿Àà½²½â;
 
-public class Test05_ä»€ä¹ˆæ—¶å€™ä½¿ç”¨åŒ¿åå†…éƒ¨ç±» {
+public class Test05_Ê²Ã´Ê±ºòÊ¹ÓÃÄäÃûÄÚ²¿Àà {
     public static void main(String[] args) {
-        //éœ€æ±‚: è°ƒç”¨Inter#method1();
+        //ĞèÇó: µ÷ÓÃInter#method1();
 
        Inter in =  new Inter() {
             @Override
@@ -24,7 +24,7 @@ public class Test05_ä»€ä¹ˆæ—¶å€™ä½¿ç”¨åŒ¿åå†…éƒ¨ç±» {
         };
        in.method1();
 
-       //éœ€æ±‚: åˆ›å»ºä¸¤ä¸ªInneræ¥å£çš„å­ç±»å¯¹è±¡.
+       //ĞèÇó: ´´½¨Á½¸öInner½Ó¿ÚµÄ×ÓÀà¶ÔÏó.
     }
 }
 
