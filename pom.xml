@@ -21,6 +21,7 @@
         <module>JVMunderstard</module>
         <module>Connectiondemo</module>
         <module>java数据结构/shujujiegou</module>
+        <module>CharsetGBK_UTF8</module>
     </modules>
     <build>
         <plugins>
