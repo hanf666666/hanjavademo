@@ -1,17 +1,17 @@
-package com.Thread.ÅÅĞò.½»»»ÀàÅÅĞò.Ã°Åİ;
+package com.it.main;
 
 /*
- * Ã°ÅİÅÅĞò
+ * å†’æ³¡æ’åº
  */
 public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {6, 3, 8, 2, 9, 1};
-        System.out.println("ÅÅĞòÇ°Êı×éÎª£º");
+        System.out.println("æ’åºå‰æ•°ç»„ä¸ºï¼š");
         for (int num : arr) {
             System.out.print(num + " ");
         }
-        for (int i = 0; i < arr.length - 1; i++) {//Íâ²ãÑ­»·¿ØÖÆÅÅĞòÌËÊı
-            for (int j = 0; j < arr.length - 1 - i; j++) {//ÄÚ²ãÑ­»·¿ØÖÆÃ¿Ò»ÌËÅÅĞò¶àÉÙ´Î
+        for (int i = 0; i < arr.length - 1; i++) {//å¤–å±‚å¾ªç¯æ§åˆ¶æ’åºè¶Ÿæ•°
+            for (int j = 0; j < arr.length - 1 - i; j++) {//å†…å±‚å¾ªç¯æ§åˆ¶æ¯ä¸€è¶Ÿæ’åºå¤šå°‘æ¬¡
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -20,7 +20,7 @@ public class BubbleSort {
             }
         }
         System.out.println();
-        System.out.println("ÅÅĞòºóµÄÊı×éÎª£º");
+        System.out.println("æ’åºåçš„æ•°ç»„ä¸ºï¼š");
         for (int num : arr) {
             System.out.print(num + " ");
         }
