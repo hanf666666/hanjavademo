@@ -6,17 +6,17 @@ import com.Thread.container.Plate;
 
 /**
  * to do
- *ä¸Šç•Œ<? extends T>ä¸èƒ½å¾€é‡Œå­˜ï¼Œåªèƒ½å¾€å¤–å–
+ *ÉÏ½ç<? extends T>²»ÄÜÍùÀï´æ£¬Ö»ÄÜÍùÍâÈ¡
  * @author Hj
  * @date 2021/12/2
  */
 public class maintest2_extends {
     public static void main(String[] args) {
         Plate<? extends Fruit> plate=new Plate<Apple>(new Apple());
-        //ä¸èƒ½å­˜å…¥ä»»ä½•å…ƒç´ 
+        //²»ÄÜ´æÈëÈÎºÎÔªËØ
 //        plate.set(new Fruit());    //Error
 //        plate.set(new Apple());    //Error
-        //è¯»å–å‡ºæ¥çš„ä¸œè¥¿åªèƒ½å­˜æ”¾åœ¨Fruitæˆ–å®ƒçš„åŸºç±»é‡Œã€‚
+        //¶ÁÈ¡³öÀ´µÄ¶«Î÷Ö»ÄÜ´æ·ÅÔÚFruit»òËüµÄ»ùÀàÀï¡£
         Fruit newFruit1 = plate.get();
         Object newFruit2 = plate.get();
 //        Apple newFruit3 = plate.get();    //Error

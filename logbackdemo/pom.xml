@@ -55,7 +55,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
-            <!--            <scope>provided</scope> &lt;!&ndash;åªåœ¨ç¼–è¯‘å’Œæµ‹è¯•æ—¶èµ·ä½œç”¨&ndash;&gt;-->
+            <!--            <scope>provided</scope> &lt;!&ndash;Ö»ÔÚ±àÒëºÍ²âÊÔÊ±Æð×÷ÓÃ&ndash;&gt;-->
         </dependency>
 
     </dependencies>

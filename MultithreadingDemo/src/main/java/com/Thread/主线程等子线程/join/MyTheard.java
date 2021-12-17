@@ -1,4 +1,4 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.join;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.join;
 
 
 public class MyTheard extends Thread {

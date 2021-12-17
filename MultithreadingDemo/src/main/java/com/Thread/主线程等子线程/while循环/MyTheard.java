@@ -1,4 +1,4 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.whileå¾ªç¯;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.whileÑ­»·;
 
 
 public class MyTheard extends Thread {

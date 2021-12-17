@@ -1,10 +1,10 @@
-package com.Thread.çº¿ç¨‹å®‰å…¨.demo02;
+package com.Thread.Ïß³Ì°²È«.demo02;
 
 public class Count {
 
     static int  count=0;
 
-    public /*static synchronized*/ void add(String str,long è¿›ç¨‹å·){
+    public /*static synchronized*/ void add(String str,long ½ø³ÌºÅ){
 
         if("a".equals(str)){
             count=100;
@@ -13,10 +13,10 @@ public class Count {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(count+", a   "+è¿›ç¨‹å·);
+            System.out.println(count+", a   "+½ø³ÌºÅ);
         }else{
             count=200;
-            System.out.println(count+",  b "+è¿›ç¨‹å·);
+            System.out.println(count+",  b "+½ø³ÌºÅ);
         }
 
     }

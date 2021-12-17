@@ -1,11 +1,11 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.CyclicBarrier;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.CyclicBarrier;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class demo {
     public static void main(String[] args) {
-        CyclicBarrier barrier = new CyclicBarrier(2);//å‚æ•°ä¸ºçº¿ç¨‹æ•°
+        CyclicBarrier barrier = new CyclicBarrier(2);//²ÎÊıÎªÏß³ÌÊı
         Thread t = new Thread(() -> {
             int num = 1000;
             String s = "";
@@ -14,7 +14,7 @@ public class demo {
             }
             System.out.println("t Over");
             try {
-                barrier.await();//é˜»å¡
+                barrier.await();//×èÈû
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (BrokenBarrierException e) {
@@ -25,7 +25,7 @@ public class demo {
         System.out.println("start = " + start);
         t.start();
         try {
-            barrier.await();//ä¹Ÿé˜»å¡,å¹¶ä¸”å½“é˜»å¡æ•°é‡è¾¾åˆ°æŒ‡å®šæ•°ç›®æ—¶åŒæ—¶é‡Šæ”¾
+            barrier.await();//Ò²×èÈû,²¢ÇÒµ±×èÈûÊıÁ¿´ïµ½Ö¸¶¨ÊıÄ¿Ê±Í¬Ê±ÊÍ·Å
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (BrokenBarrierException e) {

@@ -18,10 +18,10 @@ class MyThreadFactory implements ThreadFactory {
 
     public Thread newThread(Runnable r) {
         SecurityManager s = new SecurityManager();
-        // 绾跨▼缁勬槸涓轰簡鏇村姞瀹夊叏
+        // 线程组是为了更加安全
         ThreadGroup group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
         Thread thread = new Thread(group, r);
-        thread.setName("浠诲姟绾跨▼-" + atomic.incrementAndGet());
+        thread.setName("任务线程-" + atomic.incrementAndGet());
         return thread;
     }
 

@@ -49,7 +49,7 @@ public class Main {
     }
 
     public static Connection getHBaseConnection() throws IOException {
-        // åˆ›å»ºHBASEçš„é“¾æŽ¥å¯¹è±¡
+        // ´´½¨HBASEµÄÁ´½Ó¶ÔÏó
         final Configuration hbaseConf = HBaseConfiguration.create();
 //    System.getProperties.setProperty("HADOOP_USER_NAME","hdfs")
         hbaseConf.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");

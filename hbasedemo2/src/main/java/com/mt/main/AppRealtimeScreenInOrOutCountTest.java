@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  * to do
- * å•ä½æ—¶é—´å†…çš„å‡ºå…¥åœºä¿¡æ¯
+ * µ¥Î»Ê±¼äÄÚµÄ³öÈë³¡ÐÅÏ¢
  * @author Hj
  * @date 2021/10/12
  */
@@ -46,7 +46,7 @@ public class AppRealtimeScreenInOrOutCountTest {
 
         }
         final DateTime endtime = DateUtil.date();
-        System.out.println("å“åº”æ—¶é—´==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("ÏìÓ¦Ê±¼ä==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 
@@ -60,7 +60,7 @@ public class AppRealtimeScreenInOrOutCountTest {
         }
         hBaseUtil.getFilterListData("centralized_management_realtime_park", parkidList);
         final DateTime endtime = DateUtil.date();
-        System.out.println("å“åº”æ—¶é—´==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("ÏìÓ¦Ê±¼ä==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 
@@ -69,7 +69,7 @@ public class AppRealtimeScreenInOrOutCountTest {
         final DateTime starttime = DateUtil.date();
         hBaseUtil.getRegexFilterListData("centralized_management_realtime_park", ".*2021100901$");
         final DateTime endtime = DateUtil.date();
-        System.out.println("å“åº”æ—¶é—´==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("ÏìÓ¦Ê±¼ä==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 }

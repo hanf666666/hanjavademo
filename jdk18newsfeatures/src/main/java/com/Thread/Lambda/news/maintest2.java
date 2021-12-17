@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * to do
- *åªéœ€è¦ç»™é™æ€æ–¹æ³• Collections.sort ä¼ å…¥ä¸€ä¸ªListå¯¹è±¡ä»¥åŠä¸€ä¸ªæ¯”è¾ƒå™¨æ¥æŒ‰æŒ‡å®šé¡ºåºæ’åˆ—ã€‚
+ *Ö»ĞèÒª¸ø¾²Ì¬·½·¨ Collections.sort ´«ÈëÒ»¸öList¶ÔÏóÒÔ¼°Ò»¸ö±È½ÏÆ÷À´°´Ö¸¶¨Ë³ĞòÅÅÁĞ¡£
 
  * @author Hj
  * @date 2021/12/1
@@ -15,7 +15,7 @@ public class maintest2 {
     public static void main(String[] args) {
         List<String> stringList = Arrays.asList("2peter", "1anna", "3mike", "4xenia");
         System.out.println(stringList);
-        //æ¥å£å®ç°ç®€å†™==>æ–¹æ³•çš„å‚æ•°->è¿”å›å€¼
+        //½Ó¿ÚÊµÏÖ¼òĞ´==>·½·¨µÄ²ÎÊı->·µ»ØÖµ
         Collections.sort(stringList, (String a, String b) -> b.compareTo(a));
         Collections.sort(stringList, ( a, b) -> b.compareTo(a));
         System.out.println(stringList);

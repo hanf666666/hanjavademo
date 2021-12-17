@@ -1,21 +1,21 @@
-package com.Thread.çº¿ç¨‹å®‰å…¨.demo01;
+package com.Thread.Ïß³Ì°²È«.demo01;
 
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-//ç†è§£è„è¯»é”éš¾
+//Àí½âÔà¶ÁËøÄÑ
 public class DirtyRead {
-    private String weibo_name = "åˆ˜å¾·å" ;
-    private String weibo_sex = "ç”·" ;
+    private String weibo_name = "ÁõµÂ»ª" ;
+    private String weibo_sex = "ÄĞ" ;
     private ReadWriteLock lock = new ReentrantReadWriteLock();
     public   void setValue(String weibo_name , String weibo_sex){
         lock.writeLock().lock();
-        //synchronizedé”ä¸ä½ä¸¤ä¸ªæ–¹æ³•
-//        getValue---------weibo_name :é«˜åœ†åœ†-- weibo_sex : ç”·
-//        setValue---------weibo_name :é«˜åœ†åœ†-- weibo_sex : å¥³
-      //  synchronized//æ·é”ä¸ä¸æ·é”æ²¡åŒºåˆ«
-//        getValue---------weibo_name :é«˜åœ†åœ†-- weibo_sex : ç”·
-//        setValue---------weibo_name :é«˜åœ†åœ†-- weibo_sex : å¥³
+        //synchronizedËø²»×¡Á½¸ö·½·¨
+//        getValue---------weibo_name :¸ßÔ²Ô²-- weibo_sex : ÄĞ
+//        setValue---------weibo_name :¸ßÔ²Ô²-- weibo_sex : Å®
+      //  synchronized//¼ÏËøÓë²»¼ÏËøÃ»Çø±ğ
+//        getValue---------weibo_name :¸ßÔ²Ô²-- weibo_sex : ÄĞ
+//        setValue---------weibo_name :¸ßÔ²Ô²-- weibo_sex : Å®
         this.weibo_name = weibo_name ;
         try {
             Thread.sleep(3000);
@@ -36,7 +36,7 @@ public class DirtyRead {
         final DirtyRead dr = new DirtyRead();
         Thread t1 = new Thread(new Runnable() {
             public void run() {
-                dr.setValue("é«˜åœ†åœ†" , "å¥³");
+                dr.setValue("¸ßÔ²Ô²" , "Å®");
             }
         }) ;
         t1.start();

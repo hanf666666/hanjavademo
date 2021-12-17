@@ -1,6 +1,7 @@
 package com.it.main;
 
 import com.it.utils.EncodeUtils;
+import com.it.utils.TraversalUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,16 +14,11 @@ import java.io.IOException;
  */
 public class demo01 {
     public static void main(String[] args) {
-        final File file1 = new File("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\CharsetGBK_UTF8\\src\\main\\java\\com\\it\\main\\BubbleSort.java");
-        final File file2 = new File("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\CharsetGBK_UTF8\\src\\main\\java\\com\\it\\main\\BubbleSort2.java");
-        final File file3 = new File("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\CharsetGBK_UTF8\\src\\main\\java\\com\\it\\main\\BubbleSort3.java");
-//        EncodeUtils.handleCharsetGBKToUTF8(file1,file2);
-//        EncodeUtils.handleCharsetUTF8ToGBK(file1,file3);
+        final String file1 = "D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo";
         try {
-           String encodetype1= EncodeUtils.getFileEncoding("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\CharsetGBK_UTF8\\src\\main\\java\\com\\it\\main\\BubbleSort3.java");
-           String encodetype2= EncodeUtils.getFileEncode("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\CharsetGBK_UTF8\\src\\main\\java\\com\\it\\main\\BubbleSort3.java");
-            System.out.println(encodetype1);
-            System.out.println(encodetype2);
+            TraversalUtil.listDirectory(new File(file1));
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

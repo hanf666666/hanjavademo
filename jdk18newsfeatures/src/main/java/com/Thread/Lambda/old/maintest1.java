@@ -7,9 +7,9 @@ import java.util.List;
 
 /**
  * to do
- *åªéœ€è¦ç»™é™æ€æ–¹æ³• Collections.sort ä¼ å…¥ä¸€ä¸ªListå¯¹è±¡ä»¥åŠä¸€ä¸ªæ¯”è¾ƒå™¨æ¥æŒ‰æŒ‡å®šé¡ºåºæŽ’åˆ—ã€‚
- * é€šå¸¸åšæ³•éƒ½æ˜¯åˆ›å»ºä¸€ä¸ª
- * åŒ¿åçš„æ¯”è¾ƒå™¨å¯¹è±¡ç„¶åŽå°†å…¶ä¼ é€’ç»™sortæ–¹æ³•ã€‚
+ *Ö»ÐèÒª¸ø¾²Ì¬·½·¨ Collections.sort ´«ÈëÒ»¸öList¶ÔÏóÒÔ¼°Ò»¸ö±È½ÏÆ÷À´°´Ö¸¶¨Ë³ÐòÅÅÁÐ¡£
+ * Í¨³£×ö·¨¶¼ÊÇ´´½¨Ò»¸ö
+ * ÄäÃûµÄ±È½ÏÆ÷¶ÔÏóÈ»ºó½«Æä´«µÝ¸øsort·½·¨¡£
  * @author Hj
  * @date 2021/12/1
  */

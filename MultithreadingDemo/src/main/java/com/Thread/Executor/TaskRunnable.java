@@ -17,13 +17,13 @@ class TaskRunnable implements Runnable {
     //        @Override
     public void run() {
         try {
-            //浼戠湢10绉掍箣鍐呯殑鏃堕棿
+            //休眠10秒之内的时间
             TimeUnit.SECONDS.sleep((int)Math.random()*10);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        System.out.println("Runnable浠诲姟"+name+"鎵ц涓氬姟閫昏緫");
+        System.out.println("Runnable任务"+name+"执行业务逻辑");
     }
 
 }

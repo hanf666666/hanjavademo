@@ -14,23 +14,35 @@ import java.util.List;
  * @date 2021/12/16
  */
 public class EncodeUtils {
+
+
     /**
-     * gbkè½¬utf-8
-     * @param gbkFile
-     * @param utf8File
+     * gbk×ªutf-8
+     *
+     * @param gbkStr
+     * @param utf8Str
      */
-    public static void handleCharsetGBKToUTF8(File gbkFile, File utf8File) {
+    public static void handleCharsetGBKToUTF8(String gbkStr, String utf8Str) {
+        final File gbkFile = new File(gbkStr);
+        final File utf8File = new File(utf8Str);
         try {
-            List<String> gbkLines =  FileUtils.readLines(gbkFile, "GBK");
+            List<String> gbkLines = FileUtils.readLines(gbkFile, "GBK");
             FileUtils.writeLines(utf8File, "UTF-8", gbkLines);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
-    //utf-8 --> gbk
-    public static void handleCharsetUTF8ToGBK(File utf8File, File gbkFile) {
+    /**
+     * utf-8 --> gbk
+     * @param utf8Str
+     * @param gbkStr
+     */
+    public static void handleCharsetUTF8ToGBK(String utf8Str, String gbkStr) {
         try {
+            final File utf8File = new File(utf8Str);
+            final File gbkFile = new File(gbkStr);
             List<String> utf8Lines = FileUtils.readLines(utf8File, "UTF-8");
             FileUtils.writeLines(gbkFile, "GBK", utf8Lines);
         } catch (IOException e) {
@@ -42,30 +54,30 @@ public class EncodeUtils {
     public static String getFileEncoding(String path) throws IOException {
 /*
 		------------------------------------------------------------------------
-		  detectoræ˜¯æ¢æµ‹å™¨ï¼Œå®ƒæŠŠæ¢æµ‹ä»»åŠ¡äº¤ç»™å…·ä½“çš„æ¢æµ‹å®ç°ç±»çš„å®ä¾‹å®Œæˆã€‚
-		  cpDetectorå†…ç½®äº†ä¸€äº›å¸¸ç”¨çš„æ¢æµ‹å®ç°ç±»ï¼Œè¿™äº›æ¢æµ‹å®ç°ç±»çš„å®ä¾‹å¯ä»¥é€šè¿‡addæ–¹æ³• åŠ è¿›æ¥ï¼Œ
-          	å¦‚ParsingDetectorã€ JChardetFacadeã€ASCIIDetectorã€UnicodeDetectorã€‚
-		  detectoræŒ‰ç…§â€œè°æœ€å…ˆè¿”å›éç©ºçš„æ¢æµ‹ç»“æœï¼Œå°±ä»¥è¯¥ç»“æœä¸ºå‡†â€çš„åŸåˆ™è¿”å›æ¢æµ‹åˆ°çš„å­—ç¬¦é›†ç¼–ç ã€‚
+		  detectorÊÇÌ½²âÆ÷£¬Ëü°ÑÌ½²âÈÎÎñ½»¸ø¾ßÌåµÄÌ½²âÊµÏÖÀàµÄÊµÀıÍê³É¡£
+		  cpDetectorÄÚÖÃÁËÒ»Ğ©³£ÓÃµÄÌ½²âÊµÏÖÀà£¬ÕâĞ©Ì½²âÊµÏÖÀàµÄÊµÀı¿ÉÒÔÍ¨¹ıadd·½·¨ ¼Ó½øÀ´£¬
+          	ÈçParsingDetector¡¢ JChardetFacade¡¢ASCIIDetector¡¢UnicodeDetector¡£
+		  detector°´ÕÕ¡°Ë­×îÏÈ·µ»Ø·Ç¿ÕµÄÌ½²â½á¹û£¬¾ÍÒÔ¸Ã½á¹ûÎª×¼¡±µÄÔ­Ôò·µ»ØÌ½²âµ½µÄ×Ö·û¼¯±àÂë¡£
 		--------------------------------------------------------------------------*/
         info.monitorenter.cpdetector.io.CodepageDetectorProxy detector =
                 info.monitorenter.cpdetector.io.CodepageDetectorProxy.getInstance();
 
 /*		-------------------------------------------------------------------------
-		  ParsingDetectorå¯ç”¨äºæ£€æŸ¥HTMLã€XMLç­‰æ–‡ä»¶æˆ–å­—ç¬¦æµçš„ç¼–ç ,æ„é€ æ–¹æ³•ä¸­çš„å‚æ•°ç”¨äº
-		  æŒ‡ç¤ºæ˜¯å¦æ˜¾ç¤ºæ¢æµ‹è¿‡ç¨‹çš„è¯¦ç»†ä¿¡æ¯ï¼Œä¸ºfalseä¸æ˜¾ç¤ºã€‚
+		  ParsingDetector¿ÉÓÃÓÚ¼ì²éHTML¡¢XMLµÈÎÄ¼ş»ò×Ö·ûÁ÷µÄ±àÂë,¹¹Ôì·½·¨ÖĞµÄ²ÎÊıÓÃÓÚ
+		  Ö¸Ê¾ÊÇ·ñÏÔÊ¾Ì½²â¹ı³ÌµÄÏêÏ¸ĞÅÏ¢£¬Îªfalse²»ÏÔÊ¾¡£
 		---------------------------------------------------------------------------*/
 
         detector.add(new info.monitorenter.cpdetector.io.ParsingDetector(false));
 
 /*--------------------------------------------------------------------------
-		  JChardetFacadeå°è£…äº†ç”±Mozillaç»„ç»‡æä¾›çš„JChardetFacadeï¼Œå®ƒå¯ä»¥å®Œæˆå¤§å¤šæ•°æ–‡ä»¶çš„ç¼–ç 
-		  æµ‹å®šã€‚æ‰€ä»¥ï¼Œä¸€èˆ¬æœ‰äº†è¿™ä¸ªæ¢æµ‹å™¨å°±å¯æ»¡è¶³å¤§å¤šæ•°é¡¹ç›®çš„è¦æ±‚ï¼Œå¦‚æœä½ è¿˜ä¸æ”¾å¿ƒï¼Œå¯ä»¥
-		  å†å¤šåŠ å‡ ä¸ªæ¢æµ‹å™¨ï¼Œæ¯”å¦‚ä¸‹é¢çš„ASCIIDetectorã€UnicodeDetectorç­‰ã€‚
+		  JChardetFacade·â×°ÁËÓÉMozilla×éÖ¯Ìá¹©µÄJChardetFacade£¬Ëü¿ÉÒÔÍê³É´ó¶àÊıÎÄ¼şµÄ±àÂë
+		  ²â¶¨¡£ËùÒÔ£¬Ò»°ãÓĞÁËÕâ¸öÌ½²âÆ÷¾Í¿ÉÂú×ã´ó¶àÊıÏîÄ¿µÄÒªÇó£¬Èç¹ûÄã»¹²»·ÅĞÄ£¬¿ÉÒÔ
+		  ÔÙ¶à¼Ó¼¸¸öÌ½²âÆ÷£¬±ÈÈçÏÂÃæµÄASCIIDetector¡¢UnicodeDetectorµÈ¡£
 		 ---------------------------------------------------------------------------*/
         detector.add(info.monitorenter.cpdetector.io.JChardetFacade.getInstance());
-        // ASCIIDetectorç”¨äºASCIIç¼–ç æµ‹å®š
+        // ASCIIDetectorÓÃÓÚASCII±àÂë²â¶¨
         detector.add(info.monitorenter.cpdetector.io.ASCIIDetector.getInstance());
-        // UnicodeDetectorç”¨äºUnicodeå®¶æ—ç¼–ç çš„æµ‹å®š
+        // UnicodeDetectorÓÃÓÚUnicode¼Ò×å±àÂëµÄ²â¶¨
         detector.add(info.monitorenter.cpdetector.io.UnicodeDetector.getInstance());
 
         java.nio.charset.Charset charset = null;
@@ -77,14 +89,16 @@ public class EncodeUtils {
             ex.printStackTrace();
         }
         if (charset != null) {
-            //System.out.println(f.getName() + " encoding isï¼š" + charset.name());
+            //System.out.println(f.getName() + " encoding is£º" + charset.name());
             return charset.name();
         } else
             //System.out.println(f.getName() + " unknown");
             return null;
     }
+
     /**
-     * æ–¹æ³•ä¸‰ï¼šæ¯”è¾ƒå‡†ç¡®ï¼Œè§£å†³äº†å®é™…é—®é¢˜
+     * ·½·¨Èı£º±È½Ï×¼È·£¬½â¾öÁËÊµ¼ÊÎÊÌâ
+     *
      * @param filePath
      * @return
      */

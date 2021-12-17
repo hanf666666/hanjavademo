@@ -1,4 +1,4 @@
-package com.Thread.Stream.骞惰Streams;
+package com.Thread.Stream.并行Streams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class maintest1 {
         long t2 = System.nanoTime();
         long millis1 = TimeUnit.NANOSECONDS.toMillis(t2 - t1);
 
-        System.out.println(String.format("浼犵粺parallel sort took: %d ms", millis1));
+        System.out.println(String.format("传统parallel sort took: %d ms", millis1));
 
 
         long t3 = System.nanoTime();
@@ -31,7 +31,7 @@ public class maintest1 {
         System.out.println(count);
         long t4 = System.nanoTime();
         long millis2 = TimeUnit.NANOSECONDS.toMillis(t3 - t4);
-        System.out.println(String.format("娴佸紡骞惰parallel sort took: %d ms", millis2));
+        System.out.println(String.format("流式并行parallel sort took: %d ms", millis2));
 
 
 

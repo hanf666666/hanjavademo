@@ -1,10 +1,10 @@
-package com.Thread.çº¿ç¨‹å®‰å…¨;
+package com.Thread.Ïß³Ì°²È«;
 
 import org.junit.Test;
 
 public class DirtyRead {
-    private String weibo_name = "åˆ˜å¾·å";
-    private String weibo_sex = "ç”·";
+    private String weibo_name = "ÁõµÂ»ª";
+    private String weibo_sex = "ÄĞ";
 
     public  void setValue(String weibo_name, String weibo_sex) {
         synchronized(this){
@@ -15,27 +15,27 @@ public class DirtyRead {
             e.printStackTrace();
         }
         this.weibo_sex = weibo_sex;
-        System.out.println("æˆ‘æ˜¯è®¾ç½®æ–¹æ³•    setValue---------weibo_name :" + weibo_name +
-                "-- weibo_sex : " + weibo_sex+"çº¿ç¨‹å:"+Thread.currentThread().getName());
+        System.out.println("ÎÒÊÇÉèÖÃ·½·¨    setValue---------weibo_name :" + weibo_name +
+                "-- weibo_sex : " + weibo_sex+"Ïß³ÌÃû:"+Thread.currentThread().getName());
 
     }
     }
 
 
     public void getValue() {
-        System.out.println("æˆ‘æ˜¯è·å–æ–¹æ³•   getValue---------weibo_name :" +
-                weibo_name + "-- weibo_sex : " + weibo_sex+"çº¿ç¨‹å:"+Thread.currentThread().getName());
+        System.out.println("ÎÒÊÇ»ñÈ¡·½·¨   getValue---------weibo_name :" +
+                weibo_name + "-- weibo_sex : " + weibo_sex+"Ïß³ÌÃû:"+Thread.currentThread().getName());
     }
 
     @Test
     /**
-     * å¤šçº¿ç¨‹å¯¹ä¸»mainçº¿ç¨‹å¯¹åƒçš„æ“ä½œ,
+     * ¶àÏß³Ì¶ÔÖ÷mainÏß³Ì¶ÔÏñµÄ²Ù×÷,
      */
     public  void demo01() throws InterruptedException {
         final DirtyRead dr = new DirtyRead();
         Thread t1 = new Thread(new Runnable() {
             public void run() {
-                dr.setValue("é«˜åœ†åœ†", "å¥³");
+                dr.setValue("¸ßÔ²Ô²", "Å®");
             }
         });
         t1.start();
@@ -48,14 +48,14 @@ public class DirtyRead {
 
     @Test
     /**
-     * å¤šçº¿ç¨‹å¯¹ä¸»new Threadçº¿ç¨‹å¯¹åƒçš„æ“ä½œ,ä¼šæŠ¥ç©ºæŒ‡é’ˆ
+     * ¶àÏß³Ì¶ÔÖ÷new ThreadÏß³Ì¶ÔÏñµÄ²Ù×÷,»á±¨¿ÕÖ¸Õë
      */
     public  void demo02() throws InterruptedException {
         DirtyRead dr=null;
         Thread t1 = new Thread(new Runnable() {
             public void run() {
                 DirtyRead dr = new DirtyRead();
-                 dr.setValue("é«˜åœ†åœ†", "å¥³");
+                 dr.setValue("¸ßÔ²Ô²", "Å®");
             }
         });
         t1.start();
@@ -70,7 +70,7 @@ public class DirtyRead {
 
     @Test
     /**
-     * å¤šçº¿ç¨‹å¯¹å¤šä¸ªå¯¹åƒçš„æ“ä½œ,ä½†æ˜¯åå­—ä¸€ç›´,å¤šå¯¹è±¡ä¸å­˜åœ¨çº¿ç¨‹å®‰å…¨
+     * ¶àÏß³Ì¶Ô¶à¸ö¶ÔÏñµÄ²Ù×÷,µ«ÊÇÃû×ÖÒ»Ö±,¶à¶ÔÏó²»´æÔÚÏß³Ì°²È«
      */
     public  void demo03() throws InterruptedException {
         DirtyRead dr=new DirtyRead();
@@ -78,7 +78,7 @@ public class DirtyRead {
             public void run() {
                 DirtyRead dr = new DirtyRead();
                 System.out.println(dr+"new Thread");
-                dr.setValue("é«˜åœ†åœ†", "å¥³");
+                dr.setValue("¸ßÔ²Ô²", "Å®");
             }
         });
         t1.start();

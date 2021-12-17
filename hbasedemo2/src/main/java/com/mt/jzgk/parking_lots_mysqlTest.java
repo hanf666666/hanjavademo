@@ -60,7 +60,7 @@ public class parking_lots_mysqlTest {
             }
         }
         final DateTime endtime = DateUtil.date();
-        System.out.println("鍝嶅簲鏃堕棿==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("响应时间==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 
@@ -94,7 +94,7 @@ public class parking_lots_mysqlTest {
         System.out.println("<=============================================");
 
         final DateTime endtime = DateUtil.date();
-        System.out.println("鍝嶅簲鏃堕棿==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("响应时间==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 

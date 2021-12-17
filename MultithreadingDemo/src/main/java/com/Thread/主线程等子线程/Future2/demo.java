@@ -1,4 +1,4 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.Future2;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.Future2;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -19,9 +19,9 @@ public class demo {
         });
         long start = System.currentTimeMillis();
         System.out.println("start = " + start);
-        Future future = executorService.submit(t);//å­çº¿ç¨‹å¯åŠ¨
+        Future future = executorService.submit(t);//×ÓÏß³ÌÆô¶¯
         try {
-            future.get();//éœ€è¦æ•è·ä¸¤ç§å¼‚å¸¸
+            future.get();//ĞèÒª²¶»ñÁ½ÖÖÒì³£
         }catch (InterruptedException e){
             e.printStackTrace();
         }catch (ExecutionException e){

@@ -1,4 +1,4 @@
-package com.Thread.å‡½æ•°å¼.Predicate1;
+package com.Thread.º¯ÊıÊ½.Predicate1;
 
 import java.util.Objects;
 import java.util.function.Predicate;
@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 /**
  * to do
- *  æ–­è¨€
+ *  ¶ÏÑÔ
  * @author Hj
  * @date 2021/12/1
  */

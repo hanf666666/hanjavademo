@@ -1,10 +1,10 @@
-package com.Thread.å‡½æ•°å¼.Supplier;
+package com.Thread.º¯ÊıÊ½.Supplier;
 
 import java.util.function.Supplier;
 
 /**
  * to do
- * Supplier æ¥å£è¿”å›ä¸€ä¸ªä»»æ„èŒƒå‹çš„å€¼ï¼Œå’ŒFunctionæ¥å£ä¸åŒçš„æ˜¯è¯¥æ¥å£æ²¡æœ‰ä»»ä½•å‚æ•°
+ * Supplier ½Ó¿Ú·µ»ØÒ»¸öÈÎÒâ·¶ĞÍµÄÖµ£¬ºÍFunction½Ó¿Ú²»Í¬µÄÊÇ¸Ã½Ó¿ÚÃ»ÓĞÈÎºÎ²ÎÊı
  * @author Hj
  * @date 2021/12/2
  */

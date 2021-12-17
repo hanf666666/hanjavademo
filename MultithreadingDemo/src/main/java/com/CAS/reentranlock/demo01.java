@@ -26,12 +26,12 @@ public class demo01 {
     }
     public static void moneychange() {
 
-        System.out.println(Thread.currentThread().getName()+"=开始取钱===>");
+        System.out.println(Thread.currentThread().getName()+"=��ʼȡǮ===>");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName()+"<=取钱结束===");
+        System.out.println(Thread.currentThread().getName()+"<=ȡǮ����===");
     }
 }

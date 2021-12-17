@@ -1,4 +1,4 @@
-package com.Thread.FunctionalInterface1.方法与构造函数引用.demo2;
+package com.Thread.FunctionalInterface1.�����빹�캯������.demo2;
 
 /**
  * to do
@@ -8,7 +8,7 @@ package com.Thread.FunctionalInterface1.方法与构造函数引用.demo2;
  */
 public class maintest3 {
     public static void main(String[] args) {
-        //  PersonFactory<Person> personFactory = Person::new;===>接口的简写
+        //  PersonFactory<Person> personFactory = Person::new;===>�ӿڵļ�д
         PersonFactory<Person> personFactory = Person::new;
         Person person = personFactory.create("Peter", "Parker");
         System.out.println(person);

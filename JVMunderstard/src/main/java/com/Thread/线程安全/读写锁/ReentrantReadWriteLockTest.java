@@ -1,4 +1,4 @@
-package com.Thread.çº¿ç¨‹å®‰å…¨.è¯»å†™é”;
+package com.Thread.Ïß³Ì°²È«.¶ÁĞ´Ëø;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
@@ -12,12 +12,12 @@ public class ReentrantReadWriteLockTest {
         private ReadWriteLock lock = new ReentrantReadWriteLock();
 
         public void get() {
-            //è¯»é”
+            //¶ÁËø
             lock.readLock().lock();
-            System.out.println(Thread.currentThread().getName() + "å‡†å¤‡è¯»æ•°æ®!!");
+            System.out.println(Thread.currentThread().getName() + "×¼±¸¶ÁÊı¾İ!!");
             try {
                 Thread.sleep(new Random().nextInt(1000));
-                System.out.println(Thread.currentThread().getName() + "è¯»æ•°æ®ä¸º:" + this.object);
+                System.out.println(Thread.currentThread().getName() + "¶ÁÊı¾İÎª:" + this.object);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
@@ -26,14 +26,14 @@ public class ReentrantReadWriteLockTest {
         }
 
         public void put(Object object) {
-            //å†™é”
+            //Ğ´Ëø
             lock.writeLock().lock();
-            System.out.println(Thread.currentThread().getName() + "å‡†å¤‡å†™æ•°æ®");
+            System.out.println(Thread.currentThread().getName() + "×¼±¸Ğ´Êı¾İ");
 
             try {
                 Thread.sleep(new Random().nextInt(1000));
                 this.object = object;
-                System.out.println(Thread.currentThread().getName() + "å†™æ•°æ®ä¸º" + this.object);
+                System.out.println(Thread.currentThread().getName() + "Ğ´Êı¾İÎª" + this.object);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {

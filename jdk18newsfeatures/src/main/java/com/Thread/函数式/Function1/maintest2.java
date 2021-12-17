@@ -1,4 +1,4 @@
-package com.Thread.å‡½æ•°å¼.Function1;
+package com.Thread.º¯ÊıÊ½.Function1;
 
 import java.util.function.Function;
 

@@ -48,7 +48,7 @@ public class AppRealtimeScreenParkPayChannelTest {
 
         }
         final DateTime endtime = DateUtil.date();
-        System.out.println("鍝嶅簲鏃堕棿==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("响应时间==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 
@@ -62,7 +62,7 @@ public class AppRealtimeScreenParkPayChannelTest {
         }
         hBaseUtil.getFilterListData("centralized_management_realtime_park", parkidList);
         final DateTime endtime = DateUtil.date();
-        System.out.println("鍝嶅簲鏃堕棿==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("响应时间==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 
@@ -71,7 +71,7 @@ public class AppRealtimeScreenParkPayChannelTest {
         final DateTime starttime = DateUtil.date();
         hBaseUtil.getRegexFilterListData("centralized_management_realtime_park", ".*2021100901$");
         final DateTime endtime = DateUtil.date();
-        System.out.println("鍝嶅簲鏃堕棿==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("响应时间==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 
@@ -80,7 +80,7 @@ public class AppRealtimeScreenParkPayChannelTest {
         final DateTime starttime = DateUtil.date();
         hBaseUtil.getPrefixFilterGetData("bigdata003_parking_lot2", "");
         final DateTime endtime = DateUtil.date();
-        System.out.println("鍝嶅簲鏃堕棿==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
+        System.out.println("响应时间==>" + DateUtil.between(starttime, endtime, DateUnit.MS) + "ms");
 
     }
 }

@@ -1,4 +1,4 @@
-package com.Thread.å‡½æ•°å¼.Consumer;
+package com.Thread.º¯ÊıÊ½.Consumer;
 
 /**
  * to do

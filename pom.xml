@@ -22,6 +22,7 @@
         <module>Connectiondemo</module>
         <module>java数据结构/shujujiegou</module>
         <module>CharsetGBK_UTF8</module>
+        <module>javaDesignPattern</module>
     </modules>
     <build>
         <plugins>

@@ -21,7 +21,7 @@ public class Phoenixtest {
         try {
             Class.forName("org.apache.phoenix.jdbc.PhoenixDriver");
 
-            // è¿™é‡Œé…ç½®zookeeperçš„åœ°å€ï¼Œå¯å•ä¸ªï¼Œä¹Ÿå¯å¤šä¸ªã€‚å¯ä»¥æ˜¯åŸŸåæˆ–è€…ip
+            // ÕâÀïÅäÖÃzookeeperµÄµØÖ·£¬¿Éµ¥¸ö£¬Ò²¿É¶à¸ö¡£¿ÉÒÔÊÇÓòÃû»òÕßip
             String     url       = "jdbc:phoenix:bigdata-alpha-003,bigdata-alpha-004,bigdata-alpha-005:2181:/hbase";
             Connection conn      = DriverManager.getConnection(url, props);
             conn.setSchema("meisoodev");
@@ -36,7 +36,7 @@ public class Phoenixtest {
             }
             long timeUsed = System.currentTimeMillis() - time;
             System.out.println("time " + timeUsed + "mm");
-            // å…³é—­è¿žæŽ¥
+            // ¹Ø±ÕÁ¬½Ó
             rs.close();
             statement.close();
             conn.close();

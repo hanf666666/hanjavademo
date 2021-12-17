@@ -1,4 +1,4 @@
-package com.Thread.FunctionalInterface1.æ–¹æ³•ä¸æ„é€ å‡½æ•°å¼•ç”¨.demo2;
+package com.Thread.FunctionalInterface1.·½·¨Óë¹¹Ôìº¯ÊıÒıÓÃ.demo2;
 
 /**
  * to do

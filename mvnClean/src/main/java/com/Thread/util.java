@@ -10,31 +10,31 @@ package com.Thread;
 import java.io.File;
 import java.io.IOException;
 
-//åˆ—å‡ºFileçš„ä¸€äº›å¸¸ç”¨æ“ä½œ
+//ÁÐ³öFileµÄÒ»Ð©³£ÓÃ²Ù×÷
 public class util {
     /**
-     * éåŽ†æŒ‡å®šç›®å½•ä¸‹ï¼ˆåŒ…æ‹¬å…¶å­ç›®å½•ï¼‰çš„æ‰€æœ‰æ–‡ä»¶ï¼Œå¹¶åˆ é™¤ä»¥ lastUpdated ç»“å°¾çš„æ–‡ä»¶
-     * @param dir ç›®å½•çš„ä½ç½® path
+     * ±éÀúÖ¸¶¨Ä¿Â¼ÏÂ£¨°üÀ¨Æä×ÓÄ¿Â¼£©µÄËùÓÐÎÄ¼þ£¬²¢É¾³ýÒÔ lastUpdated ½áÎ²µÄÎÄ¼þ
+     * @param dir Ä¿Â¼µÄÎ»ÖÃ path
      * @throws IOException
      */
     public static void listDirectory(File dir) throws IOException {
         if (!dir.exists())
-            throw new IllegalArgumentException("ç›®å½•ï¼š" + dir + "ä¸å­˜åœ¨.");
+            throw new IllegalArgumentException("Ä¿Â¼£º" + dir + "²»´æÔÚ.");
         if (!dir.isDirectory()) {
-            throw new IllegalArgumentException(dir + " ä¸æ˜¯ç›®å½•ã€‚");
+            throw new IllegalArgumentException(dir + " ²»ÊÇÄ¿Â¼¡£");
         }
         File[] files = dir.listFiles();
         if (files != null && files.length > 0) {
             for (File file : files) {
                 if (file.isDirectory())
-                    //é€’å½’
+                    //µÝ¹é
                     listDirectory(file);
-                else{ // åˆ é™¤ä»¥ lastUpdated ç»“å°¾çš„æ–‡ä»¶
+                else{ // É¾³ýÒÔ lastUpdated ½áÎ²µÄÎÄ¼þ
                     String fileName = file.getName();
                     boolean isLastupdated = fileName.toLowerCase().endsWith("lastupdated");
                     if (isLastupdated){
                         boolean is_delete = file.delete();
-                        System.out.println("åˆ é™¤çš„æ–‡ä»¶å => " + file.getName() + "  || æ˜¯å¦åˆ é™¤æˆåŠŸï¼Ÿ ==> " + is_delete);
+                        System.out.println("É¾³ýµÄÎÄ¼þÃû => " + file.getName() + "  || ÊÇ·ñÉ¾³ý³É¹¦£¿ ==> " + is_delete);
                     }
                 }
             }

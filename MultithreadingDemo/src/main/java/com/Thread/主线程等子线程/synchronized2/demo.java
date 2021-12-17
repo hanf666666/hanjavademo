@@ -1,7 +1,7 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.synchronized2;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.synchronized2;
 
 /**
- * ä¸å¤ªæ˜ç™½ Objectèƒ½é”ä½
+ * ²»Ì«Ã÷°× ObjectÄÜËø×¡
  */
 public class demo {
     public static void main(String[] args) {
@@ -19,24 +19,24 @@ public class demo {
             }
             System.out.println("t Over");
             synchronized (lock) {
-                System.out.println("æˆ‘æ€ä¹ˆè¿›æ¥äº†");
+                System.out.println("ÎÒÔõÃ´½øÀ´ÁË");
                 try {
                     Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                lock.notify();//å­çº¿ç¨‹å”¤é†’
+                lock.notify();//×ÓÏß³Ì»½ĞÑ
             }
         });
-        //è®¡æ—¶
+        //¼ÆÊ±
         long start = System.currentTimeMillis();
         System.out.println("start = " + start);
-        //å¯åŠ¨å­çº¿ç¨‹
+        //Æô¶¯×ÓÏß³Ì
         t.start();
         try {
             synchronized (lock) {
-                System.out.println("é”æ­»======ã€‹");
-                lock.wait();//ä¸»çº¿ç¨‹ç­‰å¾…
+                System.out.println("ËøËÀ======¡·");
+                lock.wait();//Ö÷Ïß³ÌµÈ´ı
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

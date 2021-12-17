@@ -1,4 +1,4 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.LockSupport08;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.LockSupport08;
 
 import java.util.concurrent.locks.LockSupport;
 
@@ -7,7 +7,7 @@ public class demo01 {
 
         Thread mainThread = Thread.currentThread();
         Thread t = new Thread(() -> {
-            //å­çº¿ç¨‹è¿›è¡Œå­—ç¬¦ä¸²è¿æ¥æ“ä½œ
+            //×ÓÏß³Ì½øĞĞ×Ö·û´®Á¬½Ó²Ù×÷
             int num = 1000;
             String s = "";
             for (int i = 0; i < num; i++) {
@@ -16,11 +16,11 @@ public class demo01 {
             System.out.println("t Over");
             LockSupport.unpark(mainThread);
         });
-//å¼€å§‹è®¡æ—¶
+//¿ªÊ¼¼ÆÊ±
         long start = System.currentTimeMillis();
         System.out.println("start = " + start);
         t.start();
-        LockSupport.park();// ç›¸å½“äºæš‚åœä¸»çº¿ç¨‹
+        LockSupport.park();// Ïàµ±ÓÚÔİÍ£Ö÷Ïß³Ì
         long end = System.currentTimeMillis();
         System.out.println("end = " + end);
         System.out.println("end - start = " + (end - start));

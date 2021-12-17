@@ -1,4 +1,4 @@
-package com.Thread.FunctionalInterface1.æ–¹æ³•ä¸Žæž„é€ å‡½æ•°å¼•ç”¨.demo1;
+package com.Thread.FunctionalInterface1.·½·¨Óë¹¹Ôìº¯ÊýÒýÓÃ.demo1;
 
 import com.Thread.FunctionalInterface1.Converter;
 
@@ -10,7 +10,7 @@ import com.Thread.FunctionalInterface1.Converter;
  */
 public class maintest2 {
     public static void main(String[] args) {
-        //å‡½æ•°æŽ¥å£çš„ç®€å†™ (from) -> Integer.valueOf(from);
+        //º¯Êý½Ó¿ÚµÄ¼òÐ´ (from) -> Integer.valueOf(from);
         Converter<String, Integer> converter = Integer::valueOf;
         Integer converted = converter.convert("123");
         System.out.println(converted);    // 123

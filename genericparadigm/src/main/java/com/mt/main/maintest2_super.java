@@ -6,7 +6,7 @@ import com.Thread.container.Plate;
 
 /**
  * to do
- *ä½¿ç”¨ä¸‹ç•Œ<? super Fruit>ä¼šä½¿ä»ç›˜å­é‡Œå–ä¸œè¥¿çš„get( )æ–¹æ³•éƒ¨åˆ†å¤±æ•ˆï¼Œåªèƒ½å­˜æ”¾åˆ°Objectå¯¹è±¡é‡Œã€‚set( )æ–¹æ³•æ­£å¸¸ã€‚
+ *Ê¹ÓÃÏÂ½ç<? super Fruit>»áÊ¹´ÓÅÌ×ÓÀïÈ¡¶«Î÷µÄget( )·½·¨²¿·ÖÊ§Ğ§£¬Ö»ÄÜ´æ·Åµ½Object¶ÔÏóÀï¡£set( )·½·¨Õı³£¡£
  * @author Hj
  * @date 2021/12/2
  */
@@ -14,11 +14,11 @@ public class maintest2_super {
     public static void main(String[] args) {
         Plate<? super Fruit> plate=new Plate<Fruit>(new Fruit());
 
-//å­˜å…¥å…ƒç´ æ­£å¸¸
+//´æÈëÔªËØÕı³£
         plate.set(new Fruit());
         plate.set(new Apple());
 
-//è¯»å–å‡ºæ¥çš„ä¸œè¥¿åªèƒ½å­˜æ”¾åœ¨Objectç±»é‡Œã€‚
+//¶ÁÈ¡³öÀ´µÄ¶«Î÷Ö»ÄÜ´æ·ÅÔÚObjectÀàÀï¡£
 //        Apple newFruit3=plate.get();    //Error
 //        Fruit newFruit1=plate.get();    //Error
         Object newFruit2=plate.get();

@@ -2,7 +2,7 @@ package com.Thread.FunctionalInterface1;
 
 /**
  * to do
- *  æ³¨é‡Šä¹Ÿè¡ŒFunctionalInterface
+ *  ×¢ÊÍÒ²ÐÐFunctionalInterface
  * @author Hj
  * @date 2021/12/1
  */

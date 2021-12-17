@@ -14,13 +14,13 @@ object Test {
     val connection: Connection = getHBaseConnection()
 
     val table: Table = connection.getTable(TableName.valueOf("MEISOODEV:EQUIPMENT_FEE_RULE"))
-////    æ’å…¥æ•°æ®
+////    ²åÈëÊı¾İ
 ////    val put = new Put(Bytes.toBytes("aiqicha"));
 ////    put.addColumn(Bytes.toBytes("aiqicha"),Bytes.toBytes("han"),Bytes.toBytes("123"))
 ////    table.put(put)
 //
-//    //å¼€å§‹rowkeyå’Œç»“æŸä¸€æ ·ä»£è¡¨ç²¾ç¡®æŸ¥è¯¢æŸæ¡æ•°æ®
-//    //ç»„è£…scanè¯­å¥
+//    //¿ªÊ¼rowkeyºÍ½áÊøÒ»Ñù´ú±í¾«È·²éÑ¯Ä³ÌõÊı¾İ
+//    //×é×°scanÓï¾ä
 //    val scan = new Scan(Bytes.toBytes("aiqicha"), Bytes.toBytes("aiqicha"))
 //    scan.setCacheBlocks(false)
 //    scan.addFamily(Bytes.toBytes("aiqicha"))
@@ -40,7 +40,7 @@ object Test {
 
 
   /**
-   * å°†Scanè½¬æ¢ä¸ºStringä½œä¸ºè®¾ç½®å‚æ•°è¾“å…¥
+   * ½«Scan×ª»»ÎªString×÷ÎªÉèÖÃ²ÎÊıÊäÈë
    *
    * @param scan
    * @return
@@ -50,7 +50,7 @@ object Test {
     Base64.encodeBytes(proto.toByteArray)
   }
   def getHBaseConnection(): Connection = {
-    // åˆ›å»ºHBASEçš„é“¾æ¥å¯¹è±¡
+    // ´´½¨HBASEµÄÁ´½Ó¶ÔÏó
     val hbaseConf = HBaseConfiguration.create()
 //    System.getProperties.setProperty("HADOOP_USER_NAME","hdfs")
     hbaseConf.set("hbase.zookeeper.quorum", "bigdata-alpha-003:2181,bigdata-alpha-004:2181,bigdata-alpha-005:2181")

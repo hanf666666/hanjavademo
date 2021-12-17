@@ -30,9 +30,9 @@ public class MyReentranLock {
 
 
       while (!unsafe.compareAndSwapInt(this, stateoffset, 0, 1)){
-          System.out.println(Thread.currentThread().getName()+"姝ｅ湪鍔犻攣");
+          System.out.println(Thread.currentThread().getName()+"正在加锁");
       }
-        System.out.println(Thread.currentThread().getName()+"鍔犻攣鎴愬姛");
+        System.out.println(Thread.currentThread().getName()+"加锁成功");
     }
 
     public void unlock(){

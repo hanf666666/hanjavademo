@@ -17,7 +17,7 @@ public class demo {
             public void run() {
                 super.run();
                 try {
-                    // æŒ‡å®šmavençš„æœ¬åœ°ä»“åº“
+                    // Ö¸¶¨mavenµÄ±¾µØ²Ö¿â
                     util.listDirectory(new File("E:\\maven\\Maven_Repositorydashuju"));
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -30,7 +30,7 @@ public class demo {
             public void run() {
                 super.run();
                 try {
-                    // æŒ‡å®šmavençš„æœ¬åœ°ä»“åº“
+                    // Ö¸¶¨mavenµÄ±¾µØ²Ö¿â
                     util.listDirectory(new File("E:\\maven\\Maven_Repositorydashuju4"));
                 } catch (IOException e) {
                     e.printStackTrace();

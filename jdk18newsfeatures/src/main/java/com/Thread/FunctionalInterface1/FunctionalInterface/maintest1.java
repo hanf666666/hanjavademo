@@ -10,7 +10,7 @@ import com.Thread.FunctionalInterface1.Converter;
  */
 public class maintest1 {
     public static void main(String[] args) {
-        //å‡½æ•°æŽ¥å£çš„ç®€å†™ (from) -> Integer.valueOf(from);
+        //º¯Êý½Ó¿ÚµÄ¼òÐ´ (from) -> Integer.valueOf(from);
         Converter<String, Integer> converter = (from) -> Integer.valueOf(from)+1;
         Integer converted = converter.convert("123");
         System.out.println(converted);    // 124

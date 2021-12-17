@@ -1,11 +1,11 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.BlockingQueue02;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.BlockingQueue02;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class demo01 {
     public static void main(String[] args) {
-        BlockingQueue queue = new ArrayBlockingQueue(1);//æ•°ç»„å‹é˜Ÿåˆ—ï¼Œé•¿åº¦ä¸º1
+        BlockingQueue queue = new ArrayBlockingQueue(1);//Êı×éĞÍ¶ÓÁĞ£¬³¤¶ÈÎª1
         Thread t = new Thread(() -> {
             int num = 1000;
             String s = "";
@@ -14,7 +14,7 @@ public class demo01 {
             }
             System.out.println("t Over");
             try {
-                queue.put("OK");//åœ¨é˜Ÿåˆ—ä¸­åŠ å…¥æ•°æ®
+                queue.put("OK");//ÔÚ¶ÓÁĞÖĞ¼ÓÈëÊı¾İ
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -23,7 +23,7 @@ public class demo01 {
         System.out.println("start = " + start);
         t.start();
         try {
-            queue.take();//ä¸»çº¿ç¨‹åœ¨é˜Ÿåˆ—ä¸­è·å–æ•°æ®ï¼Œtake()æ–¹æ³•ä¼šé˜»å¡é˜Ÿåˆ—ï¼Œpsè¿˜æœ‰ä¸ä¼šé˜»å¡çš„æ–¹æ³•
+            queue.take();//Ö÷Ïß³ÌÔÚ¶ÓÁĞÖĞ»ñÈ¡Êı¾İ£¬take()·½·¨»á×èÈû¶ÓÁĞ£¬ps»¹ÓĞ²»»á×èÈûµÄ·½·¨
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package com.Thread.绾跨▼瀹夊叏.demo01;
+package com.Thread.线程安全.demo01;
 
 public class han {
     public static void main(String[] args) {

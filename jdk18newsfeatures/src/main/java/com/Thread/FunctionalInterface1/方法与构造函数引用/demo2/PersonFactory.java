@@ -1,4 +1,4 @@
-package com.Thread.FunctionalInterface1.æ–¹æ³•ä¸æ„é€ å‡½æ•°å¼•ç”¨.demo2;
+package com.Thread.FunctionalInterface1.·½·¨Óë¹¹Ôìº¯ÊıÒıÓÃ.demo2;
 
 /**
  * to do
@@ -7,7 +7,7 @@ package com.Thread.FunctionalInterface1.æ–¹æ³•ä¸æ„é€ å‡½æ•°å¼•ç”¨.demo2;
  * @date 2021/12/1
  */
 @FunctionalInterface
-//extends Personå¯çœç•¥
+//extends Person¿ÉÊ¡ÂÔ
 interface PersonFactory<P extends Person> {
     P create(String firstName, String lastName);
 }

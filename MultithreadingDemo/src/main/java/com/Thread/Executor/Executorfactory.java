@@ -27,7 +27,7 @@ public class Executorfactory {
     }
 
     /**
-     * æ— ç•Œé˜Ÿåˆ—ï¼Œå†…éƒ¨ä½¿ç”¨åŒæ­¥é˜»å¡é˜Ÿåˆ—
+     * ÎŞ½ç¶ÓÁĞ£¬ÄÚ²¿Ê¹ÓÃÍ¬²½×èÈû¶ÓÁĞ
      *
      * @return
      */
@@ -38,7 +38,7 @@ public class Executorfactory {
     }
 
     /**
-     * äº§ç”Ÿå›ºå®šçº¿ç¨‹æ•°çš„çº¿ç¨‹ç®¡ç†å™¨
+     * ²úÉú¹Ì¶¨Ïß³ÌÊıµÄÏß³Ì¹ÜÀíÆ÷
      *
      * @param count
      * @return
@@ -49,12 +49,12 @@ public class Executorfactory {
     }
 
     /**
-     * æ„å»ºå¸¦æœ‰å»¶è¿Ÿï¼Œå‘¨æœŸåŠŸèƒ½çš„çº¿ç¨‹ç®¡ç†å™¨
+     * ¹¹½¨´øÓĞÑÓ³Ù£¬ÖÜÆÚ¹¦ÄÜµÄÏß³Ì¹ÜÀíÆ÷
      *
      * @return
      */
     public ExecutorService createScheduledPool() {
-        // cpuæ•°ç›®
+        // cpuÊıÄ¿
         int cpu = Runtime.getRuntime().availableProcessors();
         executors = Executors.newScheduledThreadPool(cpu * 10, new MyThreadFactory());
         return executors;

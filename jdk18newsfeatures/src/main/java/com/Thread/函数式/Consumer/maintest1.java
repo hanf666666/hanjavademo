@@ -1,10 +1,10 @@
-package com.Thread.å‡½æ•°å¼.Consumer;
+package com.Thread.º¯ÊıÊ½.Consumer;
 
 import java.util.function.Consumer;
 
 /**
  * to do
- *Consumer æ¥å£è¡¨ç¤ºæ‰§è¡Œåœ¨å•ä¸ªå‚æ•°ä¸Šçš„æ“ä½œã€‚
+ *Consumer ½Ó¿Ú±íÊ¾Ö´ĞĞÔÚµ¥¸ö²ÎÊıÉÏµÄ²Ù×÷¡£
  * @author Hj
  * @date 2021/12/2
  */

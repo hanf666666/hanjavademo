@@ -1,11 +1,11 @@
-package com.Thread.ä¸»çº¿ç¨‹ç­‰å­çº¿ç¨‹.CountDownLatch01;
+package com.Thread.Ö÷Ïß³ÌµÈ×ÓÏß³Ì.CountDownLatch01;
 
 import java.util.concurrent.CountDownLatch;
 
 public class demo {
     public static void main(String[] args) {
         int threadNumber = 1;
-        final CountDownLatch cdl = new CountDownLatch(threadNumber);//å‚æ•°ä¸ºçº¿ç¨‹ä¸ªæ•°
+        final CountDownLatch cdl = new CountDownLatch(threadNumber);//²ÎÊıÎªÏß³Ì¸öÊı
 
         Thread t = new Thread(() -> {
             int num = 1000;
@@ -14,15 +14,15 @@ public class demo {
                 s += "Java";
             }
             System.out.println("t Over");
-            cdl.countDown();//æ­¤æ–¹æ³•æ˜¯CountDownLatchçš„çº¿ç¨‹æ•°-1
+            cdl.countDown();//´Ë·½·¨ÊÇCountDownLatchµÄÏß³ÌÊı-1
         });
 
         long start = System.currentTimeMillis();
         System.out.println("start = " + start);
         t.start();
-//çº¿ç¨‹å¯åŠ¨åè°ƒç”¨countDownLatchæ–¹æ³•
+//Ïß³ÌÆô¶¯ºóµ÷ÓÃcountDownLatch·½·¨
         try {
-            cdl.await();//éœ€è¦æ•è·å¼‚å¸¸ï¼Œå½“å…¶ä¸­çº¿ç¨‹æ•°ä¸º0æ—¶è¿™é‡Œæ‰ä¼šç»§ç»­è¿è¡Œ
+            cdl.await();//ĞèÒª²¶»ñÒì³££¬µ±ÆäÖĞÏß³ÌÊıÎª0Ê±ÕâÀï²Å»á¼ÌĞøÔËĞĞ
         }catch (InterruptedException e){
             e.printStackTrace();
         }

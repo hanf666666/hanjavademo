@@ -22,7 +22,7 @@ public class Maindemo01 {
 
     public static void main(String[] args) {
         Configuration config = HBaseConfiguration.create();
-        //ZKÂú∞ÂùÄ
+        //ZKµÿ÷∑
         String zkAddress = "hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181";
         config.set(HConstants.ZOOKEEPER_QUORUM, zkAddress);
         Connection connection = null;
