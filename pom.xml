@@ -23,6 +23,7 @@
         <module>java数据结构/shujujiegou</module>
         <module>CharsetGBK_UTF8</module>
         <module>javaDesignPattern</module>
+        <module>Annotationdemo</module>
     </modules>
     <build>
         <plugins>
