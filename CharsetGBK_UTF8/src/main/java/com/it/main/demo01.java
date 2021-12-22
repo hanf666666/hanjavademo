@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class demo01 {
     public static void main(String[] args) {
-        final String file1 = "D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo";
+        final String file1 = "D:\\ideaspace\\sourcecodespace\\spring-framework";
         try {
             TraversalUtil.listDirectory(new File(file1));
 

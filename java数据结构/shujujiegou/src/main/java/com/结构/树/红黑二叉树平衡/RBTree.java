@@ -1,4 +1,4 @@
-package 树.红黑二叉树平衡;
+package com.结构.树.红黑二叉树平衡;
 
 //T就是节点
 public class RBTree<T extends Comparable<T>> {

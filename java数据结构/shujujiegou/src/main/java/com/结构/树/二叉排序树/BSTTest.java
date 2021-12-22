@@ -1,4 +1,4 @@
-package Ê÷.¶ş²æÅÅĞòÊ÷;
+package com.½á¹¹.Ê÷.¶ş²æÅÅĞòÊ÷;
 
 public class BSTTest {
     public static void main(String[] args) {

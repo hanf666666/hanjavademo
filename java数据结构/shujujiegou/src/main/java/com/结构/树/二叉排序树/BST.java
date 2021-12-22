@@ -1,4 +1,4 @@
-package Ê÷.¶ş²æÅÅĞòÊ÷;
+package com.½á¹¹.Ê÷.¶ş²æÅÅĞòÊ÷;
 
 //binary search tree
 public class BST<T extends Comparable<T>> {

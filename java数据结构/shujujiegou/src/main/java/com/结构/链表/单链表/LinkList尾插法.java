@@ -1,4 +1,4 @@
-package com.Thread.排序.交换类排序.链表.单链表;
+package com.结构.链表.单链表;
 
 public class LinkList尾插法 {
     static Node head主;//头结点

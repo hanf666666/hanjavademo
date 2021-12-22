@@ -1,4 +1,4 @@
-package 树.红黑二叉树平衡;
+package com.结构.树.红黑二叉树平衡;
 
 public class RBTNode<T extends Comparable<T>> {
 

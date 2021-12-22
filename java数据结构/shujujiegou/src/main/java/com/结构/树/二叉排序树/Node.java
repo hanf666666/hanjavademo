@@ -1,4 +1,4 @@
-package 树.二叉排序树;
+package com.结构.树.二叉排序树;
 
 //每个节点
 public class Node<T extends Comparable<T>>{

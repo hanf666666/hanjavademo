@@ -1,6 +1,6 @@
-package 树.二叉排序树;
+package com.结构.树.二叉排序树;
 
-import 树.红黑二叉树平衡.RBTree;
+import com.结构.树.红黑二叉树平衡.RBTree;
 
 /*
 *

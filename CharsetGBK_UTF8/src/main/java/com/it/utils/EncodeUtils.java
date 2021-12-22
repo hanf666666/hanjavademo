@@ -5,6 +5,8 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -84,7 +86,8 @@ public class EncodeUtils {
         File f = new File(path);
         try {
 //			charset = detector.detectCodepage(new URI(f.getPath()).toURL());
-            charset = detector.detectCodepage(f.toURL());
+            final URL url = f.toURL();
+            charset = detector.detectCodepage(url);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

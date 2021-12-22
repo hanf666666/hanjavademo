@@ -1,4 +1,4 @@
-package com.Thread.排序.交换类排序.算数题.投硬币;
+package com.算数题.投硬币;
 
 import java.util.Random;
 /**/

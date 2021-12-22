@@ -1,4 +1,4 @@
-package com.Thread.排序.交换类排序.算数题.递归求最大值;
+package com.算数题.递归求最大值;
 
 public class maxvalue {
 

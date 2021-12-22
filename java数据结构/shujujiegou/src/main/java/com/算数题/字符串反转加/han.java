@@ -1,4 +1,4 @@
-package com.Thread.排序.交换类排序.算数题.字符串反转加;
+package com.算数题.字符串反转加;
 
 public class han {
     public static void main(String[] args) {
