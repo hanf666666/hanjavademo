@@ -1,5 +1,6 @@
 package com.it.main;
 
+import com.it.utils.ConvertEncodetype;
 import com.it.utils.EncodeUtils;
 import com.it.utils.TraversalUtil;
 
@@ -14,9 +15,10 @@ import java.io.IOException;
  */
 public class demo01 {
     public static void main(String[] args) {
-        final String file1 = "D:\\ideaspace\\sourcecodespace\\spring-framework";
+        final String file1 = "D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\CharsetGBK_UTF8\\src\\main\\java\\com\\it\\data";
         try {
-            TraversalUtil.listDirectory(new File(file1));
+//            TraversalUtil.listDirectory(new File(file1), ConvertEncodetype.TOUTF);
+            TraversalUtil.listDirectory(new File(file1), ConvertEncodetype.TOGBK);
 
 
         } catch (Exception e) {

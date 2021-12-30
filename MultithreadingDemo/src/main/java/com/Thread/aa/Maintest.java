@@ -9,17 +9,27 @@ package com.Thread.aa;
 public class Maintest {
     public static void main(String[] args) {
         int a=1;
-        final Runnable runnable = new Runnable() {
+        final Thread thread = new Thread() {
            int a=2;
             @Override
             public void run() {
                 int a=3;
-                System.out.println(a);
-                System.out.println(this.a);
+                for (int i = 0; i < 10000000; i++) {
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(a);
+                    System.out.println(this.a);
+                }
+
 
             }
         };
-        runnable.run();
+        thread.start();
+        System.out.println("=================主线程结束");
+
 
 
     }
