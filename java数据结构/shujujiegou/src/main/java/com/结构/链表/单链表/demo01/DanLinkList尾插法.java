@@ -1,6 +1,6 @@
-package com.结构.链表.单链表;
+package com.结构.链表.单链表.demo01;
 
-public class LinkList尾插法 {
+public class DanLinkList尾插法 {
     static Node head主;//头结点
     //插入
     public static void insert( int data) {

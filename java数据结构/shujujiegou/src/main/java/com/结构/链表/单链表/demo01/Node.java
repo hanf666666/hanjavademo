@@ -1,4 +1,4 @@
-package com.结构.链表.单链表;
+package com.结构.链表.单链表.demo01;
 
 
 public class Node {

@@ -1,8 +1,8 @@
-package com.结构.链表.单链表;
+package com.结构.链表.单链表.demo01;
 
 public class text {
     public static void main(String[] args) {
-        LinkList linkList = new LinkList();
+        DanLinkList linkList = new DanLinkList();
         linkList.addFirstNode(20);
         linkList.addFirstNode(21);
         linkList.addFirstNode(19);

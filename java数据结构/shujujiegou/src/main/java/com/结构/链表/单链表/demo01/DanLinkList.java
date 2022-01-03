@@ -1,10 +1,10 @@
-package com.结构.链表.单链表;
+package com.结构.链表.单链表.demo01;
 
-public class LinkList {
+public class DanLinkList {
     public Node first; // 定义一个头结点,null
     private int pos = 0;// 节点的位置
 
-    public LinkList() {
+    public DanLinkList() {
         this.first = null;
     }
 
