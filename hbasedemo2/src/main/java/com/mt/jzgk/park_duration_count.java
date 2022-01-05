@@ -1,7 +1,6 @@
 package com.mt.jzgk;
 
 import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import com.Thread.utils.HBaseUtil;
 import org.apache.hadoop.hbase.TableName;
@@ -11,11 +10,8 @@ import org.apache.hadoop.hbase.util.Bytes;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  * to do
