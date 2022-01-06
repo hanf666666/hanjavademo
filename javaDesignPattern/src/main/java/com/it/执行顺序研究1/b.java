@@ -12,7 +12,7 @@ public class b extends a
         System.out.println("子构造 666666666666666666666");
     }
     static  void a1(){
-        System.out.println("我是继承b1静态方法");
+        System.out.println("我是继承b1静态方法==>特殊");
     }
     public void a2(){
         System.out.println("我是继承b2普通方法");
