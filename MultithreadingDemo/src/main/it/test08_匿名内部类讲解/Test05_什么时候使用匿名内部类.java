@@ -1,4 +1,4 @@
-package com.it.test08_匿名内部类讲解;
+package com.date.test08_匿名内部类讲解;
 
 public class Test05_什么时候使用匿名内部类 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.it.test04_多线程模拟卖票_基础版本;
+package com.date.test04_多线程模拟卖票_基础版本;
 
 /**
  * 测试类, 模拟卖票

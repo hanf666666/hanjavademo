@@ -1,4 +1,4 @@
-package com.it.test01_非多线程版程序演示;
+package com.date.test01_非多线程版程序演示;
 
 public class Test01 {
     public static void main(String[] args) {

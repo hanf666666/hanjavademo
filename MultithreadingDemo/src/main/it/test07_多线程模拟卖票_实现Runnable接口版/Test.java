@@ -1,4 +1,4 @@
-package com.it.test07_多线程模拟卖票_实现Runnable接口版;
+package com.date.test07_多线程模拟卖票_实现Runnable接口版;
 
 public class Test {
     public static void main(String[] args) {

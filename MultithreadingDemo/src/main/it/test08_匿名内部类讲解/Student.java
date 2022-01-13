@@ -1,4 +1,4 @@
-package com.it.test08_匿名内部类讲解;
+package com.date.test08_匿名内部类讲解;
 
 public class Student extends Person {
     @Override

@@ -1,4 +1,4 @@
-package com.it.test09_同步方法的锁对象演示;
+package com.date.test09_同步方法的锁对象演示;
 
 public class Demo {
     public static synchronized void method1() {

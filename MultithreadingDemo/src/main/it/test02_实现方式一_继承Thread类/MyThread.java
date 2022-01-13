@@ -1,4 +1,4 @@
-package com.it.test02_实现方式一_继承Thread类;
+package com.date.test02_实现方式一_继承Thread类;
 
 /**
  * 这个是自定义的线程类: MyThread

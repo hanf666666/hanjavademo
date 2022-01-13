@@ -1,4 +1,4 @@
-package com.it.test05_多线程模拟卖票_出现的问题;
+package com.date.test05_多线程模拟卖票_出现的问题;
 
 /**
  * 自定义的线程类, 模拟卖票

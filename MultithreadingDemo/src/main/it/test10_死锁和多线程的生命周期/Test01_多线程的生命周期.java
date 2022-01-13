@@ -1,4 +1,4 @@
-package com.it.test10_死锁和多线程的生命周期;
+package com.date.test10_死锁和多线程的生命周期;
 
 import java.util.Scanner;
 

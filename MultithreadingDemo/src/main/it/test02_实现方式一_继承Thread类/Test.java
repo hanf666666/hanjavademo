@@ -1,4 +1,4 @@
-package com.it.test02_实现方式一_继承Thread类;
+package com.date.test02_实现方式一_继承Thread类;
 
 /**
  * 测试类, 测试MyThread的类.

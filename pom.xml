@@ -24,6 +24,7 @@
         <module>CharsetGBK_UTF8</module>
         <module>javaDesignPattern</module>
         <module>Annotationdemo</module>
+        <module>DateDemo</module>
     </modules>
     <build>
         <plugins>
