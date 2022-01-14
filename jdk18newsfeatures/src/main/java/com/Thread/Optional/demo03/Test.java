@@ -16,7 +16,7 @@ public class Test {
         String name = p.map(People::getCar)
                 .map(Car::getInsurence)
                 .map(Insurence::getName)
-                .orElse("string");
+                .orElseGet(null);
         System.out.println(name);
     }
 
