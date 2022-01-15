@@ -3,7 +3,7 @@ package com.mt.jzgk;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
-import com.Thread.utils.HBaseUtil;
+import com.print.utils.HBaseUtil;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.ResultScanner;

@@ -1,6 +1,6 @@
 package com.mt.main;
 
-import com.Thread.utils.HBaseUtil;
+import com.print.utils.HBaseUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.HBaseConfiguration;

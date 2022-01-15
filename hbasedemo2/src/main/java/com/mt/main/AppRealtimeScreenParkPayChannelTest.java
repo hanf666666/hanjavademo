@@ -3,7 +3,7 @@ package com.mt.main;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
-import com.Thread.utils.HBaseUtil;
+import com.print.utils.HBaseUtil;
 import org.junit.Before;
 import org.junit.Test;
 
