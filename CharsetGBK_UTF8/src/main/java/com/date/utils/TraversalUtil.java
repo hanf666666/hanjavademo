@@ -45,7 +45,8 @@ public class TraversalUtil {
                     } else if (encodetype.contains("GB2312") && convertEncodetype == ConvertEncodetype.TOUTF) {
                         //转为utf
                         System.out.println("源文件类型===>" + encodetype + "===>将转为UTF8");
-                        EncodeUtils.handleCharsetGBKToUTF8(file1, file1);
+//                        EncodeUtils.handleCharsetGBKToUTF8(file1, file1);
+
                     } else if (encodetype.contains("GB2312") && convertEncodetype == ConvertEncodetype.TOGBK) {
                         System.out.println("本身就是GB2312,不需要再转");
                     } else {

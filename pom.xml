@@ -12,19 +12,22 @@
         <module>jdk18newsfeatures</module>
         <module>genericparadigmAndReflex</module>
         <module>mvnClean</module>
-        <module>hbasedemo</module>
-        <module>hbasedemo2</module>
-        <module>hbasedemo2</module>
+        <module>hbase_Set/hbasedemo</module>
+        <module>hbase_Set/hbasedemo2</module>
         <module>logbackdemo</module>
         <module>MultithreadingDemo</module>
         <module>javaDesignPattern</module>
         <module>JVMunderstard</module>
         <module>Connectiondemo</module>
-        <module>java数据结构/shujujiegou</module>
         <module>CharsetGBK_UTF8</module>
         <module>javaDesignPattern</module>
         <module>Annotationdemo</module>
         <module>DateAndJSONDemo</module>
+        <module>kafkademo_Set/aliKafkaDemo</module>
+        <module>kafkademo_Set/kafkademoMonitor</module>
+        <module>kafkademo_Set/kafkakerberosdemo2</module>
+        <module>java数据结构及算法题/AlgorithmAndInterviewQuestions</module>
+        <module>java数据结构及算法题/shujujiegou</module>
     </modules>
     <build>
         <plugins>

@@ -1,8 +1,8 @@
 package com.mt.main;
 
-import com.Thread.container.Plate;
-import com.Thread.Lev2.Fruit;
-import com.Thread.Lev3.Apple;
+import com.mt.entity.container.Plate;
+import com.mt.entity.Lev2.Fruit;
+import com.mt.entity.Lev3.Apple;
 
 /**
  * to do
