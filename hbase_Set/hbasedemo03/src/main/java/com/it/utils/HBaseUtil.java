@@ -1,4 +1,18 @@
-package com.mt.entity.utils;
+package com.it.utils;
+
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.*;
+import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.filter.*;
+import org.apache.hadoop.hbase.util.Bytes;
+
+import java.io.IOException;
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * to do
@@ -7,98 +21,55 @@ package com.mt.entity.utils;
  * @date 2021/8/2
  */
 
-
-import org.apache.commons.io.IOUtils;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.*;
-import org.apache.hadoop.hbase.client.*;
-import org.apache.hadoop.hbase.filter.*;
-import org.apache.hadoop.hbase.util.Bytes;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-
 public class HBaseUtil {
 
-    /**
-     * Á¬½Ó³Ø¶ÔÏó
-     */
-    protected static Connection connection;
-//    private static final String ZK_QUORUM = "hbase.zookeeper.quorum";
-//    private static final String ZK_CLIENT_PORT = "hbase.zookeeper.property.clientPort";
-//    /**
-//     * HBaseÎ»ÖÃ
-//     */
-//    private static final String HBASE_POS = "192.168.1.104";
-//
-//    /**
-//     * ZooKeeperÎ»ÖÃ
-//     */
-//    private static final String ZK_POS = "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181";
-//
-//    /**
-//     * zookeeper·şÎñ¶Ë¿Ú
-//     */
-//    private final static String ZK_PORT_VALUE = "2181";
 
     /**
-     * ¾²Ì¬¹¹Ôì£¬ÔÚµ÷ÓÃ¾²Ì¬·½·¨Ê±Ç°½øĞĞÔËĞĞ
-     * ³õÊ¼»¯Á¬½Ó¶ÔÏó£®
+     * è¿æ¥æ± å¯¹è±¡
+     */
+    public Connection connection;
+
+
+    /**
+     * é™æ€æ„é€ ï¼Œåœ¨è°ƒç”¨é™æ€æ–¹æ³•æ—¶å‰è¿›è¡Œè¿è¡Œ
+     * åˆå§‹åŒ–è¿æ¥å¯¹è±¡ï¼
      * */
-    static {
-        Configuration configuration = HBaseConfiguration.create();
-        configuration.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
-//        configuration.set("hbase.zookeeper.quorum", "hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181");
-        configuration.set("hbase.zookeeper.property.clientPort", "2181");
-        try {
-            connection = ConnectionFactory.createConnection(configuration);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }// ´´½¨Á¬½Ó³Ø
-    }
 
     /**
-     * ¹¹Ôìº¯Êı£¬ÓÃÓÚ³õÊ¼»¯ÄÚÖÃ¶ÔÏó
+     * è®¾ç½®hbaseçš„é…ç½®ä¿¡æ¯,ä»ymlä¸­è·å–
      */
-    public HBaseUtil() {
-        Configuration configuration = HBaseConfiguration.create();
-        configuration.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
-//        configuration.set("hbase.zookeeper.quorum", "hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181");
-//        configuration.set("hbase.zookeeper.property.clientPort", "2181");
+    public void setHBaseconfig() {
         try {
+            Configuration configuration = HBaseConfiguration.create();
+            configuration.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
             connection = ConnectionFactory.createConnection(configuration);
-            System.out.println(connection);
         } catch (IOException e) {
             e.printStackTrace();
-        }// ´´½¨Á¬½Ó³Ø
+        }// åˆ›å»ºè¿æ¥æ± 
     }
 
     /**
-     * @param tableName ´´½¨Ò»¸ö±í tableName Ö¸¶¨µÄ±íÃû¡¡ seriesStr
-     * @param seriesStr ÒÔ×Ö·û´®µÄĞÎÊ½Ö¸¶¨±íµÄÁĞ×å£¬Ã¿¸öÁĞ×åÒÔ¶ººÅµÄĞÎÊ½¸ô¿ª,(ÀıÈç£º£¢f1,f2£¢Á½¸öÁĞ×å£¬·Ö±ğÎªf1ºÍf2)
+     * @param tableName åˆ›å»ºä¸€ä¸ªè¡¨ tableName æŒ‡å®šçš„è¡¨åã€€ seriesStr
+     * @param seriesStr ä»¥å­—ç¬¦ä¸²çš„å½¢å¼æŒ‡å®šè¡¨çš„åˆ—æ—ï¼Œæ¯ä¸ªåˆ—æ—ä»¥é€—å·çš„å½¢å¼éš”å¼€,(ä¾‹å¦‚ï¼šï¼‚f1,f2ï¼‚ä¸¤ä¸ªåˆ—æ—ï¼Œåˆ†åˆ«ä¸ºf1å’Œf2)
      **/
     public boolean createTable(String tableName, String seriesStr) {
-        boolean isSuccess = false;// ÅĞ¶ÏÊÇ·ñ´´½¨³É¹¦£¡³õÊ¼ÖµÎªfalse
+        boolean isSuccess = false;// åˆ¤æ–­æ˜¯å¦åˆ›å»ºæˆåŠŸï¼åˆå§‹å€¼ä¸ºfalse
         Admin admin = null;
         TableName table = TableName.valueOf(tableName);
         try {
             admin = connection.getAdmin();
             if (!admin.tableExists(table)) {
-                System.out.println("INFO:Hbase::  " + tableName + "Ô­Êı¾İ¿âÖĞ±í²»´æÔÚ£¡¿ªÊ¼´´½¨...");
+                System.out.println("INFO:Hbase::  " + tableName + "åŸæ•°æ®åº“ä¸­è¡¨ä¸å­˜åœ¨ï¼å¼€å§‹åˆ›å»º...");
                 HTableDescriptor descriptor = new HTableDescriptor(table);
                 String[] series = seriesStr.split(",");
                 for (String s : series) {
                     descriptor.addFamily(new HColumnDescriptor(s.getBytes()));
                 }
                 admin.createTable(descriptor);
-                System.out.println("INFO:Hbase::  " + tableName + "ĞÂµÄ" + tableName + "±í´´½¨³É¹¦£¡");
+                System.out.println("INFO:Hbase::  " + tableName + "æ–°çš„" + tableName + "è¡¨åˆ›å»ºæˆåŠŸï¼");
                 isSuccess = true;
             } else {
-                System.out.println("INFO:Hbase::  ¸Ã±íÒÑ¾­´æÔÚ£¬²»ĞèÒªÔÚ´´½¨£¡");
+                System.out.println("INFO:Hbase::  è¯¥è¡¨å·²ç»å­˜åœ¨ï¼Œä¸éœ€è¦åœ¨åˆ›å»ºï¼");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -109,13 +80,13 @@ public class HBaseUtil {
     }
 
     /**
-     * É¾³ıÖ¸¶¨±íÃûµÄ±í
+     * åˆ é™¤æŒ‡å®šè¡¨åçš„è¡¨
      *
-     * @param tableName ¡¡±íÃû
+     * @param tableName ã€€è¡¨å
      * @throws IOException
      */
     public boolean dropTable(String tableName) throws IOException {
-        boolean isSuccess = false;// ÅĞ¶ÏÊÇ·ñ´´½¨³É¹¦£¡³õÊ¼ÖµÎªfalse
+        boolean isSuccess = false;// åˆ¤æ–­æ˜¯å¦åˆ›å»ºæˆåŠŸï¼åˆå§‹å€¼ä¸ºfalse
         Admin admin = null;
         TableName table = TableName.valueOf(tableName);
         try {
@@ -131,21 +102,19 @@ public class HBaseUtil {
         return isSuccess;
     }
 
-
     /**
-     * ÏòÖ¸¶¨±íÖĞ²åÈëÊı¾İ
+     * å‘æŒ‡å®šè¡¨ä¸­æ’å…¥æ•°æ®
      *
-     * @param tableName Òª²åÈëÊı¾İµÄ±íÃû
-     * @param rowkey    Ö¸¶¨Òª²åÈëÊı¾İµÄ±íµÄĞĞ¼ü
-     * @param family    Ö¸¶¨Òª²åÈëÊı¾İµÄ±íµÄÁĞ×åfamily
-     * @param qualifier Òª²åÈëÊı¾İµÄqualifier
-     * @param value     Òª²åÈëÊı¾İµÄÖµvalue
+     * @param tableName è¦æ’å…¥æ•°æ®çš„è¡¨å
+     * @param rowkey    æŒ‡å®šè¦æ’å…¥æ•°æ®çš„è¡¨çš„è¡Œé”®
+     * @param family    æŒ‡å®šè¦æ’å…¥æ•°æ®çš„è¡¨çš„åˆ—æ—family
+     * @param qualifier è¦æ’å…¥æ•°æ®çš„qualifier
+     * @param value     è¦æ’å…¥æ•°æ®çš„å€¼value
      */
-    protected static void putDataH(String tableName, String rowkey, String family,
-                                   String qualifier, Object value) throws IOException {
-        Admin admin = null;
+    protected void putDataH(String tableName, String rowkey, String family,
+                            String qualifier, Object value) throws IOException {
+        Admin admin = connection.getAdmin();
         TableName tN = TableName.valueOf(tableName);
-        admin = connection.getAdmin();
         if (admin.tableExists(tN)) {
             try (Table table = connection.getTable(TableName.valueOf(tableName
                     .getBytes()))) {
@@ -157,20 +126,20 @@ public class HBaseUtil {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("²åÈëÊı¾İµÄ±í²»´æÔÚ£¬ÇëÖ¸¶¨ÕıÈ·µÄtableName ! ");
+            System.out.println("æ’å…¥æ•°æ®çš„è¡¨ä¸å­˜åœ¨ï¼Œè¯·æŒ‡å®šæ­£ç¡®çš„tableName ! ");
         }
     }
 
     /**
-     * ¸ù¾İÖ¸¶¨±í»ñÈ¡Ö¸¶¨ĞĞ¼ürowkeyºÍÁĞ×åfamilyµÄÊı¾İ ²¢ÒÔ×Ö·û´®µÄĞÎÊ½·µ»Ø²éÑ¯µ½µÄ½á¹û
+     * æ ¹æ®æŒ‡å®šè¡¨è·å–æŒ‡å®šè¡Œé”®rowkeyå’Œåˆ—æ—familyçš„æ•°æ® å¹¶ä»¥å­—ç¬¦ä¸²çš„å½¢å¼è¿”å›æŸ¥è¯¢åˆ°çš„ç»“æœ
      *
-     * @param tableName Òª»ñÈ¡±í tableName µÄ±íÃû
-     * @param rowKey    Ö¸¶¨Òª»ñÈ¡Êı¾İµÄĞĞ¼ü
-     * @param family    Ö¸¶¨Òª»ñÈ¡Êı¾İµÄÁĞ×åÔªËØ
-     * @param qualifier Ö¸¶¨Òª»ñÈ¡Êı¾İµÄqualifier
+     * @param tableName è¦è·å–è¡¨ tableName çš„è¡¨å
+     * @param rowKey    æŒ‡å®šè¦è·å–æ•°æ®çš„è¡Œé”®
+     * @param family    æŒ‡å®šè¦è·å–æ•°æ®çš„åˆ—æ—å…ƒç´ 
+     * @param qualifier æŒ‡å®šè¦è·å–æ•°æ®çš„qualifier
      */
-    protected static String getValueBySeriesH(String tableName, String rowKey,
-                                              String family, String qualifier) throws IllegalArgumentException, IOException {
+    protected String getValueBySeriesH(String tableName, String rowKey,
+                                       String family, String qualifier) throws IllegalArgumentException, IOException {
         Table table = null;
         String resultStr = null;
         try {
@@ -183,8 +152,6 @@ public class HBaseUtil {
                 byte[] result = res.getValue(Bytes.toBytes(family),
                         Bytes.toBytes(qualifier));
                 resultStr = Bytes.toString(result);
-            } else {
-                resultStr = null;
             }
         } finally {
             IOUtils.closeQuietly(table);
@@ -194,14 +161,14 @@ public class HBaseUtil {
 
 
     /**
-     * ¸ù¾İÖ¸¶¨±í»ñÈ¡Ö¸¶¨ĞĞ¼ürowKeyºÍÁĞ×åfamilyµÄÊı¾İ ²¢ÒÔMap¼¯ºÏµÄĞÎÊ½·µ»Ø²éÑ¯µ½µÄ½á¹û
+     * æ ¹æ®æŒ‡å®šè¡¨è·å–æŒ‡å®šè¡Œé”®rowKeyå’Œåˆ—æ—familyçš„æ•°æ® å¹¶ä»¥Mapé›†åˆçš„å½¢å¼è¿”å›æŸ¥è¯¢åˆ°çš„ç»“æœ
      *
-     * @param tableName Òª»ñÈ¡±í tableName µÄ±íÃû
-     * @param rowKey    Ö¸¶¨µÄĞĞ¼ürowKey
-     * @param family    Ö¸¶¨ÁĞ×åfamily
+     * @param tableName è¦è·å–è¡¨ tableName çš„è¡¨å
+     * @param rowKey    æŒ‡å®šçš„è¡Œé”®rowKey
+     * @param family    æŒ‡å®šåˆ—æ—family
      */
-    protected static Map<String, String> getAllValue£È(String tableName,
-                                                      String rowKey, String family) throws IllegalArgumentException, IOException {
+    protected Map<String, String> getAllValueï¼¨(String tableName,
+                                               String rowKey, String family) throws IllegalArgumentException, IOException {
         Table table = null;
         Map<String, String> resultMap = null;
         try {
@@ -211,7 +178,7 @@ public class HBaseUtil {
                 Result res = table.get(get);
                 Map<byte[], byte[]> result = res.getFamilyMap(family.getBytes());
                 Iterator<Entry<byte[], byte[]>> it = result.entrySet().iterator();
-                resultMap = new HashMap<String, String>();
+                resultMap = new HashMap<>();
                 while (it.hasNext()) {
                     Entry<byte[], byte[]> entry = it.next();
                     resultMap.put(Bytes.toString(entry.getKey()),
@@ -224,50 +191,11 @@ public class HBaseUtil {
         return resultMap;
     }
 
-
     /**
-     * ¸ù¾İÖ¸¶¨±í»ñÈ¡Ö¸¶¨ĞĞ¼ürowKeyµÄËùÓĞÊı¾İ ²¢ÒÔMap¼¯ºÏµÄĞÎÊ½·µ»Ø²éÑ¯µ½µÄ½á¹û
-     * Ã¿ÌõÊı¾İÖ®¼äÓÃ&&&½«QualifierºÍValue½øĞĞÇø·Ö
+     * è·å–hbaseçš„è¡¨
      *
-     * @param tableName Òª»ñÈ¡±í tableName µÄ±íÃû
-     * @param rowkey    Ö¸¶¨µÄĞĞ¼ürowKey
+     * @return
      */
-    public ArrayList<String> getFromRowkeyValues(String tableName, String rowkey) {
-        Table table = null;
-        ArrayList<String> Resultlist = new ArrayList<>();
-        Get get = new Get(Bytes.toBytes(rowkey));
-        try {
-            table = connection.getTable(TableName.valueOf(tableName));
-            Result r = table.get(get);
-            for (Cell cell : r.rawCells()) {
-                //Ã¿ÌõÊı¾İÖ®¼äÓÃ&&&½«QualifierºÍValue½øĞĞÇø·Ö
-                String reString = Bytes.toString(CellUtil.cloneQualifier(cell)) + "&&&" + Bytes.toString(CellUtil.cloneValue(cell));
-                Resultlist.add(reString);
-            }
-            table.close();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        return Resultlist;
-    }
-
-    /**
-     * ¸ù¾İ±íÃû»ñÈ¡ËùÓĞµÄÊı¾İ
-     */
-    @SuppressWarnings("unused")
-    private void getAllValues(String tableName) {
-        try {
-            Table table = connection.getTable(TableName.valueOf(tableName));
-            Scan scan = new Scan();
-            ResultScanner resutScanner = table.getScanner(scan);
-            for (Result result : resutScanner) {
-                System.out.println("scan:  " + result);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public TableName[] getTables() {
 
         final Admin admin;
@@ -286,52 +214,98 @@ public class HBaseUtil {
 
     }
 
+    /**
+     * æ ¹æ®æŒ‡å®šè¡¨è·å–æŒ‡å®šè¡Œé”®rowKeyçš„æ‰€æœ‰æ•°æ® å¹¶ä»¥Mapé›†åˆçš„å½¢å¼è¿”å›æŸ¥è¯¢åˆ°çš„ç»“æœ
+     * æ¯æ¡æ•°æ®ä¹‹é—´ç”¨&&&å°†Qualifierå’ŒValueè¿›è¡ŒåŒºåˆ†
+     *
+     * @param tableName è¦è·å–è¡¨ tableName çš„è¡¨å
+     * @param rowkey    æŒ‡å®šçš„è¡Œé”®rowKey
+     */
+    public ArrayList<String> getFromRowkeyValues(String tableName, String rowkey) {
+        ArrayList<String> Resultlist = new ArrayList<>();
+        Get get = new Get(Bytes.toBytes(rowkey));
+        try {
+            Table table = connection.getTable(TableName.valueOf(tableName));
+            Result r = table.get(get);
+            for (Cell cell : r.rawCells()) {
+                //æ¯æ¡æ•°æ®ä¹‹é—´ç”¨&&&å°†Qualifierå’ŒValueè¿›è¡ŒåŒºåˆ†
+                String reString = Bytes.toString(CellUtil.cloneQualifier(cell)) + "&&&" + Bytes.toString(CellUtil.cloneValue(cell));
+                Resultlist.add(reString);
+            }
+            table.close();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        return Resultlist;
+    }
 
     /**
-     * ¸ù¾İrowkeyÇ°×º»ñÈ¡Êı¾İ
+     * æ ¹æ®è¡¨åè·å–æ‰€æœ‰çš„æ•°æ®
      */
-//    @SuppressWarnings("unused")
-    public ResultScanner getPrefixFilterGetData(String tableName, String prefixrowkey) {
+    @SuppressWarnings("unused")
+    private void getAllValues(String tableName) {
+        try {
+            Table table = connection.getTable(TableName.valueOf(tableName));
+            table.close();
+            Scan scan = new Scan();
+            ResultScanner resultScanner = table.getScanner(scan);
+            for (Result result : resultScanner) {
+                System.out.println("scan:  " + result);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * æ ¹æ®rowkeyå‰ç¼€è·å–æ•°æ®
+     */
+    @SuppressWarnings("unused")
+    public ResultScanner getPrefixFilterGetData(String tableName, String prefixRowkey) {
+        ResultScanner resultScanner = null;
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();
-//            PrefixFilter prefixFilter = new PrefixFilter(Bytes.toBytes(prefixrowkey));
-//            scan.setFilter(prefixFilter);
-            ResultScanner resutScanner = table.getScanner(scan);
-            return resutScanner;
+            PrefixFilter prefixFilter = new PrefixFilter(Bytes.toBytes(prefixRowkey));
+            scan.setFilter(prefixFilter);
+            resultScanner = table.getScanner(scan);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return resultScanner;
     }
 
 
     /**
-     * ¸ù¾İrowkeyÇ°×º»ñÈ¡Êı¾İ
+     * æ ¹æ®rowkeyå‰ç¼€çš„æ•°æ®èŒƒå›´
      */
-    public ResultScanner getRowData(String tableName) {
-        Table table = null;
+    @SuppressWarnings("unused")
+    public ResultScanner getRowRangeData(String tableName, String startRow, String endRow) {
+        ResultScanner resultScanner = null;
         try {
-            table = connection.getTable(TableName.valueOf(tableName));
-            ResultScanner resutScanner = table.getScanner(new Scan());
-            return resutScanner;
+            Table table = connection.getTable(TableName.valueOf(tableName));
+            Scan scan = new Scan();
+            scan.withStartRow(Bytes.toBytes(startRow));
+            scan.withStopRow(Bytes.toBytes(endRow));
+            resultScanner = table.getScanner(scan);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return resultScanner;
     }
 
 
     /**
-     * ¸ù¾İrowkeyÇ°×º»ñÈ¡Êı¾İ
+     * æ ¹æ®rowkeyå‰ç¼€è·å–æ•°æ®
      */
     @SuppressWarnings("unused")
     public void getFilterListData(String tableName, ArrayList<Integer> arrayList) {
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();
-            //×éºÏ¹ıÂËÆ÷filterList  statistic:park_id
+            //ç»„åˆè¿‡æ»¤å™¨filterList  statistic:park_id
             FilterList filterList = new FilterList(FilterList.Operator.MUST_PASS_ONE);
             for (Integer park_id : arrayList) {
 //                System.out.println(park_id);
@@ -346,9 +320,9 @@ public class HBaseUtil {
             }
 
 
-            ResultScanner resutScanner = table.getScanner(scan);
+            ResultScanner resultScanner = table.getScanner(scan);
             int i = 1;
-            for (Result result : resutScanner) {
+            for (Result result : resultScanner) {
                 System.out.println(i++ + "==>scan:  " + result);
             }
         } catch (IOException e) {
@@ -357,24 +331,33 @@ public class HBaseUtil {
     }
 
 
+    public String genRowKey(String[] array) {
+        String rowKey = "";
+        rowKey = String.join("_", Arrays.asList(array));
+
+        return rowKey;
+
+    }
+
+
     /**
-     * ¸ù¾İrowkeyÇ°×º»ñÈ¡Êı¾İ
+     * æ ¹æ®rowkeyå‰ç¼€è·å–æ•°æ®
      */
     @SuppressWarnings("unused")
     public void getRegexFilterListData(String tableName, String regex) {
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();
-            //×éºÏ¹ıÂËÆ÷filterList  statistic:park_id
+            //ç»„åˆè¿‡æ»¤å™¨filterList  statistic:park_id
             FilterList filterList = new FilterList(FilterList.Operator.MUST_PASS_ALL);
             RowFilter rowFilter = new RowFilter(CompareOperator.EQUAL,
                     new RegexStringComparator(regex));
 
             filterList.addFilter(rowFilter);
             scan.setFilter(filterList);
-            ResultScanner resutScanner = table.getScanner(scan);
+            ResultScanner resultScanner = table.getScanner(scan);
             int i = 1;
-            for (Result result : resutScanner) {
+            for (Result result : resultScanner) {
                 System.out.println(i++ + "==>scan:  " + result);
             }
         } catch (IOException e) {
@@ -383,9 +366,8 @@ public class HBaseUtil {
     }
 
 
-    public static void getTestDate(String tableName) throws IOException {
-        Table table = null;
-        table = connection.getTable(TableName.valueOf(tableName));
+    public void getTestDate(String tableName) throws IOException {
+        Table table = connection.getTable(TableName.valueOf(tableName));
         int count = 0;
         Scan scan = new Scan();
         scan.addFamily("f".getBytes());
@@ -398,17 +380,49 @@ public class HBaseUtil {
             System.out.println(result);
             count++;
         }
-        System.out.println("INFO:Hbase::  ²âÊÔ½áÊø£¡¹²ÓĞ¡¡" + count + "ÌõÊı¾İ");
+        System.out.println("INFO:Hbase::  æµ‹è¯•ç»“æŸï¼å…±æœ‰ã€€" + count + "æ¡æ•°æ®");
     }
 
 
-//    public ResultScanner delete(String tableName,String rowkey,String family,String version) throws IOException {
-//        Table table = null;
-//        table = connection.getTable(TableName.valueOf(tableName));
-//        Delete delete = new Delete(Bytes.toBytes(rowkey));
-//        delete.addColumns(Bytes.toBytes(family), Bytes.toBytes(version));
-////        delete.add(Bytes.toBytes(family), Bytes.toBytes(version));
-//
-////        delete.deleteFamily(Bytes.toBytes("professional"));
-//    }
+    public ResultScanner getAll(String tableName, String family) throws IOException {
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        Scan scan = new Scan();
+        scan.addFamily(family.getBytes());
+        return table.getScanner(scan);
+    }
+
+    public void insertbean(String tableName, Object object) throws IOException {
+        Table table = connection.getTable(TableName.valueOf(tableName));
+
+        List<Put> putList = new ArrayList<>();
+        final Put put = new Put("aaa".getBytes());
+        put.addColumn("info".getBytes(), "name".getBytes(), "hanjing".getBytes());
+        putList.add(put);
+        table.put(putList);
+
+    }
+
+    /**
+     * @param tableName
+     * @param put
+     * @throws IOException
+     */
+    public void insertPut(String tableName, Put put) throws IOException {
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        table.put(put);
+
+    }
+
+    /**
+     * @param tableName
+     * @param putList
+     * @throws IOException
+     */
+    public void insertPutList(String tableName, List<Put> putList) throws IOException {
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        table.put(putList);
+
+    }
+
+
 }

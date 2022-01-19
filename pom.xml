@@ -28,6 +28,7 @@
         <module>kafkademo_Set/aliKafkaDemo</module>
         <module>kafkademo_Set/kafkademoMonitor</module>
         <module>kafkademo_Set/kafkakerberosdemo2</module>
+        <module>hbase_Set/hbasedemo03</module>
     </modules>
     <build>
         <plugins>
