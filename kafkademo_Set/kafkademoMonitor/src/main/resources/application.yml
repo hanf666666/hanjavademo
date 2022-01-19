@@ -1,0 +1,7 @@
+server:
+  port: 11300
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: KafkademoMonitorApplication
