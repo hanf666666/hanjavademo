@@ -1,0 +1,37 @@
+server:
+  port: 11300
+spring:
+  kafka:
+    bootstrap-servers: bigdata-alpha-003.meitianbigdata.local:9092,bigdata-alpha-004.meitianbigdata.local:9092,bigdata-alpha-005.meitianbigdata.local:9092
+    consumer:
+      auto:
+        commit:
+          interval:
+            ms: 1000
+      #      auto-offset-reset: latest
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        group:
+          id: meisoo-bigdata-group-open
+        request:
+          timeout:
+            ms: 180000
+        session:
+          timeout:
+            ms: 120000
+    listener:
+      missing-topics-fatal: false
+#    producer:
+#      acks: 1
+#      batch-size: 16384
+#      buffer-memory: 33554432
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      properties:
+#        linger:
+#          ms: 0
+#      retries: 0
+
