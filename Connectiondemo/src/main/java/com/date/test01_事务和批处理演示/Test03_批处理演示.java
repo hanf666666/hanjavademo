@@ -7,6 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 
+/**
+ * to do
+ *Test03_批处理演示
+ * @author Hj
+ * @date 2022/1/19
+ */
 public class Test03_批处理演示 {
     public static void main(String[] args) {
         /*

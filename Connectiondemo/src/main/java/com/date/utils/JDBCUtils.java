@@ -18,15 +18,23 @@ public class JDBCUtils {
 
     //3. 定义方法, 读取配置文件.
     public static void readConfig() {
+        FileInputStream fileInputStream = null;
         Properties pp = new Properties();
         try {
-            pp.load(new FileInputStream("D:\\ideaspace\\Connectiondemo\\src\\main\\resources\\config.properties"));
+            fileInputStream = new FileInputStream("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\Connectiondemo\\src\\main\\resources\\config.properties");
+            pp.load(fileInputStream);
             driverClass = pp.getProperty("driverClass");
             url = pp.getProperty("url");
             username = pp.getProperty("username");
             password = pp.getProperty("password");
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                fileInputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

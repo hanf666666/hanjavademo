@@ -6,6 +6,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * to do
+ *Test02_事务演示
+ * @author Hj
+ * @date 2022/1/19
+ */
 public class Test02_事务演示 {
     public static void main(String[] args) {
         //案例: 张三 给 李四 转1000
