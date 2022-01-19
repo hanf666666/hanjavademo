@@ -37,7 +37,7 @@ public class Test01_手动设置参数 {
             //B: 设置数据库连接池的参数信息
             //必要参数
             dds.setDriver(new Driver());
-            dds.setUrl("jdbc:mysql:///connectiondemo");
+            dds.setUrl("jdbc:mysql:///test");
             dds.setUsername("root");
             dds.setPassword("123456");
 

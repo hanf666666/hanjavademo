@@ -25,7 +25,7 @@ public class Test01_手动设置参数 {
             cpds.setDriverClass("com.mysql.jdbc.Driver");
             cpds.setJdbcUrl("jdbc:mysql:///web04");
             cpds.setUser("root");
-            cpds.setPassword("123");
+            cpds.setPassword("123456");
 
             //C: 从数据库连接池获取连接对象
             conn = cpds.getConnection();
