@@ -9,7 +9,6 @@ import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.filter.*;
 import org.apache.hadoop.hbase.util.Bytes;
-
 import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
@@ -262,7 +261,7 @@ public class HBaseUtil {
      */
     @SuppressWarnings("unused")
     public ResultScanner getPrefixFilterGetData(String tableName, String prefixRowkey) {
-        ResultScanner resultScanner = null;
+        ResultScanner  resultScanner = null;
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();

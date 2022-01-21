@@ -2,7 +2,8 @@ package com.utils;
 
 /**
  * to do
- *
+ * 过时
+ * @see com.utils.TraversalUtil 替换
  * @author Hj
  * @date 2021/8/6
  */
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //列出File的一些常用操作
+@Deprecated
 public class util {
     /**
      * 遍历指定目录下（包括其子目录）的所有文件，并删除以 lastUpdated 结尾的文件
