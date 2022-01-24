@@ -1,0 +1,10 @@
+package com.executor.º¯ÊýÊ½.Supplier;
+
+/**
+ * to do
+ *
+ * @author Hj
+ * @date 2021/12/2
+ */
+public class Person {
+}

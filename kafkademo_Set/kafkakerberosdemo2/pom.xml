@@ -41,8 +41,8 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <!-- ´Ë´¦Ö¸¶¨main·½·¨Èë¿ÚµÄclass -->
-                            <mainClass>com.it.AvroKafkaProducter</mainClass>
+                            <!-- ï¿½Ë´ï¿½Ö¸ï¿½ï¿½mainï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½class -->
+                            <mainClass>com.base.AvroKafkaProducter</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
