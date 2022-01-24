@@ -287,6 +287,8 @@ public class HBaseUtil {
             Scan scan = new Scan();
             scan.withStartRow(Bytes.toBytes(startRow));
             scan.withStopRow(Bytes.toBytes(endRow));
+            scan.setCaching(100);
+            scan.addColumn(Bytes.toBytes("info"),Bytes.toBytes("carInImage"));
             resultScanner = table.getScanner(scan);
 
         } catch (IOException e) {

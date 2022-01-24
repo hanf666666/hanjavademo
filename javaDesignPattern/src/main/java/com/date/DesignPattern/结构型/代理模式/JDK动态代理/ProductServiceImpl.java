@@ -5,21 +5,21 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void add() {
-        System.out.println("??????...");
+        System.out.println("add.....");
     }
 
     @Override
     public void edit() {
-        System.out.println("??????...");
+        System.out.println("edit.....");
     }
 
     @Override
     public void delete() {
-        System.out.println("??????...");
+        System.out.println("delete.....");
     }
 
     @Override
     public void query() {
-        System.out.println("??????...");
+        System.out.println("query.....");
     }
 }
