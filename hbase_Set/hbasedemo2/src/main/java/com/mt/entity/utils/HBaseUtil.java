@@ -8,7 +8,9 @@ package com.mt.entity.utils;
  */
 
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.hbase.client.*;
@@ -16,10 +18,7 @@ import org.apache.hadoop.hbase.filter.*;
 import org.apache.hadoop.hbase.util.Bytes;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 public class HBaseUtil {
@@ -66,8 +65,8 @@ public class HBaseUtil {
      */
     public HBaseUtil() {
         Configuration configuration = HBaseConfiguration.create();
-        configuration.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
-//        configuration.set("hbase.zookeeper.quorum", "hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181");
+//        configuration.set("hbase.zookeeper.quorum", "172.17.134.80:2181,172.17.134.81:2181,172.17.134.82:2181");
+        configuration.set("hbase.zookeeper.quorum", "hb-2zei94r0f7s815763-master1-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master2-001.hbase.rds.aliyuncs.com:2181,hb-2zei94r0f7s815763-master3-001.hbase.rds.aliyuncs.com:2181");
 //        configuration.set("hbase.zookeeper.property.clientPort", "2181");
         try {
             connection = ConnectionFactory.createConnection(configuration);
@@ -250,6 +249,32 @@ public class HBaseUtil {
         }
         return Resultlist;
     }
+
+
+
+    public void getFilterListData(String ormTableName, Scan scan) {
+        ResultScanner resultScanner = null;
+
+        try {
+            Table table = connection.getTable(TableName.valueOf(ormTableName));
+            resultScanner = table.getScanner(scan);
+            int count=0;
+            for (Result result : resultScanner) {
+
+                for (Cell cell : result.rawCells()) {
+                    //每条数据之间用&&&将Qualifier和Value进行区分
+                    String reString = Bytes.toString(CellUtil.cloneQualifier(cell)) + "   ==   " + Bytes.toString(CellUtil.cloneValue(cell));
+                    System.out.println(reString);
+                }
+                System.out.println(count+++"======================================================================");
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     /**
      * 根据表名获取所有的数据
