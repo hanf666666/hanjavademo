@@ -22,18 +22,18 @@ public class HBaseUtil {
 
 
     /**
-     * è¿æ¥æ± å¯¹è±¡
+     * Á¬½Ó³Ø¶ÔÏó
      */
     public Connection connection;
 
 
     /**
-     * é™æ€æ„é€ ï¼Œåœ¨è°ƒç”¨é™æ€æ–¹æ³•æ—¶å‰è¿›è¡Œè¿è¡Œ
-     * åˆå§‹åŒ–è¿æ¥å¯¹è±¡ï¼
+     * ¾²Ì¬¹¹Ôì£¬ÔÚµ÷ÓÃ¾²Ì¬·½·¨Ê±Ç°½øĞĞÔËĞĞ
+     * ³õÊ¼»¯Á¬½Ó¶ÔÏó£®
      * */
 
     /**
-     * è®¾ç½®hbaseçš„é…ç½®ä¿¡æ¯,ä»ymlä¸­è·å–
+     * ÉèÖÃhbaseµÄÅäÖÃĞÅÏ¢,´ÓymlÖĞ»ñÈ¡
      */
     public void setHBaseconfig() {
         try {
@@ -42,31 +42,31 @@ public class HBaseUtil {
             connection = ConnectionFactory.createConnection(configuration);
         } catch (IOException e) {
             e.printStackTrace();
-        }// åˆ›å»ºè¿æ¥æ± 
+        }// ´´½¨Á¬½Ó³Ø
     }
 
     /**
-     * @param tableName åˆ›å»ºä¸€ä¸ªè¡¨ tableName æŒ‡å®šçš„è¡¨åã€€ seriesStr
-     * @param seriesStr ä»¥å­—ç¬¦ä¸²çš„å½¢å¼æŒ‡å®šè¡¨çš„åˆ—æ—ï¼Œæ¯ä¸ªåˆ—æ—ä»¥é€—å·çš„å½¢å¼éš”å¼€,(ä¾‹å¦‚ï¼šï¼‚f1,f2ï¼‚ä¸¤ä¸ªåˆ—æ—ï¼Œåˆ†åˆ«ä¸ºf1å’Œf2)
+     * @param tableName ´´½¨Ò»¸ö±í tableName Ö¸¶¨µÄ±íÃû¡¡ seriesStr
+     * @param seriesStr ÒÔ×Ö·û´®µÄĞÎÊ½Ö¸¶¨±íµÄÁĞ×å£¬Ã¿¸öÁĞ×åÒÔ¶ººÅµÄĞÎÊ½¸ô¿ª,(ÀıÈç£º£¢f1,f2£¢Á½¸öÁĞ×å£¬·Ö±ğÎªf1ºÍf2)
      **/
     public boolean createTable(String tableName, String seriesStr) {
-        boolean isSuccess = false;// åˆ¤æ–­æ˜¯å¦åˆ›å»ºæˆåŠŸï¼åˆå§‹å€¼ä¸ºfalse
+        boolean isSuccess = false;// ÅĞ¶ÏÊÇ·ñ´´½¨³É¹¦£¡³õÊ¼ÖµÎªfalse
         Admin admin = null;
         TableName table = TableName.valueOf(tableName);
         try {
             admin = connection.getAdmin();
             if (!admin.tableExists(table)) {
-                System.out.println("INFO:Hbase::  " + tableName + "åŸæ•°æ®åº“ä¸­è¡¨ä¸å­˜åœ¨ï¼å¼€å§‹åˆ›å»º...");
+                System.out.println("INFO:Hbase::  " + tableName + "Ô­Êı¾İ¿âÖĞ±í²»´æÔÚ£¡¿ªÊ¼´´½¨...");
                 HTableDescriptor descriptor = new HTableDescriptor(table);
                 String[] series = seriesStr.split(",");
                 for (String s : series) {
                     descriptor.addFamily(new HColumnDescriptor(s.getBytes()));
                 }
                 admin.createTable(descriptor);
-                System.out.println("INFO:Hbase::  " + tableName + "æ–°çš„" + tableName + "è¡¨åˆ›å»ºæˆåŠŸï¼");
+                System.out.println("INFO:Hbase::  " + tableName + "ĞÂµÄ" + tableName + "±í´´½¨³É¹¦£¡");
                 isSuccess = true;
             } else {
-                System.out.println("INFO:Hbase::  è¯¥è¡¨å·²ç»å­˜åœ¨ï¼Œä¸éœ€è¦åœ¨åˆ›å»ºï¼");
+                System.out.println("INFO:Hbase::  ¸Ã±íÒÑ¾­´æÔÚ£¬²»ĞèÒªÔÚ´´½¨£¡");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,13 +77,13 @@ public class HBaseUtil {
     }
 
     /**
-     * åˆ é™¤æŒ‡å®šè¡¨åçš„è¡¨
+     * É¾³ıÖ¸¶¨±íÃûµÄ±í
      *
-     * @param tableName ã€€è¡¨å
+     * @param tableName ¡¡±íÃû
      * @throws IOException
      */
     public boolean dropTable(String tableName) throws IOException {
-        boolean isSuccess = false;// åˆ¤æ–­æ˜¯å¦åˆ›å»ºæˆåŠŸï¼åˆå§‹å€¼ä¸ºfalse
+        boolean isSuccess = false;// ÅĞ¶ÏÊÇ·ñ´´½¨³É¹¦£¡³õÊ¼ÖµÎªfalse
         Admin admin = null;
         TableName table = TableName.valueOf(tableName);
         try {
@@ -100,13 +100,13 @@ public class HBaseUtil {
     }
 
     /**
-     * å‘æŒ‡å®šè¡¨ä¸­æ’å…¥æ•°æ®
+     * ÏòÖ¸¶¨±íÖĞ²åÈëÊı¾İ
      *
-     * @param tableName è¦æ’å…¥æ•°æ®çš„è¡¨å
-     * @param rowkey    æŒ‡å®šè¦æ’å…¥æ•°æ®çš„è¡¨çš„è¡Œé”®
-     * @param family    æŒ‡å®šè¦æ’å…¥æ•°æ®çš„è¡¨çš„åˆ—æ—family
-     * @param qualifier è¦æ’å…¥æ•°æ®çš„qualifier
-     * @param value     è¦æ’å…¥æ•°æ®çš„å€¼value
+     * @param tableName Òª²åÈëÊı¾İµÄ±íÃû
+     * @param rowkey    Ö¸¶¨Òª²åÈëÊı¾İµÄ±íµÄĞĞ¼ü
+     * @param family    Ö¸¶¨Òª²åÈëÊı¾İµÄ±íµÄÁĞ×åfamily
+     * @param qualifier Òª²åÈëÊı¾İµÄqualifier
+     * @param value     Òª²åÈëÊı¾İµÄÖµvalue
      */
     protected void putDataH(String tableName, String rowkey, String family,
                             String qualifier, Object value) throws IOException {
@@ -123,17 +123,17 @@ public class HBaseUtil {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("æ’å…¥æ•°æ®çš„è¡¨ä¸å­˜åœ¨ï¼Œè¯·æŒ‡å®šæ­£ç¡®çš„tableName ! ");
+            System.out.println("²åÈëÊı¾İµÄ±í²»´æÔÚ£¬ÇëÖ¸¶¨ÕıÈ·µÄtableName ! ");
         }
     }
 
     /**
-     * æ ¹æ®æŒ‡å®šè¡¨è·å–æŒ‡å®šè¡Œé”®rowkeyå’Œåˆ—æ—familyçš„æ•°æ® å¹¶ä»¥å­—ç¬¦ä¸²çš„å½¢å¼è¿”å›æŸ¥è¯¢åˆ°çš„ç»“æœ
+     * ¸ù¾İÖ¸¶¨±í»ñÈ¡Ö¸¶¨ĞĞ¼ürowkeyºÍÁĞ×åfamilyµÄÊı¾İ ²¢ÒÔ×Ö·û´®µÄĞÎÊ½·µ»Ø²éÑ¯µ½µÄ½á¹û
      *
-     * @param tableName è¦è·å–è¡¨ tableName çš„è¡¨å
-     * @param rowKey    æŒ‡å®šè¦è·å–æ•°æ®çš„è¡Œé”®
-     * @param family    æŒ‡å®šè¦è·å–æ•°æ®çš„åˆ—æ—å…ƒç´ 
-     * @param qualifier æŒ‡å®šè¦è·å–æ•°æ®çš„qualifier
+     * @param tableName Òª»ñÈ¡±í tableName µÄ±íÃû
+     * @param rowKey    Ö¸¶¨Òª»ñÈ¡Êı¾İµÄĞĞ¼ü
+     * @param family    Ö¸¶¨Òª»ñÈ¡Êı¾İµÄÁĞ×åÔªËØ
+     * @param qualifier Ö¸¶¨Òª»ñÈ¡Êı¾İµÄqualifier
      */
     protected String getValueBySeriesH(String tableName, String rowKey,
                                        String family, String qualifier) throws IllegalArgumentException, IOException {
@@ -158,13 +158,13 @@ public class HBaseUtil {
 
 
     /**
-     * æ ¹æ®æŒ‡å®šè¡¨è·å–æŒ‡å®šè¡Œé”®rowKeyå’Œåˆ—æ—familyçš„æ•°æ® å¹¶ä»¥Mapé›†åˆçš„å½¢å¼è¿”å›æŸ¥è¯¢åˆ°çš„ç»“æœ
+     * ¸ù¾İÖ¸¶¨±í»ñÈ¡Ö¸¶¨ĞĞ¼ürowKeyºÍÁĞ×åfamilyµÄÊı¾İ ²¢ÒÔMap¼¯ºÏµÄĞÎÊ½·µ»Ø²éÑ¯µ½µÄ½á¹û
      *
-     * @param tableName è¦è·å–è¡¨ tableName çš„è¡¨å
-     * @param rowKey    æŒ‡å®šçš„è¡Œé”®rowKey
-     * @param family    æŒ‡å®šåˆ—æ—family
+     * @param tableName Òª»ñÈ¡±í tableName µÄ±íÃû
+     * @param rowKey    Ö¸¶¨µÄĞĞ¼ürowKey
+     * @param family    Ö¸¶¨ÁĞ×åfamily
      */
-    protected Map<String, String> getAllValueï¼¨(String tableName,
+    protected Map<String, String> getAllValue£È(String tableName,
                                                String rowKey, String family) throws IllegalArgumentException, IOException {
         Table table = null;
         Map<String, String> resultMap = null;
@@ -189,7 +189,7 @@ public class HBaseUtil {
     }
 
     /**
-     * è·å–hbaseçš„è¡¨
+     * »ñÈ¡hbaseµÄ±í
      *
      * @return
      */
@@ -212,11 +212,11 @@ public class HBaseUtil {
     }
 
     /**
-     * æ ¹æ®æŒ‡å®šè¡¨è·å–æŒ‡å®šè¡Œé”®rowKeyçš„æ‰€æœ‰æ•°æ® å¹¶ä»¥Mapé›†åˆçš„å½¢å¼è¿”å›æŸ¥è¯¢åˆ°çš„ç»“æœ
-     * æ¯æ¡æ•°æ®ä¹‹é—´ç”¨&&&å°†Qualifierå’ŒValueè¿›è¡ŒåŒºåˆ†
+     * ¸ù¾İÖ¸¶¨±í»ñÈ¡Ö¸¶¨ĞĞ¼ürowKeyµÄËùÓĞÊı¾İ ²¢ÒÔMap¼¯ºÏµÄĞÎÊ½·µ»Ø²éÑ¯µ½µÄ½á¹û
+     * Ã¿ÌõÊı¾İÖ®¼äÓÃ&&&½«QualifierºÍValue½øĞĞÇø·Ö
      *
-     * @param tableName è¦è·å–è¡¨ tableName çš„è¡¨å
-     * @param rowkey    æŒ‡å®šçš„è¡Œé”®rowKey
+     * @param tableName Òª»ñÈ¡±í tableName µÄ±íÃû
+     * @param rowkey    Ö¸¶¨µÄĞĞ¼ürowKey
      */
     public ArrayList<String> getFromRowkeyValues(String tableName, String rowkey) {
         ArrayList<String> Resultlist = new ArrayList<>();
@@ -225,7 +225,7 @@ public class HBaseUtil {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Result r = table.get(get);
             for (Cell cell : r.rawCells()) {
-                //æ¯æ¡æ•°æ®ä¹‹é—´ç”¨&&&å°†Qualifierå’ŒValueè¿›è¡ŒåŒºåˆ†
+                //Ã¿ÌõÊı¾İÖ®¼äÓÃ&&&½«QualifierºÍValue½øĞĞÇø·Ö
                 String reString = Bytes.toString(CellUtil.cloneQualifier(cell)) + "&&&" + Bytes.toString(CellUtil.cloneValue(cell));
                 Resultlist.add(reString);
             }
@@ -237,7 +237,7 @@ public class HBaseUtil {
     }
 
     /**
-     * æ ¹æ®è¡¨åè·å–æ‰€æœ‰çš„æ•°æ®
+     * ¸ù¾İ±íÃû»ñÈ¡ËùÓĞµÄÊı¾İ
      */
     @SuppressWarnings("unused")
     private void getAllValues(String tableName) {
@@ -255,7 +255,7 @@ public class HBaseUtil {
     }
 
     /**
-     * æ ¹æ®rowkeyå‰ç¼€è·å–æ•°æ®
+     * ¸ù¾İrowkeyÇ°×º»ñÈ¡Êı¾İ
      */
     @SuppressWarnings("unused")
     public ResultScanner getPrefixFilterGetData(String tableName, String prefixRowkey) {
@@ -275,7 +275,7 @@ public class HBaseUtil {
 
 
     /**
-     * æ ¹æ®rowkeyå‰ç¼€çš„æ•°æ®èŒƒå›´
+     * ¸ù¾İrowkeyÇ°×ºµÄÊı¾İ·¶Î§
      */
     @SuppressWarnings("unused")
     public ResultScanner getRowRangeData(String tableName, String startRow, String endRow) {
@@ -297,14 +297,14 @@ public class HBaseUtil {
 
 
     /**
-     * æ ¹æ®rowkeyå‰ç¼€è·å–æ•°æ®
+     * ¸ù¾İrowkeyÇ°×º»ñÈ¡Êı¾İ
      */
     @SuppressWarnings("unused")
     public void getFilterListData(String tableName, ArrayList<Integer> arrayList) {
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();
-            //ç»„åˆè¿‡æ»¤å™¨filterList  statistic:park_id
+            //×éºÏ¹ıÂËÆ÷filterList  statistic:park_id
             FilterList filterList = new FilterList(FilterList.Operator.MUST_PASS_ONE);
             for (Integer park_id : arrayList) {
 //                System.out.println(park_id);
@@ -340,14 +340,14 @@ public class HBaseUtil {
 
 
     /**
-     * æ ¹æ®rowkeyå‰ç¼€è·å–æ•°æ®
+     * ¸ù¾İrowkeyÇ°×º»ñÈ¡Êı¾İ
      */
     @SuppressWarnings("unused")
     public void getRegexFilterListData(String tableName, String regex) {
         try {
             Table table = connection.getTable(TableName.valueOf(tableName));
             Scan scan = new Scan();
-            //ç»„åˆè¿‡æ»¤å™¨filterList  statistic:park_id
+            //×éºÏ¹ıÂËÆ÷filterList  statistic:park_id
             FilterList filterList = new FilterList(FilterList.Operator.MUST_PASS_ALL);
             RowFilter rowFilter = new RowFilter(CompareOperator.EQUAL,
                     new RegexStringComparator(regex));
@@ -379,7 +379,7 @@ public class HBaseUtil {
             System.out.println(result);
             count++;
         }
-        System.out.println("INFO:Hbase::  æµ‹è¯•ç»“æŸï¼å…±æœ‰ã€€" + count + "æ¡æ•°æ®");
+        System.out.println("INFO:Hbase::  ²âÊÔ½áÊø£¡¹²ÓĞ¡¡" + count + "ÌõÊı¾İ");
     }
 
 
