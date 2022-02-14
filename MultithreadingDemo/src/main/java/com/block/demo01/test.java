@@ -9,16 +9,16 @@ package com.block.demo01;
 public class test {
     public static void main(String[] args) throws InterruptedException {
 
-        final BlockingQueue blockingQueue = new BlockingQueue(20);
+        final BlockingQueue blockingQueue = new BlockingQueue(5);
         final Thread thread = new Thread() {
 
             @Override
             public void run() {
                 try {
                     while (true) {
-                        for (int i = 0; i < 20; i++) {
-                            blockingQueue.enqueue(i);
-                        }
+//                        for (int i = 0; i < 20; i++) {
+//                            blockingQueue.enqueue(i);
+//                        }
                         Thread.sleep(3000);
                     }
                 } catch (InterruptedException e) {

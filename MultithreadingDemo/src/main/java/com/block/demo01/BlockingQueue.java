@@ -25,13 +25,13 @@ public class BlockingQueue {
             throws InterruptedException {
 
         while (this.queue.size() == this.limit) {
-
+            System.out.println("生产线程阻塞");
             wait();
 
         }
 
         if (this.queue.size() == 0) {
-
+            System.out.println("生产线程唤醒");
             notifyAll();
 
         }
@@ -45,14 +45,16 @@ public class BlockingQueue {
             throws InterruptedException {
 
         while (this.queue.size() == 0) {
-            System.out.println("阻塞了");
+            System.out.println("消费线程阻塞了");
             wait();
+            System.out.println("阻塞了就不执行了,除非唤醒");
 
         }
 
         if (this.queue.size() == this.limit) {
 
             notifyAll();
+            System.out.println("消费线程唤醒");
 
         }
 

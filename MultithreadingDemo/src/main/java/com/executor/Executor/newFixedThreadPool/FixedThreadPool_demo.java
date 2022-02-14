@@ -11,8 +11,11 @@ import java.util.concurrent.Executors;
  */
 public class FixedThreadPool_demo {
     public static void main(String[] args) {
-        final ExecutorService executorService = Executors.newFixedThreadPool(30);
-        executorService.submit(new MyCallable());
-        executorService.submit(new MyCallable());
+        final ExecutorService executorService = Executors.newFixedThreadPool(2);
+        for (int i = 0; i < 4; i++) {
+            executorService.submit(new MyCallable());
+        }
+
+
     }
 }
