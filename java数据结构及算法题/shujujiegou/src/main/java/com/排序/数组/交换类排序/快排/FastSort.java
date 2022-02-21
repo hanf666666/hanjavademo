@@ -1,4 +1,4 @@
-package com.排序.交换类排序.快排;
+package com.排序.数组.交换类排序.快排;
 
 public class FastSort{
 

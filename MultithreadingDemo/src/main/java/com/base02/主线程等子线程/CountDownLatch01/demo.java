@@ -1,11 +1,13 @@
 package com.base02.主线程等子线程.CountDownLatch01;
 
+import java.util.LinkedList;
 import java.util.concurrent.CountDownLatch;
 
 public class demo {
     public static void main(String[] args) {
         int threadNumber = 1;
         final CountDownLatch cdl = new CountDownLatch(threadNumber);//参数为线程个数
+
 
         Thread t = new Thread(() -> {
             int num = 1000;
