@@ -1,8 +1,8 @@
 package com.mt.main;
 
-import com.executor.container.Plate;
-import com.executor.Lev2.Fruit;
-import com.executor.Lev3.Apple;
+import com.newsfeatures.container.Plate;
+import com.newsfeatures.Lev2.Fruit;
+import com.newsfeatures.Lev3.Apple;
 
 /**
  * to do
