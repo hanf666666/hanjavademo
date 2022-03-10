@@ -5,7 +5,7 @@ import java.util.Date;
 public class Singleton  {
 
     private Singleton(){
-        System.out.println("??????");
+        System.out.println("ππ‘Ï");
     }
     private static Singleton instance=  new Singleton();
     public static Singleton getInstance() {

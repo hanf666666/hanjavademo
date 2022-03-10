@@ -68,21 +68,25 @@ public class QuickSortUtils {
             return headNode;
         }
         //第一个元素
-        Node p = headNode;
+        Node p1 = headNode;
         //第二个元素
-        Node q = headNode.nextNode;
-        Node tempNode = null;
-        while(q!=null){
+        Node q2 = headNode.nextNode;
+        Node tempNode3 = null;
+        while(q2!=null){
             //修改p和q的指针放心
-            tempNode = q.nextNode;
-            q.nextNode=p;
-            p = q;
-            q = tempNode;
+            tempNode3 = q2.nextNode;
+            q2.nextNode=p1;
+            p1 = q2;
+            q2 = tempNode3;
         }
         //设置链表尾
         headNode.nextNode=null;
         //修改链表头
-        headNode=p;
+        headNode=p1;
         return headNode;
     }
+
+
+
+
 }

@@ -1,11 +1,11 @@
-package com.date.DesignPattern.创建型.单例模式.饱汉模式;
+package com.date.DesignPattern.创建型.单例模式.懒汉模式;
 
 import java.util.Date;
 
-//??????
+//单例模式
 public class Singleton {
     private Singleton() {
-        System.out.println("??????");
+        System.out.println("构造");
     }
 
     private static volatile Singleton instance = null;

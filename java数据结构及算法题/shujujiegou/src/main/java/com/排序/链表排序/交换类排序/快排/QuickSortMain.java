@@ -1,5 +1,7 @@
 package com.排序.链表排序.交换类排序.快排;
 
+import com.排序.链表排序.交换类排序.反转.Solution;
+
 public class QuickSortMain {
 
     public static void main(String []args){
@@ -15,7 +17,8 @@ public class QuickSortMain {
         System.out.print("排序之后数据打印===>");
         danLinkList.displayAllNodes(danLinkList.headNode);
         System.out.print("排序之后倒序数据打印===>");
-        danLinkList.displayAllNodes(QuickSortUtils.reverseList(danLinkList.headNode));
+//        danLinkList.displayAllNodes(QuickSortUtils.reverseList(danLinkList.headNode));
+        danLinkList.displayAllNodes(Solution.ReverseList(danLinkList.headNode));
 
 
     }
