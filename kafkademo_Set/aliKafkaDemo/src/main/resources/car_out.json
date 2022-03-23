@@ -1,0 +1,29 @@
+{
+  "extra": {},
+  "items": [
+    {
+      "endDate": 1638400223000,
+      "howLong": 27407000,
+      "image": "fasdfa",
+      "moneyPay": 0,
+      "no": "11111111",
+      "parkId": 19496,
+      "parkItemName": "089511",
+      "parkName": "遂宁市紫东街二段",
+      "parkNo": "4590DE",
+      "parkType": 1,
+      "payType": 2,
+      "phone": "15881912046",
+      "plateNo": "川111111",
+      "posUserChineseName": 3,
+      "posUserId": 4,
+      "posUserName": 5,
+      "postage": 7,
+      "startDate": 1640966400000,
+      "status": 2
+    }
+  ],
+  "msgSeqNo": "202112022156482385V7TIo",
+  "segNo": "563563456",
+  "topicName": "CAR_OUT"
+}

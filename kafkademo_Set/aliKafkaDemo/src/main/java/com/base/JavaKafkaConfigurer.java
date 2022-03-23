@@ -1,5 +1,7 @@
 package com.base;
 
+import com.base.producerdemo.KafkaProducerDemo;
+
 import java.util.Properties;
 
 /**

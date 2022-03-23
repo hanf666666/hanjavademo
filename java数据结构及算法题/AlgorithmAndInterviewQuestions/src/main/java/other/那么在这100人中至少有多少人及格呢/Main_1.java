@@ -11,7 +11,7 @@ import java.util.Stack;
 public class Main_1 {
     public static void main(String[] args) {
         Stack<String> stack = new Stack<String>();
-        String[] data = {"A", "B"};
+        String[] data = {"A", "B","C"};
         perm(data,stack);
     }
     public static void perm(String[] array, Stack<String> stack) {

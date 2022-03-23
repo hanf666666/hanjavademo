@@ -1,0 +1,24 @@
+{
+  "carImage": "temp/2021/12/24/11/29/beab8254a599499796cc8fa0f4b62b27.jpg",
+  "closeParkChannelName": "大门出口",
+  "closeParkChannelNumber": "口",
+  "feeDiscount": 0,
+  "feePaid": 0,
+  "feeShouldPay": 0,
+  "inRecord": {
+    "businessOrder": "2222222",
+    "carBrand": 0,
+    "carCategory": 0,
+    "carType": 0,
+    "inTime": 1641052800000,
+    "parkingLotType": "closepark",
+    "parkingNo": "ZQ53G4",
+    "parkingSpaceReserved": 0,
+    "type": 0
+  },
+  "orderState": 1,
+  "outTime": 1622902361123,
+  "parkingSpaceReserved": 19,
+  "reportDate": 1640316547659,
+  "type": 1
+}

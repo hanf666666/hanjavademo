@@ -1,0 +1,19 @@
+{
+  "businessOrder": "2222222",
+  "carBrand": 0,
+  "carCategory": 0,
+  "carColor": "未知",
+  "carImage": "temp/2021/12/24/11/29/c5d576a572c04f339d112991f09b8a68.jpg",
+  "carNumber": "渝222222",
+  "carType": 1,
+  "closeParkChannelName": "大门入口",
+  "closeParkChannelNumber": "口",
+  "inTime": 1641052800000,
+  "licensePlateColor": "未知",
+  "parkingLotType": "closepark",
+  "parkingNo": "ZQ53G4",
+  "parkingSpaceReserved": 19,
+  "pictureOfLicensePlateColor": "temp/2021/12/24/11/29/08773393d32b43ea98b28e17ed9daa54.jpg",
+  "reportDate": 1640316575942,
+  "type": 1
+}

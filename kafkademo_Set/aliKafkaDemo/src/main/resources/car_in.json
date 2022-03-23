@@ -1,0 +1,29 @@
+{
+  "extra": {},
+  "items": [
+    {
+      "endDate": null,
+      "howLong": null,
+      "image": "111",
+      "moneyPay": 0,
+      "no": "11111111",
+      "parkId": 19408,
+      "parkItemName": "086805",
+      "parkName": "遂宁市圣泉路十段",
+      "parkNo": "4590DE",
+      "parkType": 1,
+      "payType": 4,
+      "phone": "13320633552",
+      "plateNo": "川111111",
+      "posUserChineseName": "5",
+      "posUserId": 5,
+      "posUserName": 6,
+      "postage": 7,
+      "startDate": 1640966400000,
+      "status": 8
+    }
+  ],
+  "msgSeqNo": "20211223154547046GF1q7m",
+  "segNo": "423542245",
+  "topicName": "CAR_IN"
+}

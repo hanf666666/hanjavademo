@@ -1,4 +1,4 @@
-package com.base;
+package com.base.producerdemo;
 
 /**
  * to do
@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.Future;
 
+import com.base.JavaKafkaConfigurer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
