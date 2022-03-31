@@ -42,17 +42,17 @@ public class KafkaProducerDemo2 {
         try {
             //批量获取Future对象可以加快速度,。但注意，批量不要太大。
 
-            for (int i =0; i < 3; i++) {
+            for (int i =0; i < 89; i++) {
 
                 //[19587, 19301]
                 String uuid= UUID.randomUUID().toString().replaceAll("\\-","");
                 final long intime = DateUtil.date().getTime();
                 //构造一个消息队列Kafka版消息。
                 String topic_REPORT_CAR_IN ="CAR_IN"; //消息所属的Topic，请在控制台申请之后，填写在这里。
-                String topic_REPORT_CAR_IN_value = "{ \"extra\": {}, \"items\": [ { \"endDate\": null, \"howLong\": null, \"image\": \"111\", \"moneyPay\": 0, \"no\": \""+uuid+"\", \"parkId\": 19587, \"parkItemName\": \"086805\", \"parkName\": \"遂宁市圣泉路十段\", \"parkNo\": \"4590DE\", \"parkType\": 1, \"payType\": 4, \"phone\": \"13320633552\", \"plateNo\": \"川111111\", \"posUserChineseName\": \"5\", \"posUserId\": 5, \"posUserName\": 6, \"postage\": 7, \"startDate\": 1640966400000, \"status\": 8 } ], \"msgSeqNo\": \"20211223154547046GF1q7m\", \"segNo\": \"423542245\", \"topicName\": \"CAR_IN\" } "; //消息的内容。
-
+                String topic_REPORT_CAR_IN_value = "{ \"extra\": {}, \"items\": [ { \"endDate\": null, \"howLong\": null, \"image\": \"111\", \"moneyPay\": 0, \"no\": \""+uuid+"\", \"parkId\": 19587, \"parkItemName\": \"086805\", \"parkName\": \"CCCCCA\", \"parkNo\": \"4590DE\", \"parkType\": 1, \"payType\": 4, \"phone\": \"13320633552\", \"plateNo\": \"川111111\", \"posUserChineseName\": \"5\", \"posUserId\": 5, \"posUserName\": 6, \"postage\": 7, \"startDate\": 1640966400000, \"status\": 8 } ], \"msgSeqNo\": \"20211223154547046GF1q7m\", \"segNo\": \"423542245\", \"topicName\": \"CAR_IN\" } "; //消息的内容。
+                uuid= UUID.randomUUID().toString().replaceAll("\\-","");
                 String topic_REPORT_CAR_OUT ="CAR_OUT"; //消息所属的Topic，请在控制台申请之后，填写在这里。
-                String REPORT_CAR_OUT_value = "{\"extra\":{},\"items\":[{\"endDate\":1638400223000,\"howLong\":27407000,\"image\":\"fasdfa\",\"moneyPay\":0,\"no\":\""+uuid+"\",\"parkId\":19587,\"parkItemName\":\"089511\",\"parkName\":\"遂宁市紫东街二段\",\"parkNo\":\"4590DE\",\"parkType\":1,\"payType\":2,\"phone\":\"15881912046\",\"plateNo\":\"川111111\",\"posUserChineseName\":3,\"posUserId\":4,\"posUserName\":5,\"postage\":7,\"startDate\":1640966400000,\"status\":2}],\"msgSeqNo\":\"202112022156482385V7TIo\",\"segNo\":\"563563456\",\"topicName\":\"CAR_OUT\"}"; //消息的内容。
+                String REPORT_CAR_OUT_value = "{\"extra\":{},\"items\":[{\"endDate\":1638400223000,\"howLong\":27407000,\"image\":\"fasdfa\",\"moneyPay\":0,\"no\":\""+uuid+"\",\"parkId\":19587,\"parkItemName\":\"089511\",\"parkName\":\"DDDDDA\",\"parkNo\":\"4590DE\",\"parkType\":1,\"payType\":2,\"phone\":\"15881912046\",\"plateNo\":\"川111111\",\"posUserChineseName\":3,\"posUserId\":4,\"posUserName\":5,\"postage\":7,\"startDate\":1640966400000,\"status\":2}],\"msgSeqNo\":\"202112022156482385V7TIo\",\"segNo\":\"563563456\",\"topicName\":\"CAR_OUT\"}"; //消息的内容。
 
                 //发送消息，并获得一个Future对象。
                 ProducerRecord<String, String> kafkaMessageIn =  new ProducerRecord<String, String>(topic_REPORT_CAR_IN, topic_REPORT_CAR_IN_value);
