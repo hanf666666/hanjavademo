@@ -2,7 +2,9 @@
 DROP DATABASE  IF EXISTS test20210707;
 CREATE DATABASE test20210707;
 USE test20210707;
-CREATE TABLE student(id INT,NAME VARCHAR(20),name2 VARCHAR(20),age INT,age2 INT,created_dt DATETIME,created_dt2 DATETIME(3));
+CREATE TABLE student(id INT,NAME VARCHAR(20),name2 VARCHAR(20)
+,age INT,age2 INT,created_dt DATETIME,
+created_dt2 DATETIME(3));
 
 INSERT INTO student(id,NAME,name2,age,age2,created_dt,created_dt2) VALUES(1,'º«','º«¾²',21,21,'2021-01-01 12:11:11','2021-01-01 12:11:11.111');
 INSERT INTO student(id,NAME,name2,age,age2,created_dt,created_dt2) VALUES(2,'º«','º«¾²',21,21,'2021-01-01 12:11:11','2021-01-01 12:11:11.112');
