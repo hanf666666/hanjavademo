@@ -28,6 +28,7 @@ public class DruidUtils {
             pp.load(new FileReader("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\Connectiondemo\\src\\main\\resources\\druid.properties"));
             // 对数据库连接池对象进行初始化操作.
             ds = DruidDataSourceFactory.createDataSource(pp);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
