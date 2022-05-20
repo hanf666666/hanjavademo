@@ -30,6 +30,12 @@ public class VolatileDemo2 {
         lock.lock();
         try {
             num++;
+            try {
+                Thread.sleep(3000);
+                System.out.println("???");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } finally {
             lock.unlock();
         }
@@ -39,8 +45,8 @@ public class VolatileDemo2 {
 
         for (int i = 0; i < 20; i++) {
             new Thread(() -> {
-                for (int j = 0; j < 1000; j++) {
-                    add();
+                for (int j = 0; j < 10; j++) {
+                    add3();
                 }
             }).start();
         }
