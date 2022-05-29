@@ -3,7 +3,7 @@ package com.date.DesignPattern.结构型.装饰模式;
 public class Coffeetea extends AbstactBeverage {
     @Override
     protected String getDescription() {
-        return "????";
+        return "咖啡";
     }
 
     @Override

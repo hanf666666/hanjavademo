@@ -122,6 +122,37 @@ select * from current_house b where b.projectname ='北岸江山财信北滨壹品' and fj
 
 
 
+select * from quartz_task.job_entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

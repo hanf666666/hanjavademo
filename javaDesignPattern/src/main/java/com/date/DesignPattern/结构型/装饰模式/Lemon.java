@@ -9,7 +9,7 @@ public class Lemon extends AbstractCondiment {
 
     @Override
     protected String getDescription() {
-        return abstactBeverage.getDescription()+"??????";
+        return abstactBeverage.getDescription()+"¼Óµ÷ÁÏ ÄûÃÊ";
     }
 
     @Override
