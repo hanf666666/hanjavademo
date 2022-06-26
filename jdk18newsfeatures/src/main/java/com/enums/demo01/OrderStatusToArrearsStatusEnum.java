@@ -11,9 +11,8 @@ import java.util.Objects;
   * @date 2019/10/22
   */
 @Getter
-@AllArgsConstructor
+//@AllArgsConstructor
 public enum OrderStatusToArrearsStatusEnum {
-
     /**
      * 5 未补缴， 6 已补缴  95 已清除
      */
@@ -21,6 +20,11 @@ public enum OrderStatusToArrearsStatusEnum {
     AFTER_PAY_DODGING_TOLL(94, "部分已缴"),
     NOT_PAY_BACK(5, "未补缴"),
     CLEARED(6, "已清除");
+
+    OrderStatusToArrearsStatusEnum(Integer value, String name) {
+        this.value = value;
+        this.name = name;
+    }
 
     /**
      * 订单状态

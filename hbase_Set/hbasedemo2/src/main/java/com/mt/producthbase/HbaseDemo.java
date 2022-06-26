@@ -42,4 +42,20 @@ public class HbaseDemo {
         hBaseUtil.getFilterListData("CarOutData", scan);
 
     }
+
+    @Test
+    public void getFilterList2() {
+        //scan 组装
+        Scan scan = new Scan();
+//        scan.withStartRow(Bytes.toBytes("other_20220118164840000_230018084"));
+//        scan.withStopRow(Bytes.toBytes( "other_20220118164840000_230018084~"));
+
+//        scan.withStartRow(Bytes.toBytes("other"));
+//        scan.withStopRow(Bytes.toBytes( "other~"));
+        //过滤器组装
+        scan.setCaching(1000);
+        scan.setCacheBlocks(false);
+        hBaseUtil.getFilterListData("remain_number_change_79432", scan);
+
+    }
 }

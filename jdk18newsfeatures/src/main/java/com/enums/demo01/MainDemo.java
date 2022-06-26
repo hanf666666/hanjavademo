@@ -14,14 +14,19 @@ public class MainDemo {
 //                AFTER_PAY_DODGING_TOLL(94, "部分已缴"),
 //                NOT_PAY_BACK(5, "未补缴"),
 //                CLEARED(6, "已清除");
+        System.out.println("======getNameByValue(95)============");
         System.out.println(OrderStatusToArrearsStatusEnum.getNameByValue(95));
 
         OrderStatusToArrearsStatusEnum orderStatusToArrearsStatus = OrderStatusToArrearsStatusEnum.CLEARED;
+        System.out.println("======orderStatusToArrearsStatus============");
         System.out.println(orderStatusToArrearsStatus);
+        System.out.println("======orderStatusToArrearsStatus.getName()============");
         System.out.println(orderStatusToArrearsStatus.getName());
+        System.out.println("======orderStatusToArrearsStatus.getValue()============");
         System.out.println(orderStatusToArrearsStatus.getValue());
         switch (orderStatusToArrearsStatus){
             case CLEARED:
+                System.out.println("======orderStatusToArrearsStatus=====toString()=======");
                 System.out.println("我是CLEARED:"+orderStatusToArrearsStatus);
                 break;
             case PAY_BACK:

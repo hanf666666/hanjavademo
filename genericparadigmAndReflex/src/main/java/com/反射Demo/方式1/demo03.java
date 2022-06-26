@@ -18,6 +18,7 @@ public class demo03 {
 //            value = null;
             Method aMethod = Person.class.getDeclaredMethod("setAge", Integer.class);
             aMethod.invoke(c1, Integer.parseInt(value));
+            c1.setAge(30);
 //            aMethod.invoke(c1,java.lang.Integer.valueOf(value));
             System.out.println(c1.getAge());
 
