@@ -1,4 +1,4 @@
-package com.newsfeatures.线程安全;
+package com;
 
 import java.util.ArrayList;
 
