@@ -1,4 +1,4 @@
-package com;
+package com.memory;
 
 import java.util.ArrayList;
 
@@ -18,6 +18,8 @@ public class MemoryDemo2 {
         System.out.println("=======计算数据占用总的大小=======================================>");
         //这么多字节换算为m
         System.out.println("计算数据占用总的大小"+(1000000000*11L)/m+"M");
+        System.out.println("<=======计算数据占用总的大小=======================================");
+        System.out.println("计算数据占用总的大小"+(1294*40L)/1024+"kb");
         System.out.println("<=======计算数据占用总的大小=======================================");
 
         System.out.println("=======根据总内存大小计算条数e4就是1万=======================================>");

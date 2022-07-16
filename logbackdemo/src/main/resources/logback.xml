@@ -21,8 +21,12 @@
         </encoder>
     </appender>
 
+
+    <!-- com.newsfeatures 为info级别 -->
+    <logger name="com.newsfeatures" level="INFO"/>
+
     <!-- 日志级别 -->
-    <root level="info">
+    <root level="warn">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

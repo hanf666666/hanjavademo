@@ -3,6 +3,7 @@ package com.numberutil;
 import cn.hutool.core.util.NumberUtil;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 /**
  * to do
@@ -18,7 +19,8 @@ public class demo01 {
        System.out.println(new BigDecimal(2.11116).setScale(4, BigDecimal.ROUND_HALF_DOWN));
        System.out.println(new BigDecimal(2.11115).setScale(4, BigDecimal.ROUND_HALF_UP));
 
-
+        String format = new DecimalFormat("0000").format(123456789);
+        System.out.println("format======>"+format);
 
 
     }

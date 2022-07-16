@@ -1,4 +1,4 @@
-package com;
+package com.memory;
 
 import java.util.ArrayList;
 
