@@ -1,5 +1,10 @@
 package com.memory;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
 /**
  * to do
  *
@@ -14,5 +19,10 @@ public class demo {
 //        K
         System.out.println("计算数据占用总的大小"+(170496*1024L)/m+"M");
         System.out.println("计算数据占用总的大小"+((170496+349696)*1024L)/m+"M");
+
+
+        HashMap<String, String> stringStringHashMap = new HashMap<>();
+        Map<Object, Object> objectObjectConcurrentMap = new ConcurrentHashMap<>();
+        objectObjectConcurrentMap.put("asdfa",null);
     }
 }
