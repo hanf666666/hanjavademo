@@ -18,6 +18,7 @@ public class demo {
         stringStringHashMap.put("k3", "v");
          int MAXIMUM_CAPACITY = 1 << 30;
         System.out.println(MAXIMUM_CAPACITY);
+        System.out.println(1/0);
 
     }
 }
