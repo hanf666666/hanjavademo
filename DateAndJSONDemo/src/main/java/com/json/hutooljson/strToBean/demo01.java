@@ -29,7 +29,8 @@ public class demo01 {
 
 
         Student student=null;
-        System.out.println(student.toString());System.out.println(student.toString());
+        System.out.println(student.toString());
+        System.out.println(student.toString());
 
     }
 }
