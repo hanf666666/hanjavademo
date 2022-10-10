@@ -20,6 +20,7 @@ public class demo04 {
         //bd2 = 0.01
         System.out.println("bd1 = " + bd1);
         System.out.println("bd2 = " + bd2);
+        System.out.println("bd3 = " + new BigDecimal(1));
 
 
         BigDecimal bd3 = new BigDecimal("1.0");

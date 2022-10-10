@@ -2,6 +2,7 @@ package com.newsfeatures.Stream.Sort;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * to do
@@ -20,6 +21,13 @@ public class maintest1 {
         stringArrayList.add("ccc");
         stringArrayList.add("bbb2");
         stringArrayList.add("ddd1");
+
+        List<String> a = stringArrayList
+                .stream()
+                .sorted()
+                .filter((s) -> s.startsWith("a")).collect(Collectors.toList());
+        System.out.println(a);
+
         stringArrayList
                 .stream()
                 .sorted()

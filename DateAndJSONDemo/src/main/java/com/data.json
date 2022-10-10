@@ -1,1 +1,20 @@
-"{\"parkId\":\"\",\"plateNo\":\"\",\"status\":\"\",\"carInBeginDate\":\"\",\"carInEndsDate\":\"\",\"carOutBeginDate\":\"\",\"carOutEndsDate\":\"\",\"pageIndex\":1,\"pageCount\":10,\"plateNoColour\":\"\"}"
+{
+  "plate_val": "true",
+  "utc_ts": 1665216688,
+  "plate_color": "À¶É«",
+  "plate_num": "ÓåB26536",
+  "confidence": 28,
+  "trigger_type": "video",
+  "vehicle_type": "½Î³µ",
+  "car_color": "Î´Öª",
+  "type": "online",
+  "plate_pic_path": "/picture/31013/180300055758/20221008/16/20221008_161128_424_plate.jpg",
+  "token": "909e441ede328e8944ae6ab352c2a47a",
+  "car_logo": "",
+  "inout": "out",
+  "local_time": "2022-10-08 16:11:28",
+  "is_whitelist": "true",
+  "full_pic_path": "/picture/31013/180300055758/20221008/16/20221008_161128_424.jpg",
+  "cmd": "result",
+  "msg_id": "1665216688454ajxq2pk"
+}
