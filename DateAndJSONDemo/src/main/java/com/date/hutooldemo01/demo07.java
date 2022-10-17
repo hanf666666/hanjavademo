@@ -16,8 +16,8 @@ import java.util.Date;
 public class demo07 {
     public static void main(String[] args) {
 
-        DateTime startTime = DateUtil.parse("2022-10-10 23:59:20");
-        DateTime endTime = DateUtil.parse("2022-10-13 00:00:20");
+        DateTime startTime = DateUtil.parse("2022-10-10 17:24:30");
+        DateTime endTime = DateUtil.parse("2022-10-11 15:11:49");
         long days = DateUtil.betweenDay(startTime, endTime, true) + 1;
         for (int i = 0; i < days; i++) {
             if (i == 0) {
