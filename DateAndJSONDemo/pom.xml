@@ -6,11 +6,14 @@
         <artifactId>hanjavademo</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
+
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.it</groupId>
     <artifactId>DateAndJSONDemo</artifactId>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <logback.version>1.1.7</logback.version>

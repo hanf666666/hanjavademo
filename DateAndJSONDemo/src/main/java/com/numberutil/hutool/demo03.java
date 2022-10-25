@@ -1,4 +1,4 @@
-package com.numberutil;
+package com.numberutil.hutool;
 
 import cn.hutool.core.convert.Convert;
 
