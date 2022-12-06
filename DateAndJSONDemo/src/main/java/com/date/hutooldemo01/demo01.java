@@ -19,5 +19,9 @@ public class demo01 {
         String startDateStr=startDate.toString("yyyy-MM-dd 00:00:00");
         System.out.println(yyyy);
         System.out.println(startDateStr);
+
+
+        String endDateTime = DateUtil.offsetDay(DateUtil.date(), -0).toString("yyyy-MM-dd 23:59:59");
+        System.out.println("endDateTime"+endDateTime);
     }
 }
