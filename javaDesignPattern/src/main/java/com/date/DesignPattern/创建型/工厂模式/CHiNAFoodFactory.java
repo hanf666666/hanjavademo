@@ -1,21 +1,22 @@
 package com.date.DesignPattern.创建型.工厂模式;
 
 public class CHiNAFoodFactory implements FoodFactory {
+
     public CHiNAFoodFactory() {
-        System.out.println("?????й?????");
+        System.out.println("中国工厂CHiNAFoodFactory");
     }
 
     public Food makeFood(String foodstr) {
 
-        if (foodstr.equalsIgnoreCase("apple")) {
-            System.out.println("apple???й???????");
+        if (ChinaFoodEnum.apple.name().equals(foodstr)) {
+            System.out.println("中国工厂的apple");
             return new Apple();
-        } else if (foodstr.equalsIgnoreCase("manggu")) {
-            System.out.println("manggu??????");
-            return new UManggu();
+        } else if (ChinaFoodEnum.mangguo.name().equals(foodstr)) {
+            System.out.println("中国工厂的mangguo");
+            return new Mangguo();
         } else {
-            System.out.println("???????????????");
-            throw new RuntimeException("???????????????!!!!");
+            System.out.println("中国工厂还不能生产的"+foodstr);
+            throw new RuntimeException("中国工厂还不能生产的"+foodstr);
         }
 
 
