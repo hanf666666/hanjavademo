@@ -5,8 +5,8 @@ package com.date.DesignPattern.创建型.工厂模式;
 public class MainClass {
     public static void main(String[] args) {
         CHiNAFoodFactory cHiNAFoodFactory = new CHiNAFoodFactory();
-        cHiNAFoodFactory.makeFood(ChinaFoodEnum.apple.name());
-        cHiNAFoodFactory.makeFood(ChinaFoodEnum.mangguo.name());
+        cHiNAFoodFactory.makeFood(cHiNAFoodFactory.apple);
+        cHiNAFoodFactory.makeFood(cHiNAFoodFactory.mangguo);
 
         System.out.println("=======================>");
         USAFoodFactory usaFoodFactory = new USAFoodFactory();
