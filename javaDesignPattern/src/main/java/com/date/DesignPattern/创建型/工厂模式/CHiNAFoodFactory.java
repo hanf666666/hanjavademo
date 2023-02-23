@@ -9,6 +9,7 @@ public class CHiNAFoodFactory implements FoodFactory {
         System.out.println("中国工厂CHiNAFoodFactory");
     }
 
+
     public Food makeFood(String foodstr) {
 
         if (apple.equals(foodstr)) {
