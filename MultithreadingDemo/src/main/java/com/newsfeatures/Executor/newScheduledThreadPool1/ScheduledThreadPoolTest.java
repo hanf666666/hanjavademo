@@ -136,7 +136,8 @@ public class ScheduledThreadPoolTest {
 
         ScheduledExecutorService exe = Executors.newScheduledThreadPool(2);
 
-        System.out.println(sdf.format(new Date()));
+        System.out.println("执行开始时间："+sdf.format(new Date())+"，5s后定时任务执行");
+        System.out.println("开始时延迟5s执行，每3s开始执行一次。以上次任务的开始时间为准");
         //开始时延迟5s执行，每3s开始执行一次。以上次任务的开始时间为准
         exe.scheduleAtFixedRate(new RunnableTask(1), 5, 3, TimeUnit.SECONDS);
 //        15:17:47
