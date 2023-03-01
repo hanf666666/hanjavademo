@@ -2,6 +2,9 @@ package com.date.DesignPattern.创建型.单例模式.懒汉模式;
 
 import java.util.Date;
 
+/**
+ * 双重检测单实例 dcl
+ */
 //单例模式
 public class Singleton {
     private Singleton() {

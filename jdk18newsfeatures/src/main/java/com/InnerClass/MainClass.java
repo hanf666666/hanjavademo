@@ -1,5 +1,7 @@
 package com.InnerClass;
 
+import java.util.ArrayList;
+
 /**
  * to do
  *
@@ -15,5 +17,7 @@ public class MainClass {
         OuterClass.InnerClass innerClass = outerClass.new InnerClass();
 
         System.out.println(outerClass);
+
+        new ArrayList<>();
     }
 }
