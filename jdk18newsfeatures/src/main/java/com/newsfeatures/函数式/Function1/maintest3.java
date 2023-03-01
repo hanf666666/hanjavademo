@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class maintest3 {
     public static void main(String[] args) {
 
-        //简写
+        //简写   (a)->{}就是new了个引用对象
 //        Function<Integer, Integer> toIntegerFunction = (a)->{
 //
 //            System.out.println(a+"=================>");
