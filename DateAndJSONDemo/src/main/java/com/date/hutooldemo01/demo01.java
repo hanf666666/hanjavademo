@@ -23,5 +23,7 @@ public class demo01 {
 
         String endDateTime = DateUtil.offsetDay(DateUtil.date(), -0).toString("yyyy-MM-dd 23:59:59");
         System.out.println("endDateTime"+endDateTime);
+
+        System.out.println(DateUtil.date().getTime());
     }
 }
