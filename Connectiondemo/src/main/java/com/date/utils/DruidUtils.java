@@ -25,7 +25,7 @@ public class DruidUtils {
         Properties pp = new Properties();
         try {
             //获取配置文件的信息
-            pp.load(new FileReader("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\Connectiondemo\\src\\main\\resources\\druid.properties"));
+            pp.load(new FileReader("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\Connectiondemo\\src\\splicingSqlmain\\resources\\druid.properties"));
             // 对数据库连接池对象进行初始化操作.
             ds = DruidDataSourceFactory.createDataSource(pp);
 

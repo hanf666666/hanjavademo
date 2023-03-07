@@ -21,7 +21,7 @@ public class JDBCUtils {
         FileInputStream fileInputStream = null;
         Properties pp = new Properties();
         try {
-            fileInputStream = new FileInputStream("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\Connectiondemo\\src\\main\\resources\\config.properties");
+            fileInputStream = new FileInputStream("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\Connectiondemo\\src\\splicingSqlmain\\resources\\config.properties");
             pp.load(fileInputStream);
             driverClass = pp.getProperty("driverClass");
             url = pp.getProperty("url");

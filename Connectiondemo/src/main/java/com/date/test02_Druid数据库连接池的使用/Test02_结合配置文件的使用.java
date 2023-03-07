@@ -22,7 +22,7 @@ public class Test02_结合配置文件的使用 {
             //conn = JDBCUtils.getConnection();
             //改为: 从数据库连接池获取.
             Properties pp = new Properties();
-            pp.load(new FileReader("src/main/resources/druid.properties"));
+            pp.load(new FileReader("src/splicingSqlmain/resources/druid.properties"));
 
             //A: 创建数据库连接池对象
             //多态
