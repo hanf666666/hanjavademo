@@ -1,0 +1,18 @@
+[
+  "/order/commonParkOrder/export",
+  "/order/commonParkOrder/getOrderDetail",
+  "/order/commonParkOrder/img",
+  "/order/tradeOrder/detail",
+  "/order/longRent/detail",
+  "/finance/statistic/export",
+  "/finance/statistic/detail",
+  "/system/ms/roleSave",
+  "/system/ms/roleUpdate",
+  "/system/ms/roleDelete",
+  "/system/ms/userSave",
+  "/system/ms/userUpdate",
+  "/system/ms/userDelete",
+  "/system/ms/userResetPassword",
+  "/task/export/download",
+  "/task/export/remove"
+]
