@@ -21,8 +21,13 @@ public class demo01 {
         todate = calendar.getTime();
         String yearDate = format.format(todate);
         System.out.println(yearDate);
-
-
+//        30 * 24 * 60 * 60 * 1000*1000 +
+        System.out.println("========"+System.currentTimeMillis());
+        System.out.println("========"+(System.currentTimeMillis()+(30 * 24 * 60 * 60 * 1000)));
+        System.out.println("======3=="+(30 * 24 * 60 * 60 * 1000L));
+        System.out.println("======3=="+(30 * 24 * 60 * 60 * 1000));
+        Date date = new Date(System.currentTimeMillis()+(30 * 24 * 60 * 60 * 1000L) );
+        System.out.println("============"+ format.format(date));
 
 
     }

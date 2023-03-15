@@ -1,5 +1,7 @@
 package com.newsfeatures.线程安全.读写锁;
 
+import cn.hutool.core.date.DateUtil;
+
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,10 +16,11 @@ public class ReentrantReadWriteLockTest {
         public void get() {
             //读锁
             lock.readLock().lock();
-            System.out.println(Thread.currentThread().getName() + "准备读数据!!");
+            System.out.println(DateUtil.date()+ Thread.currentThread().getName() + "准备读数据!!");
             try {
-                Thread.sleep(new Random().nextInt(1000));
-                System.out.println(Thread.currentThread().getName() + "读数据为:" + this.object);
+                Thread.sleep(new Random().nextInt(10000));
+                System.out.println(DateUtil.date()+ Thread.currentThread().getName() + "读数据为:" + this.object);
+                System.out.println();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
@@ -28,12 +31,14 @@ public class ReentrantReadWriteLockTest {
         public void put(Object object) {
             //写锁
             lock.writeLock().lock();
-            System.out.println(Thread.currentThread().getName() + "准备写数据");
+            System.out.println(DateUtil.date()+ Thread.currentThread().getName() + "准备写数据");
 
             try {
-                Thread.sleep(new Random().nextInt(1000));
+                Thread.sleep(new Random().nextInt(10000));
                 this.object = object;
-                System.out.println(Thread.currentThread().getName() + "写数据为" + this.object);
+                System.out.println(DateUtil.date()+ Thread.currentThread().getName() + "写数据为" + this.object);
+                System.out.println();
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
@@ -50,13 +55,13 @@ public class ReentrantReadWriteLockTest {
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
-                    for (int j = 0; j < 5; j++)
+                    for (int j = 0; j < 1; j++)
                         myObject.put(new Random().nextInt(1000));
                 }
             });
         }
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
