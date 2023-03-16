@@ -8,36 +8,42 @@ import java.util.concurrent.atomic.AtomicInteger;
  * to do
  *  该类线程安全 可以不使用volatile可以禁止指令的重排序
  *  https://blog.csdn.net/liangwenmail/article/details/119380136
+ *  Integer 非线程安全
  * @author Hj
  * @date 2023/3/15
  */
-public class StatisticsUtils2 {
-    public static ConcurrentHashMap<String, AtomicInteger> concurrentHashMap = new ConcurrentHashMap();
+public class StatisticsUtils4 {
+    public static ConcurrentHashMap<String, Integer> concurrentHashMap = new ConcurrentHashMap();
 
     public static void addIncrement(String tableName) {
-         AtomicInteger countAtomicInteger  = StatisticsUtils2.concurrentHashMap.get(tableName);
-        if (countAtomicInteger == null) {
-            synchronized (StatisticsUtils2.class) {
-                countAtomicInteger  = StatisticsUtils2.concurrentHashMap.get(tableName);
-                if (countAtomicInteger == null) {
-                    countAtomicInteger = new AtomicInteger();
-                    concurrentHashMap.put(tableName, countAtomicInteger);
-                    countAtomicInteger.getAndIncrement();
+        Integer count  = StatisticsUtils4.concurrentHashMap.get(tableName);
+        if (count == null) {
+            synchronized (StatisticsUtils4.class) {
+                count  = StatisticsUtils4.concurrentHashMap.get(tableName);
+                if (count == null) {
+                    count = 0;
+                    count=count+1;
+                    concurrentHashMap.put(tableName, count);
+
 
                 } else {
-                    countAtomicInteger.getAndIncrement();
+                    count=count+1;
+                    concurrentHashMap.put(tableName, count);
+
 
                 }
             }
         } else {
-            countAtomicInteger.getAndIncrement();
+            count=count+1;
+            concurrentHashMap.put(tableName, count);
+
         }
 
     }
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("aaaaaaaaaaaa=======>1000000");
-        for (int f = 0; f < 150; f++) {
+        for (int f = 0; f < 100; f++) {
             concurrentHashMap = new ConcurrentHashMap();
             ExecutorService executorService = Executors.newFixedThreadPool(100);
             ArrayList<Future> futureArrayList = new ArrayList<>();
@@ -45,8 +51,8 @@ public class StatisticsUtils2 {
                 futureArrayList.add(
                         executorService.submit(() -> {
                             for (int j = 0; j < 10000; j++) {
-                                StatisticsUtils2.addIncrement("aaaaaaaaaaaa");
-                                StatisticsUtils2.addIncrement("bbbbbbbbbbbb");
+                                StatisticsUtils4.addIncrement("aaaaaaaaaaaa");
+                                StatisticsUtils4.addIncrement("bbbbbbbbbbbb");
                             }
 
                         })
@@ -66,7 +72,7 @@ public class StatisticsUtils2 {
             });
 //            System.out.println(concurrentHashMap.size());
             concurrentHashMap.forEach((k, v) -> {
-                System.out.println(k + "=======>" + v.get());
+                System.out.println(k + "=======>" + v);
 
 
             });
