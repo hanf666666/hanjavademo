@@ -19,6 +19,7 @@ public class demo {
         });
         long start = System.currentTimeMillis();
         System.out.println("start = " + start);
+
         Future future = executorService.submit(t);//子线程启动
         try {
             future.get();//需要捕获两种异常
