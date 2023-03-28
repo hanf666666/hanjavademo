@@ -1,5 +1,7 @@
 package com.date;
 
+import cn.hutool.core.text.StrBuilder;
+
 import java.util.Random;
 
 /**
@@ -11,19 +13,10 @@ import java.util.Random;
 public class splicingSqlmain {
     public static void main(String[] args) {
 
-        String sql = "select opo.id,opo.no,opo.plate_no,opo.park_name,opo.park_item_name,opo.phone,opnp.open_id,opnp.user_name,opo.in_type, " +
-                "date_format(opo.start_date, '%Y-%m-%d %H:%i:%s') startDate,a.channel_name inChannelName " +
-                "from order_park_order opo " +
-                "LEFT JOIN (select open_id,user_name,order_park_order_no from order_park_no_plate where is_finish = 1) opnp " +
-                "ON opo.no = opnp.order_park_order_no " +
-                "LEFT JOIN (select id,car_code,in_time,channel_name from api_park_in_callback where in_or_out = 0) a " +
-                "on opo.plate_no = a.car_code and opo.start_date = a.in_time " +
-                "where opo.type = 2 and opo.category = 2  " +
-                "and opo.deleted = 0 " +
-                "and opo.`status` not in (99,95,5,6) ";
-        System.out.println(sql);
-        int i = new Random().nextInt(3);
-        System.out.println(i);
+        String fieldSql = " select rlco.id,rlco.trade_no,rlco.no,rlco.user_name,rlco.phone,rlc.status,rlco.rule_name,rlco.combo_name,rlco.pay_type,rlco.pay_channel,rlco.payable,rlco.discount,rlco.money_pay,rlco.charge_name,rlco.start_time,rlco.end_time,rlco.pay_time,rlco.action,rlco.truck_space,rlco.plate_nos,rlco.park_names,rlco.long_car_id ";
+        StrBuilder bodySql = new StrBuilder(" from roadside_longrent_car_order rlco left join roadside_longrent_car rlc on rlco.long_car_id = rlc.id  ");
+        StrBuilder whereSql = new StrBuilder(" where  rlco.deleted = 0 and rlco.status = 2 ");
+        System.out.println(fieldSql+bodySql+whereSql);
         System.out.println("2303021716341558062".length());
 
 
