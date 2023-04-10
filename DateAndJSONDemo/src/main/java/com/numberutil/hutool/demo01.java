@@ -16,7 +16,7 @@ public class demo01 {
         BigDecimal mul = NumberUtil.mul("22.1111", "22.1111");
        System.out.println(mul.setScale(4, BigDecimal.ROUND_HALF_DOWN));
 
-       //错误方式  new BigDecimal(double)
+       //错误方式  new BigDecimal(double) 用 BigDecimal#valueOf() 方法吧。
        System.out.println(new BigDecimal(2.11116).setScale(4, BigDecimal.ROUND_HALF_DOWN));
        System.out.println(new BigDecimal(2.11115).setScale(4, BigDecimal.ROUND_HALF_UP));
 
