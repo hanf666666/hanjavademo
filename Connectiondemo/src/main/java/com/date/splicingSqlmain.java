@@ -13,10 +13,11 @@ import java.util.Random;
 public class splicingSqlmain {
     public static void main(String[] args) {
 
-        String fieldSql = " select rlco.id,rlco.trade_no,rlco.no,rlco.user_name,rlco.phone,rlc.status,rlco.rule_name,rlco.combo_name,rlco.pay_type,rlco.pay_channel,rlco.payable,rlco.discount,rlco.money_pay,rlco.charge_name,rlco.start_time,rlco.end_time,rlco.pay_time,rlco.action,rlco.truck_space,rlco.plate_nos,rlco.park_names,rlco.long_car_id ";
-        StrBuilder bodySql = new StrBuilder(" from roadside_longrent_car_order rlco left join roadside_longrent_car rlc on rlco.long_car_id = rlc.id  ");
-        StrBuilder whereSql = new StrBuilder(" where  rlco.deleted = 0 and rlco.status = 2 ");
-        System.out.println(fieldSql+bodySql+whereSql);
+        String sql = new StringBuffer().append("SELECT * from (SELECT park_owner_id parkOwnerId,MAX( CASE setting_key WHEN 'ALIPAY_FEE' THEN setting_value ELSE '' END ) alipay_fee,")
+                .append(" MAX( CASE setting_key WHEN 'WECHAT_FEE' THEN setting_value ELSE '' END ) wechat_fee,MAX( CASE setting_key WHEN 'BALANCE_FEE' THEN setting_value ELSE '' END ) balance_fee ")
+                .append(" FROM equipment_park_owner_setting where park_owner_id in (:parkOwnerList) GROUP BY park_owner_id HAVING alipay_fee != '' OR wechat_fee != '' OR balance_fee != '' ) oi ").toString();
+
+        System.out.println(sql);
         System.out.println("2303021716341558062".length());
 
 
