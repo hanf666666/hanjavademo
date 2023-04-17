@@ -6,7 +6,10 @@ import java.util.UUID;
 
 /**
  * to do
- *
+ -Xms32m
+ -Xmx32m
+ -XX:+HeapDumpOnOutOfMemoryError
+ -XX:HeapDumpPath=D:\softwares\study\javaJvm\MemoryAnalyzer-1.12.0.20210602-win32.win32.x86_64\dump_test\1
  * @author Hj
  * @date 2022/1/24
  */

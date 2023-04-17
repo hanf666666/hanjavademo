@@ -8,7 +8,7 @@ import java.util.function.Function;
  * @author Hj
  * @date 2021/12/2
  */
-public class maintest2 {
+public class  {
     public static void main(String[] args) {
         Function<Integer, Integer> toIntegerFunction = (a)->a+1;
         Function<Integer, Integer> backToStringFunction = toIntegerFunction.andThen((a)->a*a);

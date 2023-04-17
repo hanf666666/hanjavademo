@@ -22,6 +22,8 @@ public class demo02 {
         BigDecimal d = new BigDecimal("-0.094").setScale(2, BigDecimal.ROUND_HALF_UP); // -0.09
         BigDecimal e = new BigDecimal("-0.090").setScale(2, BigDecimal.ROUND_HALF_UP); // -0.09
         BigDecimal f = new BigDecimal("-0.098").setScale(2, BigDecimal.ROUND_HALF_UP); // -0.10
+        System.out.println(f+"%");
+
 
 
     }
