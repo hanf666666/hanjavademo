@@ -14,7 +14,7 @@ jstat -gc -t 323903 10000 30
 
  jmap -dump:format=b,file=/root/dump.hprof 1716
 
- 
+ mat 的单位是字节
 
 
 
