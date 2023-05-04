@@ -23,11 +23,18 @@ public class heapMainThreadLocal {
          * Exception in thread "http-nio-8080-exec-1" java.lang.OutOfMemoryError: GC overhead limit exceeded
          */
         List<User> userList =new ArrayList<>();
+        User2 user2 = new User2();
+        List<User2> userList2 =new ArrayList<>();
+        List<User2> userList3 =new ArrayList<>();
+        List<User2> userList4 =new ArrayList<>();
         userListThreadLocal.set(userList);
         int i = 0;
         while (true){
-            System.out.println(i);
             userList.add(new User(i++, UUID.randomUUID().toString()));
+            userList2.add(user2);
+            userList3.add(user2);
+            userList4.add(user2);
         }
+
     }
 }
