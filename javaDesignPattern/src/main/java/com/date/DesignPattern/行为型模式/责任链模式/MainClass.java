@@ -28,7 +28,7 @@ public class MainClass {
         loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
         System.out.println();
         loggerChain.logMessage(AbstractLogger.DEBUG,
-                "This is a debug level information.");
+                "This is Fua debug level information.");
         System.out.println();
         loggerChain.logMessage(AbstractLogger.ERROR,
                 "This is an error information.");
