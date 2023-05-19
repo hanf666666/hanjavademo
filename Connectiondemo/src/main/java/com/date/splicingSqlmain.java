@@ -2,6 +2,8 @@ package com.date;
 
 import cn.hutool.core.text.StrBuilder;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -13,38 +15,18 @@ import java.util.Random;
 public class splicingSqlmain {
     public static void main(String[] args) {
 
-        String settlementBatchSql="SELECT  distinct(`park_id`) FROM  `order_business` WHERE `recon_date` = '' and (`is_settlement` = 1  and  `settlement_status` = 3) or (is_settlement =2  and vouch_settlement_status =1 and vouch_settlement_status = 3)  ";
-        String sql =
-                "SELECT "+
-                        "a.created_dt AS createdDt,"+
-                        "a.phone AS phone,"+
-                        "a.plate_no AS plateNo,"+
-                        "a.park_id AS parkId,"+
-                        "a.park_record_num AS parkRecordNum,"+
-                        "a.no AS no,"+
-                        "a.channel_order AS channelOrder,"+
-                        "a.refund_order AS refundOrder,"+
-                        "a.refund_no AS refundNo,"+
-                        "a.coupon_pay AS couponPay,"+
-                        "a.money_pay AS moneyPay,"+
-                        "a.back_pay AS backPay,"+
-                        "a.dispute_back_pay AS disputeBackPay,"+
-                        "a.channel AS channel,"+
-                        "a.wx_type AS wxType,"+
-                        "a.order_service_type AS orderServiceType,"+
-                        "a.order_status AS orderStatus,"+
-                        "a.transaction_type AS transactionType,"+
-                        "a.order_category AS orderCategory,"+
-                        "a.refund AS refund,"+
-                        "a.order_type AS orderType,"+
-                        "a.pay_time AS payTime,"+
-                        "a.provider_service AS providerService,"+
-                        "b.park_owner_id as parkOwnerId "+
-                        "FROM water_bills_record a "+
-                        "left join equipment_park b "+
-                        "on a.park_id = b.id "+
-                        "WHERE channel in (1,2,3) "+
-                        "AND a.pay_time >= :startDate AND a.pay_time < :endDate ";
+//        StringBuilder sql = new StringBuilder();
+        String sql = "SELECT t.lessThanThirtyMin * 100 / t.countCar AS lessThanThirtyMinPer, \n" +
+                "t.thirtyToSixtyMin * 100 / t.countCar AS thirtyToSixtyMinPer, t.oneToTwoHours * 100 / t.countCar \n" +
+                "AS oneToTwoHoursPer, t.twoToFourHours * 100 / t.countCar AS twoToFourHoursPer, \n" +
+                "t.moreThanFourHours * 100 / t.countCar AS moreThanFourHoursPer FROM ( SELECT SUM(ap.park_carnum) \n" +
+                "AS countCar, SUM( CASE WHEN ap.min_time IN (0, 600) THEN ap.park_carnum ELSE 0 END ) AS \n" +
+                "lessThanThirtyMin, SUM( CASE WHEN ap.min_time IN (1800) THEN ap.park_carnum ELSE 0 END ) AS \n" +
+                "thirtyToSixtyMin, SUM( CASE WHEN ap.min_time IN (3600) THEN ap.park_carnum ELSE 0 END ) AS \n" +
+                "oneToTwoHours, SUM( CASE WHEN ap.min_time IN (7200) THEN ap.park_carnum ELSE 0 END ) AS \n" +
+                "twoToFourHours, SUM( CASE WHEN ap.min_time IN ( 14400, 21600, 28800, 36000, 43200 ) THEN \n" +
+                "ap.park_carnum ELSE 0 END ) AS moreThanFourHours FROM analysis_parktimerate ap \n ) AS t;";
+
 
         System.out.println(sql);
         System.out.println("2303021716341558062".length());

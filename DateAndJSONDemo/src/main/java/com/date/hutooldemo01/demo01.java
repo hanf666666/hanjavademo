@@ -1,6 +1,7 @@
 package com.date.hutooldemo01;
 
 import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 
@@ -25,5 +26,15 @@ public class demo01 {
         System.out.println("endDateTime"+endDateTime);
 
         System.out.println(DateUtil.date().getTime());
+
+        DateTime parse = DateUtil.parse("2022-05-07 00:00:00");
+
+        String yyyy1 = DateUtil.format(parse, "yyyy");
+        System.out.println(yyyy1);
+
+        if ("fasdfas_2022".endsWith(DateUtil.format(parse,"yyyy"))) {
+            System.out.println("fasdfas2022");
+        }
+
     }
 }

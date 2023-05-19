@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>jdk18newsfeatures</module>
+        <module>jdk1dot8newsfeatures</module>
         <module>genericparadigmAndReflex</module>
         <module>mvnClean</module>
         <module>hbase_Set/hbasedemo</module>

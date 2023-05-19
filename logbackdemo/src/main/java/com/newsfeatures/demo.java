@@ -1,5 +1,6 @@
 package com.newsfeatures;
 
+import com.entity.User;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -13,6 +14,7 @@ public class demo {
     public static void main(String[] args) {
 
        log.info("fasdasf");
+       log.info("fasdasf===>{}",new User());
 
     }
 }
