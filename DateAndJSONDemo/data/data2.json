@@ -1,0 +1,538 @@
+[
+  {
+    "id": 728,
+    "systemType": "cloudMsManage",
+    "resourceName": "报表中心",
+    "resourceType": "mod",
+    "visitUrl": "/task/export/page",
+    "sort": 1,
+    "icon": "",
+    "resourceVoList": []
+  },
+  {
+    "id": 635,
+    "systemType": "cloudMsManage",
+    "resourceName": "运营数据",
+    "resourceType": "mod",
+    "visitUrl": "/operationData",
+    "sort": 3,
+    "icon": "",
+    "resourceVoList": [
+      {
+        "id": 644,
+        "systemType": "cloudMsManage",
+        "resourceName": "异常处理记录",
+        "resourceType": "menu",
+        "visitUrl": "/operationData/dealException",
+        "sort": 4,
+        "icon": "",
+        "parentId": 635,
+        "resourceVoList": [
+          {
+            "id": 647,
+            "systemType": "cloudMsManage",
+            "resourceName": "设备告警记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationData/dealException/deviceWarning",
+            "sort": 4,
+            "icon": "",
+            "parentId": 644,
+            "resourceVoList": []
+          },
+          {
+            "id": 646,
+            "systemType": "cloudMsManage",
+            "resourceName": "手动开关闸记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationData/dealException/switchPole",
+            "sort": 4,
+            "icon": "",
+            "parentId": 644,
+            "resourceVoList": []
+          },
+          {
+            "id": 645,
+            "systemType": "cloudMsManage",
+            "resourceName": "纠正车牌记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationData/dealException/correctPlateNum",
+            "sort": 4,
+            "icon": "",
+            "parentId": 644,
+            "resourceVoList": []
+          }
+        ]
+      },
+      {
+        "id": 641,
+        "systemType": "cloudMsManage",
+        "resourceName": "交易记录",
+        "resourceType": "menu",
+        "visitUrl": "/operationData/tradingRecords",
+        "sort": 4,
+        "icon": "",
+        "parentId": 635,
+        "resourceVoList": [
+          {
+            "id": 643,
+            "systemType": "cloudMsManage",
+            "resourceName": "长租交易记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationData/tradingRecords/longRentTrading",
+            "sort": 4,
+            "icon": "",
+            "parentId": 641,
+            "resourceVoList": []
+          },
+          {
+            "id": 642,
+            "systemType": "cloudMsManage",
+            "resourceName": "临停交易记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationData/tradingRecords/temporaryParkTrading",
+            "sort": 4,
+            "icon": "",
+            "parentId": 641,
+            "resourceVoList": []
+          }
+        ]
+      },
+      {
+        "id": 638,
+        "systemType": "cloudMsManage",
+        "resourceName": "停车记录",
+        "resourceType": "menu",
+        "visitUrl": "/operationData/parkRecords",
+        "sort": 4,
+        "icon": "",
+        "parentId": 635,
+        "resourceVoList": [
+          {
+            "id": 640,
+            "systemType": "cloudMsManage",
+            "resourceName": "场内在停??è??",
+            "resourceType": "menu",
+            "visitUrl": "/operationData/parkRecords/insideParkCarsList",
+            "sort": 4,
+            "icon": "",
+            "parentId": 638,
+            "resourceVoList": []
+          },
+          {
+            "id": 639,
+            "systemType": "cloudMsManage",
+            "resourceName": "?????????è??è?°???",
+            "resourceType": "menu",
+            "visitUrl": "/operationData/parkRecords/parkHistorys",
+            "sort": 4,
+            "icon": "",
+            "parentId": 638,
+            "resourceVoList": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 636,
+    "systemType": "cloudMsManage",
+    "resourceName": "è???????????",
+    "resourceType": "mod",
+    "visitUrl": "/parkManage",
+    "sort": 3,
+    "icon": "",
+    "resourceVoList": [
+      {
+        "id": 656,
+        "systemType": "cloudMsManage",
+        "resourceName": "è??è????????",
+        "resourceType": "menu",
+        "visitUrl": "/parkManage/carsManage",
+        "sort": 4,
+        "icon": "",
+        "parentId": 636,
+        "resourceVoList": [
+          {
+            "id": 659,
+            "systemType": "cloudMsManage",
+            "resourceName": "é??????????????",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/carsManage/blackListCar",
+            "sort": 4,
+            "icon": "",
+            "parentId": 656,
+            "resourceVoList": []
+          },
+          {
+            "id": 658,
+            "systemType": "cloudMsManage",
+            "resourceName": "???????????????",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/carsManage/whiteListCar",
+            "sort": 4,
+            "icon": "",
+            "parentId": 656,
+            "resourceVoList": []
+          },
+          {
+            "id": 657,
+            "systemType": "cloudMsManage",
+            "resourceName": "é???§?è????????",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/carsManage/longRentCar",
+            "sort": 4,
+            "icon": "",
+            "parentId": 656,
+            "resourceVoList": []
+          }
+        ]
+      },
+      {
+        "id": 653,
+        "systemType": "cloudMsManage",
+        "resourceName": "设备管理",
+        "resourceType": "menu",
+        "visitUrl": "/parkManage/deviceManage",
+        "sort": 4,
+        "icon": "",
+        "parentId": 636,
+        "resourceVoList": [
+          {
+            "id": 655,
+            "systemType": "cloudMsManage",
+            "resourceName": "设备对讲终端",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/deviceManage/talkbackDevice",
+            "sort": 4,
+            "icon": "",
+            "parentId": 653,
+            "resourceVoList": []
+          },
+          {
+            "id": 654,
+            "systemType": "cloudMsManage",
+            "resourceName": "车牌识别相机",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/deviceManage/identifyCarmera",
+            "sort": 4,
+            "icon": "",
+            "parentId": 653,
+            "resourceVoList": []
+          }
+        ]
+      },
+      {
+        "id": 648,
+        "systemType": "cloudMsManage",
+        "resourceName": "车场配置",
+        "resourceType": "menu",
+        "visitUrl": "/parkManage/parkSetting",
+        "sort": 4,
+        "icon": "",
+        "parentId": 636,
+        "resourceVoList": [
+          {
+            "id": 652,
+            "systemType": "cloudMsManage",
+            "resourceName": "出入口二维码",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/parkSetting/inOutQrCode",
+            "sort": 4,
+            "icon": "",
+            "parentId": 648,
+            "resourceVoList": []
+          },
+          {
+            "id": 651,
+            "systemType": "cloudMsManage",
+            "resourceName": "长租收费规则",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/parkSetting/longRentChargeRule",
+            "sort": 4,
+            "icon": "",
+            "parentId": 648,
+            "resourceVoList": []
+          },
+          {
+            "id": 650,
+            "systemType": "cloudMsManage",
+            "resourceName": "临停收费规则",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/parkSetting/temporaryChargeRule",
+            "sort": 4,
+            "icon": "",
+            "parentId": 648,
+            "resourceVoList": []
+          },
+          {
+            "id": 649,
+            "systemType": "cloudMsManage",
+            "resourceName": "车场运行配置",
+            "resourceType": "menu",
+            "visitUrl": "/parkManage/parkSetting/parkOperationSetting",
+            "sort": 4,
+            "icon": "",
+            "parentId": 648,
+            "resourceVoList": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 738,
+    "systemType": "cloudMsManage",
+    "resourceName": "运营配置",
+    "resourceType": "mod",
+    "visitUrl": "/operationConfig",
+    "sort": 3,
+    "icon": "",
+    "resourceVoList": [
+      {
+        "id": 739,
+        "systemType": "cloudMsManage",
+        "resourceName": "商家管理",
+        "resourceType": "menu",
+        "visitUrl": "/operationConfig/merchantManage",
+        "sort": 1,
+        "icon": "",
+        "parentId": 738,
+        "resourceVoList": [
+          {
+            "id": 743,
+            "systemType": "cloudMsManage",
+            "resourceName": "商户列表",
+            "resourceType": "menu",
+            "visitUrl": "/operationConfig/merchantManage/merchantList",
+            "sort": 1,
+            "icon": "",
+            "parentId": 739,
+            "resourceVoList": []
+          },
+          {
+            "id": 744,
+            "systemType": "cloudMsManage",
+            "resourceName": "商户账号",
+            "resourceType": "menu",
+            "visitUrl": "/operationConfig/merchantManage/merchantAccount",
+            "sort": 2,
+            "icon": "",
+            "parentId": 739,
+            "resourceVoList": []
+          },
+          {
+            "id": 745,
+            "systemType": "cloudMsManage",
+            "resourceName": "余额记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationConfig/merchantManage/balanceRecord",
+            "sort": 3,
+            "icon": "",
+            "parentId": 739,
+            "resourceVoList": []
+          }
+        ]
+      },
+      {
+        "id": 740,
+        "systemType": "cloudMsManage",
+        "resourceName": "优惠券管理",
+        "resourceType": "menu",
+        "visitUrl": "/operationConfig/coupons",
+        "sort": 2,
+        "icon": "",
+        "parentId": 738,
+        "resourceVoList": [
+          {
+            "id": 746,
+            "systemType": "cloudMsManage",
+            "resourceName": "优惠券列表",
+            "resourceType": "menu",
+            "visitUrl": "/operationConfig/coupons/couponsList",
+            "sort": 1,
+            "icon": "",
+            "parentId": 740,
+            "resourceVoList": []
+          },
+          {
+            "id": 747,
+            "systemType": "cloudMsManage",
+            "resourceName": "购买记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationConfig/coupons/changeRecord",
+            "sort": 2,
+            "icon": "",
+            "parentId": 740,
+            "resourceVoList": []
+          },
+          {
+            "id": 748,
+            "systemType": "cloudMsManage",
+            "resourceName": "发放记录",
+            "resourceType": "menu",
+            "visitUrl": "/operationConfig/coupons/provideRecord",
+            "sort": 3,
+            "icon": "",
+            "parentId": 740,
+            "resourceVoList": []
+          }
+        ]
+      },
+      {
+        "id": 741,
+        "systemType": "cloudMsManage",
+        "resourceName": "站点管理",
+        "resourceType": "menu",
+        "visitUrl": "/operationConfig/siteManage",
+        "sort": 3,
+        "icon": "",
+        "parentId": 738,
+        "resourceVoList": [
+          {
+            "id": 796,
+            "systemType": "cloudMsManage",
+            "resourceName": "工作岗管理",
+            "resourceType": "menu",
+            "visitUrl": "/operationConfig/siteManage/jobManage",
+            "sort": 4,
+            "icon": "",
+            "parentId": 741,
+            "resourceVoList": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 637,
+    "systemType": "cloudMsManage",
+    "resourceName": "统计报表",
+    "resourceType": "mod",
+    "visitUrl": "/statistics",
+    "sort": 4,
+    "icon": "",
+    "resourceVoList": [
+      {
+        "id": 660,
+        "systemType": "cloudMsManage",
+        "resourceName": "统计报表",
+        "resourceType": "menu",
+        "visitUrl": "/statistics/report",
+        "sort": 4,
+        "icon": "",
+        "parentId": 637,
+        "resourceVoList": [
+          {
+            "id": 742,
+            "systemType": "cloudMsManage",
+            "resourceName": "交接班报表",
+            "resourceType": "menu",
+            "visitUrl": "/statistics/report/shiftReport",
+            "sort": 3,
+            "icon": "",
+            "parentId": 660,
+            "resourceVoList": []
+          },
+          {
+            "id": 662,
+            "systemType": "cloudMsManage",
+            "resourceName": "车场运营报表",
+            "resourceType": "menu",
+            "visitUrl": "/statistics/report/parkOperationReport",
+            "sort": 4,
+            "icon": "",
+            "parentId": 660,
+            "resourceVoList": []
+          },
+          {
+            "id": 661,
+            "systemType": "cloudMsManage",
+            "resourceName": "财务统计报表",
+            "resourceType": "menu",
+            "visitUrl": "/statistics/report/financeReport",
+            "sort": 4,
+            "icon": "",
+            "parentId": 660,
+            "resourceVoList": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 476,
+    "systemType": "cloudMsManage",
+    "resourceName": "首页",
+    "resourceType": "mod",
+    "visitUrl": "/home",
+    "sort": 14,
+    "icon": "iconicon-test",
+    "resourceVoList": []
+  },
+  {
+    "id": 403,
+    "systemType": "cloudMsManage",
+    "resourceName": "系统设置",
+    "resourceType": "mod",
+    "visitUrl": "/systemSetting",
+    "sort": 18,
+    "icon": "iconsz",
+    "resourceVoList": [
+      {
+        "id": 404,
+        "systemType": "cloudMsManage",
+        "resourceName": "权限设置",
+        "resourceType": "menu",
+        "visitUrl": "/systemSetting/permission",
+        "sort": 1,
+        "icon": "iconqx",
+        "parentId": 403,
+        "resourceVoList": [
+          {
+            "id": 405,
+            "systemType": "cloudMsManage",
+            "resourceName": "角色管理",
+            "resourceType": "menu",
+            "visitUrl": "/systemSetting/permission/role",
+            "sort": 1,
+            "parentId": 404,
+            "resourceVoList": []
+          },
+          {
+            "id": 406,
+            "systemType": "cloudMsManage",
+            "resourceName": "用户管理",
+            "resourceType": "menu",
+            "visitUrl": "/systemSetting/permission/user",
+            "sort": 2,
+            "parentId": 404,
+            "resourceVoList": []
+          }
+        ]
+      },
+      {
+        "id": 663,
+        "systemType": "cloudMsManage",
+        "resourceName": "操作日志",
+        "resourceType": "menu",
+        "visitUrl": "/systemSetting/log",
+        "sort": 4,
+        "icon": "",
+        "parentId": 403,
+        "resourceVoList": [
+          {
+            "id": 664,
+            "systemType": "cloudMsManage",
+            "resourceName": "用户操作日志",
+            "resourceType": "menu",
+            "visitUrl": "/systemSetting/log/userOperation",
+            "sort": 4,
+            "icon": "",
+            "parentId": 663,
+            "resourceVoList": []
+          }
+        ]
+      }
+    ]
+  }
+]

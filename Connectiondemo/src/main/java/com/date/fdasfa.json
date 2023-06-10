@@ -1,0 +1,111 @@
+{
+  "flag": true,
+  "data": {
+    "rentEnd": 1696003199000,
+    "images": [
+      "http://cloudms-manage-bkt-test.oss-cn-beijing.aliyuncs.com/picture/000001/2e38f0bb-c97b45c3/20230607/16/20230607_161044_159.jpg?Expires=1686208157&OSSAccessKeyId=LTAIIycUv6qReilC&Signature=w5yF842LW1SvVqraARMlG7gc4Ac%3D"
+    ],
+    "orderNo": "2306071610471683592",
+    "parkingStage": "222",
+    "parkOrder": {
+      "id": 65268556,
+      "createdBy": 1,
+      "createdDt": "2023-06-07 16:10:47",
+      "updatedBy": 1,
+      "updatedDt": "2023-06-07 16:10:47",
+      "deleted": 0,
+      "checked": null,
+      "linked": {
+        "payNo": ""
+      },
+      "no": "2306071610471683592",
+      "type": 2,
+      "category": 2,
+      "outCategory": null,
+      "phone": null,
+      "modifyType": null,
+      "plateNo": "蒙A6CZ36",
+      "parkId": 51870,
+      "parkName": "******停车场",
+      "parkItemId": null,
+      "parkItemName": "-",
+      "submitDate": null,
+      "startDate": "2023-06-07 16:10:43",
+      "endDate": "2023-06-08 14:09:17",
+      "howLong": 79114732,
+      "payDate": null,
+      "validity": null,
+      "postage": 360,
+      "couponPay": 0,
+      "moneyPay": 0,
+      "advanceCharge": null,
+      "backPay": 0,
+      "status": 0,
+      "username": null,
+      "videoRecordId": null,
+      "picRecordId": null,
+      "inType": null,
+      "parkOwnerId": null,
+      "parkOwnerName": null,
+      "remark": null,
+      "isCleared": 0,
+      "occupyOrderId": null,
+      "forcedTimeoutStatus": null,
+      "inChannelId": "396",
+      "dataFlag": null,
+      "parkType": 20,
+      "cleanPay": null,
+      "plateNoColour": 0,
+      "busiType": null,
+      "thirdPlatformType": null,
+      "parkingStatus": null
+    },
+    "list": [],
+    "rentBegin": 1685289600000,
+    "imgTwo": "",
+    "freeUser": 2,
+    "detail": {
+      "leaveTime": "3",
+      "timeRules": [
+        {
+          "no": 1,
+          "timeName": "时段一",
+          "cappedFee": "",
+          "billModel": "2",
+          "startTime": "00:00",
+          "rules": [
+            {
+              "unitTariff": "3",
+              "unitOfCharge": "60",
+              "cappedFee": "10",
+              "fee": "10",
+              "startTime": "0",
+              "endTime": 12
+            },
+            {
+              "unitTariff": "0.1",
+              "unitOfCharge": "60",
+              "cappedFee": "0.5",
+              "fee": "0.5",
+              "startTime": 12,
+              "endTime": 24
+            }
+          ],
+          "endTime": "23:59",
+          "onceParkFee": ""
+        }
+      ],
+      "carType": "0",
+      "onceParkCycleFee": "1",
+      "topFee": "",
+      "cappedFee": "",
+      "chargeRuleDesc": "11111",
+      "freeTime": "1",
+      "cycleFee": "1",
+      "isCycle": false,
+      "ruleName": "测试123456"
+    },
+    "imgOne": "http://cloudms-manage-bkt-test.oss-cn-beijing.aliyuncs.com/picture/000001/2e38f0bb-c97b45c3/20230607/16/20230607_161044_159.jpg?Expires=1686208157&OSSAccessKeyId=LTAIIycUv6qReilC&Signature=w5yF842LW1SvVqraARMlG7gc4Ac%3D"
+  },
+  "msg": null
+}

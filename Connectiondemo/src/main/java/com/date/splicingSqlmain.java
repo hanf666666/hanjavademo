@@ -16,21 +16,34 @@ public class splicingSqlmain {
     public static void main(String[] args) {
 
 //        StringBuilder sql = new StringBuilder();
-        String sql = "SELECT t.lessThanThirtyMin * 100 / t.countCar AS lessThanThirtyMinPer, \n" +
-                "t.thirtyToSixtyMin * 100 / t.countCar AS thirtyToSixtyMinPer, t.oneToTwoHours * 100 / t.countCar \n" +
-                "AS oneToTwoHoursPer, t.twoToFourHours * 100 / t.countCar AS twoToFourHoursPer, \n" +
-                "t.moreThanFourHours * 100 / t.countCar AS moreThanFourHoursPer FROM ( SELECT SUM(ap.park_carnum) \n" +
-                "AS countCar, SUM( CASE WHEN ap.min_time IN (0, 600) THEN ap.park_carnum ELSE 0 END ) AS \n" +
-                "lessThanThirtyMin, SUM( CASE WHEN ap.min_time IN (1800) THEN ap.park_carnum ELSE 0 END ) AS \n" +
-                "thirtyToSixtyMin, SUM( CASE WHEN ap.min_time IN (3600) THEN ap.park_carnum ELSE 0 END ) AS \n" +
-                "oneToTwoHours, SUM( CASE WHEN ap.min_time IN (7200) THEN ap.park_carnum ELSE 0 END ) AS \n" +
-                "twoToFourHours, SUM( CASE WHEN ap.min_time IN ( 14400, 21600, 28800, 36000, 43200 ) THEN \n" +
-                "ap.park_carnum ELSE 0 END ) AS moreThanFourHours FROM analysis_parktimerate ap \n ) AS t;";
+        StringBuilder sql = new StringBuilder("select no,type,category,out_category,phone,plate_no,park_id,park_name,park_item_id,park_item_name,plate_no_colour," +
+                "start_date,end_date,status,park_type from order_park_order where plate_no=:plateNo  and status in (0,1,2,3,4) and deleted=0 and type = 2 ");
+        Map<String,Object> params = new HashMap<>(3);
+
+        sql.append(" order by start_date desc ");
 
 
-        System.out.println(sql);
-        System.out.println("2303021716341558062".length());
+        System.out.println(sql.toString());
+        String fasdfas = fasdfas();
+        System.out.println(fasdfas);
 
+
+    }
+
+    private static String  fasdfas() {
+        try {
+            System.out.println("2303021716341558062".length());
+            Integer aa=null;
+            aa.longValue();
+            return "222222";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "3333333";
+        } finally {
+            System.out.println("111111111111");
+//            return "1111";
+
+        }
 
     }
 }
