@@ -1,0 +1,53 @@
+{
+  "leaveTime": "1",
+  "timeRules": [
+    {
+      "no": 1,
+      "timeName": "时段一",
+      "cappedFee": "",
+      "billModel": "1",
+      "startTime": "00:00",
+      "endTime":"23:59",
+      "rules": [
+        {
+          "unitOfCharge": "10",
+          "unitTariff": "0.01",
+          "cappedFee": "",
+          "startTime": "0",
+          "endTime": 12,
+          "status": "edit",
+          "index": 0,
+          "fee": 0.72
+        },
+        {
+          "unitOfCharge": "10",
+          "unitTariff": "0.01",
+          "cappedFee": "",
+          "startTime": 12,
+          "endTime": 24,
+          "fee": 0.72
+        }
+      ],
+      "hasSpecial": true,
+      "newEnergy": {
+        "reductionStartTime": "08:00:00",
+        "reductionEndTime": "20:00:00",
+        "ignoreFreeTime": true,
+        "reductionFreeTime": 120,
+        "reductionRate": 50,
+        "manyIgnoreFreeTime": true,
+        "manyReductionFreeTime": 0,
+        "manyReductionRate": 50
+      }
+    }
+  ],
+  "carType": "0",
+  "onceParkCycleFee": "1",
+  "cappedFee": "",
+  "freeTime": "1",
+  "cycleFee": "1",
+  "ruleName": "临停车",
+  "id": 1,
+  "isCycle": false,
+  "ruleChinese": "测试专用资费"
+}

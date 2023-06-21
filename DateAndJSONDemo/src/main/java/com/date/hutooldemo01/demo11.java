@@ -1,9 +1,6 @@
 package com.date.hutooldemo01;
 
-import cn.hutool.core.date.DateField;
-import cn.hutool.core.date.DatePattern;
-import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.date.*;
 
 import java.util.Date;
 
@@ -16,10 +13,13 @@ import java.util.Date;
 public class demo11 {
     public static void main(String[] args) {
 
-        DateTime startTime = DateUtil.parse("2022-11-07 17:24:30");
-        DateTime endTime = DateUtil.parse("2023-02-07 15:11:49");
+        DateTime startTime = DateUtil.parse("2023-02-07 11:11:49");
+        DateTime endTime = DateUtil.parse("2023-02-07 15:11:48");
         System.out.println(startTime.after(endTime));
         System.out.println(startTime.isBefore(endTime));
+
+
+        System.out.println(DateUtil.between(startTime,endTime, DateUnit.HOUR));
 
 
     }
