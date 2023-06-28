@@ -23,9 +23,9 @@ public class demo02 {
         ids2.add(3);
 
 
-        ids.retainAll(ids2);
+        boolean b = ids.retainAll(ids2);
         System.out.println("½»¼¯£º" + ids);
-
+        System.out.println("parkIDs: "+ids+",b: "+b);
 //        System.out.println("²î¼¯£º" + result);
 
 
