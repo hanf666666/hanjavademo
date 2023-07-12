@@ -1,0 +1,26 @@
+<ap>
+    <head>
+        <tr_code>210201</tr_code>
+        <corp_no>0009999842</corp_no>
+        <user_no>00003</user_no>
+        <req_no>73_1689057319376</req_no>
+        <tr_acdt>null</tr_acdt>
+        <tr_time>null</tr_time>
+        <atom_tr_count>1</atom_tr_count>
+        <channel>0</channel>
+        <reserved></reserved>
+    </head>
+    <body>
+        <pay_acno>310069037013004296362</pay_acno>
+        <pay_acname>上海黄浦江科技技术有限公司</pay_acname>
+        <rcv_acno>6214831239552091</rcv_acno>
+        <rcv_bank_name>招商银行重庆分行营业部</rcv_bank_name>
+        <rcv_acname>何杰</rcv_acname>
+        <cur_code>CNY</cur_code>
+        <amt>0.59</amt>
+        <cert_no>73_1689057319376</cert_no>
+        <summary>0.59#0#交行线上测试车场#2023-04-19至2023-07-04</summary>
+        <bank_flag>1</bank_flag>
+    </body>
+</ap>
+

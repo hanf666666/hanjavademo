@@ -21,6 +21,12 @@ public class demo11 {
 
         System.out.println(DateUtil.between(startTime,endTime, DateUnit.HOUR));
         System.out.println(DateUtil.between(startTime,endTime, DateUnit.DAY));
+        DateTime offset = DateUtil.offset(startTime, DateField.DAY_OF_YEAR, 1);
+        System.out.println(DateUtil.parse(offset.toString(DatePattern.NORM_DATE_PATTERN)+" 00:00:00"));
+        String aaa= "0101.zip";
+        System.out.println(aaa.substring(0,aaa.length()-4));
+
+
 
 
     }
