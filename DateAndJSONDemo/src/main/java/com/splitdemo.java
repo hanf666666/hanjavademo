@@ -17,6 +17,7 @@ public class splitdemo {
                 System.out.println(split[i]);
             }else{
                 System.out.print(split[i]+",");
+                throw new RuntimeException("2023-08-09");
             }
 
         }
