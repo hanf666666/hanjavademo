@@ -26,7 +26,7 @@ public class demo02 {
         BigDecimal h1 = new BigDecimal("-0.598").setScale(2, BigDecimal.ROUND_HALF_UP); // -0.10
         BigDecimal h2 = new BigDecimal("1").setScale(2, BigDecimal.ROUND_HALF_UP); // -0.10
 
-        System.out.println(h2.add(h1).setScale(2, BigDecimal.ROUND_HALF_UP));
+        System.out.println(h2.add(h1).setScale(0, BigDecimal.ROUND_HALF_UP));
         System.out.println(h1.longValue());
 
 

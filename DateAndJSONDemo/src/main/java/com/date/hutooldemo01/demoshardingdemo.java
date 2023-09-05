@@ -75,7 +75,7 @@ public class demoshardingdemo {
                  "    'table-name' = 'order_park_order_201707'\n" +
                  "  );";
 
-         DateTime startTime = DateUtil.parse("2017-02-07 15:11:49");
+         DateTime startTime = DateUtil.parse("2016-02-07 15:11:49");
         DateTime endTime = DateUtil.parse("2023-04-07 15:11:49");
         long days = DateUtil.age(startTime, endTime) ;
 //        for (int i = 0; i < days; i++) {
@@ -85,23 +85,31 @@ public class demoshardingdemo {
 //            System.out.println(sql.replaceAll("201707",yyyy+"07"));
 //        }
 
-        for (int i = 0; i < days; i++) {
+//        for (int i = 0; i < days; i++) {
+//            startTime = startTime.offset(DateField.YEAR, 1);
+//            String yyyy = startTime.toString("yyyy");
+//            sql="insert into pre_order_park_order_201701\n" +
+//                    "select *\n" +
+//                    "from\n" +
+//                    "  bigdata005_order_park_order  where created_dt<='2017-06-30 23:59:59' and created_dt>='2017-01-01 00:00:00';";
+//            System.out.println(sql.replaceAll("201707",yyyy+"01").replaceAll("2017",yyyy));
+//            sql="insert into pre_order_park_order_201707\n" +
+//                    "select *\n" +
+//                    "from\n" +
+//                    "  bigdata005_order_park_order where created_dt <='2017-12-30 23:59:59' and created_dt>'2017-06-30 23:59:59';";
+//
+//            System.out.println(sql.replaceAll("201707",yyyy+"07").replaceAll("2017",yyyy));
+////            System.out.println(sql.replaceAll("201707",yyyy+"07"));
+//        }
+
+
+                for (int i = 0; i < days; i++) {
             startTime = startTime.offset(DateField.YEAR, 1);
             String yyyy = startTime.toString("yyyy");
-            sql="insert into pre_order_park_order_201701\n" +
-                    "select *\n" +
-                    "from\n" +
-                    "  bigdata005_order_park_order  where created_dt<='2017-06-30 23:59:59' and created_dt>='2017-01-01 00:00:00';";
-            System.out.println(sql.replaceAll("201707",yyyy+"01").replaceAll("2017",yyyy));
-            sql="insert into pre_order_park_order_201707\n" +
-                    "select *\n" +
-                    "from\n" +
-                    "  bigdata005_order_park_order where created_dt <='2017-12-30 23:59:59' and created_dt>'2017-06-30 23:59:59';";
-
-            System.out.println(sql.replaceAll("201707",yyyy+"07").replaceAll("2017",yyyy));
-//            System.out.println(sql.replaceAll("201707",yyyy+"07"));
+            sql="select count(1) from order_park_order_201701;";
+            System.out.println(sql.replaceAll("201701",yyyy+"01"));
+            System.out.println(sql.replaceAll("201701",yyyy+"07"));
         }
-
 
 
 

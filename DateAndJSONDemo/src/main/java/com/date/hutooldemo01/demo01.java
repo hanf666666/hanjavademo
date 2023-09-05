@@ -15,6 +15,12 @@ import java.text.DateFormat;
  */
 public class demo01 {
     public static void main(String[] args) {
+
+        DateTime parse2= DateUtil.parse("2023-08-26 10:39:38");
+        DateTime dateTime = DateUtil.beginOfDay(parse2);
+        System.out.println(dateTime);
+
+
         String yyyy = DateUtil.date().toString("yyyy-MM-dd 00:00:00");
         DateTime startDate = DateUtil.date().offset(DateField.DAY_OF_YEAR, -1);
         String startDateStr=startDate.toString("yyyy-MM-dd 00:00:00");

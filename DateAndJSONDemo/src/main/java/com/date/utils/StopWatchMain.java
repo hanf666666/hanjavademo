@@ -3,6 +3,10 @@ package com.date.utils;
 
 import cn.hutool.core.date.StopWatch;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * to do
@@ -23,7 +27,18 @@ public class StopWatchMain {
         stopwatch.stop();
 
         System.out.println(stopwatch.prettyPrint());
-
+        System.out.println(stopwatch.prettyPrint(TimeUnit.SECONDS));
+        System.out.println(stopwatch.getLastTaskTimeMillis());
+        String momRatio = String.format("%.2f", (10898 * 1.00 / 10898 - 1) * 100);
+        String momRatio2 = String.format("%.2f", (10898 * 1.0 / 10898 - 1) * 100);
+        System.out.println(momRatio);
+        long l = (long) 1.111;
+        System.out.println(l);
+         l =40425L;
+        String format = NumberFormat.getIntegerInstance(Locale.getDefault()).format(l);
+        System.out.println(format);
+        long l1 = Long.parseLong(format.replaceAll(",",""));
+        System.out.println(l1);
 
         try {
             int i = 1 / 0;
