@@ -1,11 +1,14 @@
 package com.scandemo;
 
+import cn.hutool.core.io.BufferUtil;
 import cn.hutool.core.io.FileUtil;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 /**
  * to do
@@ -37,15 +40,27 @@ public class ScanDemo {
 //                }
 //
 //            });
-
-            stringList.parallelStream().forEach(line -> {
+            HashMap<Integer, String> lineMap = new HashMap<>();
+            for (int i = 0; i < stringList.size(); i++) {
+                String line = stringList.get(i);
                 if (line.contains("utr.balance_change_type")) {
-                    System.out.println(file.getPath());
-                    System.out.println(line);
+                    lineMap.put(i,line);
+                }
+                if (line.contains("ROUND(utr.trade_amount/100,2) tradeAmount")) {
+                    lineMap.put(i,line);
+                }
+                if(lineMap.size()>=2){
+                    Object[] keys = lineMap.keySet().toArray();
+                    if(Math.abs((Integer) keys[0]-(Integer)(keys[1]))<15){
+                        System.out.println(file.getPath());
+                        System.out.println(lineMap.get(keys[0]));
+                        System.out.println(lineMap.get(keys[1]));
+                        lineMap.clear();
+                    }
+
                 }
 
-            });
-
+            }
 
         }
 
