@@ -26,7 +26,19 @@ public class demo11 {
         String aaa= "0101.zip";
         System.out.println(aaa.substring(0,aaa.length()-4));
 
+        System.out.println("=========================================");
+         startTime = DateUtil.parse("2023-01-01 00:00:00");
+         endTime = DateUtil.parse("2023-06-01 15:11:48");
 
+        System.out.println(DateUtil.betweenMonth(startTime,endTime,true));
+        long betweenMonth = DateUtil.betweenMonth(startTime, endTime, true);
+        for (int i = 0; i < betweenMonth; i++) {
+            System.out.println(startTime.toString("yyyy-MM-dd 00:00:00"));
+            DateTime dateTime = DateUtil.offsetMonth(startTime, 1);
+            System.out.println(dateTime.toString("yyyy-MM-dd 00:00:00"));
+            startTime=dateTime;
+
+        }
 
 
     }

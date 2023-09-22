@@ -1,18 +1,18 @@
 {
-  "pageInfo": {
-    "pageCount": 10,
-    "pageIndex": 0,
-    "totalCount": 1
+  "messageDetail": {
+    "currentParkId": 38034,
+    "currentParkName": "郴州市协作路一段",
+    "currentStartDate": "2023-09-14 10:02",
+    "expenseRule": "详询0735-8899520\n核心区域（非严管路段）：\n①收费时段08:00—20:00；\n②单次停车不足30分钟免收停车费，超过30分钟按车辆入场起计算；\n③1.25元/15分钟·泊位，全天封顶40元。具体详见各路段收费公示牌；\n如您长时间停放，建议选择就近停车场停放。\n",
+    "mpOpenid": "o8g4N5KrpRnB0tgFE2QrbnpV9hHQ",
+    "orderParkOrderNo": "2309141002403454939",
+    "phone": "13973512233",
+    "plateNo": "湘LSS009"
   },
-  "pageList": [
-    {
-      "cardType": 1,
-      "id": 1,
-      "name": "套餐1",
-      "parkCardNumber": 1,
-      "periodType": 1,
-      "price": 1,
-      "status": 1
-    }
-  ]
+  "task": {
+    "pushModel": "PUSH_NOW",
+    "pushScale": "ORDINARY",
+    "taskId": 107,
+    "taskType": "WXCHAT"
+  }
 }
