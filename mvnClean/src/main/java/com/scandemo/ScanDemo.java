@@ -34,7 +34,7 @@ public class ScanDemo {
         for (File file : files) {
             List<String> stringList = FileUtil.readLines(file, Charset.defaultCharset());
 //            stringList.parallelStream().forEach(line->{
-//                if(line.contains("utr.balance_change_type")){
+//                if(line.contains("opo.occupy_order_id IS NULL")){
 //                    System.out.println(file.getPath());
 //                    System.out.println(line);
 //                }
@@ -43,10 +43,10 @@ public class ScanDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("utr.balance_change_type")) {
+                if (line.contains("update order_third_detail set")) {
                     lineMap.put(i,line);
                 }
-                if (line.contains("ROUND(utr.trade_amount/100,2) tradeAmount")) {
+                if (line.contains("trade_no in")) {
                     lineMap.put(i,line);
                 }
                 if(lineMap.size()>=2){
