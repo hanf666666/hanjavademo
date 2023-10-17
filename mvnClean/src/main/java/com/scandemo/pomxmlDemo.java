@@ -1,6 +1,5 @@
 package com.scandemo;
 
-import cn.hutool.core.io.BufferUtil;
 import cn.hutool.core.io.FileUtil;
 
 import java.io.File;
@@ -8,7 +7,6 @@ import java.io.FileFilter;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 /**
  * to do
@@ -16,15 +14,15 @@ import java.util.Set;
  * @author Hj
  * @date 2021/8/6
  */
-public class ScanDemo {
+public class pomxmlDemo {
 
     public static void main(String[] args) {
 
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                if (pathname.getName().indexOf("xml") > -1 || pathname.getName().indexOf("java") > -1) {
+                if (pathname.getName().indexOf("xml") > -1 ) {
                     return true;
                 } else {
                     return false;
@@ -43,10 +41,10 @@ public class ScanDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("SUM(j.parkingNumber) AS parkingNumber")) {
+                if (line.contains("com.baomidou")) {
                     lineMap.put(i,line);
                 }
-                if (line.contains("reserve_actual_time")) {
+                if (line.contains("mybatis-plus-boot-starter")) {
                     lineMap.put(i,line);
                 }
                 if(lineMap.size()>=2){

@@ -12,20 +12,26 @@ import java.util.List;
  */
 public class demo02 {
     public static void main(String[] args) {
-        List<Integer> ids=new ArrayList<>();
-        ids.add(1);
-        ids.add(3);
-        ids.add(5);
+        List<Integer> ids1=new ArrayList<>();
+        ids1.add(1);
+        ids1.add(3);
+        ids1.add(5);
 
         List<Integer> ids2=new ArrayList<>();
         ids2.add(1);
         ids2.add(2);
-        ids2.add(3);
+//        ids2.add(3);
 
+        // 使用HashSet求差集
+        HashSet<Integer> set1 = new HashSet<>(ids1);
+        set1.removeAll(ids2);
+        // 使用HashSet求差集
+        HashSet<Integer> set2 = new HashSet<>(ids2);
+        set2.removeAll(ids1);
+        // 输出结果
+        System.out.println("差集结果：" + set1);
+        System.out.println("差集结果：" + set2);
 
-        boolean b = ids.retainAll(ids2);
-        System.out.println("交集：" + ids);
-        System.out.println("parkIDs: "+ids+",b: "+b);
 //        System.out.println("差集：" + result);
 
 

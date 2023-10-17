@@ -20,17 +20,25 @@ public class splicingSqlmain2 {
         Integer c = null;
         Boolean flag = false;
         // a*b 的结果是 int 类型，那么 c 会强制拆箱成 int 类型，抛出 NPE 异常
-        Integer result=(flag? a*b : c);
+//        Integer result=(flag? a*b : c);
 //        Integer result=(flag? new Integer(a*b) : c);
 //        Integer result=a*b;
 
 
 //        String aa= "{\"id\":9,\"list\":[{\"advancedConfig\":true,\"advancedConfigList\":[{\"billingTimeFee\":300,\"billingTimeUnit\":240,\"endTime\":240,\"startTime\":0,\"topFee\":300},{\"billingTimeFee\":100,\"billingTimeUnit\":60,\"endTime\":720,\"startTime\":240}],\"fee\":\"\",\"freeTime\":15,\"hasEx\":\"Y\",\"offTime\":30,\"special\":{\"newEnergy\":{\"ignoreFreeTime\":true,\"manyIgnoreFreeTime\":true,\"manyReductionFreeTime\":0,\"manyReductionRate\":50,\"reductionEndTime\":\"20:00:00\",\"reductionFreeTime\":120,\"reductionRate\":50,\"reductionStartTime\":\"08:00:00\"}},\"timeE\":\"20:00:00\",\"timeS\":\"08:00:00\",\"topPrice\":\"\",\"type\":\"time\"}],\"name\":\"遂宁资费分时段免费\",\"postageRuleChinese\":\"①单次停车不足15分钟免收停车费。\\n②超过15分钟，前4小时收费3元；超过4小时，每增加1小时加收1元，不足1小时按1小时计费。\\n③收费时段8:00——20:00，每日8:00开始重新计费。\\n④新能源车每日免首2小时停车优惠，超过2小时，停车费减半收取。\\n\",\"setting\":1,\"topFee\":\"\"}";
-        String value="SELECT SUM(ait.today_income)/100 AS incomeTrendValue,DATE_FORMAT(ait.report_date,'%c月%d日') AS incomeTrendTime FROM \n" +
-                "analysis_income_trend ait WHERE report_date >='"+
-                "GROUP BY ait.report_date ORDER BY ait.report_date";
+        String fieldsSql = " s.settlement_no,ep.name as parkOwnerName,e.`name` as parkNames,s.account_period,s.settlement_count,s.settlement_amount,s.settlement_status,s.start_time,s.end_time,(CASE WHEN epd.setting_value in (1,2,3) THEN '自动结算'  ELSE '手动结算' END ) clearType , epd2.setting_value as bankCode,t.created_dt as transeferSuccessDt,tr.receipt_date,tr.receipt_number,tr.receipt_serial_no ";
+        StringBuffer mainSql = new StringBuffer(
+                " FROM " + " settlement_batch s "
+                        + "   LEFT JOIN transfer_payment_record_status t ON s.settlement_no = t.settlement_no and t.step_status =4 "
+                        + "   LEFT JOIN transfer_payment_record tr ON t.serial_no = tr.serial_no "
+                        + "   LEFT JOIN equipment_park e ON s.park_id = e.id "
+                        + " LEFT JOIN equipment_park_owner ep ON s.park_owner_id=ep.id  "
+                        + "  LEFT JOIN equipment_park_owner_setting epd ON ep.id = epd.park_owner_id   AND epd.setting_key = 'pay_date_type'  "
+                        + "  LEFT JOIN equipment_park_owner_setting epd2 ON ep.id = epd2.park_owner_id   AND epd2.setting_key = 'bankCode' "
+                        + " WHERE "
+                        + " 1=1  ");;
 
-        String s = value.replaceAll("]]>", "")
+        String s = mainSql.toString().replaceAll("]]>", "")
                 .replaceAll("CDATA", "")
                 .replaceAll("<!\\[\\[", "");
         System.out.println(s);
