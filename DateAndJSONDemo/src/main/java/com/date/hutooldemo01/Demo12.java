@@ -1,0 +1,40 @@
+package com.date.hutooldemo01;
+
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUnit;
+import cn.hutool.core.date.DateUtil;
+
+/**
+ * to do
+ *
+ * @author Hj
+ * @date 2023/11/3
+ */
+public class Demo12 {
+    public static void main(String[] args) {
+
+        DateTime startTime = DateUtil.parse("2023-08-03 00:00:00");
+//        DateTime endTime = DateUtil.parse("2024-03-27 00:00:00");
+//        long between = DateUtil.between(startTime, endTime, DateUnit.DAY);
+//        long wokerDay=0L;
+//        for (long i = 0; i < between; i++) {
+//            DateTime offset = startTime.offset(DateField.DAY_OF_YEAR, 1);
+//            if(!DateUtil.isWeekend(offset)){
+//                ++wokerDay;
+//            }
+//            if(wokerDay==80+4){
+//                System.out.println(offset);
+//            }
+//        }
+
+
+        String yyyyMM = startTime.toString("yyyyMM");
+        String yyyy =startTime.toString("yyyy");
+        System.out.println((yyyy+"07").compareTo(yyyyMM));
+        yyyyMM=(yyyyMM).compareTo(yyyy+"07")>=0?yyyy+"07":yyyy+"01";
+        System.out.println(yyyyMM);
+
+
+    }
+}

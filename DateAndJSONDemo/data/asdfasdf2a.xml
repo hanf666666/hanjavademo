@@ -1,0 +1,24 @@
+<ap>
+    <head>
+        <tr_code>210201</tr_code>
+        <corp_no>0010027838</corp_no>
+        <req_no>131_1697525098208</req_no>
+        <serial_no>2011000420231017144082369240</serial_no>
+        <ans_no>
+
+        </ans_no>
+        <next_no>
+
+        </next_no>
+        <tr_acdt>20231017</tr_acdt>
+        <tr_time>144459</tr_time>
+        <ans_code>0</ans_code>
+        <ans_info>
+
+        </ans_info>
+        <particular_code>0000</particular_code>
+        <particular_info>交易成功</particular_info>
+        <atom_tr_count>1</atom_tr_count>
+        <reserved></reserved>
+    </head>
+</ap>

@@ -1,6 +1,5 @@
 package com.scandemo;
 
-import cn.hutool.core.io.BufferUtil;
 import cn.hutool.core.io.FileUtil;
 
 import java.io.File;
@@ -8,7 +7,6 @@ import java.io.FileFilter;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 /**
  * to do
@@ -16,7 +14,7 @@ import java.util.Set;
  * @author Hj
  * @date 2021/8/6
  */
-public class ScanDemo {
+public class ScanDemosimple {
 
     public static void main(String[] args) {
 
@@ -32,6 +30,10 @@ public class ScanDemo {
             }
         });
         for (File file : files) {
+//            if(file.getPath().contains("HomeMapper")){
+//                System.out.println(file.getPath());
+//            }
+
             List<String> stringList = FileUtil.readLines(file, Charset.defaultCharset());
 //            stringList.parallelStream().forEach(line->{
 //                if(line.contains("opo.occupy_order_id IS NULL")){
@@ -40,24 +42,11 @@ public class ScanDemo {
 //                }
 //
 //            });
-            HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("plate_no like")) {
-                    lineMap.put(i,line);
-                }
-                if (line.contains("province_city_area")) {
-                    lineMap.put(i,line);
-                }
-                if(lineMap.size()>=2){
-                    Object[] keys = lineMap.keySet().toArray();
-                    if(Math.abs((Integer) keys[0]-(Integer)(keys[1]))<15){
-                        System.out.println(file.getPath());
-                        System.out.println(lineMap.get(keys[0]));
-                        System.out.println(lineMap.get(keys[1]));
-                        lineMap.clear();
-                    }
-
+                if (line.contains("analysis_parktimerate")) {
+                    System.out.println(file.getPath());
+                    System.out.println(line);
                 }
 
             }
