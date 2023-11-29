@@ -14,5 +14,6 @@ import java.time.LocalDateTime;
 public class Student {
     private String name;
     private LocalDateTime curDateTime;
+    private Data2 data2;
 
 }

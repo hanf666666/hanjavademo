@@ -13,6 +13,8 @@ import java.util.HashMap;
 public class demo01 {
     public static void main(String[] args) {
         final HashMap<String, Object> stringObjectHashMap = new HashMap<>();
+        System.out.println("º«");
+
         stringObjectHashMap.put("name", "hanjing");
         stringObjectHashMap.put("age", 22);
         stringObjectHashMap.put("utilDate", "2022/12/1");

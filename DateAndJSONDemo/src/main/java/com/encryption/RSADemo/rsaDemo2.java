@@ -20,7 +20,7 @@ public class rsaDemo2 {
         String PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcc5WJ+hNvGYuGot2DqxabPGE3BQODeuH0NntAi4DTranH8IVPi48oPSt6gSYoT6q8hcV6WF00xJ5FOE3sT3jRYwzUVcTz5NbTpjEdSYAhaAV1ZNnuHtUBBpGJ/9WjoAgw50Assydhm3iNSCCL+XviaNmOqFz1pImoyJQnzw9HYQIDAQAB";
 
         RSA rsa = new RSA(PRIVATE_KEY, PUBLIC_KEY);
-        System.out.println("sadfa你好");
+        System.out.println("你好");
         //私钥加密，公钥解密
         byte[] encrypt2 = rsa.encrypt(StrUtil.bytes("sadfa你好", CharsetUtil.CHARSET_GBK), KeyType.PrivateKey);
         String encode = Base64.encode(encrypt2);

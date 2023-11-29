@@ -21,14 +21,16 @@ public class demo01 {
         // DateUtil.parse(value)
         String jsonStr="{\n" +
                 "  \"name\": \"hanjing\",\n" +
-                "  \"curDateTime\": \"2022-01-01T00:00\"\n" +
+                "  \"data2\": { \"name222\":\"hanjing\"},\n" +
+                "  \"curDateTime\": \"2022-01-01T00:00:00\"\n" +
                 "}";
-//        final Student student = JSONUtil.toBean(jsonStr, Student.class,false);
-//        System.out.println(JSONUtil.parse(student));
-        System.out.println(DateUtil.parse("2022-01-01T00:00:00"));
+        System.out.println(jsonStr);
+        final Student student = JSONUtil.toBean(jsonStr, Student.class,false);
+        System.out.println(JSONUtil.parse(student));
+//        System.out.println(DateUtil.parse("2022-01-01T00:00:00"));
 
 
-        Student student=null;
+//        Student student=null;
         System.out.println(student.toString());
         System.out.println(student.toString());
 
