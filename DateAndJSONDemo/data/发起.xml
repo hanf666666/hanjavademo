@@ -1,9 +1,9 @@
 <ap>
     <head>
         <tr_code>210201</tr_code>
-        <corp_no>0010027838</corp_no>
-        <user_no>00005</user_no>
-        <req_no>131_1697525098208</req_no>
+        <corp_no>0009999842</corp_no>
+        <user_no>00003</user_no>
+        <req_no>null_1702529363549</req_no>
         <tr_acdt>null</tr_acdt>
         <tr_time>null</tr_time>
         <atom_tr_count>1</atom_tr_count>
@@ -11,15 +11,15 @@
         <reserved></reserved>
     </head>
     <body>
-        <pay_acno>500500301013002217327</pay_acno>
-        <pay_acname>重庆盘古美天物联网科技有限公司</pay_acname>
-        <rcv_acno>6221805630000811403</rcv_acno>
-        <rcv_bank_name>中国邮政储蓄银行国庆南路鸿燕支行</rcv_bank_name>
-        <rcv_acname>魏锋</rcv_acname>
+        <pay_acno>310069037013004296362</pay_acno>
+        <pay_acname>上海黄浦江科技技术有限公司</pay_acname>
+        <rcv_acno>0902001400000676</rcv_acno>
+        <rcv_bank_name>贵州银行兴仁支行</rcv_bank_name>
+        <rcv_acname>贵州恒创投资开发有限公司</rcv_acname>
         <cur_code>CNY</cur_code>
-        <amt>9.94</amt>
-        <cert_no>131_1697525098208</cert_no>
-        <summary>9.94#0.06#null#2023-09-03至2023-09-03</summary>
+        <amt>3699.00</amt>
+        <cert_no>null_1702529363550</cert_no>
+        <summary>3699.00#0.00#兴仁市仁政家园#2022-04-23至2023-07-27</summary>
         <bank_flag>1</bank_flag>
     </body>
 </ap>

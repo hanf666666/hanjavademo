@@ -8,6 +8,9 @@ package com.date;
  */
 public class crulMain {
     public static void main(String[] args) {
+        Object object = 1;
+        System.out.println(object.equals("1"));
+
         String curl="curl \"http://test1managegateway.meitianiot.com/api/cloudMsManage/v1/park/runConfig/listParkByUser\" ^\n" +
                 "  -X \"POST\" ^\n" +
                 "  -H \"Accept: */*\" ^\n" +
