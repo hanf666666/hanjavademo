@@ -10,8 +10,16 @@ public class trycatchfinally {
     public static void main(String[] args) {
 
 
-        String extracted = extracted();
-        System.out.println(extracted);
+        String extracted = null;
+        try {
+            extracted = extracted();
+        } catch (Exception e) {
+            System.out.println("Íâ²ã");
+           e.printStackTrace();
+        } finally {
+            System.out.println(extracted);
+        }
+
     }
 
     private static String extracted() {
@@ -21,12 +29,13 @@ public class trycatchfinally {
             int i1 = 1 / i;
         } catch (Exception e) {
             System.out.println("catch");
-
+            e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
             System.out.println("finally");
-            return "finally";
+//            return "finally";
         }
+        return "½á¹û";
 
     }
 }
