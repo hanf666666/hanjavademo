@@ -2,6 +2,9 @@ package com.date.DesignPattern.结构型.适配器模式.默认适配器模式;
 
 import java.io.File;
 
+/**
+ * 文件变更
+ */
 public interface FileAlterationListener {
     void onStart(final FileAlterationObserver observer);
     void onDirectoryCreate(final File directory);

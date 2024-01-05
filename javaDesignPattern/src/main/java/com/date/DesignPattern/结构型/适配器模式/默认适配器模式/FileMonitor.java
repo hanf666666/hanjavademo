@@ -6,18 +6,17 @@ public class FileMonitor extends FileAlterationListenerAdaptor {
     @Override
     public void onDirectoryCreate(File directory) {
         super.onDirectoryCreate(directory);
-        System.out.println("???????");
+        // 文件创建
+        //doSomething()
+        System.out.println("doSomething()");
     }
 
-    @Override
-    public void onDirectoryChange(File directory) {
-        super.onDirectoryChange(directory);
-        System.out.println("??????");
+
+    public void onFileDelete(final File file) {
+        // 文件删除
+        //doSomething();
+        System.out.println("doSomething()");
     }
 
-    @Override
-    public void onDirectoryDelete(File directory) {
-        super.onDirectoryDelete(directory);
-        System.out.println("??????");
-    }
+
 }

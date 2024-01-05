@@ -1,6 +1,7 @@
 package com.date.DesignPattern.结构型.适配器模式.对象适配器模式;
 
 // 毫无疑问，首先，这个适配器肯定需要 implements Duck，这样才能当做鸭来用
+//背景:我们让cock要Duck呱呱叫
 public class CockAdapter implements Duck {
 
     Cock cock;
