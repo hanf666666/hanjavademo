@@ -1,4 +1,4 @@
-package com.scandemo;
+package com.scandemo.Migrate;
 
 import cn.hutool.core.io.FileUtil;
 

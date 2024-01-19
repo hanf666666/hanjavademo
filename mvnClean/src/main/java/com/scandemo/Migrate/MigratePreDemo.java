@@ -1,4 +1,4 @@
-package com.scandemo;
+package com.scandemo.Migrate;
 
 import cn.hutool.core.io.FileUtil;
 
@@ -14,14 +14,14 @@ import java.util.List;
  * @author Hj
  * @date 2024/1/9
  */
-public class MigrateProDemo {
+public class MigratePreDemo {
     public static void main(String[] args) {
 
-        String srcFileName="application-yun.properties";
-        String dedfileName="application-txprod.properties";
+        String srcFileName="application-k8spre.properties";
+        String dedfileName="application-txpre.properties";
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\BossManage\\meisoo-bossmanage-service\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
@@ -55,15 +55,17 @@ public class MigrateProDemo {
                         // 修改每一行的内容，这里只是一个简单的示例，你可以根据需要进行修改
                         String modifiedLine = line.replace("fasdfasdfasdfasd", "fasdfasdfasdfasd");
 //                         modifiedLine = line.replace("mysql-service.dev.svc.cluster.local", "10.50.254.22");
-                        //mysql
-                        modifiedLine = modifiedLine.replace("rm-2ze1u8696xk73k9o2.mysql.rds.aliyuncs.com", "10.50.255.15:3306");
-                        //mongo
-                        modifiedLine = modifiedLine.replace("mongodb://db_log:Jj89757***@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/db_log", "spring.data.mongodb.uri=mongodb://db_log:l3W!Fh!8TNwQ@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log");
-                        //redis
-                        modifiedLine = modifiedLine.replace("r-2ze3cb178c631624.redis.rds.aliyuncs.com", "10.50.255.23");
-                        modifiedLine = modifiedLine.replace("spring.redis.password=DyhkQazBs989", "spring.redis.password=ZDzNIwcG8wVCkeO1");
-                        //kafka
-                        modifiedLine = modifiedLine.replace("172.17.134.26:9092,172.17.134.27:9092,172.17.134.28:9092", "10.50.254.4:9092");
+                        // mysql
+                         modifiedLine = modifiedLine.replace("rm-2zeo71tq83aq0381u.mysql.rds.aliyuncs.com", "10.50.254.15:3306");
+                         //mongo
+//                        modifiedLine = modifiedLine.replace("spring.data.mongodb.uri=mongodb://mongo-svc.test1.svc.cluster.local:27017/log_db", "spring.data.mongodb.uri=mongodb://db_log:Cb6JFb5HNt@@U2A*@mongo-svc.test.svc.cluster.local:27018/db_log");
+                         modifiedLine = modifiedLine.replace("mongodb://db_log:Jj89757***@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:l3W!Fh!8TNwQ@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/db_log?authSource=admin&replicaSet=cmgo-pksm3i0f_0");
+                         //redis
+                         modifiedLine = modifiedLine.replace("r-2zef7cf6dadbdf74.redis.rds.aliyuncs.com", "10.50.254.8");
+                         modifiedLine = modifiedLine.replace("spring.redis.password=Dy&hk78Qaz$98", "spring.redis.password=DyhkQazBs989");
+                         //kafka
+                         modifiedLine = modifiedLine.replace("172.17.134.26:9092,172.17.134.27:9092,172.17.134.28:9092", "10.50.254.4:9092");
+
 //                        modifiedLine = modifiedLine.replace("spring.datasource.username=meisooWr", "spring.datasource.username=root");
 //                        modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
 //                        modifiedLine = modifiedLine.replace("spring.datasource.primary.password=RmNzM2MjNiYmMzMWMwNTMT", "spring.datasource.primary.password=password");

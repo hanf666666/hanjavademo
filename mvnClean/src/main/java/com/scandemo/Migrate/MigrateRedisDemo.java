@@ -1,4 +1,4 @@
-package com.scandemo;
+package com.scandemo.Migrate;
 
 import cn.hutool.core.io.FileUtil;
 
@@ -14,15 +14,18 @@ import java.util.List;
  * @author Hj
  * @date 2024/1/9
  */
-public class MigrateDevDemo {
+public class MigrateRedisDemo {
     public static void main(String[] args) {
 
+        String srcFileName="application-k8spre.properties";
+        String dedfileName="application-txpre.properties";
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\BossManage\\meisoo-bossmanage-service\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                if (pathname.getName().indexOf("application-k8sdev.properties") > -1) {
+                if (pathname.getName().indexOf(srcFileName) > -1) {
                     return true;
                 } else {
                     return false;
@@ -31,9 +34,9 @@ public class MigrateDevDemo {
         });
         for (File file : files) {
             Path source = Paths.get(file.getPath());
-            Path destination = Paths.get(file.getParent()+"//application-txdev.properties");
+            Path destination = Paths.get(file.getParent()+"//"+dedfileName);
             destination.toFile().delete();
-            destination = Paths.get(file.getParent()+"//application-txdev.properties");
+            destination = Paths.get(file.getParent()+"//"+dedfileName);
             try {
                 System.out.println(file.getPath());
                 System.out.println(file.getParent());
@@ -52,15 +55,17 @@ public class MigrateDevDemo {
                         // 修改每一行的内容，这里只是一个简单的示例，你可以根据需要进行修改
                         String modifiedLine = line.replace("fasdfasdfasdfasd", "fasdfasdfasdfasd");
 //                         modifiedLine = line.replace("mysql-service.dev.svc.cluster.local", "10.50.254.22");
-//                         modifiedLine = modifiedLine.replace("mysql-service.dev.svc.cluster.local", "10.50.254.22");
-                         modifiedLine = modifiedLine.replace("spring.data.mongodb.uri=mongodb://mongo-svc.dev.svc.cluster.local:27017/log_db", "spring.data.mongodb.uri=mongodb://db_log:0ai0kA!BM14flpxk@mongo-svc.dev.svc.cluster.local:27017/db_log");
-//                         modifiedLine = modifiedLine.replace("mongo-svc.dev.svc.cluster.local", "10.50.254.22");
-//                         modifiedLine = modifiedLine.replace("redis-service.dev.svc.cluster.local", "10.50.254.22");
-//                         modifiedLine = modifiedLine.replace("kafka-service.dev.svc.cluster.local", "kafka-service.dev.svc.cluster.local");
-                         modifiedLine = modifiedLine.replace("spring.datasource.username=meisooWr", "spring.datasource.username=root");
-                         modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
-                         modifiedLine = modifiedLine.replace("spring.datasource.primary.password=gzYzExYjQxMjNlNWJkNjED", "spring.datasource.primary.password=password");
-                         modifiedLine = modifiedLine.replace("spring.datasource.password=Us9891@qazWSX", "spring.datasource.password=password");
+                         modifiedLine = modifiedLine.replace("rm-2zeo71tq83aq0381u.mysql.rds.aliyuncs.com", "10.50.254.15:3306");
+                        modifiedLine = modifiedLine.replace("spring.data.mongodb.uri=mongodb://mongo-svc.test1.svc.cluster.local:27017/log_db", "spring.data.mongodb.uri=mongodb://db_log:Cb6JFb5HNt@@U2A*@mongo-svc.test.svc.cluster.local:27018/db_log");
+                        modifiedLine = modifiedLine.replace("test1", "test");
+                         modifiedLine = modifiedLine.replace("mongodb://db_log:Jj89757***@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:l3W!Fh!8TNwQ@10.50.254.110:27017/db_log");
+                         modifiedLine = modifiedLine.replace("r-2zef7cf6dadbdf74.redis.rds.aliyuncs.com", "10.50.254.8");
+                         modifiedLine = modifiedLine.replace("spring.redis.password=Dy&hk78Qaz$98", "spring.redis.password=DyhkQazBs989");
+                         modifiedLine = modifiedLine.replace("172.17.134.26:9092,172.17.134.27:9092,172.17.134.28:9092", "10.50.254.4:9092");
+//                        modifiedLine = modifiedLine.replace("spring.datasource.username=meisooWr", "spring.datasource.username=root");
+//                        modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
+//                        modifiedLine = modifiedLine.replace("spring.datasource.primary.password=RmNzM2MjNiYmMzMWMwNTMT", "spring.datasource.primary.password=password");
+//                        modifiedLine = modifiedLine.replace("spring.datasource.password=RmNzM2MjNiYmMzMWMwNTMT", "spring.datasource.password=password");
 //                         modifiedLine = modifiedLine.replace("eureka-0.eureka.dev.svc.cluster.local", "eureka-0.eureka.dev.svc.cluster.local");
                         writer.write(modifiedLine);
                         writer.newLine(); // 写入一个新行
