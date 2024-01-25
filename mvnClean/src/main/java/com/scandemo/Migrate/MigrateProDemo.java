@@ -59,6 +59,7 @@ public class MigrateProDemo {
 //                         modifiedLine = line.replace("mysql-service.dev.svc.cluster.local", "10.50.254.22");
                         //mysql
                         modifiedLine = modifiedLine.replace("rm-2ze1u8696xk73k9o2.mysql.rds.aliyuncs.com", "10.50.255.15:3306");
+
                         //mongo 预发都是腾讯云,生产除了redis,mongodb,hbase,都是腾讯云
 //                        modifiedLine = modifiedLine.replace("mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin");
 //                        modifiedLine = modifiedLine.replace("mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin");
