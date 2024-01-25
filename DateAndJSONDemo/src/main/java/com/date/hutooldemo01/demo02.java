@@ -1,6 +1,7 @@
 package com.date.hutooldemo01;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.extra.spring.SpringUtil;
 
 import java.util.Calendar;
 
@@ -12,7 +13,6 @@ import java.util.Calendar;
  */
 public class demo02 {
     public static void main(String[] args) {
-
         for (int month = 1; month <13 ; month++) {
             System.out.println(month+"ÔÂ·Ý"+countWorkDay(2022, month));
         }

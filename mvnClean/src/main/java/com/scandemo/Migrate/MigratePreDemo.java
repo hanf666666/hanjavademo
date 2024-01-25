@@ -21,7 +21,8 @@ public class MigratePreDemo {
         String dedfileName="application-txpre.properties";
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-activities\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\BossManage\\meisoo-bossmanage-service\\", new FileFilter() {
             @Override
@@ -61,9 +62,11 @@ public class MigratePreDemo {
                          //mongo
 //                        modifiedLine = modifiedLine.replace("spring.data.mongodb.uri=mongodb://mongo-svc.test1.svc.cluster.local:27017/log_db", "spring.data.mongodb.uri=mongodb://db_log:Cb6JFb5HNt@@U2A*@mongo-svc.test.svc.cluster.local:27018/db_log");
                          modifiedLine = modifiedLine.replace("mongodb://db_log:Jj89757***@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:l3W!Fh!8TNwQ@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/db_log?authSource=admin&replicaSet=cmgo-pksm3i0f_0");
+                         modifiedLine = modifiedLine.replace("mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/clearing_plat", "mongodb://clearing_plat_user:CwQ5yCWpLP@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/clearing_plat?replicaSet=cmgo-pksm3i0f_0&authSource=admin");
                          //redis
                          modifiedLine = modifiedLine.replace("r-2zef7cf6dadbdf74.redis.rds.aliyuncs.com", "10.50.254.8");
                          modifiedLine = modifiedLine.replace("spring.redis.password=Dy&hk78Qaz$98", "spring.redis.password=DyhkQazBs989");
+                         modifiedLine = modifiedLine.replace("redisson.password=Dy&hk78Qaz$98", "redisson.password=DyhkQazBs989");
                          //kafka
                          modifiedLine = modifiedLine.replace("172.17.134.26:9092,172.17.134.27:9092,172.17.134.28:9092", "10.50.254.4:9092");
 

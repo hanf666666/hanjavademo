@@ -19,7 +19,8 @@ public class MigrateDevDemo {
 
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-activities\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getName().indexOf("application-k8sdev.properties") > -1) {
@@ -53,10 +54,13 @@ public class MigrateDevDemo {
                         String modifiedLine = line.replace("fasdfasdfasdfasd", "fasdfasdfasdfasd");
 //                         modifiedLine = line.replace("mysql-service.dev.svc.cluster.local", "10.50.254.22");
 //                         modifiedLine = modifiedLine.replace("mysql-service.dev.svc.cluster.local", "10.50.254.22");
+                        //mongo
                          modifiedLine = modifiedLine.replace("spring.data.mongodb.uri=mongodb://mongo-svc.dev.svc.cluster.local:27017/log_db", "spring.data.mongodb.uri=mongodb://db_log:0ai0kA!BM14flpxk@mongo-svc.dev.svc.cluster.local:27017/db_log");
 //                         modifiedLine = modifiedLine.replace("mongo-svc.dev.svc.cluster.local", "10.50.254.22");
+                        //redis
 //                         modifiedLine = modifiedLine.replace("redis-service.dev.svc.cluster.local", "10.50.254.22");
 //                         modifiedLine = modifiedLine.replace("kafka-service.dev.svc.cluster.local", "kafka-service.dev.svc.cluster.local");
+                        //mysql
                          modifiedLine = modifiedLine.replace("spring.datasource.username=meisooWr", "spring.datasource.username=root");
                          modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
                          modifiedLine = modifiedLine.replace("spring.datasource.primary.password=gzYzExYjQxMjNlNWJkNjED", "spring.datasource.primary.password=password");

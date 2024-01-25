@@ -1,5 +1,7 @@
 package com.date.执行顺序研究1;
 
+import java.util.Map;
+
 /**
  * 静态代码块超级优先
  * 本类代码块优先构造
@@ -7,7 +9,9 @@ package com.date.执行顺序研究1;
  * 普通方法访问,对象最近原则
  */
 public class ZhuMain {
+
     public static void main(String[] args) {
+        Map<String, String> sortedFileStoreList = FileStoreUtil.sortedFileStoreList;
         System.out.println("=========  Fua Fua = new Zib();======================================");
         Fua a = new Zib();
         a.statica1();
