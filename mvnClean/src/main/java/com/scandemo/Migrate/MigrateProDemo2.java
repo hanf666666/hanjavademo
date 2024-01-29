@@ -14,15 +14,15 @@ import java.util.List;
  * @author Hj
  * @date 2024/1/9
  */
-public class MigrateProDemo {
+public class MigrateProDemo2 {
     public static void main(String[] args) {
 
         String srcFileName="application-yun.properties";
         String dedfileName="application-txprod.properties";
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
 //            List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
-//                List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-activities\\", new FileFilter() {
+                List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-activities\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\BossManage\\meisoo-bossmanage-service\\", new FileFilter() {
             @Override
@@ -61,17 +61,17 @@ public class MigrateProDemo {
                         modifiedLine = modifiedLine.replace("rm-2ze1u8696xk73k9o2.mysql.rds.aliyuncs.com", "10.50.255.15:3306");
 
                         //mongo 预发都是腾讯云,生产除了redis,mongodb,hbase,都是腾讯云
-                        modifiedLine = modifiedLine.replace("mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin");
-                        modifiedLine = modifiedLine.replace("mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/clearing_plat", "mongodb://clearing_plat_user:0NeaEjjEdqTuot@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/clearing_plat?replicaSet=cmgo-elcc0tif_0&authSource=admin");
+//                        modifiedLine = modifiedLine.replace("mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin");
+//                        modifiedLine = modifiedLine.replace("mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log", "mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin");
 
                         //redis 预发都是腾讯云,生产除了redis,mongodb,hbase,都是腾讯云
 
-                        modifiedLine = modifiedLine.replace("r-2ze3cb178c631624.redis.rds.aliyuncs.com", "10.50.255.23");
-                        modifiedLine = modifiedLine.replace("spring.redis.password=DyhkQazBs989", "spring.redis.password=ZDzNIwcG8wVCkeO1");
-                        modifiedLine = modifiedLine.replace("redisson.password=DyhkQazBs989", "spring.redis.password=ZDzNIwcG8wVCkeO1");
+//                        modifiedLine = modifiedLine.replace("r-2ze3cb178c631624.redis.rds.aliyuncs.com", "10.50.255.23");
+//                        modifiedLine = modifiedLine.replace("spring.redis.password=DyhkQazBs989", "spring.redis.password=ZDzNIwcG8wVCkeO1");
+//                        modifiedLine = modifiedLine.replace("redisson.password=DyhkQazBs989", "spring.redis.password=ZDzNIwcG8wVCkeO1");
 
                         //kafka
-                        modifiedLine = modifiedLine.replace("172.17.134.45:9092,172.17.134.46:9092,172.17.134.47:9092", "10.50.254.4:9092");
+                        modifiedLine = modifiedLine.replace("172.17.134.26:9092,172.17.134.27:9092,172.17.134.28:9092", "10.50.254.4:9092");
 
 //                        modifiedLine = modifiedLine.replace("spring.datasource.username=meisooWr", "spring.datasource.username=root");
 //                        modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
