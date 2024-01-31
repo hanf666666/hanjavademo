@@ -18,8 +18,8 @@ public class MigrateDevDemo {
     public static void main(String[] args) {
 
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\yun\\meisoo-appmanage-activity-service\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\yun\\meisoo-appmanage-activity-service\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
@@ -65,6 +65,13 @@ public class MigrateDevDemo {
                          modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
                          modifiedLine = modifiedLine.replace("spring.datasource.primary.password=gzYzExYjQxMjNlNWJkNjED", "spring.datasource.primary.password=password");
                          modifiedLine = modifiedLine.replace("spring.datasource.password=Us9891@qazWSX", "spring.datasource.password=password");
+
+
+                        //file.store.default.upload.type TencentCOS
+                        if(line.contains("file.store.default.upload.type")){
+                            modifiedLine ="file.store.default.upload.type=TencentCOS";
+                        }
+
 //                         modifiedLine = modifiedLine.replace("eureka-0.eureka.dev.svc.cluster.local", "eureka-0.eureka.dev.svc.cluster.local");
                         writer.write(modifiedLine);
                         writer.newLine(); // 写入一个新行

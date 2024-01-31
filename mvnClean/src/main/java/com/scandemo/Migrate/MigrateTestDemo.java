@@ -79,6 +79,10 @@ public class MigrateTestDemo {
                         modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
                         modifiedLine = modifiedLine.replace("spring.datasource.primary.password=RmNzM2MjNiYmMzMWMwNTMT", "spring.datasource.primary.password=password");
 
+                        //file.store.default.upload.type TencentCOS
+                        if(line.contains("file.store.default.upload.type")){
+                            modifiedLine ="file.store.default.upload.type=TencentCOS";
+                        }
 
 //                         modifiedLine = modifiedLine.replace("eureka-0.eureka.dev.svc.cluster.local", "eureka-0.eureka.dev.svc.cluster.local");
                         writer.write(modifiedLine);

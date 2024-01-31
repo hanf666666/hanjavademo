@@ -1,4 +1,4 @@
-package com;
+package com.ossdemo;
 
 /**
  * to do
@@ -8,17 +8,38 @@ package com;
  */
 public class demo01 {
     public static void main(String[] args) {
-        //datecenter
-//        String alitest = "boss-manage-bkt-test";
-//        String aliProd = "boss-manage-bkt";
-//        String txtest = "boss-manage-test-1320652165";
-//        String txProd = "boss-manage-bkt-1320652165";
+//        clearing-plat-bkt
+//        String alitest = "clearing-plat-bkt-test";
+//        String aliProd = "clearing-plat-bkt";
+//        String txtest = "clearing-plat-test-1320652165";
+//        String txProd = "clearing-plat-bkt-1320652165";
+
 
         //datecenter
-        String alitest = "close-park-bkt-test";
-        String aliProd = "close-park-bkt";
-        String txtest = "close-park-test-1320652165";
-        String txProd = "close-park-bkt-1320652165";
+        String alitest = "boss-manage-bkt-test";
+        String aliProd = "boss-manage-bkt";
+        String txtest = "boss-manage-test-1320652165";
+        String txProd = "boss-manage-bkt-1320652165";
+
+        //openapi
+//        String alitest = "close-park-bkt-test";
+//        String aliProd = "close-park-bkt";
+//        String txtest = "close-park-test-1320652165";
+//        String txProd = "close-park-bkt-1320652165";
+
+//seller-coupon-bkt-test …Ãº“»Ø
+//                String alitest = "seller-coupon-bkt-test";
+//        String aliProd = "seller-coupon-bkt";
+//        String txtest = "seller-coupon-test-1320652165";
+//        String txProd = "seller-coupon-bkt-1320652165";
+
+
+
+
+
+
+
+
 
 
 

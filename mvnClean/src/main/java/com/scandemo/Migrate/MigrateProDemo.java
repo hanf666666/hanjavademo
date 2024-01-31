@@ -20,7 +20,7 @@ public class MigrateProDemo {
         String srcFileName="application-yun.properties";
         String dedfileName="application-txprod.properties";
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\CloudMsManage\\", new FileFilter() {
 //            List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
 //                List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-activities\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
@@ -72,6 +72,11 @@ public class MigrateProDemo {
 
                         //kafka
                         modifiedLine = modifiedLine.replace("172.17.134.45:9092,172.17.134.46:9092,172.17.134.47:9092", "10.50.254.4:9092");
+
+                        //file.store.default.upload.type TencentCOS
+                        if(line.contains("file.store.default.upload.type")){
+                            modifiedLine ="file.store.default.upload.type=TencentCOS";
+                        }
 
 //                        modifiedLine = modifiedLine.replace("spring.datasource.username=meisooWr", "spring.datasource.username=root");
 //                        modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");

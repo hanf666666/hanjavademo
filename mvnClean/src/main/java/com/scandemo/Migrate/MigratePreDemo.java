@@ -70,6 +70,13 @@ public class MigratePreDemo {
                          //kafka
                          modifiedLine = modifiedLine.replace("172.17.134.26:9092,172.17.134.27:9092,172.17.134.28:9092", "10.50.254.4:9092");
 
+
+                        //file.store.default.upload.type TencentCOS
+                        if(line.contains("file.store.default.upload.type")){
+                            modifiedLine ="file.store.default.upload.type=TencentCOS";
+                        }
+
+
 //                        modifiedLine = modifiedLine.replace("spring.datasource.username=meisooWr", "spring.datasource.username=root");
 //                        modifiedLine = modifiedLine.replace("spring.datasource.primary.username=mslc", "spring.datasource.primary.username=root");
 //                        modifiedLine = modifiedLine.replace("spring.datasource.primary.password=RmNzM2MjNiYmMzMWMwNTMT", "spring.datasource.primary.password=password");
