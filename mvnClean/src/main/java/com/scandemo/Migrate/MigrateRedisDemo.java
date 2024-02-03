@@ -14,6 +14,7 @@ import java.util.List;
  * @author Hj
  * @date 2024/1/9
  */
+@Deprecated
 public class MigrateRedisDemo {
     public static void main(String[] args) {
 

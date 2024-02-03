@@ -71,7 +71,7 @@ public class MigrateProDemo {
                         modifiedLine = modifiedLine.replace("redisson.password=DyhkQazBs989", "spring.redis.password=ZDzNIwcG8wVCkeO1");
 
                         //kafka
-                        modifiedLine = modifiedLine.replace("172.17.134.45:9092,172.17.134.46:9092,172.17.134.47:9092", "10.50.254.4:9092");
+                        modifiedLine = modifiedLine.replace("172.17.134.45:9092,172.17.134.46:9092,172.17.134.47:9092", "10.50.255.28:9092");
 
                         //file.store.default.upload.type TencentCOS
                         if(line.contains("file.store.default.upload.type")){
