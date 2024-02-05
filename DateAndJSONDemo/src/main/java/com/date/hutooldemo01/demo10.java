@@ -14,13 +14,23 @@ import java.util.Date;
 public class demo10 {
     public static void main(String[] args) {
 
+
+        DateTime startTime = DateUtil.parse("2024-01-01 00:11:49");
+        DateTime endTime = DateUtil.parse("2024-01-31 00:12:00");
+        long days = DateUtil.betweenDay(startTime, endTime, true) + 1;
+        for (int i = 0; i < days; i++) {
+            System.out.println("('"+startTime.toString(DatePattern.NORM_DATE_PATTERN)+"'),");
+            startTime = startTime.offset(DateField.DAY_OF_YEAR, 1);
+
+        }
+        /*
         DateTime startTime = DateUtil.parse("2023-02-07 15:11:49");
         DateTime endTime = DateUtil.parse("2023-04-07 15:11:49");
         long days = DateUtil.betweenDay(startTime, endTime, true) + 1;
         for (int i = 0; i < days; i++) {
             startTime = startTime.offset(DateField.DAY_OF_YEAR, 1);
             System.out.println("('"+startTime.toString(DatePattern.NORM_DATE_PATTERN)+"'),");
-        }
+        }*/
 
     }
 
