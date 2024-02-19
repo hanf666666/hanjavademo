@@ -15,7 +15,7 @@ public class demo04 {
     public static void main(String[] args) {
 //        CsvReader reader = CsvUtil.getReader();
 //        communicationsBankReconciliationDTOList = reader.read(ResourceUtil.getReader(response.getFilePath() + response.getFileName(), CharsetUtil.CHARSET_GBK), CommunicationsBankReconciliationDTO.class);
-        ExcelReader reader = ExcelUtil.getReader("aaaa.xlsx",1);
+        ExcelReader reader = ExcelUtil.getReader("bbbb.xlsx",1);
 //        List<List<Object>> read = reader.read();
         List<List<Object>> read = reader.read(1,128);
 //        List<PlateDTO> read = reader.read(0,128,PlateDTO.class);
