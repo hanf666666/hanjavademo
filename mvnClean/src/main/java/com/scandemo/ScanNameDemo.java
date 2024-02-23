@@ -39,7 +39,7 @@ public class ScanNameDemo {
                 String line = stringList.get(i);
 //                if (line.contains("spring.application.name")) {
                 if (!file.getPath().contains("meisoo-manage-gateway-server")
-                        &&line.contains("MEISOO-CITY-SUPERVICE-PLAT-SERVICE")) {
+                        &&line.contains("MEISOO-CLOSE-PARKMANAGE-SERVICE")) {
                     System.out.println(file.getPath());
                     System.out.println(line);
                 }
