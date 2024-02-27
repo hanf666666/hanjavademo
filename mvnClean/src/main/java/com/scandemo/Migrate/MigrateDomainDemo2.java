@@ -18,7 +18,8 @@ public class MigrateDomainDemo2 {
     public static void main(String[] args) {
 
 
-        String srcFileName3="application-txpre.properties";
+//        String srcFileName3="application-txpre.properties";
+        String srcFileName3="application-txprod.properties";
 
 
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
@@ -44,7 +45,10 @@ public class MigrateDomainDemo2 {
             try {
                 contentList = Files.readAllLines(file.toPath());
                 contentList.forEach(line->{
-                    if (line.contains("http://beta")) {
+                    if (line.contains("http://beta")
+                            ||line.contains("http://api")
+                            ||(line.contains("meitianiot")&&!line.contains("http://tx"))
+                    ) {
                         System.out.println(file.getPath() + " === " + line);
                     }
                 });
