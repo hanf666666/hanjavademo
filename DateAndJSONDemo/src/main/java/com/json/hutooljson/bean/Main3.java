@@ -18,9 +18,12 @@ public class Main3 {
         Result<Student> studentResult = Result.success(111, "返回错误", student);
         String str = JSON.toJSONString(studentResult);
         System.out.println("str===="+str);
-        //要用JSONUtil不要用BeanUtil 无法解析
+        //要用JSONUtil不要用BeanUtil 无法解析(都没发解析)
 //        Result bean = BeanUtil.toBean(str, new Result<Student>().getClass());
+        //泛型无法解析
         Result bean = JSONUtil.toBean(str, new Result<Student>().getClass());
+//         Result<Student> result=null;
+//        Result bean = JSONUtil.toBean(str, Result.class);
         System.out.println("bean===="+bean);
     }
 }
