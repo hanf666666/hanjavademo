@@ -1,0 +1,18 @@
+{
+  "plateNo": "¼ªJJJJJJ",
+  "parkingCode": "37942",
+  "billID": "2403281018406039928",
+  "payType": 102,
+  "payStatus": 1,
+  "paidType": 2,
+  "billTime": "2024-03-28 10:19:44",
+  "shouldPay": 2,
+  "actualPay": 2,
+  "dealTime": "2024-03-28 10:19:52",
+  "orderCode": "4200002177202403281726469279",
+  "discountList": [],
+  "discountAmount": 0,
+  "plateColor": 1,
+  "accessID": "TONGca51b02cbec132c0",
+  "requestId": 21005533
+}

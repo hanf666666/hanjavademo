@@ -1,64 +1,56 @@
 {
-  "leaveTime": "15",
-  "timeRules": [
+  "parkCode": "TDZN/103116P14682",
+  "serviceId": "sync.enter.in.record",
+  "action": null,
+  "dataItems": [
     {
-      "no": 1,
-      "timeName": "Ê±¶ÎÒ»",
-      "cappedFee": "",
-      "billModel": "2",
-      "startTime": "08:00",
-      "rules": [
-        {
-          "unitTariff": "1",
-          "unitOfCharge": "30",
-          "cappedFee": "",
-          "fee": 48,
-          "index": 0,
-          "startTime": "0",
-          "endTime": 24,
-          "status": "edit"
-        }
-      ],
-      "endTime": "20:00",
-      "onceParkFee": ""
-    },
-    {
-      "no": 2,
-      "timeName": "Ê±¶Î¶þ",
-      "cappedFee": "5",
-      "billModel": "2",
-      "startTime": "20:00",
-      "rules": [
-        {
-          "unitTariff": "1",
-          "unitOfCharge": "30",
-          "cappedFee": "5",
-          "fee": "5",
-          "startTime": "0",
-          "endTime": "24"
-        }
-      ],
-      "endTime": "08:00",
-      "onceParkFee": ""
+      "plateNumber": "ÏæLLW079",
+      "plateColorTxt": "À¶",
+      "carType": 8,
+      "enterTime": "2024-03-26 17:09:10",
+      "entrance": "³µ¿â1Èë¿Ú",
+      "carSubType": 81,
+      "carStatus": 1,
+      "enterOpId": 3,
+      "enterOpame": "222",
+      "remainParkNum": 471,
+      "totalParkNum": 600,
+      "recognizeType": 2,
+      "enterPic": "http://88_da_a0_0_2f_2d.tdzntech.com:9898/ftpdir/pic/Recognize/20240326/192.168.2.113_2024032617091071603_2654.jpg",
+      "enterPicSmall": "http://88_da_a0_0_2f_2d.tdzntech.com:9898/ftpdir/pic/Recognize/20240326/192.168.2.113_2024032617091071603_2654_M.jpg",
+      "enterPicSsl": "https://88_da_a0_0_2f_2d.tdzntech.com:9696/ftpdir/pic/Recognize/20240326/192.168.2.113_2024032617091071603_2654.jpg",
+      "enterPicSmallSsl": "https://88_da_a0_0_2f_2d.tdzntech.com:9696/ftpdir/pic/Recognize/20240326/192.168.2.113_2024032617091071603_2654_M.jpg",
+      "inChannelid": "1",
+      "recordNo": "C57B7235242645FAB1EEF8E682D9A630",
+      "recordId": 119034,
+      "groupId": 43,
+      "groupUuid": "10S1SD73LE0CWNBJ16XIZIM1M05FKP6U",
+      "groupName": "206",
+      "inMac": "88_da_a0_0_2f_2d",
+      "visitorTime": null,
+      "ticketNo": null,
+      "trigger": 0,
+      "workspaceIp": "192.168.2.150",
+      "isportmapping": 0,
+      "routerip": "192.168.1.1",
+      "routerport": "80",
+      "hardwareUuid": "8B1B14C7BF9B11D3A67B021875CD22A8",
+      "cplx": "02",
+      "jckbh": "1",
+      "jckmc": "1",
+      "zxd": "99",
+      "cb": "",
+      "clys": "255",
+      "sfwc": "1",
+      "bcbz": "1"
     }
   ],
-  "carType": "0",
-  "onceParkCycleFee": "1",
-  "validateNewEnergy": 1,
-  "cappedFee": "29",
-  "freeTime": "10",
-  "cycleFee": "1",
-  "ruleName": "",
-  "id": 1,
-  "reductionRule": {
-    "newEnergyPlatePrefix": "Óå,¾©,½ò,»¦,¼½,Ô¥,ÔÆ,ÁÉ,ºÚ,Ïæ,Íî,Â³,ÐÂ,ËÕ,Õã,¸Ó,¶õ,¹ð,¸Ê,½ú,ÃÉ,ÉÂ,¼ª,Ãö,¹ó,ÔÁ,Çà,²Ø,´¨,Äþ,Çí,Ê¹,Áì,¹Ò,Ñ§,¾¯,¸Û,°Ä",
-    "firstPercent": "50",
-    "removeFreeParkingTime": "1",
-    "firstFreeParkingTime": "120",
-    "startTime": "08:00",
-    "endTime": "20:00",
-    "FreeParkingTime": "1",
-    "percent": "50",
-    "firstRemoveFreeParkingTime": "1"
-  }
+  "opt": "222",
+  "clientId": "TDZN/103116P14682_192.168.2.150",
+  "mac": "88_da_a0_0_2f_2d",
+  "uuid": "a5b48833-1e89-48e9-aba3-7b96df0eb19e",
+  "code": 1,
+  "msg": null,
+  "timestamp": "2024-03-26 17:09:11",
+  "transType": 0
 }

@@ -1,0 +1,33 @@
+{
+  "channelOrder": "4200002177202403281726469279",
+  "parkOwnerCode": "MEISOO",
+  "payChannel": 90,
+  "payTerminalType": 260,
+  "payType": 70,
+  "sceneInfo": {
+    "parkInfo": {
+      "parkingFeeInfo": {
+        "chargeDetails": [
+          {
+            "chargeRule": "{\"holidayStatus\":0,\"id\":120,\"list\":[{\"advancedConfig\":true,\"advancedConfigList\":[{\"billingTimeFee\":2,\"billingTimeUnit\":60,\"endTime\":720,\"startTime\":0,\"topFee\":1500},{\"billingTimeFee\":2,\"billingTimeUnit\":60,\"endTime\":1440,\"startTime\":720,\"topFee\":2500}],\"fee\":\"\",\"freeTime\":1,\"hasEx\":\"Y\",\"hasTopEx\":\"Y\",\"offTime\":10,\"timeE\":\"23:59:59\",\"timeS\":\"00:00:00\",\"topPrice\":\"25\",\"type\":\"time\"}],\"name\":\"²âÊÔ×Ê·Ñtest\",\"postageRuleChinese\":\"00000\",\"setting\":1,\"topFee\":\"\"}",
+            "endDate": "2024-03-28 10:19:53",
+            "fee": 2,
+            "startDate": "2024-03-28 10:18:41",
+            "type": 0
+          }
+        ],
+        "endDate": "2024-03-28 10:19:53",
+        "orderNo": "2403281018406039928",
+        "parkId": 37942,
+        "parkingFee": 2,
+        "plateNo": "¼ªJJJJJJ",
+        "platformType": 0,
+        "posUserId": 1811,
+        "startDate": "2024-03-28 10:18:41",
+        "type": 2
+      }
+    },
+    "sceneType": 18
+  },
+  "totalFee": 2
+}
