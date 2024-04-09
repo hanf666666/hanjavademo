@@ -23,8 +23,8 @@ public class MigrateMongoprodDemo2 {
         String srcFileName4="application-txprod.properties";
 
         //????????????????ß÷???????? ????????????
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
             //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\yun\\meisoo-appmanage-activity-service\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-order\\", new FileFilter() {
             //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
@@ -53,8 +53,14 @@ public class MigrateMongoprodDemo2 {
                         System.out.println(file.getPath());
                     }
                     String updatedContent = null;
-                    updatedContent = line.replace( "mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin","mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log");
-                    updatedContent = updatedContent.replace("mongodb://clearing_plat_user:0NeaEjjEdqTuot@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/clearing_plat?replicaSet=cmgo-elcc0tif_0&authSource=admin","mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/clearing_plat");
+                    //txªª∞¢¿Ô
+//                    updatedContent = line.replace( "mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin","mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log");
+//                    updatedContent = updatedContent.replace("mongodb://clearing_plat_user:0NeaEjjEdqTuot@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/clearing_plat?replicaSet=cmgo-elcc0tif_0&authSource=admin","mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/clearing_plat");
+//
+                    //∞¢¿Ôªªtx
+                    updatedContent = line.replace( "mongodb://db_log:l3W!Fh!8TNwQ@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/db_log","mongodb://db_log:kuYk1Sp#k5pCP8E!@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/db_log?replicaSet=cmgo-elcc0tif_0&authSource=admin");
+                    updatedContent = updatedContent.replace("mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2ce8dce5181b433290.mongodb.rds.aliyuncs.com:3717/clearing_plat","mongodb://clearing_plat_user:0NeaEjjEdqTuot@10.50.255.49:27017,10.50.255.21:27017,10.50.255.45:27017/clearing_plat?replicaSet=cmgo-elcc0tif_0&authSource=admin");
+
 
                     newContentList.add(updatedContent);
                 }
