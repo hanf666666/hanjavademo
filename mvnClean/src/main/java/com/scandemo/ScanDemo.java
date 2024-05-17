@@ -43,10 +43,10 @@ public class ScanDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("plate_no like")) {
+                if (line.contains("parking_inbound")) {
                     lineMap.put(i,line);
                 }
-                if (line.contains("province_city_area")) {
+                if (line.contains("parking_inbound")) {
                     lineMap.put(i,line);
                 }
                 if(lineMap.size()>=2){

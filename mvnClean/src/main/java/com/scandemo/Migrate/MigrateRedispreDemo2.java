@@ -27,8 +27,8 @@ public class MigrateRedispreDemo2 {
 //        String srcFileName4="application-txprod.properties";
 
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\ClearingPlat\\", new FileFilter() {
             //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\yun\\meisoo-appmanage-activity-service\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-order\\", new FileFilter() {
             //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
@@ -55,10 +55,15 @@ public class MigrateRedispreDemo2 {
                     // 处理每一行内容
              String updatedContent = null;
 //                    //redis
-                    updatedContent = line.replace("10.50.254.8","r-2zef7cf6dadbdf74.redis.rds.aliyuncs.com");
-                    updatedContent = updatedContent.replace("spring.redis.password=DyhkQazBs989","spring.redis.password=Dy&hk78Qaz$98");
-                    updatedContent = updatedContent.replace("redisson.password=DyhkQazBs989","redisson.password=Dy&hk78Qaz$98" );
-                   newContentList.add(updatedContent);
+//                    updatedContent = line.replace("10.50.254.8","r-2zef7cf6dadbdf74.redis.rds.aliyuncs.com");
+//                    updatedContent = updatedContent.replace("spring.redis.password=DyhkQazBs989","spring.redis.password=Dy&hk78Qaz$98");
+//                    updatedContent = updatedContent.replace("redisson.password=DyhkQazBs989","redisson.password=Dy&hk78Qaz$98" );
+
+                    updatedContent = line.replace("r-2zef7cf6dadbdf74.redis.rds.aliyuncs.com","10.50.254.8");
+                    updatedContent = updatedContent.replace("spring.redis.password=Dy&hk78Qaz$98","spring.redis.password=DyhkQazBs989");
+                    updatedContent = updatedContent.replace("redisson.password=Dy&hk78Qaz$98","redisson.password=DyhkQazBs989" );
+
+                    newContentList.add(updatedContent);
                 }
                 FileUtil.writeUtf8Lines(newContentList, file);
 

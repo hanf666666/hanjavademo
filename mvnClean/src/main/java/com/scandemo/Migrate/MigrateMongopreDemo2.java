@@ -53,8 +53,11 @@ public class MigrateMongopreDemo2 {
                         System.out.println(file.getPath());
                     }
                     String updatedContent = null;
-                    updatedContent = line.replace( "mongodb://db_log:l3W!Fh!8TNwQ@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/db_log?authSource=admin&replicaSet=cmgo-pksm3i0f_0","mongodb://db_log:Jj89757***@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/db_log");
-                    updatedContent = updatedContent.replace("mongodb://clearing_plat_user:CwQ5yCWpLP@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/clearing_plat?replicaSet=cmgo-pksm3i0f_0&authSource=admin","mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/clearing_plat");
+//                    updatedContent = line.replace( "mongodb://db_log:l3W!Fh!8TNwQ@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/db_log?authSource=admin&replicaSet=cmgo-pksm3i0f_0","mongodb://db_log:Jj89757***@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/db_log");
+//                    updatedContent = updatedContent.replace("mongodb://clearing_plat_user:CwQ5yCWpLP@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/clearing_plat?replicaSet=cmgo-pksm3i0f_0&authSource=admin","mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/clearing_plat");
+//
+                    updatedContent = line.replace( "mongodb://db_log:Jj89757***@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/db_log","mongodb://db_log:l3W!Fh!8TNwQ@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/db_log?authSource=admin&replicaSet=cmgo-pksm3i0f_0");
+                    updatedContent = updatedContent.replace("mongodb://clearing_plat_user:CwQ5yCWpLP@dds-2ze2242abf52143433270.mongodb.rds.aliyuncs.com:3717/clearing_plat","mongodb://clearing_plat_user:CwQ5yCWpLP@10.50.254.110:27017,10.50.254.39:27017,10.50.254.143:27017/clearing_plat?replicaSet=cmgo-pksm3i0f_0&authSource=admin");
 
                     newContentList.add(updatedContent);
                 }
