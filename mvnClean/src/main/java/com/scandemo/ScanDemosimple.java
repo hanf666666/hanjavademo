@@ -19,7 +19,7 @@ public class ScanDemosimple {
     public static void main(String[] args) {
 
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getName().indexOf("xml") > -1 || pathname.getName().indexOf("java") > -1) {
@@ -44,7 +44,7 @@ public class ScanDemosimple {
 //            });
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("analysis_parktimerate")) {
+                if (line.contains("令牌")) {
                     System.out.println(file.getPath());
                     System.out.println(line);
                 }

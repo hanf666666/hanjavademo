@@ -1,34 +1,21 @@
 {
-  "cashType": 0,
-  "excutePayType": 10,
-  "ip": "39.144.219.246",
-  "openId": "o_FYa1oUS-B52d5FyIseQSxZ0vQc",
-  "payChannel": 0,
-  "payTerminalType": 80,
-  "payType": 20,
-  "sceneInfo": {
-    "parkInfo": {
-      "parkingFeeInfo": {
-        "chargeDetails": [
-          {
-            "chargeRule": "暂无资费规则",
-            "endDate": "2024-03-19 17:59:57",
-            "fee": 100,
-            "startDate": "2024-03-19 15:39:39",
-            "type": 0
-          }
-        ],
-        "endDate": "2024-03-19 17:59:57",
-        "orderNo": "2403191539393149527",
-        "parkId": 112264,
-        "parkingFee": 100,
-        "plateNo": "渝AFB6786",
-        "platformType": 0,
-        "startDate": "2024-03-19 15:39:39",
-        "type": 2
-      }
-    },
-    "sceneType": 1
-  },
-  "totalFee": 100
+  "vendorParkId": "133681",
+  "operationUnit": "城投金卡",
+  "parkName": "雪屿佳苑",
+  "address": "重庆市江北区大石坝街道大石坝大路96号",
+  "longitude": 106.496686,
+  "latitude": 29.571953,
+  "provinceID": "50",
+  "provinceName": "重庆市",
+  "cityID": "5001",
+  "cityName": "重庆中心城区",
+  "districtID": "500105",
+  "districtName": "江北区",
+  "streetID": "500105004",
+  "streetName": "大石坝街道",
+  "totalSpace": 200,
+  "totalOpenSpace": 200,
+  "parkType": "ON_STREET",
+  "parkEstateType": "PUBLIC_PARKING",
+  "parkBusinessType": "RESIDENTIAL"
 }

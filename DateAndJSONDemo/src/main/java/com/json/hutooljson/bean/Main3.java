@@ -15,12 +15,12 @@ public class Main3 {
     public static void main(String[] args) {
         Student student = new Student();
         student.setName("1111111");
-        Result<Student> studentResult = Result.success(111, "·µ»Ø´íÎó", student);
+        Result<Student> studentResult = Result.success(111, "è¿”å›é”™è¯¯", student);
         String str = JSON.toJSONString(studentResult);
         System.out.println("str===="+str);
-        //ÒªÓÃJSONUtil²»ÒªÓÃBeanUtil ÎŞ·¨½âÎö(¶¼Ã»·¢½âÎö)
+        //è¦ç”¨JSONUtilä¸è¦ç”¨BeanUtil æ— æ³•è§£æ(éƒ½æ²¡å‘è§£æ)
 //        Result bean = BeanUtil.toBean(str, new Result<Student>().getClass());
-        //·ºĞÍÎŞ·¨½âÎö
+        //æ³›å‹æ— æ³•è§£æ
         Result bean = JSONUtil.toBean(str, new Result<Student>().getClass());
 //         Result<Student> result=null;
 //        Result bean = JSONUtil.toBean(str, Result.class);
