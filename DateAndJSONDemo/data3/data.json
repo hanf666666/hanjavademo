@@ -1,21 +1,26 @@
 {
-  "vendorParkId": "133681",
-  "operationUnit": "城投金卡",
-  "parkName": "雪屿佳苑",
-  "address": "重庆市江北区大石坝街道大石坝大路96号",
-  "longitude": 106.496686,
-  "latitude": 29.571953,
-  "provinceID": "50",
-  "provinceName": "重庆市",
-  "cityID": "5001",
-  "cityName": "重庆中心城区",
-  "districtID": "500105",
-  "districtName": "江北区",
-  "streetID": "500105004",
-  "streetName": "大石坝街道",
-  "totalSpace": 200,
-  "totalOpenSpace": 200,
-  "parkType": "ON_STREET",
-  "parkEstateType": "PUBLIC_PARKING",
-  "parkBusinessType": "RESIDENTIAL"
+  "extra": {},
+  "items": [
+    {
+      "channelName": "车库入口",
+      "endDate": null,
+      "howLong": null,
+      "image": "picture/000001/678dc9f1-15f84838/20240603/7/20240603_070727_212.jpg",
+      "moneyPay": 0,
+      "no": "2406030707279436162",
+      "parkId": 110878,
+      "parkItemName": null,
+      "parkName": "志龙花园大厦车库",
+      "parkNo": "444002",
+      "parkType": 2,
+      "phone": "13668085966",
+      "plateNo": "渝AFC6862",
+      "postage": 0,
+      "startDate": 1717369646000,
+      "status": 1
+    }
+  ],
+  "msgSeqNo": "20240603070728118ukHosd",
+  "segNo": "",
+  "topicName": "CAR_IN"
 }

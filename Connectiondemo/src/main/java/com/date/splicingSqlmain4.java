@@ -35,7 +35,15 @@ public class splicingSqlmain4 {
                 "        AND ep.is_inservice = 1\n" +
                 "        and ep.area_id=3351" +
                 " and ep.id in (146972, 112213, 112264, 112200, 112242, 112265, 128848, 112255, 146976, 147072, 112216, 112247, 112263, 112231, 112232, 112271, 112217, 112209, 146973, 112246, 112212, 112233, 112211, 112218, 112214, 112248, 112199, 146974, 112203, 112208);";
-        System.out.println(sql);
+
+
+             String sql2 = new StringBuffer().append("SELECT * from (SELECT park_owner_id parkOwnerId,MAX( CASE setting_key WHEN 'ALIPAY_FEE' THEN setting_value ELSE '' END ) alipay_fee,")
+                .append(" MAX( CASE setting_key WHEN 'WECHAT_FEE' THEN setting_value ELSE '' END ) wechat_fee,MAX( CASE setting_key WHEN 'BALANCE_FEE' THEN setting_value ELSE '' END ) balance_fee ," +
+                        "MAX(  CASE setting_key WHEN 'parking_percent' THEN setting_value ELSE '' END) as parking_percent")
+                .append(" FROM equipment_park_owner_setting where park_owner_id in (:parkOwnerList) GROUP BY park_owner_id HAVING alipay_fee != '' OR wechat_fee != '' OR balance_fee != '' ) oi ").toString();
+
+
+        System.out.println(sql2);
 
 
     }

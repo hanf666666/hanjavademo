@@ -1,12 +1,32 @@
 {
-  "channelOrder": "culpa do est",
-  "parkOwnerCode": "MEISOO",
-  "payChannel": 90,
-  "payTerminalType": 260,
-  "payType": 70,
-  "sceneInfo": {
-    "parkInfo": {},
-    "sceneType": 18
+  "carImage": "",
+  "closeParkChannelName": "出口",
+  "closeParkChannelNumber": "22540",
+  "feeDiscount": 0,
+  "feePaid": 0,
+  "feeShouldPay": 0,
+  "inRecord": {
+    "businessOrder": "43b92ae4dced49f58257471280219cd3",
+    "carBrand": 0,
+    "carCategory": 3,
+    "carColor": "others",
+    "carImage": "",
+    "carNumber": "渝ACE978",
+    "carType": 1,
+    "closeParkChannelName": "入口",
+    "closeParkChannelNumber": "22539",
+    "inTime": "2024-05-30T18:35:23",
+    "licensePlateColor": "others",
+    "parkingLotType": "closepark",
+    "parkingNo": "43018",
+    "parkingSpaceReserved": 0,
+    "pictureOfLicensePlateColor": "",
+    "type": 1
   },
-  "totalFee": 0
+  "orderState": 2,
+  "outTime": "2024-05-30T19:53:40",
+  "parkingSpaceReserved": 0,
+  "pictureOfLicensePlateColor": "",
+  "reportDate": 1717070046063,
+  "type": 1
 }
