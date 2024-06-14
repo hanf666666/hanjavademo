@@ -11,7 +11,10 @@ import java.util.regex.Pattern;
  */
 public class OtherDemo01 {
     public static void main(String[] args) {
-        isWeekPassword("mt1234");
+//        isWeekPassword("mt12345");
+//        isWeekPassword("aaa12345adfa1111");
+        isWeekPassword("1111");
+        isWeekPassword("asdfa");
 
     }
 
@@ -24,16 +27,36 @@ public class OtherDemo01 {
         //适配新版登录逻辑：
         String realPassword = password;
 
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(realPassword);
+        while (matcher.find()) {
+            realPassword = matcher.group();
+            System.out.println(realPassword);
+
+        }
+
+
         boolean isWeekPassword=false;
 
+
         if(!isWeekPassword){
-            String regEx = "^(?!^\\d+$)(?!^[a-zA-Z!@#$&=.+-]+$)[A-Z0-9a-z!@#$&=.+-]{6,30}$";
+            //匹配4位顺降或匹配4位顺降
+            String regEx = "(?:(?:0(?=1)|1(?=2)|2(?=3)|3(?=4)|4(?=5)|5(?=6)|6(?=7)|7(?=8)|8(?=9)){4,}|" +
+                    "(?:9(?=8)|8(?=7)|7(?=6)|6(?=5)|5(?=4)|4(?=3)|3(?=2)|2(?=1)|1(?=0)){4,})\\d";
             Pattern p = Pattern.compile(regEx);
             Matcher m = p.matcher(realPassword);
             isWeekPassword=m.matches();
-            System.out.println(password+"isWeekPassword:"+isWeekPassword);
-
+            System.out.println(password+"匹配4位顺降或匹配4位顺降isWeekPassword:"+isWeekPassword);
         }
+        if(!isWeekPassword){
+            //匹配3位以上的重复数字
+            String regEx = "([\\d])\\1{3,}";
+            Pattern p = Pattern.compile(regEx);
+            Matcher m = p.matcher(realPassword);
+            isWeekPassword=m.matches();
+            System.out.println(realPassword+"匹配3位以上的重复数字isWeekPassword:"+isWeekPassword);
+        }
+
 
         return isWeekPassword;
     }
