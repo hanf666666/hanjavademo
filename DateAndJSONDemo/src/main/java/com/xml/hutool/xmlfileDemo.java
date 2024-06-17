@@ -24,7 +24,7 @@ public class xmlfileDemo {
     public static void main(String[] args) {
 
 
-        File file = new File("D:\\ideaspace\\ScheduleWorkflow202308.xml");
+        File file = new File("D:\\ideaspace\\ScheduleWorkflow202405.xml");
         Document document = XmlUtil.readXML(file);
         NodeList nodeList = document.getElementsByTagName("row");
         List<String> strings = new ArrayList<>();
@@ -42,8 +42,8 @@ public class xmlfileDemo {
                 strings.add(workflowType+name+":"+DateUtil.parse(beginTime)+"到"+DateUtil.parse(endTime)+"星期"+(i1-1)+" 原因:"+reason);
             }
         }
-         strings.stream().sorted().forEach(row->{
-             System.out.println(row);
+        strings.stream().sorted().forEach(row->{
+            System.out.println(row);
         });
 
     }
