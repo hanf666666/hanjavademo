@@ -14,8 +14,8 @@ import lombok.ToString;
 @ToString
 public class PlateDTO {
 
-    @Alias("车牌")
-    private String Plate;
+//    @Alias("车牌")
+//    private String plate;
 
     @Alias("开始时间")
     private String startTime;
