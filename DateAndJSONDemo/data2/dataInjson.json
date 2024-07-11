@@ -1,21 +1,10 @@
 {
-  "flag": true,
-  "data": {
-    "entity": {
-      "id": 9,
-      "createdBy": 10301,
-      "createdDt": "2021-02-26 17:08:25",
-      "updatedBy": 10301,
-      "updatedDt": "2022-07-19 17:25:09",
-      "deleted": 0,
-      "checked": null,
-      "linked": null,
-      "modifyName": "MTSN",
-      "name": "遂宁资费分时段免费",
-      "feeType": "1",
-      "json": "{\"id\":9,\"list\":[{\"advancedConfig\":true,\"advancedConfigList\":[{\"billingTimeFee\":300,\"billingTimeUnit\":240,\"endTime\":240,\"startTime\":0,\"topFee\":300},{\"billingTimeFee\":100,\"billingTimeUnit\":60,\"endTime\":720,\"startTime\":240}],\"fee\":\"\",\"freeTime\":15,\"hasEx\":\"Y\",\"offTime\":30,\"special\":{\"newEnergy\":{\"ignoreFreeTime\":true,\"manyIgnoreFreeTime\":true,\"manyReductionFreeTime\":0,\"manyReductionRate\":50,\"reductionEndTime\":\"20:00:00\",\"reductionFreeTime\":120,\"reductionRate\":50,\"reductionStartTime\":\"08:00:00\"}},\"timeE\":\"20:00:00\",\"timeS\":\"08:00:00\",\"topPrice\":\"\",\"type\":\"time\"}],\"name\":\"遂宁资费分时段免费\",\"postageRuleChinese\":\"①单次停车不足15分钟免收停车费。\\n②超过15分钟，前4小时收费3元；超过4小时，每增加1小时加收1元，不足1小时按1小时计费。\\n③收费时段8:00——20:00，每日8:00开始重新计费。\\n④新能源车每日免首2小时停车优惠，超过2小时，停车费减半收取。\\n\",\"setting\":1,\"topFee\":\"\"}",
-      "ruleChinese": "①单次停车不足15分钟免收停车费。\n②超过15分钟，前4小时收费3元；超过4小时，每增加1小时加收1元，不足1小时按1小时计费。\n③收费时段8:00——20:00，每日8:00开始重新计费。\n④新能源车每日免首2小时停车优惠，超过2小时，停车费减半收取。\n"
-    }
-  },
-  "msg": null
+  vendorParkId=15,
+  vendorRecordId=2407081425144468563,
+  pictureUrl=http://txhy.txfrp.meitianiot.com:9000/api/closePark/05015/image/20247/8/142512-渝AZH616.jpg,
+  pictureType=OUT,
+  photoID=100908870,
+  time=2024-07-08 14:25:14,
+  name=05015/image/20247/8/142512-渝AZH616.jpg,
+  uploadTime=1720419914000
 }

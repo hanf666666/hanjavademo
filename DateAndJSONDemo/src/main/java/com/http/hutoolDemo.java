@@ -20,7 +20,7 @@ import java.util.List;
 public class hutoolDemo {
     public static void main(String[] args) {
         HashMap<String, Object> paramMap = new HashMap<>();
-        String mm = DateUtil.date().offset(DateField.MONTH, 0).toString("MM");
+        String mm = DateUtil.date().offset(DateField.MONTH, -1).toString("MM");
         System.out.println(mm);
         paramMap.put("beginNum", "1");
         paramMap.put("endNum", "40");

@@ -46,7 +46,7 @@ public class ScanDemosimple {
 //            });
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("waterBillsRecordRepository.save")) {
+                if (line.contains("client_api_resource")) {
                     System.out.println(file.getPath());
                     System.out.println(line);
                 }

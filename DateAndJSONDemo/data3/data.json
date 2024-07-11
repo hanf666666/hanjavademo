@@ -1,26 +1,14 @@
 {
-  "extra": {},
-  "items": [
-    {
-      "channelName": "车库入口",
-      "endDate": null,
-      "howLong": null,
-      "image": "picture/000001/678dc9f1-15f84838/20240603/7/20240603_070727_212.jpg",
-      "moneyPay": 0,
-      "no": "2406030707279436162",
-      "parkId": 110878,
-      "parkItemName": null,
-      "parkName": "志龙花园大厦车库",
-      "parkNo": "444002",
-      "parkType": 2,
-      "phone": "13668085966",
-      "plateNo": "渝AFC6862",
-      "postage": 0,
-      "startDate": 1717369646000,
-      "status": 1
-    }
-  ],
-  "msgSeqNo": "20240603070728118ukHosd",
-  "segNo": "",
-  "topicName": "CAR_IN"
+  "createDate": 1720576058000,
+  "inTime": "2024-07-10 09:47:38",
+  "moneyPay": 1800,
+  "no": "202407101115307977235",
+  "orderNo": "TD1018MSJDTXKTSZL642F6AE701881DFC45A127D04",
+  "outTime": "2024-07-10 10:31:14",
+  "parkId": 106562,
+  "payMethod": 2,
+  "phone": "",
+  "plateNo": "湘L58398",
+  "plateNoColour": 0,
+  "postage": 2000
 }

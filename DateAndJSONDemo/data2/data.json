@@ -1,18 +1,4 @@
 {
-  "code": "200.0",
-  "message": "?????",
-  "localizedMsg": "null",
-  "data": {
-    "carStock": "0.0",
-    "plateNo": "??A1LZ91",
-    "shouldPay": "10.0",
-    "discountAmount": "0.0",
-    "paidType": "2.0",
-    "dealTime": "2024-03-26 11:12:57",
-    "billID": "2403261111239879012",
-    "orderCode": "",
-    "askOrderTime": "2024-03-26 11:12:56",
-    "payStatus": "1.0",
-    "actualPay": "10.0"
-  }
-}
+  vendorParkId=112238,
+  vendorRecordId=2407081817005070457,
+  pictureUrl=https://cloudms-manage-bkt-1320652165.cos.ap-nanjing.myqcloud.com/picture/000001/c961fc05-2f7e405b/20240708/18/20240708_181700_198.jpg?q-sign-algorithm=sha1&q-ak=AKIDymdSBC1d193lHbm7HCsJVS9mLqDTXP3f&q-sign-time=1720433820%3B1751969820&q-key-time=1720433820%3B1751969820&q-header-list=host&q-url-param-list=&q-signature=260c2d15de6f11fff9c801137193342645878ecb, pictureType=IN, photoID=100984338, time=2024-07-08 18:17:01, name=picture/000001/c961fc05-2f7e405b/20240708/18/20240708_181700_198.jpg, uploadTime=1720433821000}
