@@ -1,4 +1,4 @@
-package com.date.DesignPattern.行为型模式.策略模式;
+package com.date.DesignPattern.行为型模式.策略模式.test1;
 
 public class Context {
     private Strategy strategy;

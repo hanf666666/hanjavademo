@@ -2,20 +2,135 @@
     <head>
         <tr_code>210201</tr_code>
         <corp_no>0010027838</corp_no>
-        <req_no>31_1688368627518</req_no>
-        <serial_no>2011000420230630175186588739</serial_no>
-        <ans_no>
-        </ans_no>
-        <next_no>
-        </next_no>
-        <tr_acdt>20230703</tr_acdt>
-        <tr_time>151708</tr_time>
-        <ans_code>0</ans_code>
-        <ans_info>
-        </ans_info>
-        <particular_code>0000</particular_code>
-        <particular_info>交易成功</particular_info>
+        <user_no>00005</user_no>
+        <req_no>88_1720679053716</req_no>
+        <tr_acdt>null</tr_acdt>
+        <tr_time>null</tr_time>
         <atom_tr_count>1</atom_tr_count>
+        <channel>0</channel>
         <reserved></reserved>
     </head>
+    <body>
+        <pay_acno>500500301013002217327</pay_acno>
+        <pay_acname>重庆盘古美天物联网科技有限公司</pay_acname>
+        <rcv_acno>50001053600050207142</rcv_acno>
+        <rcv_bank_name>中国建设银行股份有限公司重庆沙坪坝支行</rcv_bank_name>
+        <rcv_acname>上海景瑞物业管理有限公司重庆分公司</rcv_acname>
+        <cur_code>CNY</cur_code>
+        <amt>165.98</amt>
+        <cert_no>88_1720679053716</cert_no>
+        <summary>165.98#1.02#重庆北碚区景瑞御蓝湾AB区停车场#2024-07-10至2024-07-10</summary>
+        <bank_flag>1</bank_flag>
+    </body>
 </ap>
+
+<head>
+    <tr_code>210201</tr_code>
+    <corp_no>0010027838</corp_no>
+    <user_no>00005</user_no>
+    <req_no>88_1720679053716</req_no>
+    <tr_acdt>null</tr_acdt>
+    <tr_time>null</tr_time>
+    <atom_tr_count>1</atom_tr_count>
+    <channel>0</channel>
+    <reserved></reserved>
+</head>
+<body>
+    <pay_acno>500500301013002217327</pay_acno>
+    <pay_acname>重庆盘古美天物联网科技有限公司</pay_acname>
+    <rcv_acno>50001053600050207142</rcv_acno>
+    <rcv_bank_name>中国建设银行股份有限公司重庆沙坪坝支行</rcv_bank_name>
+    <rcv_acname>上海景瑞物业管理有限公司重庆分公司</rcv_acname>
+    <cur_code>CNY</cur_code>
+    <amt>165.98</amt>
+    <cert_no>88_1720679053716</cert_no>
+    <summary>165.98#1.02#重庆北碚区景瑞御蓝湾AB区停车场#2024-07-10至2024-07-10</summary>
+    <bank_flag>1</bank_flag>
+</body>
+</ap>
+        [TradeID=20240711142412_59840][0]报文签名::::错误码：E5001，错误信息：报文签名失败
+        [TradeID=20240711142412_59840][0]返回企业报文::::<ap>
+<head>
+    <tr_code>210201</tr_code>
+    <corp_no>0010027838</corp_no>
+    <req_no>88_1720679053716</req_no>
+    <serial_no></serial_no>
+    <ans_no></ans_no>
+    <next_no></next_no>
+    <tr_acdt>20240711</tr_acdt>
+    <tr_time>142412</tr_time>
+    <ans_code>0</ans_code>
+    <ans_info></ans_info>
+    <particular_code>E5001</particular_code>
+    <particular_info>报文签名失败</particular_info>
+    <atom_tr_count>1</atom_tr_count>
+    <reserved></reserved>
+</head>
+</ap>
+        [TradeID=20240711142412_55416][0]企业Http请求报文::::<ap>
+<head>
+    <tr_code>210201</tr_code>
+    <corp_no>0010027838</corp_no>
+    <user_no>00005</user_no>
+    <req_no>83_1720679053738</req_no>
+    <tr_acdt>null</tr_acdt>
+    <tr_time>null</tr_time>
+    <atom_tr_count>1</atom_tr_count>
+    <channel>0</channel>
+    <reserved></reserved>
+</head>
+<body>
+    <pay_acno>500500301013002217327</pay_acno>
+    <pay_acname>重庆盘古美天物联网科技有限公司</pay_acname>
+    <rcv_acno>6228851049868192</rcv_acno>
+    <rcv_bank_name>重庆农村商业银行永川支行</rcv_bank_name>
+    <rcv_acname>胡达伟</rcv_acname>
+    <cur_code>CNY</cur_code>
+    <amt>154.05</amt>
+    <cert_no>83_1720679053738</cert_no>
+    <summary>154.05#0.95#重庆金玉得物业管理有限公司#2024-07-10至2024-07-10</summary>
+    <bank_flag>1</bank_flag>
+</body>
+</ap>
+        [TradeID=20240711142412_55416][0]签名前的请求：::::<ap>
+<head>
+    <tr_code>210201</tr_code>
+    <corp_no>0010027838</corp_no>
+    <user_no>00005</user_no>
+    <req_no>83_1720679053738</req_no>
+    <tr_acdt>null</tr_acdt>
+    <tr_time>null</tr_time>
+    <atom_tr_count>1</atom_tr_count>
+    <channel>0</channel>
+    <reserved></reserved>
+</head>
+<body>
+    <pay_acno>500500301013002217327</pay_acno>
+    <pay_acname>重庆盘古美天物联网科技有限公司</pay_acname>
+    <rcv_acno>6228851049868192</rcv_acno>
+    <rcv_bank_name>重庆农村商业银行永川支行</rcv_bank_name>
+    <rcv_acname>胡达伟</rcv_acname>
+    <cur_code>CNY</cur_code>
+    <amt>154.05</amt>
+    <cert_no>83_1720679053738</cert_no>
+    <summary>154.05#0.95#重庆金玉得物业管理有限公司#2024-07-10至2024-07-10</summary>
+    <bank_flag>1</bank_flag>
+</body>
+</ap>
+        [TradeID=20240711142412_55416][0]报文签名::::错误码：E5001，错误信息：报文签名失败
+        [TradeID=20240711142412_55416][0]返回企业报文::::<ap>
+<head>
+    <tr_code>210201</tr_code>
+    <corp_no>0010027838</corp_no>
+    <req_no>83_1720679053738</req_no>
+    <serial_no></serial_no>
+    <ans_no></ans_no>
+    <next_no></next_no>
+    <tr_acdt>20240711</tr_acdt>
+    <tr_time>142412</tr_time>
+    <ans_code>0</ans_code>
+    <ans_info></ans_info>
+    <particular_code>E5001</particular_code>
+    <particular_info>报文签名失败</particular_info>
+    <atom_tr_count>1</atom_tr_count>
+    <reserved></reserved>
