@@ -1,49 +1,7 @@
 {
-  "id": 9,
-  "list": [
-    {
-      "advancedConfig": true,
-      "advancedConfigList": [
-        {
-          "billingTimeFee": 300,
-          "billingTimeUnit": 240,
-          "endTime": 240,
-          "startTime": 0,
-          "topFee": 300
-        },
-        {
-          "billingTimeFee": 100,
-          "billingTimeUnit": 60,
-          "endTime": 720,
-          "startTime": 240
-        }
-      ],
-      "fee": "",
-      "freeTime": 15,
-      "hasEx": "Y",
-      "offTime": 30,
-      "special": {
-        "newEnergy": {
-          "reductionStartTime": "08:00:00",
-          "reductionEndTime": "20:00:00",
-
-          "ignoreFreeTime": true,
-          "reductionFreeTime": 120,
-          "reductionRate": 50,
-
-          "manyIgnoreFreeTime": true,
-          "manyReductionFreeTime": 0,
-          "manyReductionRate": 50
-        }
-      },
-      "timeE": "20:00:00",
-      "timeS": "08:00:00",
-      "topPrice": "",
-      "type": "time"
-    }
-  ],
-  "name": "遂宁资费分时段免费",
-  "postageRuleChinese": "①单次停车不足15分钟免收停车费。\n②超过15分钟，前4小时收费3元；超过4小时，每增加1小时加收1元，不足1小时按1小时计费。\n③收费时段8:00——20:00，每日8:00开始重新计费。\n④新能源车每日免首2小时停车优惠，超过2小时，停车费减半收取。\n",
-  "setting": 1,
-  "topFee": ""
+  "dataItems": "[{\"filePath\":\"/home/jht/up_file/NISSP/af5b7d7b9c85494fbdb64fb5050664de/PIC/NISSP_IMG_PARK_OUT/20240719/afa902f025d947c986eed8c8bd4f9368\"}]",
+  "pno": "MTYXPT",
+  "sn": "2A8D9657345CB6590E4243C6FAC95A16",
+  "tn": "6393E4392F9341918501D9EA0A80C5D2",
+  "ts": "17213535592420000"
 }

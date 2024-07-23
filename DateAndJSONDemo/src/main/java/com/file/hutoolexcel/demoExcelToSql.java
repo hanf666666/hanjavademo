@@ -15,11 +15,11 @@ import java.util.Map;
 public class demoExcelToSql {
     public static void main(String[] args) {
         String fileName = "C:\\Users\\han\\Desktop\\meisoocity\\ExceltoSQl.xlsx";
-        ExcelReader reader = ExcelUtil.getReader(fileName, 0);
+        ExcelReader reader = ExcelUtil.getReader(fileName, 2);
         List<Map<String, Object>> maps = reader.readAll();
         maps.forEach(map -> {
 //            insertdemo(map);
-            update_mt_to_cq_base_park(map);
+            update_mt_to_cq_base_park2(map);
         });
 
 
@@ -55,6 +55,7 @@ public class demoExcelToSql {
                 map.get("³µ³¡Ãû³Æ")
         ));
     }
+
 
     private static void insertdemo(Map<String, Object> map) {
         System.out.println();
