@@ -26,25 +26,39 @@ public class splicingSqlmain2 {
 
 
 //        String aa= "{\"id\":9,\"list\":[{\"advancedConfig\":true,\"advancedConfigList\":[{\"billingTimeFee\":300,\"billingTimeUnit\":240,\"endTime\":240,\"startTime\":0,\"topFee\":300},{\"billingTimeFee\":100,\"billingTimeUnit\":60,\"endTime\":720,\"startTime\":240}],\"fee\":\"\",\"freeTime\":15,\"hasEx\":\"Y\",\"offTime\":30,\"special\":{\"newEnergy\":{\"ignoreFreeTime\":true,\"manyIgnoreFreeTime\":true,\"manyReductionFreeTime\":0,\"manyReductionRate\":50,\"reductionEndTime\":\"20:00:00\",\"reductionFreeTime\":120,\"reductionRate\":50,\"reductionStartTime\":\"08:00:00\"}},\"timeE\":\"20:00:00\",\"timeS\":\"08:00:00\",\"topPrice\":\"\",\"type\":\"time\"}],\"name\":\"遂宁资费分时段免费\",\"postageRuleChinese\":\"①单次停车不足15分钟免收停车费。\\n②超过15分钟，前4小时收费3元；超过4小时，每增加1小时加收1元，不足1小时按1小时计费。\\n③收费时段8:00——20:00，每日8:00开始重新计费。\\n④新能源车每日免首2小时停车优惠，超过2小时，停车费减半收取。\\n\",\"setting\":1,\"topFee\":\"\"}";
-        String fieldsSql = " s.settlement_no,ep.name as parkOwnerName,e.`name` as parkNames,s.account_period,s.settlement_count,s.settlement_amount,s.settlement_status,s.start_time,s.end_time,(CASE WHEN epd.setting_value in (1,2,3) THEN '自动结算'  ELSE '手动结算' END ) clearType , epd2.setting_value as bankCode,t.created_dt as transeferSuccessDt,tr.receipt_date,tr.receipt_number,tr.receipt_serial_no ";
-        String settlementBatchSql = "  select \n" +
-                "  sb.park_id as parkId, \n" +
-                "  ep.name as parkName, \n" +
-                "  sb.park_owner_id as parkOwnerId, \n" +
-                "  sb.account_period as accountPeriod, \n" +
-                "  sb.settlement_amount as amt, \n" +
-                "  sb.settlement_no as settlementNo, \n" +
-                "  epo.bank_account as rcvAcno, \n" +
-                "  epo.bank_account_name as rcvAcname, \n" +
-                "  epo.bank_name as rcvBankName\n" +
-                "from settlement_batch sb\n" +
-                "  left join equipment_park ep  on  sb.park_id = ep.id \n" +
-                "  left join equipment_park_owner epo  on  sb.park_owner_id = epo.id \n" +
-                " where \n" +
-                "   sb.settlement_status in( 2 , 4 ) \n" +
-                " and  `settlement_no` = :settlementNo ";
+        String sql =
+                "SELECT " +
+                        "a.created_dt AS createdDt," +
+                        "a.phone AS phone," +
+                        "a.plate_no AS plateNo," +
+                        "a.park_id AS parkId," +
+                        "a.park_record_num AS parkRecordNum," +
+                        "a.no AS no," +
+                        "a.channel_order AS channelOrder," +
+                        "a.refund_order AS refundOrder," +
+                        "a.refund_no AS refundNo," +
+                        "a.coupon_pay AS couponPay," +
+                        "a.money_pay AS moneyPay," +
+                        "a.back_pay AS backPay," +
+                        "a.dispute_back_pay AS disputeBackPay," +
+                        "a.channel AS channel," +
+                        "a.wx_type AS wxType," +
+                        "a.order_service_type AS orderServiceType," +
+                        "a.order_status AS orderStatus," +
+                        "a.transaction_type AS transactionType," +
+                        "a.order_category AS orderCategory," +
+                        "a.refund AS refund," +
+                        "a.order_type AS orderType," +
+                        "a.pay_time AS payTime," +
+                        "a.provider_service AS providerService," +
+                        "b.park_owner_id as parkOwnerId " +
+                        "FROM water_bills_record a " +
+                        "left join equipment_park b " +
+                        "on a.park_id = b.id " +
+                        "WHERE channel in (1,2,3) " +
+                        "AND a.pay_time >= :startDate AND a.pay_time < :endDate ";
 
-        String s = settlementBatchSql.toString().replaceAll("]]>", "")
+        String s = sql.toString().replaceAll("]]>", "")
                 .replaceAll("CDATA", "")
                 .replaceAll("<!\\[\\[", "");
         System.out.println(s);
