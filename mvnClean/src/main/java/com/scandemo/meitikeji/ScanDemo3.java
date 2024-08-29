@@ -17,11 +17,22 @@ public class ScanDemo3 {
 
     public static void main(String[] args) {
 
-        //µİ¹é±éÀúÄ¿Â¼ÒÔ¼°×ÓÄ¿Â¼ÖĞµÄËùÓĞÎÄ¼ş ¿ÉÒÔ¼Ó¹ıÂËÌõ¼ş
+        //ï¿½İ¹ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½Ô¼ï¿½ï¿½ï¿½Ä¿Â¼ï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ ï¿½ï¿½ï¿½Ô¼Ó¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
-//        List<File> files = FileUtil.loopFiles("E:\\×ÊÁÏ\\ÅÌ¹ÅÃÀÌì¿Æ¼¼\\20220920·â±ÕÆ½Ì¨\\20220922yum3.0\\2024061102´¦Àí6ÔÂ1ºÅÊı¾İºÍÖØ¸´ÔÚÍ£\\", new FileFilter() {
+            //        List<File> files = FileUtil.loopFiles("E:\\ï¿½ï¿½ï¿½ï¿½\\ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½\\20220920ï¿½ï¿½ï¿½Æ½Ì¨\\20220922yum3.0\\2024061102ï¿½ï¿½ï¿½ï¿½6ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½İºï¿½ï¿½Ø¸ï¿½ï¿½ï¿½Í£\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
+                if (pathname.getPath().indexOf(".git") > -1
+//                        || pathname.getPath().indexOf("sql") > -1
+                        || pathname.getPath().indexOf("target") > -1
+                        || pathname.getPath().indexOf(".idea") > -1
+
+                ) {
+                    {
+                        return false;
+                    }
+
+                }
                 return true;
             }
         });
@@ -31,7 +42,7 @@ public class ScanDemo3 {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("pro.meitianiot.com") ) {
+                if (line.contains("trade_data_report")) {
                     lineMap.put(i, line);
                 }
 
