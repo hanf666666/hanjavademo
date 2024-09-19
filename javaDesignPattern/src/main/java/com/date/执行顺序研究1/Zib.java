@@ -1,6 +1,7 @@
 package com.date.执行顺序研究1;
 public class Zib extends Fua
 {
+    public String ziName;
     static {
         System.out.println("Zib的静态代码块new时执行,且一次   2222222222");
     }

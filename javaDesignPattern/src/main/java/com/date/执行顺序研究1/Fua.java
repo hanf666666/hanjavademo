@@ -1,6 +1,7 @@
 package com.date.执行顺序研究1;
 
 public class Fua {
+    public String name;
     static {
         System.out.println("Fua的静态代码块new时执行,且一次  1111111111111");
     }

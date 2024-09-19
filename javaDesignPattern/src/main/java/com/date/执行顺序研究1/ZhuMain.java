@@ -9,7 +9,11 @@ package com.date.Ö´ÐÐË³ÐòÑÐ¾¿1;
 public class ZhuMain {
     public static void main(String[] args) {
         System.out.println("=========  Fua Fua = new Zib();======================================");
-        Fua a = new Zib();
+        Zib zib = new Zib();
+        zib.ziName = "zib";
+        Fua a = zib;
+        String ziName = ((Zib) a).ziName;
+
         a.statica1();
         a.a2();
         System.out.println("=========  Zib Zib= new Zib();======================================");
