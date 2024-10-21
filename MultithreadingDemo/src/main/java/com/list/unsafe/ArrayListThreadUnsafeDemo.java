@@ -9,13 +9,16 @@ package com.list.unsafe;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ArrayListThreadUnsafeDemo {
 
     public static void main(String[] args) {
 //        List<Integer> list = new ArrayList<>();
+//        List<Integer> list = new ArrayList<>();
         //添加的数据是完整的
-        List<Integer> list = Collections.synchronizedList(new ArrayList<>());
+//        List<Integer> list = Collections.synchronizedList(new ArrayList<>());
+        List<Integer> list =new CopyOnWriteArrayList<>();
 
         // 创建多个线程，每个线程都向列表中添加元素
         for (int i = 0; i < 1000; i++) {
