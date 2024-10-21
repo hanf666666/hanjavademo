@@ -3,6 +3,7 @@ package com.list.ModificationException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,7 +16,8 @@ import java.util.List;
 @Slf4j
 public class ConcurrentModificationExceptionExample {
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
+        List<String> list = Collections.synchronizedList(new ArrayList<>());
+//        List<String> list = new ArrayList<>();
         list.add("A");
         list.add("B");
         list.add("C");
@@ -26,7 +28,7 @@ public class ConcurrentModificationExceptionExample {
         // 使用迭代器遍历列表
         while (iterator.hasNext()) {
             String item = iterator.next();
-
+            list.add("D");
             // 在遍历过程中，直接通过列表对象修改列表（而不是通过迭代器）
             if (item.equals("B")) {
                 List<String> list2 = new ArrayList<>();
