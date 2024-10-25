@@ -1,4 +1,4 @@
-package com.list;
+package com.list.thread;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * to do
+ * ArrayList是线程不安全的,put等在多线程会丢失
  *
  * @author Hj
  * @date 2024/7/23
