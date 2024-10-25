@@ -23,6 +23,7 @@ public class Test02 {
     public static void main(String[] args) {
 
         List<Future> futureList = new ArrayList<>();
+        //SynchronizedCollection的增删改查加锁
         List<Long> synlist = Collections.synchronizedList(new ArrayList<>());
 //        List<Long> synlist = new ArrayList<>();
 
