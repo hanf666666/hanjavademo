@@ -17,9 +17,7 @@ public class ScanDemo3 {
 
     public static void main(String[] args) {
 
-        //�ݹ����Ŀ¼�Լ���Ŀ¼�е������ļ� ���Լӹ�������
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
-            //        List<File> files = FileUtil.loopFiles("E:\\����\\�̹�����Ƽ�\\20220920���ƽ̨\\20220922yum3.0\\2024061102����6��1�����ݺ��ظ���ͣ\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getPath().indexOf(".git") > -1
@@ -42,7 +40,7 @@ public class ScanDemo3 {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("trade_data_report")) {
+                if (line.contains("targetUrl")) {
                     lineMap.put(i, line);
                 }
 
