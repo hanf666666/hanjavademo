@@ -14,7 +14,7 @@ import java.net.*;
 @Slf4j
 public class AudioClient {
     public static void main(String[] args) throws IOException, LineUnavailableException {
-        Socket socket = new Socket("localhost", 12345);
+        Socket socket = new Socket("47.95.216.113", 8098);
 
         // 获取音频输入流（接收音频数据）
         InputStream inputStream = socket.getInputStream();

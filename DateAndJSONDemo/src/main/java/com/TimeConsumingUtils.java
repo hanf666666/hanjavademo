@@ -28,6 +28,6 @@ public class TimeConsumingUtils {
     public void printDateDiff(List list, String meissage) {
         endtime = System.currentTimeMillis();
         final Optional<List> listOptional = Optional.ofNullable(list);
-        log.info("{}==>Êý¾ÝÓÐ¶àÉÙ{}Ìõ,ºÄÊ±Ê±¼ä==>{}ms", meissage, listOptional.map(l -> l.size()).orElseGet(() -> null),endtime-starttime);
+        log.info("{}==>æ•°æ®æœ‰å¤šå°‘{}æ¡,è€—æ—¶æ—¶é—´==>{}ms", meissage, listOptional.map(l -> l.size()).orElseGet(() -> null),endtime-starttime);
     }
 }

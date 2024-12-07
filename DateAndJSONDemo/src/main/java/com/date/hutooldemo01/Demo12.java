@@ -36,5 +36,11 @@ public class Demo12 {
         System.out.println(yyyyMM);
 
 
+        System.out.println(DateUtil.date(0));
+
+        System.out.println(443446145/(24*60*60*1000));
+        System.out.println(DateUtil.date(443446145));
+
+
     }
 }

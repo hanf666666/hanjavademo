@@ -1,27 +1,32 @@
 {
-  "eventType": 11,
-  "tradeOrderMsg": {
-    "backPay": 0,
-    "channelOrder": "arrearPay_2403280956280449286",
-    "discount": 0,
-    "disputePay": 0,
-    "moneyPay": 2,
-    "no": "2403280956280352356",
-    "orderNo": "2403280954460093213",
-    "orderStatus": 5,
-    "parkId": 37942,
-    "parkNo": "S21IF1",
-    "parkType": 1,
-    "payDate": "2024-03-28 09:56:28",
-    "payMethod": 4,
-    "payType": 2,
-    "phone": "17823544048",
-    "plateNo": "”ÂA1LZ91",
-    "plateNoColour": 0,
-    "posUserId": 1811,
-    "posUsername": "clsfy",
-    "postage": 2,
-    "todayOrderNo": true,
-    "type": 3
-  }
+  "carType": "0",
+  "ruleName": "√‚∑—",
+  "freeTime": "1440",
+  "leaveTime": "1440",
+  "cappedFee": "0",
+  "onceParkCycleFee": "1",
+  "cycleFee": "1",
+  "timeRules": [
+    {
+      "no": 1,
+      "timeName": " ±∂Œ“ª",
+      "startTime": "00:00",
+      "endTime": "23:59",
+      "cappedFee": "",
+      "billModel": "2",
+      "onceParkFee": "",
+      "rules": [
+        {
+          "unitOfCharge": "60",
+          "unitTariff": "0",
+          "cappedFee": "0",
+          "startTime": "0",
+          "endTime": "24",
+          "fee": "0"
+        }
+      ]
+    }
+  ],
+  "isCycle": false,
+  "includeFreeTime": 0
 }

@@ -1,4 +1,4 @@
-package com.mvnclean;
+package com.delete.targetdelelte;
 
 import com.utils.TraversalUtil;
 
@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class demo {
 
     public static void main(String[] args) throws IOException {
+
         final Thread thread1 = new Thread() {
             @Override
             public void run() {
@@ -23,14 +24,14 @@ public class demo {
 
                     final ArrayList<File> fileArrayList = new ArrayList<>();
                     final String rootFileStr = "E:\\maven\\Maven_Repositorydashuju";
-                    // 指定maven的本地仓库
+                    // ???maven???????
                     TraversalUtil.traversalDirectory(new File(rootFileStr),fileArrayList);
                     fileArrayList.forEach(file -> {
                         String fileName = file.getName();
                         boolean isLastupdated = fileName.toLowerCase().endsWith("lastupdated");
                         if (isLastupdated){
                             boolean is_delete = file.delete();
-                            System.out.println("删除的文件名 => " + file.getName() + "  || 是否删除成功？ ==> " + is_delete);
+                            System.out.println("?????????? => " + file.getName() + "  || ??????????? ==> " + is_delete);
                         }
                     });
 
@@ -46,7 +47,7 @@ public class demo {
                 super.run();
                 final ArrayList<File> fileArrayList = new ArrayList<>();
                 final String rootFileStr = "E:\\maven\\Maven_Repositorydashuju4";
-                // 指定maven的本地仓库
+                // ???maven???????
                 try {
                     TraversalUtil.traversalDirectory(new File(rootFileStr),fileArrayList);
                 } catch (IOException e) {
@@ -57,7 +58,7 @@ public class demo {
                     boolean isLastupdated = fileName.toLowerCase().endsWith("lastupdated");
                     if (isLastupdated){
                         boolean is_delete = file.delete();
-                        System.out.println("删除的文件名 => " + file.getName() + "  || 是否删除成功？ ==> " + is_delete);
+                        System.out.println("?????????? => " + file.getName() + "  || ??????????? ==> " + is_delete);
                     }
                 });
             }

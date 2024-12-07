@@ -24,9 +24,8 @@ public class hutoolDemo {
         System.out.println(mm);
         paramMap.put("beginNum", "1");
         paramMap.put("endNum", "40");
-        paramMap.put("beginDate", "2024-"+mm+"-21");
-         mm = DateUtil.date().offset(DateField.MONTH, 1).toString("MM");
-        paramMap.put("endDate", "2024-"+mm+"-01");
+        paramMap.put("beginDate", DateUtil.date().toString("yyyy-MM-dd"));
+        paramMap.put("endDate",  DateUtil.date().toString("yyyy-MM-dd"));
         paramMap.put("hrmId", 1378);
         String result = HttpUtil.post("http://oa.dongyinghk.com:8000/custom/hrm/action/gethrmschedule.jsp", paramMap);
         System.out.println(result);
