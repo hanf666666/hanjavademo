@@ -31,9 +31,10 @@ public class TargetDemo {
                         String fileName = file.getName();
 
                         boolean isLastupdated = fileName.toLowerCase().endsWith("jar");
+                        boolean isLastupdated2 = fileName.toLowerCase().endsWith(".jar.original");
                         boolean isTarget = file.getAbsolutePath().contains("target");
 
-                        if (isLastupdated && isTarget) {
+                        if ((isLastupdated||isLastupdated2) && isTarget) {
                             boolean is_delete = true;
                              is_delete = file.delete();
                             System.out.println("要删的文件" + file.getName() + "   " + is_delete);
