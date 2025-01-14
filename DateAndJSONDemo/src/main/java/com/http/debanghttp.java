@@ -1,12 +1,8 @@
 package com.http;
 
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import cn.hutool.http.HttpUtil;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.HashMap;
 
 /**
  * to do
@@ -15,14 +11,14 @@ import java.util.HashMap;
  * @date 2024/12/14
  */
 @Slf4j
-public class Xinlanghttp {
+public class debanghttp {
     public static void main(String[] args) {
 
         //-H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0" -H "Accept: */*" -H "Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2" -H "Accept-Encoding: gzip, deflate, br, zstd" -H "Connection: keep-alive" -H "Referer: https://finance.sina.com.cn/" -H "Sec-Fetch-Dest: script" -H "Sec-Fetch-Mode: no-cors" -H "Sec-Fetch-Site: cross-site" -H "Pragma: no-cache" -H "Cache-Control: no-cache"
 
         // 创建一个 HttpRequest 对象
 //        HttpRequest request = HttpRequest.post("https://hq.sinajs.cn/etag.php?_=1734144626870&list=sz002175")
-        String url = "https://hq.sinajs.cn/list=" + "sz002175";
+        String url = "https://mbinvest.tebon.com.cn/reqxml";
 
         HttpRequest request = HttpRequest.post(url)
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0")

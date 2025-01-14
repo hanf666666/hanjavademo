@@ -21,7 +21,7 @@ public class CrulgetHeaderMain {
                 for (int i = 1; i < split.length; i++) {
                     value+=(":"+split[i]);
                 }
-                value=value.substring(1,value.length());
+                value=value.substring(2,value.length());
                 System.out.println(".header(\""+key+"\", \""+value+"\")");
             }
         });

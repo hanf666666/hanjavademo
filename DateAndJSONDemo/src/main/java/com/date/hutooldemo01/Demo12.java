@@ -5,6 +5,8 @@ import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 
+import java.math.BigDecimal;
+
 /**
  * to do
  *
@@ -13,6 +15,8 @@ import cn.hutool.core.date.DateUtil;
  */
 public class Demo12 {
     public static void main(String[] args) {
+
+        BigDecimal divide = new BigDecimal(11).divide(new BigDecimal(22+""));
 
         DateTime startTime = DateUtil.parse("2023-08-03 00:00:00");
 //        DateTime endTime = DateUtil.parse("2024-03-27 00:00:00");
@@ -41,6 +45,11 @@ public class Demo12 {
         System.out.println(443446145/(24*60*60*1000));
         System.out.println(DateUtil.date(443446145));
 
+        int code = 111; // 示例代码
+        String formattedCode = String.format("%03d", code); // 格式化为6位数字，不足则补0
+        System.out.println("格式化后的代码: " + formattedCode);
 
-    }
+
+
+        }
 }

@@ -18,11 +18,10 @@ public class splicingSqlmain {
     public static void main(String[] args) {
 
 //        StringBuilder sql = new StringBuilder();
-        StringBuffer sql = new StringBuffer("SELECT DATE_FORMAT(recon_date,'%y-%m') reconDate," +
-                "SUM(CASE WHEN plat_order_status=1 THEN payment_amount ELSE 0 END) AS payMoney," +
-                "SUM(CASE WHEN payment_status=2 THEN ready_refund + dispute_refund ELSE 0 END) AS refundMoney" +
-                " FROM order_plat force index(IDX_RECON_DATE_settlement_status) ");
-
+        String fieldsSql = " trade_time as payTime,cbd.trade_no as tradeNo,cbd.order_num itemNo,\n" +
+                "business_no as businessNo,\n" +
+                "sub_mch_id  merchantId,payment_status as  paymentStatus,cbd.clear_amount/100 as payMoney,agent_service_charge as profitSharingMoney" +
+                "";
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, +1);
 
@@ -33,14 +32,14 @@ public class splicingSqlmain {
         String thisMonth = dft.format(cal.getTime());
         //本月-12个月
         String minMonth = dft.format(cal1.getTime());
+//
+//        sql.append("WHERE recon_date< '"+thisMonth+"-01"+"' and recon_date>='"+minMonth+"-01"+"' AND settlement_status>=3 " +
+//                "GROUP BY  DATE_FORMAT(recon_date,'%y-%m')");
 
-        sql.append("WHERE recon_date< '"+thisMonth+"-01"+"' and recon_date>='"+minMonth+"-01"+"' AND settlement_status>=3 " +
-                "GROUP BY  DATE_FORMAT(recon_date,'%y-%m')");
 
-
-        System.out.println(sql.toString());
-        String fasdfas = fasdfas();
-        System.out.println(fasdfas);
+        System.out.println(fieldsSql.toString());
+//        String fasdfas = fasdfas();
+//        System.out.println(fasdfas);
 
 
     }
