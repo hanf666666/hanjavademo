@@ -18,13 +18,15 @@ public class ScanDemo3 {
     public static void main(String[] args) {
 
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\pyspace", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getPath().indexOf(".git") > -1
-//                        || pathname.getPath().indexOf("sql") > -1
+                        || pathname.getPath().indexOf("sql") > -1
                         || pathname.getPath().indexOf("target") > -1
                         || pathname.getPath().indexOf(".idea") > -1
+                        || pathname.getPath().indexOf(".java") > -1
+                        || pathname.getPath().indexOf("txprod") == -1
 
                 ) {
                     {
@@ -41,7 +43,7 @@ public class ScanDemo3 {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("sinajs")) {
+                if ( line.contains("open-api-bkt-1320652165")) {
                     lineMap.put(i, line);
                 }
 

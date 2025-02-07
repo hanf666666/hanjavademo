@@ -23,15 +23,15 @@ public class demo {
                 try {
 
                     final ArrayList<File> fileArrayList = new ArrayList<>();
-                    final String rootFileStr = "E:\\maven\\Maven_Repositorydashuju";
-                    // ???maven???????
+                    final String rootFileStr = "E:\\maven\\Maven_Repository";
+                    // Maven_Repository
                     TraversalUtil.traversalDirectory(new File(rootFileStr),fileArrayList);
                     fileArrayList.forEach(file -> {
                         String fileName = file.getName();
                         boolean isLastupdated = fileName.toLowerCase().endsWith("lastupdated");
                         if (isLastupdated){
                             boolean is_delete = file.delete();
-                            System.out.println("?????????? => " + file.getName() + "  || ??????????? ==> " + is_delete);
+                            System.out.println("Maven_Repository" + file.getName() + "Maven_Repository" + is_delete);
                         }
                     });
 
@@ -58,7 +58,7 @@ public class demo {
                     boolean isLastupdated = fileName.toLowerCase().endsWith("lastupdated");
                     if (isLastupdated){
                         boolean is_delete = file.delete();
-                        System.out.println("?????????? => " + file.getName() + "  || ??????????? ==> " + is_delete);
+                        System.out.println("Maven_Repositorydashuju4 => " + file.getName() + "  || Maven_Repositorydashuju4 ==> " + is_delete);
                     }
                 });
             }

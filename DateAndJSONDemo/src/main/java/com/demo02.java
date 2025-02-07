@@ -2,6 +2,8 @@ package com;
 
 import cn.hutool.core.date.DateUtil;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -14,22 +16,9 @@ import java.util.UUID;
  */
 public class demo02 {
     public static void main(String[] args) {
-        Long aa=100L;
-        System.out.println(Integer.parseInt(aa+""));
-//        List<String> list = new ArrayList<>(100000000);
-//        for (int i = 0; i < 1000000000; i++) {
-//            UUID uuid = UUID.randomUUID();
-//            if(!list.contains(uuid.toString())){
-//                list.add(uuid.toString());
-//            }else {
-//                System.out.println("重复了"+uuid.toString());
-//            }
-//            if(list.size()%100000==0){
-//                System.out.println("list的大小"+list.size()+ DateUtil.now());
-//
-//            }
-//
-//
-//        }
+        BigDecimal refund = new BigDecimal(3);
+        BigDecimal profitRate = new BigDecimal(0.18+"");
+        BigDecimal subtract = new BigDecimal(0).subtract(refund.multiply(profitRate).setScale(0, RoundingMode.HALF_UP));
+        System.out.println(subtract);
     }
 }

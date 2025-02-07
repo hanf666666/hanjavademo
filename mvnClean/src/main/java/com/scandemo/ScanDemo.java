@@ -24,7 +24,7 @@ public class ScanDemo {
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                if (pathname.getName().indexOf("xml") > -1 || pathname.getName().indexOf("java") > -1) {
+                if (pathname.getName().indexOf("") > -1 || pathname.getName().indexOf("java") > -1) {
                     return true;
                 } else {
                     return false;

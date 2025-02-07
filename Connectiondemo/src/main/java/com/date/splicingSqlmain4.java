@@ -1,5 +1,8 @@
 package com.date;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * to do
  *
@@ -8,12 +11,11 @@ package com.date;
  */
 public class splicingSqlmain4 {
     public static void main(String[] args) {
-        String sql  ="zncpsb001,zncpsb002,zncpsb003,zncpsb004,zncpsb005," +
-                "10033288,24001,210713112937,24003,41009,41008,41010,43040,FB100157,43083,43211," +
-                "43248,43298,43299,75001,74001,43222,43278,43017,43019,43021,43024,43032,43033,43034," +
-                "43043,43045,43052,43061,43062,43065,43066,43067,43069,43083,43084,43094,43203,43204," +
-                "43206,43207,43209,43210,43211,43242,43212,43222,43223,43224,43225,43233,43234,43235,43240,43244," +
-                "43247,43253,43274,43278,43282,43284,43286,43287,43288,43291,43295,24001,43267,79001,75001,80001,43250,87001";
+        String sql = new StringBuffer().append("SELECT * from (SELECT park_owner_id parkOwnerId,MAX( CASE setting_key WHEN 'ALIPAY_FEE' THEN setting_value ELSE '' END ) alipay_fee,")
+                .append(" MAX( CASE setting_key WHEN 'WECHAT_FEE' THEN setting_value ELSE '' END ) wechat_fee,MAX( CASE setting_key WHEN 'BALANCE_FEE' THEN setting_value ELSE '' END ) balance_fee ," +
+                        "MAX(  CASE setting_key WHEN 'parking_percent' THEN setting_value ELSE '' END) as parking_percent")
+                .append(" FROM equipment_park_owner_setting where park_owner_id in (:parkOwnerList) GROUP BY park_owner_id HAVING alipay_fee != '' OR wechat_fee != '' OR balance_fee != '' ) oi ").toString();
+
         System.out.println(sql);
 
 
