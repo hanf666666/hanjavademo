@@ -25,15 +25,15 @@ public class hutoolDemo {
         paramMap.put("beginNum", "1");
         paramMap.put("endNum", "40");
         paramMap.put("beginDate", DateUtil.date().toString("yyyy-MM-01"));
-        paramMap.put("endDate",  DateUtil.date().toString("yyyy-MM-31"));
-        paramMap.put("hrmId", 1111);
+        paramMap.put("endDate",  DateUtil.date().toString("yyyy-MM-22"));
+        paramMap.put("hrmId", 1378);
 
         String result = HttpUtil.post("http://oa.dongyinghk.com:8000/custom/hrm/action/gethrmschedule.jsp", paramMap);
         System.out.println(result);
         JSONObject jsonObject = JSONUtil.parseObj(result);
         List<OABean> result1 = BeanUtil.copyToList(jsonObject.getJSONArray("datas"), OABean.class);
         result1.forEach(row -> {
-            System.out.println(row);
+            System.out.println(row.getScheduledate()+" "+row.getBeginsigntime()+" "+row.getEndsigntime()+" "+row.getKqrequest());
 
         });
 
