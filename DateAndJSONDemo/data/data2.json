@@ -1,7 +1,131 @@
 {
-  "dataItems": "[{\"filePath\":\"/home/jht/up_file/NISSP/af5b7d7b9c85494fbdb64fb5050664de/PIC/NISSP_IMG_PARK_OUT/20240719/afa902f025d947c986eed8c8bd4f9368\"}]",
-  "pno": "MTYXPT",
-  "sn": "2A8D9657345CB6590E4243C6FAC95A16",
-  "tn": "6393E4392F9341918501D9EA0A80C5D2",
-  "ts": "17213535592420000"
+  "id": 1878,
+  "reconDate": "2025-02-07 17:22:14",
+  "tradeDate": "2025-01-08",
+  "reconBatchNum": "DZ1738920132944",
+  "thirdBatchNum": "TP1738920131206",
+  "aliNum": 0,
+  "aliTradeAmount": 0,
+  "aliRefundAmount": 0,
+  "wxAppNum": 13,
+  "wxAppTradeAmount": 472,
+  "wxAppRefundAmount": 143,
+  "wxOfficialNum": 0,
+  "wxOfficialTradeAmount": 0,
+  "wxOfficialRefundAmount": 0,
+  "errorNum": 1,
+  "bananceTradeAmount": 0,
+  "bananceTradeNum": 0,
+  "reconTime": "2025-01-08",
+  "linked": {
+    "wxAppRefundAmountYuan": "1.43",
+    "aliTradeAmountYuan": "0.00",
+    "aliRefundAmountYuan": "0.00",
+    "wxOfficialRefundAmountYuan": "0.00",
+    "wxAppTradeAmountYuan": "4.72",
+    "dataList": [
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      },
+      {
+        "recontradeAmountYuan": "1889493168078929920",
+        "reconrefundAmountYuan": "1889493168078929920",
+        "reconNum": "1889493168078929920"
+      },
+      {
+        "recontradeAmountYuan": "1890311508089049088",
+        "reconrefundAmountYuan": "1890311508089049088",
+        "reconNum": "1890311508089049088"
+      }
+    ],
+    "wxOfficialTradeAmountYuan": "0.00",
+    "balanceTradeAmountYuan": "0.00"
+  }
 }
