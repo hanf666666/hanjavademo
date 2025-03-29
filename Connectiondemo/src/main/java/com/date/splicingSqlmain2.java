@@ -8,25 +8,20 @@ import java.util.Objects;
 
 /**
  * to do
- *
+ * splitsql
  * @author Hj
  * @date 2023/3/7
  */
 public class splicingSqlmain2 {
     public static void main(String[] args) {
-        String membersql = "SELECT a.created_dt AS createdDt,\n" +
-                "        a.member_phone AS phone,\n" +
-                "        a.order_no AS parkRecordNum,\n" +
-                "        a.order_no AS no,\n" +
-                "        a.pay_no AS channelOrder,\n" +
-                "        a.pay_money AS moneyPay,\n" +
-                "        a.pay_time AS payTime \n" +
-                " from member_right_order a\n" +
-                "left join park_order_member_rel rel on a.order_no=rel.member_order_no \n" +
-                "where 1=1 and  rel.deleted =0 " +
-                " and a.pay_no= :channelOrder ";
+        String value = "select a.* from pay_route_info a \n" +
+                "join pay_route_business b on a.id=b.pay_route_id \n" +
+                "join pay_route_owner c on a.id =c.pay_route_id \n" +
+                "where a.deleted =0 and a.pay_app_id =?1 \n" +
+                "and b.deleted =0 and b.pay_business_id in ?2\n" +
+                "and c.deleted =0 and c.park_owner_id =?3";
 
-        String s = membersql.toString().replaceAll("]]>", "")
+        String s = value.toString().replaceAll("]]>", "")
                 .replaceAll("CDATA", "")
                 .replaceAll("<!\\[\\[", "");
         System.out.println(s);

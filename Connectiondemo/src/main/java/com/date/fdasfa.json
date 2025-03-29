@@ -1,111 +1,67 @@
 {
-  "flag": true,
-  "data": {
-    "rentEnd": 1696003199000,
-    "images": [
-      "http://cloudms-manage-bkt-test.oss-cn-beijing.aliyuncs.com/picture/000001/2e38f0bb-c97b45c3/20230607/16/20230607_161044_159.jpg?Expires=1686208157&OSSAccessKeyId=LTAIIycUv6qReilC&Signature=w5yF842LW1SvVqraARMlG7gc4Ac%3D"
-    ],
-    "orderNo": "2306071610471683592",
-    "parkingStage": "222",
-    "parkOrder": {
-      "id": 65268556,
-      "createdBy": 1,
-      "createdDt": "2023-06-07 16:10:47",
-      "updatedBy": 1,
-      "updatedDt": "2023-06-07 16:10:47",
-      "deleted": 0,
-      "checked": null,
-      "linked": {
-        "payNo": ""
-      },
-      "no": "2306071610471683592",
-      "type": 2,
-      "category": 2,
-      "outCategory": null,
-      "phone": null,
-      "modifyType": null,
-      "plateNo": "ÃÉA6CZ36",
-      "parkId": 51870,
-      "parkName": "******Í£³µ³¡",
-      "parkItemId": null,
-      "parkItemName": "-",
-      "submitDate": null,
-      "startDate": "2023-06-07 16:10:43",
-      "endDate": "2023-06-08 14:09:17",
-      "howLong": 79114732,
-      "payDate": null,
-      "validity": null,
-      "postage": 360,
-      "couponPay": 0,
-      "moneyPay": 0,
-      "advanceCharge": null,
-      "backPay": 0,
-      "status": 0,
-      "username": null,
-      "videoRecordId": null,
-      "picRecordId": null,
-      "inType": null,
-      "parkOwnerId": null,
-      "parkOwnerName": null,
-      "remark": null,
-      "isCleared": 0,
-      "occupyOrderId": null,
-      "forcedTimeoutStatus": null,
-      "inChannelId": "396",
-      "dataFlag": null,
-      "parkType": 20,
-      "cleanPay": null,
-      "plateNoColour": 0,
-      "busiType": null,
-      "thirdPlatformType": null,
-      "parkingStatus": null
-    },
-    "list": [],
-    "rentBegin": 1685289600000,
-    "imgTwo": "",
-    "freeUser": 2,
-    "detail": {
-      "leaveTime": "3",
-      "timeRules": [
+  "appId": "wx31578e8baa1f6106",
+  "cashType": 2,
+  "deductionAmount": 1910,
+  "deductionScore": 1910,
+  "ip": "183.69.129.106",
+  "openId": "orWKV5Bdbgyj7NmNRmmsa1KvMMnc",
+  "payChannel": 0,
+  "payMoney": 9100,
+  "payTerminalType": 211,
+  "payType": 70,
+  "programType": "cz",
+  "routeInfo": {
+    "payAppId": 1890308320292179968,
+    "payBusinessIds": [
+      1890308459173974016
+    ]
+  },
+  "sceneInfo": {
+    "parkInfo": {
+      "arrearsFeeInfos": [
         {
-          "no": 1,
-          "timeName": "Ê±¶ÎÒ»",
-          "cappedFee": "",
-          "billModel": "2",
-          "startTime": "00:00",
-          "rules": [
+          "chargeDetails": [
             {
-              "unitTariff": "3",
-              "unitOfCharge": "60",
-              "cappedFee": "10",
-              "fee": "10",
-              "startTime": "0",
-              "endTime": 12
-            },
-            {
-              "unitTariff": "0.1",
-              "unitOfCharge": "60",
-              "cappedFee": "0.5",
-              "fee": "0.5",
-              "startTime": 12,
-              "endTime": 24
+              "chargeRule": "{\"holidayStatus\":0,\"id\":100,\"list\":[{\"advancedConfig\":true,\"advancedConfigList\":[{\"billingTimeFee\":9100,\"billingTimeUnit\":60,\"endTime\":1440,\"startTime\":0,\"topFee\":10000}],\"fee\":\"\",\"freeTime\":0,\"hasEx\":\"Y\",\"hasTopEx\":\"Y\",\"offTime\":0,\"timeE\":\"23:59:59\",\"timeS\":\"00:00:00\",\"topPrice\":\"100\",\"type\":\"time\"}],\"name\":\"zccxzcz\",\"postageRuleChinese\":\"fgdfgdssg\",\"setting\":1,\"topFee\":\"100\"}",
+              "endDate": "2025-03-10 10:09:10",
+              "fee": 1000,
+              "startDate": "2025-03-10 10:08:00",
+              "type": 0
             }
           ],
-          "endTime": "23:59",
-          "onceParkFee": ""
+          "endDate": "2025-03-10 10:09:10",
+          "orderNo": "2503101009018245699",
+          "parkId": 19305,
+          "parkingFee": 1000,
+          "plateNo": "ºÚAA1233",
+          "platformType": 0,
+          "startDate": "2025-03-10 10:08:00"
         }
       ],
-      "carType": "0",
-      "onceParkCycleFee": "1",
-      "topFee": "",
-      "cappedFee": "",
-      "chargeRuleDesc": "11111",
-      "freeTime": "1",
-      "cycleFee": "1",
-      "isCycle": false,
-      "ruleName": "²âÊÔ123456"
+      "parkingFeeInfo": {
+        "chargeDetails": [
+          {
+            "chargeRule": "{\"holidayStatus\":0,\"id\":100,\"list\":[{\"advancedConfig\":true,\"advancedConfigList\":[{\"billingTimeFee\":9100,\"billingTimeUnit\":60,\"endTime\":1440,\"startTime\":0,\"topFee\":10000}],\"fee\":\"\",\"freeTime\":0,\"hasEx\":\"Y\",\"hasTopEx\":\"Y\",\"offTime\":0,\"timeE\":\"23:59:59\",\"timeS\":\"00:00:00\",\"topPrice\":\"100\",\"type\":\"time\"}],\"name\":\"zccxzcz\",\"postageRuleChinese\":\"fgdfgdssg\",\"setting\":1,\"topFee\":\"100\"}",
+            "endDate": "2025-03-10 15:35:44",
+            "fee": 9100,
+            "startDate": "2025-03-10 15:33:22",
+            "type": 0
+          }
+        ],
+        "endDate": "2025-03-10 15:35:44",
+        "orderNo": "2503101534241036950",
+        "parkId": 19305,
+        "parkingFee": 9100,
+        "plateNo": "ºÚAA1233",
+        "platformType": 0,
+        "startDate": "2025-03-10 15:33:22",
+        "type": 2
+      }
     },
-    "imgOne": "http://cloudms-manage-bkt-test.oss-cn-beijing.aliyuncs.com/picture/000001/2e38f0bb-c97b45c3/20230607/16/20230607_161044_159.jpg?Expires=1686208157&OSSAccessKeyId=LTAIIycUv6qReilC&Signature=w5yF842LW1SvVqraARMlG7gc4Ac%3D"
+    "sceneType": 3
   },
-  "msg": null
+  "scoreStackedUse": true,
+  "totalFee": 10100,
+  "useVerificationRandom": false,
+  "userId": 2302194
 }

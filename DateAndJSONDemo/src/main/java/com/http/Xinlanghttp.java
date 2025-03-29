@@ -22,7 +22,8 @@ public class Xinlanghttp {
 
         // 创建一个 HttpRequest 对象
 //        HttpRequest request = HttpRequest.post("https://hq.sinajs.cn/etag.php?_=1734144626870&list=sz002175")
-        String url = "https://hq.sinajs.cn/list=" + "sz002175";
+//        String url = "https://hq.sinajs.cn/list=" + "sz002175";
+        String url = "https://q.stock.sohu.com/hisHq?code=cn_600039&start=20250325&end=20250326&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp";
 
         HttpRequest request = HttpRequest.post(url)
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0")

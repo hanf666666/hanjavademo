@@ -1,13 +1,13 @@
 package com.date.DesignPattern.创建型.原型模式.浅克隆;
 
-import com.date.DesignPattern.创建型.原型模式.深克隆.实现serialrizable.EntitySon;;
+import com.date.DesignPattern.创建型.原型模式.浅克隆.EntitySon;;
 
 /**
  *
  */
 public class EntityFather implements Cloneable{
  private String name;
- private com.date.DesignPattern.创建型.原型模式.深克隆.实现serialrizable.EntitySon son;
+ private EntitySon son;
 
     public String getName() {
         return name;
@@ -17,7 +17,7 @@ public class EntityFather implements Cloneable{
         this.name = name;
     }
 
-    public com.date.DesignPattern.创建型.原型模式.深克隆.实现serialrizable.EntitySon getSon() {
+    public EntitySon getSon() {
         return son;
     }
 
