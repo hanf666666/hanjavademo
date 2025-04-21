@@ -18,11 +18,25 @@ public class splicingSqlmain {
     public static void main(String[] args) {
 
 //        StringBuilder sql = new StringBuilder();
-        String fieldsSql = " trade_time as payTime,cbd.trade_no as tradeNo,cbd.order_num itemNo,\n" +
-                "business_no as businessNo,\n" +
-                "sub_mch_id  merchantId,payment_status as  paymentStatus,cbd.clear_amount/100 as payMoney,agent_service_charge as profitSharingMoney" +
-                "";
-        Calendar cal = Calendar.getInstance();
+        String bodySql = " from (\n" +
+                "select '1' as orderType,oi.order_no as orderNo,oi.pay_time as  payDt,oi.phone as  phoneTailNo, sta.name as stationName , oi.gun_no as gunNo,\n" +
+                "oi.oil_no  as oilNo,oi.show_money/100 as showAmount,oi.oil_money/100 as writeOffAmount,acc.real_name as writeOffPerson\n" +
+                ",'' as   productName,'' as  originalMoney, '' as money,'' as  settleMoney,'' as detail \n" +
+                "\n" +
+                "from member_right_oil_order oi \n" +
+                "left join member_right_partner_station sta on oi.station_id =sta.id\n" +
+                "left join member_right_store_account acc on oi.write_off_person =acc.id\n" +
+                "where \n" +
+                "oi.station_id in (:stationId) and oi.deleted=0 and pay_time>=:startDate and pay_time<=:endDate \n" +
+                "and order_status=:orderStatus and write_off_status=:writeOffStatus\n" +
+                "union  all\n" +
+                "select  '2' as orderType,'' as orderNo,code.pay_dt as payDt,code.phone as  phoneTailNo, '' as stationName , '' as gunNo,''  as oilNo,'' as showAmount,'' fAmount,'' as writeOffPerson,\n" +
+                " p.name as   productName,code.original_money/100 as  originalMoney, code.money/100 as money,code.settle_money/100 as  settleMoney,p.detail as detail   \n" +
+                "from score_store_life_code code  \n" +
+                "left join score_store_product p on code.product_id=p.id  where code.check_status=:writeOffStatus and  code.product_id=:merchantId and code.status=2   \n" +
+                " and code.pay_dt >=:startDate and pay_dt<=:endDate\n" +
+                ") temp " +
+                "";        Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, +1);
 
         Calendar cal1 = Calendar.getInstance();
@@ -37,7 +51,7 @@ public class splicingSqlmain {
 //                "GROUP BY  DATE_FORMAT(recon_date,'%y-%m')");
 
 
-        System.out.println(fieldsSql.toString());
+        System.out.println(bodySql.toString());
 //        String fasdfas = fasdfas();
 //        System.out.println(fasdfas);
 

@@ -14,12 +14,11 @@ import java.util.Objects;
  */
 public class splicingSqlmain2 {
     public static void main(String[] args) {
-        String value = "select a.* from pay_route_info a \n" +
-                "join pay_route_business b on a.id=b.pay_route_id \n" +
-                "join pay_route_owner c on a.id =c.pay_route_id \n" +
-                "where a.deleted =0 and a.pay_app_id =?1 \n" +
-                "and b.deleted =0 and b.pay_business_id in ?2\n" +
-                "and c.deleted =0 and c.park_owner_id =?3";
+        String value = "select p.account_code " +
+                "as accountCode,a.app_id as appId,p.api_key as apiKey    \n" +
+                "from meisoodev.pay_route_info r,meisoodev.pay_account_info p ,meisoodev.pay_app_info a\n" +
+                "where r.pay_account_id =p.id and r.pay_app_id =a.id and p.account_code  in ('1705358801','1616069988')\n" +
+                "group by p.server_account_code,p.account_code,p.api_key   ";
 
         String s = value.toString().replaceAll("]]>", "")
                 .replaceAll("CDATA", "")

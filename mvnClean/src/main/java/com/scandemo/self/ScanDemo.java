@@ -1,4 +1,4 @@
-package com.scandemo.meitikeji;
+package com.scandemo.self;
 
 import cn.hutool.core.io.FileUtil;
 
@@ -13,18 +13,20 @@ import java.util.List;
  * @author Hj
  * @date 2021/8/6
  */
-public class ScanDemo3 {
+public class ScanDemo {
 
     public static void main(String[] args) {
 
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getPath().indexOf(".git") > -1
                         || pathname.getPath().indexOf("sql") > -1
                         || pathname.getPath().indexOf("target") > -1
                         || pathname.getPath().indexOf(".idea") > -1
+//                        || pathname.getPath().indexOf("application") > -1
+//                        || pathname.getPath().indexOf("java") > -1
 //                        || pathname.getPath().indexOf(".java") > -1
 //                        || pathname.getPath().indexOf("txprod") == -1
 
@@ -43,7 +45,7 @@ public class ScanDemo3 {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("equipment_park_business")) {
+                if ( line.contains("47.95.216.113")) {
                     lineMap.put(i, line);
                 }
 
