@@ -29,7 +29,8 @@ public class hutoolDemo {
         paramMap.put("endNum", "40");
         paramMap.put("beginDate", DateUtil.date().toString("yyyy-MM-01"));
         paramMap.put("endDate",  DateUtil.date().toString("yyyy-MM-28"));
-        paramMap.put("hrmId", 1378);
+        paramMap.put("hrmId", 1308);
+
 
 
         String result = HttpUtil.post("http://oa.dongyinghk.com:8000/custom/hrm/action/gethrmschedule.jsp", paramMap);
@@ -43,4 +44,7 @@ public class hutoolDemo {
 
 
     }
+
+
+
 }

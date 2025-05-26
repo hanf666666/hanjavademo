@@ -57,6 +57,7 @@ public class hutoolDemo2 {
                         countDownLatch.countDown();
 //                        e.printStackTrace();
                     }
+
                 }
             });
 

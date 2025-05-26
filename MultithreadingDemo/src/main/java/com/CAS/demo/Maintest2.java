@@ -5,14 +5,14 @@ public class Maintest2 {
         System.out.println(StaticValue.reentrantLock);
         System.out.println(StaticValue.reentrantLock);
         System.out.println(StaticValue.reentrantLock==StaticValue.reentrantLock);
-
-        for (int i = 0; i < 1000; i++) {
+        StaticValue.reentrantLock.lock();
+        for (int i = 0; i < 100; i++) {
             MyTheard myTheard = new MyTheard();
             myTheard.start();
 
         }
         try {
-            Thread.sleep(3000);
+            Thread.sleep(30000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

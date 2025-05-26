@@ -22,7 +22,7 @@ public class pomxmlDemo {
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                if (pathname.getName().indexOf("xml") > -1 ) {
+                if (pathname.getName().indexOf("pom.xml") > -1 ) {
                     return true;
                 } else {
                     return false;
@@ -41,12 +41,19 @@ public class pomxmlDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("com.baomidou")) {
-                    lineMap.put(i,line);
+//                if (line.contains("com.baomidou")) {
+//                    lineMap.put(i,line);
+//                }
+//                if (line.contains("mybatis-plus-boot-starter")) {
+//                    lineMap.put(i,line);
+//                }
+                if (line.contains("spring-boot")) {
+                    lineMap.put(i, line);
                 }
-                if (line.contains("mybatis-plus-boot-starter")) {
-                    lineMap.put(i,line);
+                if (line.contains("2.7")) {
+                    lineMap.put(i, line);
                 }
+
                 if(lineMap.size()>=2){
                     Object[] keys = lineMap.keySet().toArray();
                     if(Math.abs((Integer) keys[0]-(Integer)(keys[1]))<15){
