@@ -17,14 +17,15 @@ import java.util.List;
 public class MigratePreDemo {
     public static void main(String[] args) {
 
-//        String srcFileName="application-txpre.properties";
-        String srcFileName="application-sntxpre.properties";
+        String srcFileName="application-txpre.properties";
+//        String srcFileName="application-sntxpre.properties";
         String dedfileName="application-sntxtest.properties";
         //递归遍历目录以及子目录中的所有文件 可以加过滤条件
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\BossManage\\meisoo-bossmanage-service\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\yun\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\common_service\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\meisoo-datasync-service\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\dataCenterService\\", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\meisoo-datasync-service\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getName().indexOf(srcFileName) > -1) {
