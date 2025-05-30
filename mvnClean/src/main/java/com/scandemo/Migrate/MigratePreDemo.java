@@ -24,7 +24,7 @@ public class MigratePreDemo {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\BossManage\\meisoo-bossmanage-service\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\yun\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\common_service\\", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\dataCenterService\\", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java\\meisoo-datasync-service\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
@@ -55,8 +55,12 @@ public class MigratePreDemo {
 
                     String line;
                     while ((line = reader.readLine()) != null) {
+
                         // 修改每一行的内容，这里只是一个简单的示例，你可以根据需要进行修改
                         String modifiedLine = line.replace("http://eureka-0.eureka.pre.svc.cluster.local:8761/center/eureka/,http://eureka-1.eureka.pre.svc.cluster.local:8761/center/eureka/,http://eureka-2.eureka.pre.svc.cluster.local:8761/center/eureka/", "http://eureka-0.eureka.test.svc.cluster.local:8761/center/eureka/,http://eureka-1.eureka.test.svc.cluster.local:8761/center/eureka/,http://eureka-2.eureka.test.svc.cluster.local:8761/center/eureka/");
+                        //kafka
+                        modifiedLine = modifiedLine.replace("10.50.254.4:9092", "10.50.254.22:19092");
+
 //                         modifiedLine = line.replace("mysql-service.dev.svc.cluster.local", "10.50.254.22");
                         // mysql
                          modifiedLine = modifiedLine.replace("10.50.254.15:3306", "10.50.254.22:13309");
@@ -68,9 +72,12 @@ public class MigratePreDemo {
                          modifiedLine = modifiedLine.replace("spring.redis.password=DyhkQazBs989", "spring.redis.password=123");
                          modifiedLine = modifiedLine.replace("spring.redis.port=6379", "spring.redis.port=16379");
                          modifiedLine = modifiedLine.replace("redisson.password=DyhkQazBs989", "redisson.password=123");
-                         //kafka
-                         modifiedLine = modifiedLine.replace("api_deploy", "root");
+                          modifiedLine = modifiedLine.replace("api_deploy", "root");
+                          modifiedLine = modifiedLine.replace("mslc", "root");
                          modifiedLine = modifiedLine.replace("1qaz@WSX", "password");
+                         modifiedLine = modifiedLine.replace("VlOGQ4YjQ5YTQ2YzRmYmES", "password");
+                         modifiedLine = modifiedLine.replace("mszf", "root");
+                         modifiedLine = modifiedLine.replace("RkNThkOTI5YmRhYjc4NzRS", "password");
 
 
 //                        //file.store.default.upload.type TencentCOS
