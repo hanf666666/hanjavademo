@@ -28,7 +28,7 @@ public class hutoolDemo {
         paramMap.put("beginNum", "1");
         paramMap.put("endNum", "40");
         paramMap.put("beginDate", DateUtil.date().toString("yyyy-MM-01"));
-        paramMap.put("endDate",  DateUtil.date().toString("yyyy-MM-28"));
+        paramMap.put("endDate",  DateUtil.date().toString("yyyy-MM-30"));
         paramMap.put("hrmId", 1378);
 
 
