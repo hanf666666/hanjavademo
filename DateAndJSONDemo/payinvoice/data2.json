@@ -1,0 +1,76 @@
+{
+  "flag": true,
+  "data": {
+    "resList": [
+      {
+        "invoiceState": 1,
+        "parkOrderItems": [
+          {
+            "orderType": "13",
+            "rentingTerm": null,
+            "createdDt": "2023-06-29T11:26:25.000+0000",
+            "parkName": "月票订单",
+            "plateNo": "冀D12345",
+            "moneyPay": 200
+          }
+        ],
+        "ftpUrl": null,
+        "ftpUrls": [],
+        "buyerAddressPhone": null,
+        "buyerBankAccount": null,
+        "invoiceTotalPriceLong": 200,
+        "id": 21728,
+        "buyerName": "个人",
+        "buyerTaxNo": null,
+        "titleType": 1,
+        "remarks": null,
+        "email": "self@qq.com",
+        "createTime": "2025-07-09T08:11:08.000+0000"
+      },
+      {
+        "invoiceState": 4,
+        "parkOrderItems": [],
+        "ftpUrl": null,
+        "ftpUrls": [],
+        "buyerAddressPhone": "",
+        "buyerBankAccount": "",
+        "invoiceTotalPriceLong": 200,
+        "id": 21704,
+        "buyerName": "我",
+        "buyerTaxNo": "fasdfa4134124312",
+        "titleType": 0,
+        "remarks": "",
+        "email": "sele@qq.com",
+        "createTime": "2025-07-09T06:10:40.000+0000"
+      },
+      {
+        "invoiceState": 1,
+        "parkOrderItems": [
+          {
+            "orderType": "1",
+            "createdDt": "2025-03-17T08:24:53.000+0000",
+            "parkName": "盒子MS车场2",
+            "plateNo": "吉RR2222",
+            "moneyPay": 110,
+            "howLong": 74438
+          }
+        ],
+        "ftpUrl": null,
+        "ftpUrls": [
+          "http://meisoo-platform-service-test.oss-cn-beijing.aliyuncs.com/platform-service/api/invoice/2025/05/30/MTCC1748590944123247.pdf?Expires=1748594546&OSSAccessKeyId=LTAIIycUv6qReilC&Signature=j2ga1Bcmv%2FOOWUsOpT1k5tLMKyg%3D"
+        ],
+        "buyerAddressPhone": "",
+        "buyerBankAccount": "",
+        "invoiceTotalPriceLong": 110,
+        "id": 21698,
+        "buyerName": "1",
+        "buyerTaxNo": "166464649613164",
+        "titleType": 0,
+        "remarks": "",
+        "email": "hejieem@163.com",
+        "createTime": "2025-05-30T07:42:24.000+0000"
+      }
+    ]
+  },
+  "msg": null
+}

@@ -43,7 +43,7 @@ public class ScanDemo3 {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("equipment_park_business")) {
+                if ( line.contains("_cloudMsHardGateway_yun")) {
                     lineMap.put(i, line);
                 }
 

@@ -39,7 +39,6 @@ public class hutoolDemo {
         List<OABean> result1 = BeanUtil.copyToList(jsonObject.getJSONArray("datas"), OABean.class);
         result1.forEach(row -> {
             System.out.println(row.getScheduledate()+" "+row.getBeginsigntime()+" "+row.getEndsigntime()+" "+row.getKqrequest());
-
         });
 
 

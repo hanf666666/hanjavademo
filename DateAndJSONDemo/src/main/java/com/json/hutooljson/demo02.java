@@ -1,5 +1,6 @@
 package com.json.hutooljson;
 
+import cn.hutool.core.io.file.FileReader;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
@@ -14,23 +15,205 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class demo02 {
 
+    /**
+     * clientid: "418a9921-95ec7435"
+     * 客户端的唯一标识符，用于区分不同的MQTT客户端。
+     * username: "meitianiot"
+     * 客户端的用户名，用于身份验证。
+     * ip_address: "10.50.255.13"
+     * 客户端的IP地址，表示其网络位置。
+     * port: 49599
+     * 客户端连接时使用的端口号。
+     * node: "emqx@emqx-mqtt-statefulset-0.emqx-mqtt-statefulset-svc.mqtt.svc.cluster.local"
+     * EMQX服务器的节点名称，表示客户端连接到的具体服务器实例。
+     * listener: "tcp:default"
+     * 客户端连接的监听器类型和名称，这里是默认的TCP监听器。
+     * 连接状态与时间
+     * connected: true
+     * 表示客户端当前处于连接状态。
+     * created_at: "2025-06-24T16:55:46.209+08:00"
+     * 连接创建的时间（UTC+8时区）。
+     * connected_at: "2025-06-24T16:55:46.210+08:00"
+     * 客户端成功建立连接的时间（UTC+8时区）。
+     * keepalive: 5
+     * 心跳间隔时间，单位为秒，表示客户端每隔5秒发送一次心跳以保持连接。
+     * is_persistent: false
+     * 会话是否持久，此处为false表示会话不是持久的，断开连接后会话数据不会保留。
+     * clean_start: true
+     * 表示客户端连接时使用了“clean start”标志，会清除之前的会话状态，重新开始。
+     * expiry_interval: 0
+     * 会话过期时间，0表示会话永不过期。
+     * is_bridge: false
+     * 表示该客户端不是桥接客户端（即不是用于连接两个MQTT服务器的特殊客户端）。
+     * mountpoint: null
+     * 挂载点，用于主题前缀，此处为null表示未设置。
+     * 协议信息
+     * proto_name: "MQTT"
+     * 使用的协议名称，这里是MQTT协议。
+     * proto_ver: 4
+     * MQTT协议的版本号，此处为4（对应MQTT 3.1.1）。
+     * 消息统计
+     * 发送统计
+     * send_cnt: 94656
+     * 发送的消息总数。
+     * send_oct: 285649
+     * 发送的总字节数。
+     * send_pkt: 94656
+     * 发送的数据包总数。
+     * send_msg: 0
+     * 发送的特定类型消息总数（可能与send_cnt的统计口径不同）。
+     * send_msg.qos0: 0
+     * 发送的QoS0级别消息数量（不保证送达）。
+     * send_msg.qos1: 0
+     * 发送的QoS1级别消息数量（至少送达一次）。
+     * send_msg.qos2: 0
+     * 发送的QoS2级别消息数量（确保送达一次）。
+     * 接收统计
+     * recv_cnt: 241711
+     * 接收的消息总数。
+     * recv_oct: 270048733
+     * 接收的总字节数。
+     * recv_pkt: 94656
+     * 接收的数据包总数。
+     * recv_msg: 48145
+     * 接收的特定类型消息总数（此处主要为QoS1消息）。
+     * recv_msg.qos0: 0
+     * 接收的QoS0级别消息数量。
+     * recv_msg.qos1: 48145
+     * 接收的QoS1级别消息数量。
+     * recv_msg.qos2: 0
+     * 接收的QoS2级别消息数量。
+     * 丢弃消息统计
+     * 发送消息丢弃
+     * send_msg.dropped: 0
+     * 总共被丢弃的发送消息数量。
+     * send_msg.dropped.too_large: 0
+     * 因消息太大而丢弃的发送消息数量。
+     * send_msg.dropped.expired: 0
+     * 因消息过期而丢弃的发送消息数量。
+     * send_msg.dropped.queue_full: 0
+     * 因消息队列满而丢弃的发送消息数量。
+     * 接收消息丢弃
+     * recv_msg.dropped: 0
+     * 总共被丢弃的接收消息数量。
+     * recv_msg.dropped.await_pubrel_timeout: 0
+     * 因等待PUBREL超时（QoS2消息处理中）而丢弃的接收消息数量。
+     * 订阅与队列
+     * subscriptions_cnt: 13
+     * 客户端当前订阅的主题数量。
+     * subscriptions_max: "infinity"
+     * 最大订阅数量，此处为无限制。
+     * mqueue_max: 1000
+     * 消息队列的最大长度。
+     * mqueue_len: 0
+     * 当前消息队列的长度。
+     * mqueue_dropped: 0
+     * 消息队列中被丢弃的消息数量。
+     * mailbox_len: 0
+     * 邮箱（可能是消息队列的另一种表示）的当前长度。
+     * 飞行窗口 (Inflight)
+     * inflight_max: 32
+     * 最大飞行窗口大小，表示同时可以处理的消息数量上限。
+     * inflight_cnt: 0
+     * 当前飞行中的消息数量（未完成确认的消息）。
+     * awaiting_rel_max: 100
+     * 等待释放的最大消息数量（QoS2消息相关）。
+     * awaiting_rel_cnt: 0
+     * 当前等待释放的消息数量。
+     * 资源与配置
+     * heap_size: 2586
+     * 客户端使用的堆内存大小（单位可能是字节）。
+     * enable_authn: true
+     * 是否启用身份验证，此处为true表示需要验证用户名和密码。
+     * reductions: 115675034
+     * 一个内部计数器，具体含义可能与EMQX的实现相关（需要参考EMQX文档）。
+     * @param args
+     */
     public static void main(String[] args) {
-        String jsonStr = "{     \"code\": 0,     \"data\": [         {             \"name\": \"郴州高铁西站停车场\",             \"lat\": \"25.734622\",             \"lng\": \"112.970696\",             \"parkingLot\": 300,             \"freeParkingLot\": 300         },         {             \"name\": \"郴州市梨树山路五段\",             \"lat\": \"25.755785\",             \"lng\": \"113.040569\",             \"parkingLot\": 0,             \"freeParkingLot\": 0         },         {             \"name\": \"郴州市永春路二段\",             \"lat\": \"25.788135\",             \"lng\": \"112.992802\",             \"parkingLot\": 156,             \"freeParkingLot\": 150         },         {             \"name\": \"郴州市国庆路一段\",             \"lat\": \"25.81132\",             \"lng\": \"113.02511\",             \"parkingLot\": 75,             \"freeParkingLot\": 70         },         {             \"name\": \"郴州市堆上路一段\",             \"lat\": \"25.770258\",             \"lng\": \"113.053151\",             \"parkingLot\": 33,             \"freeParkingLot\": 21         },         {             \"name\": \"郴州市南湖路三段\",             \"lat\": \"25.774284\",             \"lng\": \"113.021828\",             \"parkingLot\": 32,             \"freeParkingLot\": 13         },         {             \"name\": \"郴州市兴城路二段\",             \"lat\": \"25.745589\",             \"lng\": \"112.984328\",             \"parkingLot\": 70,             \"freeParkingLot\": 47         },         {             \"name\": \"郴州市香花南路二段\",             \"lat\": \"25.776702\",             \"lng\": \"113.027263\",             \"parkingLot\": 39,             \"freeParkingLot\": 28         },         {             \"name\": \"郴州市沟东街\",             \"lat\": \"25.81076\",             \"lng\": \"113.031713\",             \"parkingLot\": 16,             \"freeParkingLot\": 13         },         {             \"name\": \"郴州市磨心塘一段\",             \"lat\": \"25.780242\",             \"lng\": \"113.042418\",             \"parkingLot\": 33,             \"freeParkingLot\": 32         },         {             \"name\": \"郴州市香雪路五段\",             \"lat\": \"25.780196\",             \"lng\": \"113.012502\",             \"parkingLot\": 65,             \"freeParkingLot\": 48         },         {             \"name\": \"郴州市国庆南路\",             \"lat\": \"25.786614\",             \"lng\": \"113.031712\",             \"parkingLot\": 27,             \"freeParkingLot\": 27         },         {             \"name\": \"郴州市宁家湾路\",             \"lat\": \"25.769565\",             \"lng\": \"113.04966\",             \"parkingLot\": 39,             \"freeParkingLot\": 36         },         {             \"name\": \"郴州市桔园路\",             \"lat\": \"25.265475\",             \"lng\": \"112.596158\",             \"parkingLot\": 40,             \"freeParkingLot\": 21         },         {             \"name\": \"郴州市骆仙西路二段\",             \"lat\": \"25.785496\",             \"lng\": \"112.991781\",             \"parkingLot\": 63,             \"freeParkingLot\": 59         },         {             \"name\": \"郴州市石油路\",             \"lat\": \"25.814284\",             \"lng\": \"113.037256\",             \"parkingLot\": 75,             \"freeParkingLot\": 69         },         {             \"name\": \"郴州市梨树山路一段\",             \"lat\": \"25.769838\",             \"lng\": \"113.055463\",             \"parkingLot\": 64,             \"freeParkingLot\": 30         },         {             \"name\": \"郴州市郴县路二段\",             \"lat\": \"25.80792\",             \"lng\": \"113.138615\",             \"parkingLot\": 36,             \"freeParkingLot\": 32         },         {             \"name\": \"郴州市船洞路一段\",             \"lat\": \"25.754534\",             \"lng\": \"113.012036\",             \"parkingLot\": 40,             \"freeParkingLot\": 31         },         {             \"name\": \"郴州市骆仙路三段\",             \"lat\": \"25.782706\",             \"lng\": \"113.019693\",             \"parkingLot\": 12,             \"freeParkingLot\": 4         },         {             \"name\": \"郴州市龙泉路三段\",             \"lat\": \"25.775665\",             \"lng\": \"113.025107\",             \"parkingLot\": 35,             \"freeParkingLot\": 17         },         {             \"name\": \"郴州市骆仙路一段\",             \"lat\": \"25.783836\",             \"lng\": \"113.0307\",             \"parkingLot\": 51,             \"freeParkingLot\": 37         },         {             \"name\": \"郴州市南岭大道北二段\",             \"lat\": \"25.796759\",             \"lng\": \"113.016943\",             \"parkingLot\": 57,             \"freeParkingLot\": 54         },         {             \"name\": \"郴州市上东边江路二段\",             \"lat\": \"25.766472\",             \"lng\": \"113.062931\",             \"parkingLot\": 53,             \"freeParkingLot\": 42         },         {             \"name\": \"新城广场停车场\",             \"lat\": \"25.795134\",             \"lng\": \"113.027179\",             \"parkingLot\": 140,             \"freeParkingLot\": 140         },         {             \"name\": \"保安公司内部停车场\",             \"lat\": \"25.795156\",             \"lng\": \"113.03931\",             \"parkingLot\": 30,             \"freeParkingLot\": 30         },         {             \"name\": \"芳头小区车库停车场\",             \"lat\": \"25.784482\",             \"lng\": \"113.050241\",             \"parkingLot\": 200,             \"freeParkingLot\": 200         },         {             \"name\": \"龙女温泉露天停车场\",             \"lat\": \"25.846826\",             \"lng\": \"113.01981\",             \"parkingLot\": 50,             \"freeParkingLot\": 50         },         {             \"name\": \"香雪路立交桥下停车场\",             \"lat\": \"25.773316\",             \"lng\": \"113.05325\",             \"parkingLot\": 50,             \"freeParkingLot\": 50         },         {             \"name\": \"西河沙滩公园停车场\",             \"lat\": \"25.798622\",             \"lng\": \"113.119806\",             \"parkingLot\": 40,             \"freeParkingLot\": 40         },         {             \"name\": \"西河水上公园停车场\",             \"lat\": \"25.787795\",             \"lng\": \"113.125043\",             \"parkingLot\": 54,             \"freeParkingLot\": 54         },         {             \"name\": \"苏仙岭公园停车场\",             \"lat\": \"25.808143\",             \"lng\": \"113.046186\",             \"parkingLot\": 30,             \"freeParkingLot\": 30         },         {             \"name\": \"王仙岭公园停车场\",             \"lat\": \"25.774296\",             \"lng\": \"113.076896\",             \"parkingLot\": 20,             \"freeParkingLot\": 20         },         {             \"name\": \"翡翠湾花园\",             \"lat\": \"25.767918\",             \"lng\": \"113.001549\",             \"parkingLot\": 1900,             \"freeParkingLot\": 1900         },         {             \"name\": \"明珠花园\",             \"lat\": \"25.782011\",             \"lng\": \"113.045151\",             \"parkingLot\": 532,             \"freeParkingLot\": 532         },         {             \"name\": \"郴州市城投大厦\",             \"lat\": \"25.79226\",             \"lng\": \"113.102516\",             \"parkingLot\": 850,             \"freeParkingLot\": 850         },         {             \"name\": \"郴州市月形路二段\",             \"lat\": \"25.557612\",             \"lng\": \"113.425087\",             \"parkingLot\": 45,             \"freeParkingLot\": 44         },         {             \"name\": \"郴州市南岭大道南三段\",             \"lat\": \"25.759011\",             \"lng\": \"113.001692\",             \"parkingLot\": 33,             \"freeParkingLot\": 33         },         {             \"name\": \"郴州市香雪路三段\",             \"lat\": \"25.779649\",             \"lng\": \"113.034841\",             \"parkingLot\": 50,             \"freeParkingLot\": 30         },         {             \"name\": \"郴州市堆上路二段\",             \"lat\": \"25.770965\",             \"lng\": \"113.055388\",             \"parkingLot\": 24,             \"freeParkingLot\": 17         },         {             \"name\": \"郴州市骆仙东路\",             \"lat\": \"25.783401\",             \"lng\": \"113.03354\",             \"parkingLot\": 126,             \"freeParkingLot\": 91         },         {             \"name\": \"郴州市国庆路二段\",             \"lat\": \"25.811617\",             \"lng\": \"113.024383\",             \"parkingLot\": 62,             \"freeParkingLot\": 54         },         {             \"name\": \"郴州市青年大道\",             \"lat\": \"25.784822\",             \"lng\": \"113.061933\",             \"parkingLot\": 45,             \"freeParkingLot\": 34         },         {             \"name\": \"郴州市南岭大道南四段\",             \"lat\": \"25.755547\",             \"lng\": \"112.998713\",             \"parkingLot\": 40,             \"freeParkingLot\": 36         },         {             \"name\": \"郴州市朝阳路车场\",             \"lat\": \"25.801045\",             \"lng\": \"113.012814\",             \"parkingLot\": 65,             \"freeParkingLot\": 58         },         {             \"name\": \"郴州市磨心塘二段\",             \"lat\": \"25.782869\",             \"lng\": \"113.043953\",             \"parkingLot\": 29,             \"freeParkingLot\": 29         },         {             \"name\": \"郴州市小溪路\",             \"lat\": \"25.683781\",             \"lng\": \"112.969643\",             \"parkingLot\": 19,             \"freeParkingLot\": 12         },         {             \"name\": \"郴州市南湖路四段\",             \"lat\": \"25.768425\",             \"lng\": \"113.021913\",             \"parkingLot\": 38,             \"freeParkingLot\": 38         },         {             \"name\": \"郴州市体育路\",             \"lat\": \"25.796257\",             \"lng\": \"113.025326\",             \"parkingLot\": 14,             \"freeParkingLot\": 4         },         {             \"name\": \"郴州市文星路一段\",             \"lat\": \"25.776111\",             \"lng\": \"113.020847\",             \"parkingLot\": 9,             \"freeParkingLot\": 5         },         {             \"name\": \"郴州市香雪路四段\",             \"lat\": \"25.778061\",             \"lng\": \"113.037971\",             \"parkingLot\": 39,             \"freeParkingLot\": 22         },         {             \"name\": \"郴州市文锦路\",             \"lat\": \"25.773685\",             \"lng\": \"113.017471\",             \"parkingLot\": 49,             \"freeParkingLot\": 18         },         {             \"name\": \"郴州市裕湘路\",             \"lat\": \"25.688402\",             \"lng\": \"112.977195\",             \"parkingLot\": 30,             \"freeParkingLot\": 20         },         {             \"name\": \"郴州市香花南路三段\",             \"lat\": \"25.779126\",             \"lng\": \"113.027845\",             \"parkingLot\": 40,             \"freeParkingLot\": 29         },         {             \"name\": \"郴州市北苑路\",             \"lat\": \"25.80\",             \"lng\": \"113.02\",             \"parkingLot\": 60,             \"freeParkingLot\": 52         },         {             \"name\": \"郴州市九子塘路车场二段\",             \"lat\": \"25.761223\",             \"lng\": \"113.026094\",             \"parkingLot\": 10,             \"freeParkingLot\": 8         },         {             \"name\": \"郴州市飞虹路二段\",             \"lat\": \"25.80441\",             \"lng\": \"113.037384\",             \"parkingLot\": 27,             \"freeParkingLot\": 20         },         {             \"name\": \"郴州市水文路\",             \"lat\": \"25.79144\",             \"lng\": \"113.024809\",             \"parkingLot\": 34,             \"freeParkingLot\": 27         },         {             \"name\": \"郴州市民生路\",             \"lat\": \"25.778942\",             \"lng\": \"113.019106\",             \"parkingLot\": 18,             \"freeParkingLot\": 18         },         {             \"name\": \"郴州市梨树山路四段\",             \"lat\": \"25.750873\",             \"lng\": \"113.037877\",             \"parkingLot\": 0,             \"freeParkingLot\": 0         },         {             \"name\": \"郴州市升平路二段\",             \"lat\": \"25.81\",             \"lng\": \"113.03\",             \"parkingLot\": 21,             \"freeParkingLot\": 16         },         {             \"name\": \"郴州市南岭大道南一段\",             \"lat\": \"25.760767\",             \"lng\": \"113.003655\",             \"parkingLot\": 51,             \"freeParkingLot\": 43         },         {             \"name\": \"郴州市槐树路\",             \"lat\": \"25.770774\",             \"lng\": \"113.048793\",             \"parkingLot\": 50,             \"freeParkingLot\": 45         },         {             \"name\": \"郴州市船洞路二段\",             \"lat\": \"25.754163\",             \"lng\": \"113.013759\",             \"parkingLot\": 23,             \"freeParkingLot\": 22         },         {             \"name\": \"郴州市协作路一段\",             \"lat\": \"25.818692\",             \"lng\": \"113.03347\",             \"parkingLot\": 61,             \"freeParkingLot\": 61         },         {             \"name\": \"郴州市南岭大道北七段\",             \"lat\": \"25.796559\",             \"lng\": \"113.016975\",             \"parkingLot\": 63,             \"freeParkingLot\": 56         },         {             \"name\": \"郴州市南湖路二段\",             \"lat\": \"25.777995\",             \"lng\": \"113.021618\",             \"parkingLot\": 38,             \"freeParkingLot\": 26         },         {             \"name\": \"郴州市下东边江路\",             \"lat\": \"25.782913\",             \"lng\": \"113.063621\",             \"parkingLot\": 41,             \"freeParkingLot\": 34         },         {             \"name\": \"郴州市苏园路\",             \"lat\": \"25.800737\",             \"lng\": \"113.035287\",             \"parkingLot\": 16,             \"freeParkingLot\": 16         },         {             \"name\": \"郴州市五岭大道二段\",             \"lat\": \"25.760516\",             \"lng\": \"113.005632\",             \"parkingLot\": 25,             \"freeParkingLot\": 18         },         {             \"name\": \"郴州市木子岭巷\",             \"lat\": \"25.765321\",             \"lng\": \"113.020048\",             \"parkingLot\": 23,             \"freeParkingLot\": 3         },         {             \"name\": \"郴州市东岭路\",             \"lat\": \"25.781813\",             \"lng\": \"113.05909\",             \"parkingLot\": 83,             \"freeParkingLot\": 78         },         {             \"name\": \"郴州市劳动路\",             \"lat\": \"25.81079\",             \"lng\": \"113.029812\",             \"parkingLot\": 44,             \"freeParkingLot\": 44         },         {             \"name\": \"郴州市飞虹路一段\",             \"lat\": \"25.80441\",             \"lng\": \"113.037384\",             \"parkingLot\": 21,             \"freeParkingLot\": 20         },         {             \"name\": \"郴州市上东边江路三段\",             \"lat\": \"25.768227\",             \"lng\": \"113.064548\",             \"parkingLot\": 220,             \"freeParkingLot\": 217         },         {             \"name\": \"郴州市香雪路二段\",             \"lat\": \"25.779958\",             \"lng\": \"113.035109\",             \"parkingLot\": 32,             \"freeParkingLot\": 22         },         {             \"name\": \"郴州市郴县路一段\",             \"lat\": \"25.785471\",             \"lng\": \"113.0892\",             \"parkingLot\": 135,             \"freeParkingLot\": 135         },         {             \"name\": \"郴州市柏树路\",             \"lat\": \"25.754578\",             \"lng\": \"113.002998\",             \"parkingLot\": 41,             \"freeParkingLot\": 38         },         {             \"name\": \"郴州市惠泽路\",             \"lat\": \"25.766812\",             \"lng\": \"113.000624\",             \"parkingLot\": 43,             \"freeParkingLot\": 41         },         {             \"name\": \"郴州市月中路\",             \"lat\": \"25.786871\",             \"lng\": \"113.093279\",             \"parkingLot\": 41,             \"freeParkingLot\": 17         },         {             \"name\": \"郴州市梨树山路二段\",             \"lat\": \"25.758681\",             \"lng\": \"113.041453\",             \"parkingLot\": 77,             \"freeParkingLot\": 47         },         {             \"name\": \"郴州市桔井路一段\",             \"lat\": \"25.797095\",             \"lng\": \"113.040184\",             \"parkingLot\": 60,             \"freeParkingLot\": 50         },         {             \"name\": \"郴州市香花北路二段\",             \"lat\": \"25.784806\",             \"lng\": \"113.029868\",             \"parkingLot\": 51,             \"freeParkingLot\": 42         },         {             \"name\": \"郴州市桔井路二段\",             \"lat\": \"25.799646\",             \"lng\": \"113.04008\",             \"parkingLot\": 44,             \"freeParkingLot\": 37         },         {             \"name\": \"郴州市东风路一段\",             \"lat\": \"25.791682\",             \"lng\": \"113.030334\",             \"parkingLot\": 24,             \"freeParkingLot\": 19         },         {             \"name\": \"郴州市五里堆路二段\",             \"lat\": \"25.788869\",             \"lng\": \"113.018597\",             \"parkingLot\": 39,             \"freeParkingLot\": 39         },         {             \"name\": \"郴州市龙泉路二段\",             \"lat\": \"25.77865\",             \"lng\": \"113.024841\",             \"parkingLot\": 26,             \"freeParkingLot\": 8         },         {             \"name\": \"郴州市龙泉路一段\",             \"lat\": \"25.774813\",             \"lng\": \"113.025208\",             \"parkingLot\": 16,             \"freeParkingLot\": 4         },         {             \"name\": \"郴州市冲口路一段\",             \"lat\": \"25.75697\",             \"lng\": \"113.011618\",             \"parkingLot\": 69,             \"freeParkingLot\": 44         },         {             \"name\": \"郴州市南岭大道南八段\",             \"lat\": \"25.758142\",             \"lng\": \"113.001302\",             \"parkingLot\": 68,             \"freeParkingLot\": 64         },         {             \"name\": \"郴州市南岭大道南五段\",             \"lat\": \"25.749936\",             \"lng\": \"112.996617\",             \"parkingLot\": 83,             \"freeParkingLot\": 65         },         {             \"name\": \"郴州市升平路一段\",             \"lat\": \"25.81\",             \"lng\": \"113.03\",             \"parkingLot\": 26,             \"freeParkingLot\": 13         },         {             \"name\": \"郴州市曹家坪一段\",             \"lat\": \"25.788864\",             \"lng\": \"113.053564\",             \"parkingLot\": 44,             \"freeParkingLot\": 32         },         {             \"name\": \"郴州市南岭大道北三段\",             \"lat\": \"25.791512\",             \"lng\": \"113.015551\",             \"parkingLot\": 19,             \"freeParkingLot\": 19         },         {             \"name\": \"郴州市兴城路一段\",             \"lat\": \"25.738981\",             \"lng\": \"112.98109\",             \"parkingLot\": 73,             \"freeParkingLot\": 62         },         {             \"name\": \"郴州市桐梓坪路\",             \"lat\": \"25.786693\",             \"lng\": \"113.033571\",             \"parkingLot\": 56,             \"freeParkingLot\": 33         },         {             \"name\": \"郴州市文星路二段\",             \"lat\": \"25.776421\",             \"lng\": \"113.023414\",             \"parkingLot\": 26,             \"freeParkingLot\": 12         },         {             \"name\": \"郴州市龙女路二段\",             \"lat\": \"25.845667\",             \"lng\": \"113.023436\",             \"parkingLot\": 51,             \"freeParkingLot\": 50         },         {             \"name\": \"郴州市滨河路\",             \"lat\": \"25.80158\",             \"lng\": \"113.117891\",             \"parkingLot\": 83,             \"freeParkingLot\": 69         },         {             \"name\": \"郴州市五岭大道一段\",             \"lat\": \"25.761718\",             \"lng\": \"113.007162\",             \"parkingLot\": 38,             \"freeParkingLot\": 29         },         {             \"name\": \"郴州市香雪路一段\",             \"lat\": \"25.778747\",             \"lng\": \"113.037414\",             \"parkingLot\": 47,             \"freeParkingLot\": 33         },         {             \"name\": \"郴州市三园路\",             \"lat\": \"25.78593\",             \"lng\": \"113.025261\",             \"parkingLot\": 48,             \"freeParkingLot\": 32         },         {             \"name\": \"郴州市上东边江路一段\",             \"lat\": \"25.77507\",             \"lng\": \"113.063664\",             \"parkingLot\": 42,             \"freeParkingLot\": 31         },         {             \"name\": \"郴州市南岭大道北四段\",             \"lat\": \"25.764091\",             \"lng\": \"113.006355\",             \"parkingLot\": 46,             \"freeParkingLot\": 37         },         {             \"name\": \"郴州市南岭大道南七段\",             \"lat\": \"25.756326\",             \"lng\": \"112.999514\",             \"parkingLot\": 57,             \"freeParkingLot\": 51         },         {             \"name\": \"郴州市东塔路\",             \"lat\": \"25.792811\",             \"lng\": \"113.051096\",             \"parkingLot\": 77,             \"freeParkingLot\": 52         },         {             \"name\": \"郴州市苏仙南路\",             \"lat\": \"25.797724\",             \"lng\": \"113.045103\",             \"parkingLot\": 57,             \"freeParkingLot\": 36         },         {             \"name\": \"郴州市茶园路\",             \"lat\": \"25.801488\",             \"lng\": \"113.020706\",             \"parkingLot\": 32,             \"freeParkingLot\": 32         },         {             \"name\": \"郴州市南岭大道北八段\",             \"lat\": \"25.807256\",             \"lng\": \"113.018387\",             \"parkingLot\": 40,             \"freeParkingLot\": 36         },         {             \"name\": \"郴州市雅石路\",             \"lat\": \"25.785129\",             \"lng\": \"113.048862\",             \"parkingLot\": 50,             \"freeParkingLot\": 50         },         {             \"name\": \"郴州市建工路\",             \"lat\": \"25.820077\",             \"lng\": \"113.019816\",             \"parkingLot\": 84,             \"freeParkingLot\": 84         },         {             \"name\": \"郴州市五岭大道四段\",             \"lat\": \"25.749925\",             \"lng\": \"112.998488\",             \"parkingLot\": 32,             \"freeParkingLot\": 24         },         {             \"name\": \"郴州市坝上路二段\",             \"lat\": \"25.76987\",             \"lng\": \"113.057641\",             \"parkingLot\": 34,             \"freeParkingLot\": 23         },         {             \"name\": \"郴州市好美居路\",             \"lat\": \"25.798384\",             \"lng\": \"113.020624\",             \"parkingLot\": 56,             \"freeParkingLot\": 51         },         {             \"name\": \"郴州市龙女路三段\",             \"lat\": \"25.845702\",             \"lng\": \"113.022272\",             \"parkingLot\": 32,             \"freeParkingLot\": 30         },         {             \"name\": \"郴州市五里堆路三段\",             \"lat\": \"25.789237\",             \"lng\": \"113.015268\",             \"parkingLot\": 26,             \"freeParkingLot\": 20         },         {             \"name\": \"郴州市白水路\",             \"lat\": \"25.791726\",             \"lng\": \"113.104337\",             \"parkingLot\": 48,             \"freeParkingLot\": 43         },         {             \"name\": \"郴州市梨树山路三段\",             \"lat\": \"25.7649\",             \"lng\": \"113.055608\",             \"parkingLot\": 68,             \"freeParkingLot\": 46         },         {             \"name\": \"郴州市永春路一段\",             \"lat\": \"25.788135\",             \"lng\": \"112.992802\",             \"parkingLot\": 60,             \"freeParkingLot\": 50         },         {             \"name\": \"郴州市郴江路五段\",             \"lat\": \"25.795279\",             \"lng\": \"113.052271\",             \"parkingLot\": 81,             \"freeParkingLot\": 72         },         {             \"name\": \"郴州市龙女路一段\",             \"lat\": \"25.845359\",             \"lng\": \"113.025797\",             \"parkingLot\": 37,             \"freeParkingLot\": 36         },         {             \"name\": \"郴州市九子塘路车场一段\",             \"lat\": \"25.763058\",             \"lng\": \"113.02852\",             \"parkingLot\": 14,             \"freeParkingLot\": 12         },         {             \"name\": \"郴州市五里堆路四段\",             \"lat\": \"25.788114\",             \"lng\": \"113.018761\",             \"parkingLot\": 26,             \"freeParkingLot\": 24         },         {             \"name\": \"郴州市骆仙路二段\",             \"lat\": \"25.783747\",             \"lng\": \"113.027884\",             \"parkingLot\": 41,             \"freeParkingLot\": 26         },         {             \"name\": \"郴州市五岭大道三段\",             \"lat\": \"25.751235\",             \"lng\": \"112.999317\",             \"parkingLot\": 67,             \"freeParkingLot\": 61         },         {             \"name\": \"郴州市南岭大道北一段\",             \"lat\": \"25.804217\",             \"lng\": \"113.018134\",             \"parkingLot\": 49,             \"freeParkingLot\": 43         },         {             \"name\": \"郴州市协作路二段\",             \"lat\": \"25.812766\",             \"lng\": \"113.030995\",             \"parkingLot\": 34,             \"freeParkingLot\": 16         },         {             \"name\": \"郴州市香花南路一段\",             \"lat\": \"25.7741\",             \"lng\": \"113.027984\",             \"parkingLot\": 34,             \"freeParkingLot\": 23         },         {             \"name\": \"郴州市南岭大道北五段\",             \"lat\": \"25.77585\",             \"lng\": \"113.011045\",             \"parkingLot\": 57,             \"freeParkingLot\": 36         },         {             \"name\": \"郴州市南岭大道南二段\",             \"lat\": \"25.761392\",             \"lng\": \"113.003718\",             \"parkingLot\": 68,             \"freeParkingLot\": 64         },         {             \"name\": \"郴州市龙泉路四段\",             \"lat\": \"25.793865\",             \"lng\": \"113.02296\",             \"parkingLot\": 20,             \"freeParkingLot\": 11         },         {             \"name\": \"郴州市海关路\",             \"lat\": \"25.774787\",             \"lng\": \"113.056202\",             \"parkingLot\": 57,             \"freeParkingLot\": 56         },         {             \"name\": \"郴州市冲口路二段\",             \"lat\": \"25.75697\",             \"lng\": \"113.011618\",             \"parkingLot\": 93,             \"freeParkingLot\": 71         },         {             \"name\": \"郴州市松山路\",             \"lat\": \"25.741513\",             \"lng\": \"112.980217\",             \"parkingLot\": 50,             \"freeParkingLot\": 46         },         {             \"name\": \"郴州市东风路三段\",             \"lat\": \"25.791218\",             \"lng\": \"113.025919\",             \"parkingLot\": 49,             \"freeParkingLot\": 32         },         {             \"name\": \"郴州市万华东路\",             \"lat\": \"25.751627\",             \"lng\": \"113.005599\",             \"parkingLot\": 41,             \"freeParkingLot\": 28         },         {             \"name\": \"郴州市市场路\",             \"lat\": \"25.665772\",             \"lng\": \"112.694376\",             \"parkingLot\": 27,             \"freeParkingLot\": 27         },         {             \"name\": \"郴州市学院路\",             \"lat\": \"25.28773\",             \"lng\": \"112.546807\",             \"parkingLot\": 15,             \"freeParkingLot\": 13         },         {             \"name\": \"郴州市司马路\",             \"lat\": \"25.818048\",             \"lng\": \"113.022102\",             \"parkingLot\": 42,             \"freeParkingLot\": 42         },         {             \"name\": \"郴州市冲口路四段\",             \"lat\": \"25.758315\",             \"lng\": \"113.012562\",             \"parkingLot\": 45,             \"freeParkingLot\": 37         },         {             \"name\": \"郴州市涌泉路\",             \"lat\": \"25.762352\",             \"lng\": \"113.005822\",             \"parkingLot\": 19,             \"freeParkingLot\": 16         },         {             \"name\": \"郴州市南岭山庄\",             \"lat\": \"25.798922\",             \"lng\": \"113.04639\",             \"parkingLot\": 28,             \"freeParkingLot\": 17         },         {             \"name\": \"郴州市万华路\",             \"lat\": \"25.753511\",             \"lng\": \"112.997429\",             \"parkingLot\": 92,             \"freeParkingLot\": 86         },         {             \"name\": \"郴州市五岭大道五段\",             \"lat\": \"25.761313\",             \"lng\": \"113.006961\",             \"parkingLot\": 35,             \"freeParkingLot\": 25         },         {             \"name\": \"郴州市冲口路三段\",             \"lat\": \"25.75697\",             \"lng\": \"113.011618\",             \"parkingLot\": 51,             \"freeParkingLot\": 44         },         {             \"name\": \"郴州市坝上路一段\",             \"lat\": \"25.768332\",             \"lng\": \"113.053943\",             \"parkingLot\": 49,             \"freeParkingLot\": 38         },         {             \"name\": \"郴州市五里堆路一段\",             \"lat\": \"25.788114\",             \"lng\": \"113.018761\",             \"parkingLot\": 39,             \"freeParkingLot\": 37         },         {             \"name\": \"郴州市高山背路\",             \"lat\": \"25.803088\",             \"lng\": \"113.038703\",             \"parkingLot\": 13,             \"freeParkingLot\": 6         },         {             \"name\": \"郴州市月形路一段\",             \"lat\": \"25.735966\",             \"lng\": \"112.973702\",             \"parkingLot\": 21,             \"freeParkingLot\": 16         },         {             \"name\": \"郴州市东风路二段\",             \"lat\": \"25.791363\",             \"lng\": \"113.027287\",             \"parkingLot\": 44,             \"freeParkingLot\": 38         },         {             \"name\": \"郴州市双坡路\",             \"lat\": \"25.756844\",             \"lng\": \"113.016972\",             \"parkingLot\": 23,             \"freeParkingLot\": 19         },         {             \"name\": \"郴州市骆仙西路一段\",             \"lat\": \"25.783807\",             \"lng\": \"113.013565\",             \"parkingLot\": 28,             \"freeParkingLot\": 28         },         {             \"name\": \"郴州市香花北路一段\",             \"lat\": \"25.785326\",             \"lng\": \"113.02982\",             \"parkingLot\": 55,             \"freeParkingLot\": 47         }     ],     \"msg\": \"获取成功\",     \"maxTimestamp\": 1734513602577 }";
+        FileReader fileReader = new FileReader("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\DateAndJSONDemo\\data3\\data.json");
+        String jsonStr = fileReader.readString();
         JSONObject jsonObject = JSONUtil.parseObj(jsonStr);
         JSONArray data = jsonObject.getJSONArray("data");
-        Long count=0L;
+        Long count = 0L;
         for (int i = 0; i < data.size(); i++) {
             JSONObject jsonObject1 = data.getJSONObject(i);
-            Long parkingLot = jsonObject1.getLong("parkingLot");
-            count=parkingLot+count;
+            String reductions = jsonObject1.getStr("reductions");
+            String subscriptions_cnt = jsonObject1.getStr("subscriptions_cnt");
+            String recv_msg_qos2 = jsonObject1.getStr("recv_msg.qos2");
+            String recv_cnt = jsonObject1.getStr("recv_cnt");
+            String send_cnt = jsonObject1.getStr("send_cnt");
+            String recv_msg_qos0 = jsonObject1.getStr("recv_msg.qos0");
+            String keepalive = jsonObject1.getStr("keepalive");
+            String send_msgdroppedtoo_large = jsonObject1.getStr("send_msg.dropped.too_large");
+            String recv_oct = jsonObject1.getStr("recv_oct");
+            String is_persistent = jsonObject1.getStr("is_persistent");
+            String heap_size = jsonObject1.getStr("heap_size");
+            String send_msg1 = jsonObject1.getStr("send_msg.dropped.expired");
+            String send_msg2 = jsonObject1.getStr("send_msg.qos2");
+            String listener = jsonObject1.getStr("listener");
+            String send_msg4 = jsonObject1.getStr("send_msg.dropped.queue_full");
+            String inflight_max = jsonObject1.getStr("inflight_max");
+            String enable_authn = jsonObject1.getStr("enable_authn");
+            String created_at = jsonObject1.getStr("created_at");
+            String send_pkt = jsonObject1.getStr("send_pkt");
+            String recv_msg = jsonObject1.getStr("recv_msg.dropped.await_pubrel_timeout");
+            String mqueue_max = jsonObject1.getStr("mqueue_max");
+            String inflight_cnt = jsonObject1.getStr("inflight_cnt");
+            String mqueue_len = jsonObject1.getStr("mqueue_len");
+            String node = jsonObject1.getStr("node");
+            String awaiting_rel_max = jsonObject1.getStr("awaiting_rel_max");
+            String mqueue_dropped = jsonObject1.getStr("mqueue_dropped");
+            String connected = jsonObject1.getStr("connected");
+            String proto_ver = jsonObject1.getStr("proto_ver");
+            String expiry_interval = jsonObject1.getStr("expiry_interval");
+            String connected_at = jsonObject1.getStr("connected_at");
+            String awaiting_rel_cnt = jsonObject1.getStr("awaiting_rel_cnt");
+            String port = jsonObject1.getStr("port");
+            String clientid = jsonObject1.getStr("clientid");
+            String send_msg22 = jsonObject1.getStr("send_msg.qos1");
+            String proto_name = jsonObject1.getStr("proto_name");
+            String recv_msg2 = jsonObject1.getStr("recv_msg");
+            String ip_address = jsonObject1.getStr("ip_address");
+            String username = jsonObject1.getStr("username");
+            String is_bridge = jsonObject1.getStr("is_bridge");
+            String mountpoint = jsonObject1.getStr("mountpoint");
+            String clean_start = jsonObject1.getStr("clean_start");
+            String send_msg222 = jsonObject1.getStr("send_msg.dropped");
+            String send_msg2111 = jsonObject1.getStr("send_msg");
+            String recv_msg11 = jsonObject1.getStr("recv_msg.qos1");
+            String send_oct = jsonObject1.getStr("send_oct");
+            String recv_pkt = jsonObject1.getStr("recv_pkt");
+            String recv_msgdropped = jsonObject1.getStr("recv_msg.dropped");
+            String send_msg333 = jsonObject1.getStr("send_msg.qos0");
+            String subscriptions_max = jsonObject1.getStr("subscriptions_max");
+            String mailbox_len = jsonObject1.getStr("mailbox_len");
+//            if(Long.parseLong(mqueue_max)<100000){
+//                log.info("data-->{}-->{}",clientid, mqueue_max);
+//
+//            }
+//            if(Long.parseLong(mqueue_max)>0){
+//                log.info("data-->{}-->{}",clientid, mqueue_max);
+//
+//            }
+
+//            if(Long.parseLong(mqueue_len)>0){
+//                log.info("data-->{}-->{}",clientid, mqueue_len);
+//
+//            }
+
+//            if(Long.parseLong(heap_size)>8000){
+//                log.info("data-->{}-->{}",clientid, heap_size);
+//
+//            }
+            System.out.println(clientid);
+
 
 
         }
-       log.info("data-->{},{}",data.size(),count);
-
-
-
-        }
+        log.info("data-->{},{}", data.size(), count);
 
 
     }
+
+
+}

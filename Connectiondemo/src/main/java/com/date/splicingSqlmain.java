@@ -17,29 +17,13 @@ import java.util.Random;
 public class splicingSqlmain {
     public static void main(String[] args) {
 
-//        StringBuilder sql = new StringBuilder();
-          String bodySql = " from (\n" +
-                "select '1' as orderType,oi.order_no as orderNo,oi.pay_time as  payDt,oi.phone as  phoneTailNo, sta.name as stationName , oi.gun_no as gunNo,\n" +
-                "oi.oil_no  as oilNo,oi.show_money/100 as showAmount,oi.oil_money/100 as writeOffAmount,acc.real_name as writeOffPerson\n" +
-                ",'' as merchantName,'' as   productName,'' as  originalMoney, '' as money,'' as  settleMoney,'' as detail \n" +
-                "\n" +
-                "from member_right_oil_order oi \n" +
-                "left join member_right_partner_station sta on oi.station_id =sta.id\n" +
-                "left join member_right_store_account acc on oi.write_off_person =acc.id\n" +
-                "where \n" +
-                "oi.station_id in (:stationId) and oi.deleted=0 and pay_time>=:startDate and pay_time<=:endDate \n" +
-                "and order_status=:orderStatus and write_off_status=:writeOffStatus\n" +
-                "union  all\n" +
-                "select  '2' as orderType,'' as orderNo,code.pay_dt as payDt,code.phone as  phoneTailNo, '' as stationName , '' as gunNo,''  as oilNo,'' as showAmount,'' fAmount,acc.real_name  as writeOffPerson,\n" +
-                " m.name as merchantName ,p.name as   productName,code.original_money/100 as  originalMoney, code.money/100 as money,code.settle_money/100 as  settleMoney,p.detail as detail   \n" +
-                "from score_store_life_code code  \n" +
-                "left join score_store_merchant m on m.id=code.merchant_id    " +
-                "left join score_store_product p on code.product_id=p.id  " +
-                "left join member_right_store_account acc on code.check_by =acc.id " +
-                "where code.check_status=:writeOffStatus and  code.product_id=:merchantId and code.status=2   \n" +
-                " and code.pay_dt >=:startDate and pay_dt<=:endDate\n" +
-                ") temp " +
-                "";
+        StringBuilder builder = new StringBuilder();
+        builder.append(" FROM equipment_park ep LEFT JOIN equipment_park_owner epo ON ep.park_owner_id = epo.id LEFT JOIN equipment_park_owner_setting epd ON epo.id = epd.park_owner_id LEFT JOIN park_time pt ON ep.id = pt.park_id " +
+                "left join (" +
+                "select park_id,sum(clear_count) \n" +
+                "as clear_count,sum(platform_verification_amount) as platform_verification_amount,sum(clear_amount) as clear_amount,settle_pay_id,settle_pay_acno \n" +
+                " from clear_batch c where c.settlement_status=2 group by park_id,settle_pay_id,settle_pay_acno ) temp on temp.park_id=ep.id ");
+
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, +1);
 
@@ -55,7 +39,7 @@ public class splicingSqlmain {
 //                "GROUP BY  DATE_FORMAT(recon_date,'%y-%m')");
 
 
-        System.out.println(bodySql.toString());
+        System.out.println(builder.toString());
 //        String fasdfas = fasdfas();
 //        System.out.println(fasdfas);
 

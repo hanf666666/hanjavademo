@@ -1,0 +1,38 @@
+{
+  "flag": true,
+  "data": {
+    "resultList": [
+      {
+        "orderType": 13,
+        "rentingTerm": null,
+        "parkName": "月票",
+        "plateNo": "冀D12345",
+        "orderItemId": 76,
+        "refundStatus": null,
+        "type": 0,
+        "backPay": 1,
+        "howLong": "0",
+        "createdDt": "2023-06-29T11:49:44.000+0000",
+        "rechargeElectricityDegrees": 0,
+        "disputeBackPay": null,
+        "moneyPay": 1
+      },
+      {
+        "orderType": 13,
+        "rentingTerm": null,
+        "parkName": "月票",
+        "plateNo": "冀D12345",
+        "orderItemId": 72,
+        "refundStatus": null,
+        "type": 0,
+        "backPay": 1,
+        "howLong": "0",
+        "createdDt": "2023-06-29T11:26:25.000+0000",
+        "rechargeElectricityDegrees": 0,
+        "disputeBackPay": null,
+        "moneyPay": 1
+      }
+    ]
+  },
+  "msg": null
+}
