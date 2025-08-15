@@ -1,0 +1,13 @@
+{
+  "mchOrderNo": "2508084CD13804001596928400195584",
+  "mchNo": "1939606948537008128",
+  "subject": "新239黑盒测试车场-充值续费-粤B12345",
+  "amount": 1,
+  "notifyUrl": "http://camera-test.tdzntech.com/cpark-core-api/pay/meitian/payNotice",
+  "clientType": 0,
+  "ip": "163.125.112.255",
+  "openId": "o4BnOwya6NZtNjqkci4YKLVHHe1o",
+  "attach": "{\"parkCode\":\"TEST/100014P1499\",\"plateNumber\":\"粤B12345\",\"openId\":\"o4BnOwya6NZtNjqkci4YKLVHHe1o\",\"payWay\":0}",
+  "noncestr": "",
+  "sign": ""
+}

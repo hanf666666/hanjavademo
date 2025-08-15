@@ -23,8 +23,8 @@ public class KafkaProducerDemo2 {
     public static void main(String args[]) {
         Properties props = new Properties();
         //设置接入点，请通过控制台获取对应Topic的接入点。
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "bigdata-alpha-003.meitianbigdata.local:9092,bigdata-alpha-004.meitianbigdata.local:9092,bigdata-alpha-005.meitianbigdata.local:9092");
-//        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "59.110.226.151:9092");
+//        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "bigdata-alpha-003.meitianbigdata.local:9092,bigdata-alpha-004.meitianbigdata.local:9092,bigdata-alpha-005.meitianbigdata.local:9092");
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.50.254.127:9092");
 
         //消息队列Kafka版消息的序列化方式。
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
@@ -42,24 +42,29 @@ public class KafkaProducerDemo2 {
         try {
             //批量获取Future对象可以加快速度,。但注意，批量不要太大。
 
-            for (int i =0; i < 89; i++) {
+            for (int i =0; i < 4; i++) {
 
                 //[19587, 19301]
                 String uuid= UUID.randomUUID().toString().replaceAll("\\-","");
                 final long intime = DateUtil.date().getTime();
                 //构造一个消息队列Kafka版消息。
                 String topic_REPORT_CAR_IN ="CAR_IN"; //消息所属的Topic，请在控制台申请之后，填写在这里。
-                String topic_REPORT_CAR_IN_value = "{ \"extra\": {}, \"items\": [ { \"endDate\": null, \"howLong\": null, \"image\": \"111\", \"moneyPay\": 0, \"no\": \""+uuid+"\", \"parkId\": 19587, \"parkItemName\": \"086805\", \"parkName\": \"CCCCCA\", \"parkNo\": \"4590DE\", \"parkType\": 1, \"payType\": 4, \"phone\": \"13320633552\", \"plateNo\": \"川111111\", \"posUserChineseName\": \"5\", \"posUserId\": 5, \"posUserName\": 6, \"postage\": 7, \"startDate\": 1640966400000, \"status\": 8 } ], \"msgSeqNo\": \"20211223154547046GF1q7m\", \"segNo\": \"423542245\", \"topicName\": \"CAR_IN\" } "; //消息的内容。
+                String topic_REPORT_CAR_IN_value = "{ \"extra\": {}, \"items\": [ { \"endDate\": null, \"howLong\": null, \"image\": \"111\", \"moneyPay\": 0, \"no\": \""+uuid+"\", \"parkId\": 1949727814434553856, \"parkItemName\": \"086805\", \"parkName\": \"CCCCCA\", \"parkNo\": \"4590DE\", \"parkType\": 1, \"payType\": 4, \"phone\": \"13320633552\", \"plateNo\": \"川111111\", \"posUserChineseName\": \"5\", \"posUserId\": 5, \"posUserName\": 6, \"postage\": 7, \"startDate\": 1640966400000, \"status\": 8 } ], \"msgSeqNo\": \"20211223154547046GF1q7m\", \"segNo\": \"423542245\", \"topicName\": \"CAR_IN\" } "; //消息的内容。
                 uuid= UUID.randomUUID().toString().replaceAll("\\-","");
-                String topic_REPORT_CAR_OUT ="CAR_OUT"; //消息所属的Topic，请在控制台申请之后，填写在这里。
-                String REPORT_CAR_OUT_value = "{\"extra\":{},\"items\":[{\"endDate\":1638400223000,\"howLong\":27407000,\"image\":\"fasdfa\",\"moneyPay\":0,\"no\":\""+uuid+"\",\"parkId\":19587,\"parkItemName\":\"089511\",\"parkName\":\"DDDDDA\",\"parkNo\":\"4590DE\",\"parkType\":1,\"payType\":2,\"phone\":\"15881912046\",\"plateNo\":\"川111111\",\"posUserChineseName\":3,\"posUserId\":4,\"posUserName\":5,\"postage\":7,\"startDate\":1640966400000,\"status\":2}],\"msgSeqNo\":\"202112022156482385V7TIo\",\"segNo\":\"563563456\",\"topicName\":\"CAR_OUT\"}"; //消息的内容。
+                String topic_REPORT_CAR_OUT ="ROAD_SIDE_PARK_EVENT_BUS"; //消息所属的Topic，请在控制台申请之后，填写在这里。
+                String REPORT_CAR_OUT_value = "{\"extra\":{},\"items\":[{\"endDate\":1638400223000,\"howLong\":27407000,\"image\":\"fasdfa\",\"moneyPay\":0,\"no\":\""+uuid+"\",\"parkId\":1949727814434553856,\"parkItemName\":\"089511\",\"parkName\":\"DDDDDA\",\"parkNo\":\"4590DE\",\"parkType\":1,\"payType\":2,\"phone\":\"15881912046\",\"plateNo\":\"川111111\",\"posUserChineseName\":3,\"posUserId\":4,\"posUserName\":5,\"postage\":7,\"startDate\":1640966400000,\"status\":2}],\"msgSeqNo\":\"202112022156482385V7TIo\",\"segNo\":\"563563456\",\"topicName\":\"CAR_OUT\"}"; //消息的内容。
+                String ORDER_ITEM_PAY="ORDER_ITEM_PAY";
+                String itempay = "{\"backPay\":0,\"channelOrder\":\"2508141732498226299\",\"discount\":0,\"disputePay\":0,\"inTime\":\"2025-08-14 17:32:19\",\"moneyPay\":100,\"no\":\"2508141732498226299\",\"orderNo\":\"2508141732185077677\",\"orderStatus\":1,\"outTime\":\"2025-08-14 17:32:49\",\"parkId\":1949727814434553856,\"parkNo\":\"NMCW30\",\"parkType\":1,\"payDate\":\"2025-08-14 17:32:49\",\"payMethod\":4,\"payType\":2,\"plateNo\":\"浙A24566\",\"plateNoColour\":0,\"posUserId\":1952899886433045088,\"posUsername\":\"君君\",\"postage\":100,\"type\":2}"; //消息的内容。
 
                 //发送消息，并获得一个Future对象。
                 ProducerRecord<String, String> kafkaMessageIn =  new ProducerRecord<String, String>(topic_REPORT_CAR_IN, topic_REPORT_CAR_IN_value);
                 ProducerRecord<String, String> kafkaMessageOut =  new ProducerRecord<String, String>(topic_REPORT_CAR_OUT, REPORT_CAR_OUT_value);
+                ProducerRecord<String, String> ORDER_ITEM_PAYProducerRecord =  new ProducerRecord<String, String>(ORDER_ITEM_PAY, itempay);
 
                  producer.send(kafkaMessageIn);
                 producer.send(kafkaMessageOut);
+                producer.send(ORDER_ITEM_PAYProducerRecord);
+                System.out.println(REPORT_CAR_OUT_value);
 
 
             }

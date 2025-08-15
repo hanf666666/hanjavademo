@@ -18,7 +18,8 @@ public class KafkaConsumerDemo {
 
         Properties props = new Properties();
         //设置接入点，请通过控制台获取对应Topic的接入点。
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getProperty("bootstrap.servers"));
+//        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getProperty("bootstrap.servers"));
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.50.254.127:9092");
         //两次Poll之间的最大允许间隔。
         //消费者超过该值没有返回心跳，服务端判断消费者处于非存活状态，服务端将消费者从Consumer Group移除并触发Rebalance，默认30s。
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 300000);
@@ -31,6 +32,7 @@ public class KafkaConsumerDemo {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         //当前消费实例所属的消费组，请在控制台申请之后填写。
         //属于同一个组的消费实例，会负载消费消息。
+//        props.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaProperties.getProperty("group.id"));
         props.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaProperties.getProperty("group.id"));
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         //构造消费对象，也即生成一个消费实例。
