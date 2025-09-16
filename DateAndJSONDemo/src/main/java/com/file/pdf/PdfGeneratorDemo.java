@@ -15,34 +15,34 @@ public class PdfGeneratorDemo {
     private static final Configuration freemarkerCfg = new Configuration(Configuration.VERSION_2_3_32);
 
     public static void main(String[] args) throws Exception {
-        // 1. åˆå§‹åŒ–æ¨¡æ¿å¼•æ“
+        // 1. ³õÊ¼»¯Ä£°åÒıÇæ
         freemarkerCfg.setDirectoryForTemplateLoading(new File("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\DateAndJSONDemo\\src\\main\\resources\\templates"));
         freemarkerCfg.setDefaultEncoding("UTF-8");
 
-        // 2. å‡†å¤‡åŠ¨æ€æ•°æ®
+        // 2. ×¼±¸¶¯Ì¬Êı¾İ
         Map<String, Object> data = new HashMap<>();
-        data.put("documentTitle", "äº§å“ä»·æ ¼æ¸…å•");
+        data.put("documentTitle", "²úÆ·¼Û¸ñÇåµ¥");
 
         List<Map<String, Object>> products = new ArrayList<>();
         Map<String, Object> map1 = new HashMap<>();
-        map1.put("name", "ç¬”è®°æœ¬ç”µè„‘1");
+        map1.put("name", "±Ê¼Ç±¾µçÄÔ1");
         map1.put("price", 1);
         Map<String, Object> map2 = new HashMap<>();
-        map2.put("name", "ç¬”è®°æœ¬ç”µè„‘2");
+        map2.put("name", "±Ê¼Ç±¾µçÄÔ2");
         map2.put("price", 2);
         products.add(map1);
         products.add(map2);
         data.put("products", products);
         data.put("discountApplied", true);
 
-        // 3. æ¸²æŸ“HTML
+        // 3. äÖÈ¾HTML
         Template template = freemarkerCfg.getTemplate("template.ftl");
         StringWriter htmlWriter = new StringWriter();
         template.process(data, htmlWriter);
         String htmlContent = htmlWriter.toString();
         System.out.println(htmlContent);
 
-        // 4. ç”ŸæˆPDF
+        // 4. Éú³ÉPDF
         try (OutputStream os = new FileOutputStream("D:\\ideaspace\\javaspace\\zijidemo\\hanjavademo\\DateAndJSONDemo\\src\\main\\resources\\templates\\output.pdf")) {
             ITextRenderer renderer = new ITextRenderer();
             renderer.setDocumentFromString(htmlContent);
@@ -50,7 +50,7 @@ public class PdfGeneratorDemo {
             renderer.createPDF(os);
         }
 
-        System.out.println("PDFç”ŸæˆæˆåŠŸï¼");
+        System.out.println("PDFÉú³É³É¹¦£¡");
     }
 }
 
