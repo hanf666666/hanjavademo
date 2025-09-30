@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class StopWatchMain {
     public static void main(String[] args) throws InterruptedException {
 
-        // Ö»Êä³öÔËÐÐ¶àÉÙÃë
+        // Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½
         StopWatch stopwatch = StopWatch.create("id");
         stopwatch.start("task1");
         stopwatch.stop();
@@ -26,9 +26,9 @@ public class StopWatchMain {
         Thread.sleep(1000);
         stopwatch.stop();
 
-        System.out.println(stopwatch.prettyPrint());
+//        System.out.println(stopwatch.prettyPrint());
         System.out.println(stopwatch.prettyPrint(TimeUnit.SECONDS));
-        System.out.println(stopwatch.getLastTaskTimeMillis());
+//        System.out.println(stopwatch.getLastTaskTimeMillis());
         String momRatio = String.format("%.2f", (10898 * 1.00 / 10898 - 1) * 100);
         String momRatio2 = String.format("%.2f", (10898 * 1.0 / 10898 - 1) * 100);
         System.out.println(momRatio);

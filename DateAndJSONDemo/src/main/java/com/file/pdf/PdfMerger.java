@@ -1,9 +1,12 @@
+/*
 package com.file.pdf;
 
+*/
 /**
  * @author Hj
  * @date 2025/9/16
- */
+ *//*
+
 
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -42,3 +45,4 @@ public class PdfMerger {
         merger.mergeDocuments(null);
     }
 }
+*/

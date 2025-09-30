@@ -1,9 +1,12 @@
+/*
 package com.file.pdf;
 
+*/
 /**
  * @author Hj
  * @date 2025/9/16
- */
+ *//*
+
 
 import org.apache.pdfbox.multipdf.Splitter;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -21,9 +24,9 @@ public class PdfSplitter {
 
         try {
             splitPDF(outputPath, inputFiles, splitCount);
-            System.out.println("PDF²ð·ÖÍê³É£¡");
+            System.out.println("PDFï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½");
         } catch (IOException e) {
-            System.err.println("PDF²ð·ÖÊ§°Ü: " + e.getMessage());
+            System.err.println("PDFï¿½ï¿½ï¿½Ê§ï¿½ï¿½: " + e.getMessage());
         }
     }
 
@@ -45,3 +48,4 @@ public class PdfSplitter {
     }
 }
 
+*/

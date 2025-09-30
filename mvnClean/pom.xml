@@ -12,11 +12,11 @@
     <artifactId>mvnClean</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-        <dependency>
-            <groupId>park.chongqing.api.gateway</groupId>
-            <artifactId>sofamq</artifactId>
-            <version>0.0.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>park.chongqing.api.gateway</groupId>-->
+<!--            <artifactId>sofamq</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--        </dependency>-->
 
         <!--        com\itextpdf\itextpdf\5.4.3-->
         <dependency>
