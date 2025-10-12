@@ -12,18 +12,32 @@ import lombok.ToString;
 @Data
 @ToString
 public class OABean {
-     private String subcompanyid;
-     private String subcompanyname;
-     private String departmentid;
-     private String departmentname;
-     private String hrmid;
-     private String hrmname;
-     private String scheduledate;
-     private String scheduleweek;
-     private String scheduletype;
-     private String timeslot;
-     private String beginsigntime;
-     private String endsigntime;
-     private String kqrequest;
-     private String auditstatus;
+    //"subcompanyid":"20",
+    private String subcompanyid;
+    // "subcompanyname":"盘古美天",
+    private String subcompanyname;
+    // "departmentid":"213",
+    private String departmentid;
+    // "departmentname":"大数据部",
+    private String departmentname;
+    // "hrmid":"1378",
+    private String hrmid;
+    // "hrmname":"韩静",
+    private String hrmname;
+    // "scheduledate":"2025-10-01",
+    private String scheduledate;
+    // "scheduleweek":"星期三",
+    private String scheduleweek;
+    // "scheduletype":"节假日",
+    private String scheduletype;
+    // "timeslot":"---",
+    private String timeslot;
+    // "beginsigntime":"---",
+    private String beginsigntime;
+    // "endsigntime":"---",
+    private String endsigntime;
+    // "kqrequest":"",
+    private String kqrequest;
+    // "auditstatus":"正常"
+    private String auditstatus;
 }
