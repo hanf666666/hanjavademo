@@ -1,131 +1,52 @@
 {
-  "id": 1878,
-  "reconDate": "2025-02-07 17:22:14",
-  "tradeDate": "2025-01-08",
-  "reconBatchNum": "DZ1738920132944",
-  "thirdBatchNum": "TP1738920131206",
-  "aliNum": 0,
-  "aliTradeAmount": 0,
-  "aliRefundAmount": 0,
-  "wxAppNum": 13,
-  "wxAppTradeAmount": 472,
-  "wxAppRefundAmount": 143,
-  "wxOfficialNum": 0,
-  "wxOfficialTradeAmount": 0,
-  "wxOfficialRefundAmount": 0,
-  "errorNum": 1,
-  "bananceTradeAmount": 0,
-  "bananceTradeNum": 0,
-  "reconTime": "2025-01-08",
-  "linked": {
-    "wxAppRefundAmountYuan": "1.43",
-    "aliTradeAmountYuan": "0.00",
-    "aliRefundAmountYuan": "0.00",
-    "wxOfficialRefundAmountYuan": "0.00",
-    "wxAppTradeAmountYuan": "4.72",
-    "dataList": [
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      },
-      {
-        "recontradeAmountYuan": "1889493168078929920",
-        "reconrefundAmountYuan": "1889493168078929920",
-        "reconNum": "1889493168078929920"
-      },
-      {
-        "recontradeAmountYuan": "1890311508089049088",
-        "reconrefundAmountYuan": "1890311508089049088",
-        "reconNum": "1890311508089049088"
-      }
+  "flag": true,
+  "data": {
+    "parkingStage": "122",
+    "plateNo": "´¨JC5818",
+    "plateNoColour": 0,
+    "parkName": "ËìÄþÊÐ»Æº×Â¥",
+    "parkPhone": null,
+    "parkItemId": 63741,
+    "parkItemName": "079031",
+    "moneyPay": 0,
+    "couponPay": 0,
+    "submitDate": null,
+    "payDate": null,
+    "status": null,
+    "postage": 0,
+    "startDate": 1760435131000,
+    "endDate": 1760510391389,
+    "offTime": 0,
+    "howLong": 75260000,
+    "videoRecordID": null,
+    "payNo": null,
+    "orderNo": "2510141745342974754",
+    "totalMoney": 900,
+    "type": 1,
+    "serverTypeStereo": 2,
+    "freeParkTime": 15,
+    "discountAmount": null,
+    "images": [
+      "https://platform-service-1320652165.cos.ap-nanjing.myqcloud.com/yun/meisoo_terminal_service/2025/10/15/08/21/pos-aa3f92d1-bedd-42da-bdc8-9d136df5cf771760487685950804.jpeg?q-sign-algorithm=sha1&q-ak=AKIDymdSBC1d193lHbm7HCsJVS9mLqDTXP3f&q-sign-time=1760510391%3B1760513991&q-key-time=1760510391%3B1760513991&q-header-list=host&q-url-param-list=&q-signature=be02a29ca41bce6f563c804637a168b68afbeefa",
+      "https://platform-service-1320652165.cos.ap-nanjing.myqcloud.com/yun/meisoo_terminal_service/2025/10/15/08/09/pos-cd903367-d5d0-4e12-bf29-1665fd53360d1760486980935727.jpeg?q-sign-algorithm=sha1&q-ak=AKIDymdSBC1d193lHbm7HCsJVS9mLqDTXP3f&q-sign-time=1760510391%3B1760513991&q-key-time=1760510391%3B1760513991&q-header-list=host&q-url-param-list=&q-signature=f58567a930fc70f91ba7fa7a2722b743cd53b5ac",
+      "https://platform-service-1320652165.cos.ap-nanjing.myqcloud.com/yun/meisoo_terminal_service/2025/10/14/19/42/pos-1b662feb-b56b-4280-958e-72389df368311760442129282411.jpeg?q-sign-algorithm=sha1&q-ak=AKIDymdSBC1d193lHbm7HCsJVS9mLqDTXP3f&q-sign-time=1760510391%3B1760513991&q-key-time=1760510391%3B1760513991&q-header-list=host&q-url-param-list=&q-signature=d0faccbb3ee604c731e3abdd447581d336c4dfd2",
+      "https://platform-service-1320652165.cos.ap-nanjing.myqcloud.com/yun/meisoo_terminal_service/2025/10/14/18/08/pos-393c3ea6-fe31-48a2-8620-c953d2cf2ce61760436530715969.jpeg?q-sign-algorithm=sha1&q-ak=AKIDymdSBC1d193lHbm7HCsJVS9mLqDTXP3f&q-sign-time=1760510391%3B1760513991&q-key-time=1760510391%3B1760513991&q-header-list=host&q-url-param-list=&q-signature=41382ad911bb60d0ebe184fa52dde479fb9a68f7",
+      "https://platform-service-1320652165.cos.ap-nanjing.myqcloud.com/yun/meisoo_terminal_service/2025/10/14/18/08/pos-2e1fcc56-6958-44fa-9d40-9c8535779fc01760436522556453.jpeg?q-sign-algorithm=sha1&q-ak=AKIDymdSBC1d193lHbm7HCsJVS9mLqDTXP3f&q-sign-time=1760510391%3B1760513991&q-key-time=1760510391%3B1760513991&q-header-list=host&q-url-param-list=&q-signature=8a41268d248038e05935d709dfc0afdc4591d799"
     ],
-    "wxOfficialTradeAmountYuan": "0.00",
-    "balanceTradeAmountYuan": "0.00"
-  }
-}
+    "freeUser": 0,
+    "rentBegin": null,
+    "rentEnd": null,
+    "isOpenNoSense": null,
+    "isSupportNoSense": null,
+    "isRoadSideLock": 0,
+    "roadSideLockLastTime": null,
+    "roadSideLockTotalTime": null,
+    "payWay": 10,
+    "parkOwnerId": 27,
+    "plateNoColoursForChoose": null,
+    "parkOwnerInfoVo": {
+      "id": 27,
+      "name": "ËìÄþÏîÄ¿",
+      "code": "parkOwner202001031400",
+      "wxOfficialAppId": null,
+      "wxOfficialApiKey"

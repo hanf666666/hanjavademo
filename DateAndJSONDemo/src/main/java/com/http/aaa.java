@@ -1,5 +1,9 @@
 package com.http;
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUtil;
+
 import java.util.Arrays;
 
 /**
@@ -8,6 +12,15 @@ import java.util.Arrays;
  */
 public class aaa {
     public static void main(String[] args) {
+
+        DateTime offset = DateUtil.date();
+        DateTime offset2=offset;
+        System.out.println(offset2);
+        DateTime offset1 = offset.offsetNew(DateField.MONTH, 1);
+        System.out.println(offset);
+        System.out.println(offset1);
+        System.out.println(offset2);
+
         String ss="https://www.meitianiot.com,https://wxsr.meitianiot.com,http://k8sapi.meitianiot.com,http://k8swww.meitianiot.com,http://realdata.meitianiot.com,http://www.meitianiot.com,http://api.meitianiot.com,https://api.meitianiot.com,https//k8swww.meitianiot.com,https://webrtch5.meitianiot.com,https://txwww.meitianiot.com,http://txwww.meitianiot.com";
         Arrays.stream(ss.split(",")).forEach(
                 row->{

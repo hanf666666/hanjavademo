@@ -1,10 +1,9 @@
 package com.date;
 
 import cn.hutool.core.text.StrBuilder;
+import cn.hutool.core.util.StrUtil;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * to do
@@ -27,7 +26,43 @@ public class splicingSqlmain2 {
                 "\twhere `order_item_no`=:orderItemNo and  r.deleted=0 \n" +
                 ") as temp left join pay_param_order_record_attr rp2 on  temp.id=rp2.pay_record_id and rp2.attr_type=2 limit 1";
 
-        String s = value.toString().replaceAll("]]>", "")
+
+        String sql = "select * from \n" +
+                "(\n" +
+                "SELECT pcr.project_id AS projectId,pcr.id,pcr.park_card_meal_id parkCardMealId,pcm.expired_remind_days expiredRemindDays,pcm.`name` cardName,pcm.card_type cardType,pcm.period_type periodType,\n" +
+                "pcr.plate_no plateNo,pcr.plate_no_color plateNoColor,pcr.validity_start_date validityStartDate,pcr.validity_end_date validityEndDate,\n" +
+                "pco.amount as amount,pco.order_no orderNo,pco.pay_time as payTime,pcr.status\n" +
+                " FROM user_purchase_card_record pcr \n" +
+                " JOIN park_card_meal pcm ON pcr.park_card_meal_id = pcm.id AND pcr.deleted = 0 \n" +
+                " JOIN park_card_order pco ON pcr.order_no = pco.order_no \n" +
+                " WHERE pcr.deleted = 0 \n" +
+                " AND pcr.phone = :phone\n" +
+                "\n" +
+                " union all\n" +
+                "\t\n" +
+                "SELECT pcr.project_id AS projectId,pcr.id,pcr.park_card_meal_id parkCardMealId,pcm.expired_remind_days expiredRemindDays,pcm.`name` cardName,pcm.card_type cardType,pcm.period_type periodType,\n" +
+                "pcr.plate_no plateNo,pcr.plate_no_color plateNoColor,pcr.validity_start_date validityStartDate,pcr.validity_end_date validityEndDate,\n" +
+                "pco.money as amount,pco.order_no orderNo,pco.pay_dt as payTime,pcr.status\n" +
+                " FROM user_purchase_card_record pcr \n" +
+                " JOIN park_card_meal pcm ON pcr.park_card_meal_id = pcm.id AND pcr.deleted = 0 \n" +
+                " JOIN score_store_order pco ON pcr.order_no = pco.order_no \n" +
+                " WHERE pcr.deleted = 0 \n" +
+                " AND pcr.phone = :phone\n" +
+                " ) t\n" +
+                "ORDER BY t.status ASC,t.validityEndDate ASC";
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+//        if (Objects.nonNull(dto.getCityId())){
+//            sql.append("AND ep.city_id = :cityId ");
+//            paramMap.put("cityId",dto.getCityId());
+//        }
+//        if (StrUtil.isNotBlank(dto.getName())){
+//            sql.append("AND (pcm.`name` LIKE :name OR ep.`name` LIKE :name) ");
+//            paramMap.put("name","%"+dto.getName()+"%");
+//        }
+
+        String s = sql.toString().replaceAll("]]>", "")
                 .replaceAll("CDATA", "")
                 .replaceAll("<!\\[\\[", "");
         System.out.println(s);
