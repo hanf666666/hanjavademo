@@ -50,13 +50,13 @@ public class hutoolDemo3 {
                 //工作日
                 startDate = row.getScheduledate() + " 19:00";
             }
-            if (!row.getEndsigntime().contains("---")&&!row.getEndsigntime().contains("18:")) {
+            if (!row.getEndsigntime().contains("---")&&!row.getEndsigntime().contains("18:")&&!row.getEndsigntime().contains("08:")) {
                 String endDate = row.getScheduledate() + " " + row.getEndsigntime();
                 if (startDate.compareTo(endDate) > 0) {
                     endDate = DateUtil.parse(endDate, "yyyy-MM-dd HH:mm").offset(DateField.DAY_OF_YEAR, 1).toString();
                 }
                 Double timeDiff = timeDiffCalculator(startDate, endDate);
-                System.out.println(row.getScheduledate() + "\t" + row.getBeginsigntime() + "\t" + row.getEndsigntime() + "\t" + timeDiff+ "\t" + row.getKqrequest() );
+                System.out.println(row.getScheduletype()+ "\t"+row.getScheduledate() + "\t" + row.getBeginsigntime() + "\t" + row.getEndsigntime() + "\t" + timeDiff+ "\t" + row.getKqrequest() );
 
             }
         });
@@ -65,28 +65,6 @@ public class hutoolDemo3 {
 
     }
 
-    //    测试
-    private static void extracted() {
-        OABean row = new OABean();
-        row.setScheduledate("2025-09-04");
-        row.setBeginsigntime("08:46");
-        row.setEndsigntime("00:00");
-        row.setScheduletype("节假2日");
-        String startDate = null;
-        if (row.getScheduletype().contains("节假日")) {
-            startDate = row.getScheduledate() + " " + row.getBeginsigntime();
-        } else {
-            startDate = row.getScheduledate() + " 19:00";
-        }
-        String endDate = row.getScheduledate() + " " + row.getEndsigntime();
-        if (startDate.compareTo(endDate) > 0) {
-            endDate = DateUtil.parse(endDate, "yyyy-MM-dd HH:mm").offset(DateField.DAY_OF_YEAR, 1).toString();
-        }
-
-        double l = timeDiffCalculator(startDate, endDate);
-        System.out.println(row.getScheduledate() + " " + row.getBeginsigntime() + " " + row.getEndsigntime() + " " + row.getKqrequest()
-                + " " + l);
-    }
 
     public static Double timeDiffCalculator(String dateStr1, String dateStr2) {
         long betweenMinute = DateUtil.between(
