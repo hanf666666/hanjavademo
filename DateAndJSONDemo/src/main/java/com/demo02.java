@@ -15,10 +15,24 @@ import java.util.UUID;
  * @date 2024/3/13
  */
 public class demo02 {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         BigDecimal refund = new BigDecimal(3);
         BigDecimal profitRate = new BigDecimal(0.18+"");
         BigDecimal subtract = new BigDecimal(0).subtract(refund.multiply(profitRate).setScale(0, RoundingMode.HALF_UP));
         System.out.println(subtract);
+
+
+        try {
+            try {
+                int i = 1 / 0;
+            } catch (Exception e) {
+                System.out.println("111111111111111111");
+                Thread.sleep(10000);
+            }
+        }catch (Exception e) {
+            System.out.println("22222222222");
+
+            e.printStackTrace();
+        }
     }
 }

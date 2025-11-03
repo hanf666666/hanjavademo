@@ -28,23 +28,26 @@ public class crulMain {
 //                "  --compressed ^\n" +
 //                "  --insecure";
 
-        String curl="curl \"http://betamanagegateway.meitianiot.com/api/bossManage/v1/advertising/management/page\" ^\n" +
-                "  -H \"Accept: application/json, text/plain, */*\" ^\n" +
-                "  -H \"Accept-Language: zh-CN,zh;q=0.9\" ^\n" +
-                "  -H \"Connection: keep-alive\" ^\n" +
-                "  -H \"Content-Type: application/json;charset=UTF-8\" ^\n" +
-                "  -H \"Origin: http://localhost:9528\" ^\n" +
-                "  -H \"Referer: http://localhost:9528/\" ^\n" +
-                "  -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\" ^\n" +
-                "  -H \"X-URL-PATH: /\" ^\n" +
-                "  -H \"accesstoken: 7b61c316-b0c6-49e1-a42c-acb2d736e7b7\" ^\n" +
-                "  -H \"projectId: 1\" ^\n" +
-                "  -H \"scope: bossManage\" ^\n" +
-                "  -H \"userid: 11838\" ^\n" +
-                "  -H \"username: zhaoyangyang\" ^\n" +
-                "  -H \"x-access-token: 7b61c316-b0c6-49e1-a42c-acb2d736e7b7\" ^\n" +
-                "  --data-raw ^\"^{^\\^\"pageIndex^\\^\":1,^\\^\"pageCount^\\^\":10,^\\^\"name^\\^\":^\\^\"^\\^\",^\\^\"position^\\^\":^\\^\"^\\^\",^\\^\"status^\\^\":^\\^\"^\\^\"^}^\" ^\n" +
-                "  --insecure";
+        String curl="curl.exe ^\"http://managegateway.meitianiot.com/api/clearingPlat/v1/settleCreated/settlementpage^\" ^\n" +
+                "  -X POST ^\n" +
+                "  -H ^\"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:144.0) Gecko/20100101 Firefox/144.0^\" ^\n" +
+                "  -H ^\"Accept: application/json, text/plain, */*^\" ^\n" +
+                "  -H ^\"Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2^\" ^\n" +
+                "  -H ^\"Accept-Encoding: gzip, deflate^\" ^\n" +
+                "  -H ^\"Content-Type: application/x-www-form-urlencoded^\" ^\n" +
+                "  -H ^\"X-URL-PATH: /^\" ^\n" +
+                "  -H ^\"x-access-token: dg507g5s4y2rsvzk7rahkljkyhx3s1zv^\" ^\n" +
+                "  -H ^\"TOKEN: dg507g5s4y2rsvzk7rahkljkyhx3s1zv^\" ^\n" +
+                "  -H ^\"USER_ID: 797^\" ^\n" +
+                "  -H ^\"TIMESTAMP: 1762169680000^\" ^\n" +
+                "  -H ^\"TRACE_ID: JAR4V8zf^\" ^\n" +
+                "  -H ^\"SIGN: e23205bb7657ec355c4c0b967bfb29d4^\" ^\n" +
+                "  -H ^\"SCOPE: clearingPlat^\" ^\n" +
+                "  -H ^\"Origin: http://clearingplat.meitianiot.com^\" ^\n" +
+                "  -H ^\"Connection: keep-alive^\" ^\n" +
+                "  -H ^\"Referer: http://clearingplat.meitianiot.com/^\" ^\n" +
+                "  -H ^\"Priority: u=0^\" ^\n" +
+                "  --data-raw ^\"pageIndex=0^&pageCount=10^&parkOwner=66^&parkName=^&clearType=^&settlementStatus=^&providerService=^&transeferSuccessDtStart=^&transeferSuccessDtEnd=^&endTimeStart=^&endTimeEnd=^&settlePayId=^\"";
 
 
         System.out.println(curl.replaceAll("\\^",""));

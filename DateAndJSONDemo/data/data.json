@@ -1,14 +1,35 @@
-[
-  {
-    "filePath": "/home/jht/up_file/NISSP/af5b7d7b9c85494fbdb64fb5050664de/PIC/NISSP_IMG_PARK_OUT/20240719/afa902f025d947c986eed8c8bd4f9368"
-  }
-]
-
-
 {
-  "dataItems": "[{\"filePath\":\"/home/jht/up_file/NISSP/af5b7d7b9c85494fbdb64fb5050664de/PIC/NISSP_IMG_PARK_OUT/20240719/ac816604d63a45b887d39b43e908fd7c\"}]",
-  "pno": "MTYXPT",
-  "sn": "C66BB8156E780C0DEAC0A44D7BF13B04",
-  "tn": "D04EDE43737847E98CD9849FD2F1E3FD",
-  "ts": "20240719095531301"
+  "extra": {},
+  "items": [
+    {
+      "eventType": 11,
+      "tradeOrderMsg": {
+        "backPay": 0,
+        "channelOrder": "4200002920202511020772067385",
+        "discount": 0,
+        "disputePay": 0,
+        "moneyPay": 300,
+        "no": "2511021118254516904",
+        "orderNo": "2511020944211608034",
+        "orderStatus": 1,
+        "parkId": 19372,
+        "parkNo": "9T73B2",
+        "parkType": 1,
+        "payDate": "2025-11-02 11:18:45",
+        "payMethod": 2,
+        "payType": 1,
+        "phone": "13982582120",
+        "plateNo": "´¨J88F56",
+        "plateNoColour": 0,
+        "posUserId": 4354,
+        "posUsername": "À×ÃúÐË",
+        "postage": 300,
+        "todayOrderNo": true,
+        "type": 2
+      }
+    }
+  ],
+  "msgSeqNo": "20251102111845579DrS7GF",
+  "segNo": "",
+  "topicName": "DATA_SYN"
 }

@@ -12,7 +12,12 @@ import java.util.Arrays;
  */
 public class aaa {
     public static void main(String[] args) {
+//        6d8a51
+        //74, certNo=415230625_1761894584773, trCode=210201, corpNo=0010027838, trAcdt=20251031, trTime=150942, serialNo=, atomTrCount=1, particularCode=9100, receiptDate=null, receiptNumber=null,
+        //74, certNo=415230625_1761894584773, trCode=210201, corpNo=0010027838, trAcdt=20251031, trTime=150942, serialNo=, atomTrCount=1, particularCode=9100, receiptDate=null, receiptNumber=null,
+        //74, certNo=cbvql1_1761894584773, trCode=210201, corpNo=0010027838, trAcdt=20251031, trTime=150942, serialNo=, atomTrCount=1, particularCode=9100, receiptDate=null, receiptNumber=null,
 
+        System.out.println(Integer.toString(415230625, 32));
         DateTime offset = DateUtil.date();
         DateTime offset2=offset;
         System.out.println(offset2);
