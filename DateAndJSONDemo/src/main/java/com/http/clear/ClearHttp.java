@@ -24,8 +24,11 @@ public class ClearHttp {
     public static void main(String[] args) {
 
         // 创建一个 HttpRequest 对象
-//        String url = "http://managegateway.meitianiot.com/api/clearingPlat/v1/settleCreated/settlementpage";
-        String url = "http://managegateway.meitianiot.com/api/clearingPlat/v1/settlement/confirm";
+//        String url = "http://managegateway.meitianiot.com/api/clearingPlat/v1/settleCreated/settlementpage?settlementNo=JS1762151603795";
+        String url = "http://managegateway.meitianiot.com/api/clearingPlat/v1/settlement/confirm?settlementNo=JS1762151603795";
+//      {app="apimanagegateway"}|="INVALID_SIGN,TRACE_ID IS"
+//      {app="apimanagegateway"}|="INVALID_SIGN,TRACE_ID IS"
+//      {app="clearingplatservice"}|="结算管理-结算批次管理3"
 
         HttpRequest request = HttpRequest.post(url)
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:144.0) Gecko/20100101 Firefox/144.0")
@@ -39,7 +42,8 @@ public class ClearHttp {
                 .header("USER_ID", "797")
                 .header("TIMESTAMP", "1762170756000")
                 .header("TRACE_ID", "QjbcePs2")
-                .header("SIGN", "89e5e38bd4440646086bc102beaf5c4f")
+//                .header("SIGN", "f96ac4f9788bac7a36ea7922f39aec4d")
+                .header("SIGN", "f96ac4f9788bac7a36ea7922f39aec4d")
                 .header("SCOPE", "clearingPlat")
                 .header("Origin", "http://clearingplat.meitianiot.com")
                 .header("Connection", "keep-alive")
