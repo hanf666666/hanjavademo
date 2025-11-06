@@ -31,8 +31,8 @@ public class EurekaDemo {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meitian-activities\\", new FileFilter() {
         //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\acquisition-platform\\", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\BossManage", new FileFilter() {
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\backend-java\\meisoo-cq-parking", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getName().contains(srcFileName)) {
@@ -60,9 +60,13 @@ public class EurekaDemo {
             List<String> newlines = new ArrayList<>();
 
             for (String line : lines) {
+                String modifiedLine = line;
                 // 修改每一行的内容，这里只是一个简单的示例，你可以根据需要进行修改
-//                String modifiedLine = line.replaceAll("http://123.56.13.226:8761", "123.56.13.226:8761");
-                String  modifiedLine = line.replaceAll("47.95.216.113:8761", "123.56.13.226:8761");
+//                String modifiedLine = modifiedLine.replaceAll("http://123.56.13.226:8761", "123.56.13.226:8761");
+                if(modifiedLine.contains("123.56.13.226:8761")&&!modifiedLine.contains("http://123.56.13.226:8761")){
+                      modifiedLine = modifiedLine.replaceAll("123.56.13.226:8761", "http://123.56.13.226:8761");
+
+                }
                  newlines.add(modifiedLine);
             }
 
