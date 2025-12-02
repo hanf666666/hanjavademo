@@ -1,5 +1,8 @@
 package com;
 
+import cn.hutool.core.lang.Snowflake;
+import cn.hutool.core.util.IdUtil;
+
 /**
  * @author Hj
  * @date 2025/10/14
@@ -57,6 +60,8 @@ public class CompactSnowflake {
         return millis;
     }
     public static void main(String[] args) {
-        System.out.println(new CompactSnowflake(2).nextId());
+//        System.out.println(new CompactSnowflake(2).nextId());
+        IdUtil.getSnowflake().nextId();
+        new Snowflake().nextId();
     }
 }
