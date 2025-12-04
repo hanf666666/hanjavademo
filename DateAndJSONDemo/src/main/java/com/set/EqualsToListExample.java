@@ -1,9 +1,11 @@
 package com.set;
 
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import javafx.util.Pair;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
 /**
  * 1. 【强制】关于 hashCode 和 equals 的处理，遵循如下规则：
  * @author Hj
@@ -11,6 +13,25 @@ import java.util.Set;
  */
 public class EqualsToListExample {
     public static void main(String[] args) {
+        List<Pair<String, Double>> pairArrayList = new ArrayList<>(3);
+        pairArrayList.add(new Pair<>("version", 12.10));
+        pairArrayList.add(new Pair<>("version", 12.19));
+        pairArrayList.add(new Pair<>("version", 6.28));
+        Map<String, Double> map = pairArrayList.stream().collect(
+// 生成的 map 集合中只有一个键值对：{version=6.28}
+                Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v2));
+
+//        在使用 java.util.stream.Collectors 类的 toMap()方法转为 Map 集合时，一定要使
+//        用含有参数类型为 BinaryOperator，参数名为 mergeFunction 的方法，否则当出现相同 key
+//        值时会抛出 IllegalStateException 异常
+        String[] departments = new String[] {"iERP", "iERP", "EIBU"};
+
+        //7. 【强制】Collections 类返回的对象，如：emptyList()/singletonList()等都是 immutable list，
+        Map<Integer, String> map2 = Arrays.stream(departments)
+                .collect(Collectors.toMap(String::hashCode, str -> str,(v1, v2) -> v2));
+        List<Object> list = Collections.emptyList();
+        list.add("aaaa");
+
         // 对象 1
         Persion p1 = new Persion();
         p1.setName("Java");
