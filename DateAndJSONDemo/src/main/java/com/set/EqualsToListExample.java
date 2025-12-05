@@ -1,8 +1,10 @@
 package com.set;
 
 
+import cn.hutool.core.date.DateUtil;
 import javafx.util.Pair;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,6 +15,13 @@ import java.util.stream.Collectors;
  */
 public class EqualsToListExample {
     public static void main(String[] args) {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        sdf.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+        String localTime = sdf.format(new Date()); // 需手动设置时区
+        System.out.println(localTime);
+        System.out.println(DateUtil.date().toDateStr());
+
         List<Pair<String, Double>> pairArrayList = new ArrayList<>(3);
         pairArrayList.add(new Pair<>("version", 12.10));
         pairArrayList.add(new Pair<>("version", 12.19));
@@ -30,7 +39,7 @@ public class EqualsToListExample {
         Map<Integer, String> map2 = Arrays.stream(departments)
                 .collect(Collectors.toMap(String::hashCode, str -> str,(v1, v2) -> v2));
         List<Object> list = Collections.emptyList();
-        list.add("aaaa");
+//        list.add("aaaa");
 
         // 对象 1
         Persion p1 = new Persion();
