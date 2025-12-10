@@ -1,12 +1,10 @@
-package com.ÂèçÂ∞ÑDemo.ÊñπÂºè1;
+package com.∑¥…‰Demo.∑Ω Ω1;
 
 /**
- * to do
- *
  * @author Hj
- * @date 2022/1/5
+ * @date 2025/12/9
  */
-public class demo01 {
+public class Demo_01 {
     public static void main(String[] args) {
         Person aPerson = new Person();
         Class class1 = aPerson.getClass();

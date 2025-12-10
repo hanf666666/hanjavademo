@@ -61,7 +61,8 @@ public class CompactSnowflake {
     }
     public static void main(String[] args) {
 //        System.out.println(new CompactSnowflake(2).nextId());
-        IdUtil.getSnowflake().nextId();
-        new Snowflake().nextId();
+        ;
+        System.out.println(IdUtil.getSnowflake(32).nextId());
+//        new Snowflake().nextId();
     }
 }
