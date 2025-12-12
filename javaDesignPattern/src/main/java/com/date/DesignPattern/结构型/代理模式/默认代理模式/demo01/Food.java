@@ -1,8 +1,17 @@
 package com.date.DesignPattern.结构型.代理模式.默认代理模式.demo01;
 
+
 public class Food {
     private  String  spicy;
     private String   salt;
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "spicy='" + spicy + '\'' +
+                ", salt='" + salt + '\'' +
+                '}';
+    }
 
     public String getSpicy() {
         return spicy;

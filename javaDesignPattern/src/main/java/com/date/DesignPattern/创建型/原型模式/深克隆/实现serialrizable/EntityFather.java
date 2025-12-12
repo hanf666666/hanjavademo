@@ -31,12 +31,12 @@ public class EntityFather implements Serializable {
         EntityFather entityFather = null;
 
         try {
-            //?????
+            //
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             ObjectOutput objectOutput = new ObjectOutputStream(byteArrayOutputStream);
             objectOutput.writeObject(this);
 
-            //??????
+            //
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
             ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
             entityFather = (EntityFather) objectInputStream.readObject();

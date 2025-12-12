@@ -49,7 +49,7 @@ public class TraversalUtil {
                     } else if (encodetype.contains("GB2312") && convertEncodetype == ConvertEncodetype.TOGBK) {
                         System.out.println("本身就是GB2312,不需要再转");
                     } else {
-                        System.out.println("源文件类型===>" + encodetype + "===>不变????????????????");
+                        System.out.println("源文件类型===>" + encodetype + "===>不变");
 
                     }
                 }

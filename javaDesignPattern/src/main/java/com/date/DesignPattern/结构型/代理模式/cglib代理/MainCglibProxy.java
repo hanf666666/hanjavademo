@@ -4,9 +4,8 @@ import org.junit.Test;
 
 public class MainCglibProxy {
     @Test
-    // ??д???
     public void testNoProxy() {
-       CustomerServiceImpl customerService = new CustomerServiceImpl();
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
         customerService.save();
         customerService.update();
         customerService.delete();
@@ -14,14 +13,11 @@ public class MainCglibProxy {
     }
 
     @Test
-    // ???? cglib????
     public void testCglibProxy() {
-        // ???
-        com.date.DesignPattern.结构型.代理模式.SpringAop2.CustomerServiceImpl target = new com.date.DesignPattern.结构型.代理模式.SpringAop2.CustomerServiceImpl();
-        // ???????
+        CustomerServiceImpl target =new CustomerServiceImpl();
         CglibProxy factory = new CglibProxy(target);
-       CustomerServiceImpl proxy = (CustomerServiceImpl) factory.createProxy();
-        // ??????????????
+        //com.date.DesignPattern.结构型.代理模式.SpringAop2.CustomerServiceImpl$$EnhancerByCGLIB$$e9ac5253@27fe3806
+        CustomerServiceImpl proxy = (CustomerServiceImpl) factory.createProxy();
         proxy.save();
         proxy.update();
         proxy.delete();

@@ -47,7 +47,7 @@ public class demo {
                 super.run();
                 final ArrayList<File> fileArrayList = new ArrayList<>();
                 final String rootFileStr = "E:\\maven\\Maven_Repositorydashuju4";
-                // ???maven???????
+                // maven?
                 try {
                     TraversalUtil.traversalDirectory(new File(rootFileStr),fileArrayList);
                 } catch (IOException e) {

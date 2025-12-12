@@ -6,9 +6,9 @@ public interface DrawAPI {
 
 /*    public static void method2() {
         System.out.println("fadsfas");
-    // ??????
+    // 
     }
-    //??????
+    //
     default void demo(){
 
     }*/

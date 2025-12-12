@@ -32,7 +32,7 @@ public class VolatileDemo2 {
             num++;
             try {
                 Thread.sleep(3000);
-                System.out.println("???");
+                System.out.println("");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

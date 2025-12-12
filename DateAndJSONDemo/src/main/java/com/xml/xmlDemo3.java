@@ -37,40 +37,40 @@ public class xmlDemo3 {
         sb.append("<ap>");
         sb.append(" <head>");
         sb.append("         <tr_code>210201</tr_code>");
-        //ÆóÒµ´úÂë
+        //ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½
         sb.append("         <corp_no>0009999842</corp_no>");
-        //00003 ÓÃ»§ºÅ
+        //00003 ï¿½Ã»ï¿½ï¿½ï¿½
         sb.append("         <user_no>00003</user_no>");
 //        sb.append("         <req_no>00010239</req_no>");
-        //½»Ò×Ê±¼ä
+        //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
         sb.append("         <tr_acdt>20221223</tr_acdt>");
         sb.append("         <tr_time>150108</tr_time>");
-        //Ô­×Ó½»Ò×Êý
+        //Ô­ï¿½Ó½ï¿½ï¿½ï¿½ï¿½ï¿½
         sb.append("        <atom_tr_count>1</atom_tr_count>");
-        //½»Ò×ÇþµÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         sb.append("        <channel>0</channel>");
         sb.append("        <reserved></reserved>");
         sb.append(" </head>");
         sb.append(" <body>");
-        //¸¶ ¿î ÈË ÕË ºÅ
+        //ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
         sb.append("         <pay_acno>310069037013004296362</pay_acno>");
-        sb.append("         <pay_acname>ÉÏº£»ÆÆÖ½­¿Æ¼¼¼¼ÊõÓÐÏÞ¹«Ë¾</pay_acname>");
-        //ÊÕ¿îÈË
+        sb.append("         <pay_acname>ï¿½Ïºï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾</pay_acname>");
+        //ï¿½Õ¿ï¿½ï¿½ï¿½
         sb.append("         <rcv_acno>310069079018010019570</rcv_acno>");
-        sb.append("         <rcv_bank_name>²âÊÔÕËºÅ 2</rcv_bank_name>");
-//        sb.append("         <rcv_acname>ÒµÎñ²âÊÔÓÐÏÞ¹«Ë¾43097</rcv_acname>");
+        sb.append("         <rcv_bank_name>ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ 2</rcv_bank_name>");
+//        sb.append("         <rcv_acname>Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾43097</rcv_acname>");
 
         sb.append("         <cur_code>CNY</cur_code>");
         sb.append("         <amt>14.22</amt>");
-        //ÆóÒµÆ¾Ö¤±àºÅ
+        //ï¿½ï¿½ÒµÆ¾Ö¤ï¿½ï¿½ï¿½
         sb.append("         <cert_no>104841212NG1</cert_no>");
         sb.append("         <bank_flag>0</bank_flag>");
         sb.append(" </body>");
         sb.append("</ap>");
 
         //
-        //½à¿Õ¼¾ºÍË³,??6222620110076082818?
-        //ÔòÏþ·ã½à,???6222620110075941360?
+        //ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½Ë³,6222620110076082818?
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,6222620110075941360?
         return sb.toString();
     }
 }

@@ -5,14 +5,14 @@ public class FoodFactory {
 
         if(foodstr.equalsIgnoreCase("apple"))
         {
-            System.out.println("apple??????");
+            System.out.println("apple");
            return  new Apple();
         }else if(foodstr.equalsIgnoreCase("manggu"))
-        {System.out.println("manggu??????");
+        {System.out.println("manggu");
             return  new Manggu();
         }else {
-            System.out.println("???????????????");
-            throw new RuntimeException("???????????????!!!!");
+            System.out.println("?");
+            throw new RuntimeException("?!!!!");
         }
 
 

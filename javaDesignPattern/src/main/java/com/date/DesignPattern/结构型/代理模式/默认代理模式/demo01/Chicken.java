@@ -5,7 +5,7 @@ public class Chicken extends Food {
     private String   chicken;
 
     public Chicken() {
-        System.out.println("??????chiken??");
+        System.out.println("chiken");
     }
 
     public String getChicken() {
