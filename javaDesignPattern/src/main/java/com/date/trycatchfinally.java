@@ -1,7 +1,7 @@
 package com.date;
 
 /**
- * to do
+ *  报错日志看的方法
  *  trycatchfinally
  * @author Hj
  * @date 2023/2/11
