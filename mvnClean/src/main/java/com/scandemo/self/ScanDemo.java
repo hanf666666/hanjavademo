@@ -46,7 +46,7 @@ public class ScanDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("@Async")) {
+                if ( line.contains("helloDemoSpringbootStarter")) {
                     lineMap.put(i, line);
                 }
 

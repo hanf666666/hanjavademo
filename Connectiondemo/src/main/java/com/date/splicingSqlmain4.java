@@ -16,19 +16,19 @@ public class splicingSqlmain4 {
                 "NULL AS  refundStatus,NULL AS disputeBackPay,0  As rechargeElectricityDegrees \n" +
                 "from park_card_order pco where pco.deleted =0 and pco.phone =:phone AND pco.created_dt > :createDate and pco.order_status=2 AND pco.invoice_id IS NULL";
 
-
-        sql = "select a.* from pay_route_info a \n" +
-                "join pay_route_business b on a.id=b.pay_route_id \n" +
-                "where a.deleted =0 and a.pay_app_id =?1 \n" +
-                "and b.deleted =0 and b.pay_business_id in ?2";
-
-        sql = "select a.* from pay_route_info a \n" +
-                "join pay_route_business b on a.id=b.pay_route_id \n" +
-                "join pay_route_owner c on a.id =c.pay_route_id \n" +
-                "where a.deleted =0 and a.pay_app_id =?1 \n" +
-                "and b.deleted =0 and b.pay_business_id in ?2\n" +
-                "and c.deleted =0 and c.park_owner_id =?3";
-        System.out.println(sql);
+        StringBuffer selectClause=new StringBuffer("select u.id," +
+                "u.chinese_name as chineseName," +
+                "u.username," +
+                "u.phone," +
+                "ru.role_id as roleId," +
+                "tg.name groupName," +
+                "ta.name areaName ");
+        StringBuffer fromClause=new StringBuffer("from toll_user u left join pos_role_user ru on u.id=ru.user_id " +
+                "left join toll_user_group_rel tur on u.id = tur.toll_user_id " +
+                "left join toll_user_group tg on tur.group_id = tg.id " +
+                "left join toll_user_group_area_rel tugr on tg.id = tugr.group_id " +
+                "left join toll_user_area ta on tugr.area_id = ta.id ");
+        System.out.println(selectClause.append(fromClause));
 
 
     }

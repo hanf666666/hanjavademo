@@ -17,6 +17,18 @@ public class ScanDemo3 {
 
     public static void main(String[] args) {
 
+//        String line2 = " parkOrder.setStatus(OrderStatusEnum.PAID.getValue());";
+//        if (
+//                line2.contains("parkOrder.setStatus(")
+//                        && (line2.contains("OrderStatusEnum.PAID") || line2.contains("3"))
+////                        &&(file.getPath().contains("road"))
+//
+//
+//        ) {
+//            System.out.println(line2);
+//        }
+
+
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
             @Override
@@ -43,7 +55,17 @@ public class ScanDemo3 {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("_cloudMsHardGateway_yun")) {
+                if (
+                        line.contains("parkOrder.setStatus(")
+                                && (line.contains("OrderStatusEnum.PAID") || line.contains("3"))
+//                        &&(file.getPath().contains("road"))
+                        &&(!file.getPath().contains("meisoo-cloud"))
+                                //¾ø¶ÔÅÅ³ý
+                        &&(!file.getPath().contains("meisooroadsideservice\\meisoo-roadside-service"))
+//                                Ö»°üº¬
+                        &&(file.getPath().contains("meisoo-close-api"))
+
+                ) {
                     lineMap.put(i, line);
                 }
 
