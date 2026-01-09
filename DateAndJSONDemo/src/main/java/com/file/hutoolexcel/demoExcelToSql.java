@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class demoExcelToSql {
     public static void main(String[] args) {
-        String fileName = "C:\\Users\\han\\Desktop\\meisoocity\\ExceltoSQl.xlsx";
+        String fileName = "C:\\Users\\Administrator\\Desktop\\meisoocity\\ExceltoSQl.xlsx";
         ExcelReader reader = ExcelUtil.getReader(fileName, 4);
         List<Map<String, Object>> maps = reader.readAll();
         maps.forEach(map -> {

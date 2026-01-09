@@ -20,7 +20,7 @@ public class DeleteSheetDemo01 {
     public static void main(String[] args) throws Exception {
 
         // 加载Excel文件（需替换为实际路径）
-        ExcelWriter writer = ExcelUtil.getWriter("C:\\Users\\han\\Desktop\\meisoocity\\aa.xls");
+        ExcelWriter writer = ExcelUtil.getWriter("C:\\Users\\Administrator\\Desktop\\meisoocity\\aa.xls");
 
         for (Sheet sheet:writer.getSheets()){
             try {
@@ -41,7 +41,7 @@ public class DeleteSheetDemo01 {
 
 
         // 保存修改后的文件
-        writer.flush(new File("C:\\Users\\han\\Desktop\\meisoocity\\aa.xlsx"));
+        writer.flush(new File("C:\\Users\\Administrator\\Desktop\\meisoocity\\aa.xlsx"));
         writer.close();
 
     }

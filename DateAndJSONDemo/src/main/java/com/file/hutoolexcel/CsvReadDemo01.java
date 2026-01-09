@@ -20,7 +20,7 @@ public class CsvReadDemo01 {
 
 
         BufferedReader reader1 = ResourceUtil.getReader(
-                "C:\\Users\\han\\Desktop\\meisoocity\\aaaa.csv",
+                "C:\\Users\\Administrator\\Desktop\\meisoocity\\aaaa.csv",
                 CharsetUtil.CHARSET_GBK);
         List<PlateDTO> read = reader.read(reader1, PlateDTO.class);
 
