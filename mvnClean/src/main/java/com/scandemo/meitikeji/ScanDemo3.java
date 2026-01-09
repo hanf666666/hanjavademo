@@ -55,17 +55,7 @@ public class ScanDemo3 {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (
-                        line.contains("parkOrder.setStatus(")
-                                && (line.contains("OrderStatusEnum.PAID") || line.contains("3"))
-//                        &&(file.getPath().contains("road"))
-                        &&(!file.getPath().contains("meisoo-cloud"))
-                                //¾ø¶ÔÅÅ³ý
-                        &&(!file.getPath().contains("meisooroadsideservice\\meisoo-roadside-service"))
-//                                Ö»°üº¬
-                        &&(file.getPath().contains("meisoo-close-api"))
-
-                ) {
+                if (line.contains("@Lock") ) {
                     lineMap.put(i, line);
                 }
 

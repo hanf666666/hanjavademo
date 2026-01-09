@@ -51,14 +51,18 @@ public class WorkspaceMavenDemo {
 
             for (String line : lines) {
                 // 修改每一行的内容，这里只是一个简单的示例，你可以根据需要进行修改
-                String modifiedLine = line.replace("C:\\maven\\apache-maven-3.6.3\\conf\\settings-mt.xml", "E:\\maven\\apache-maven-3.3.9\\conf\\settings-mtwl.xml");
-                modifiedLine = modifiedLine.replace("C:\\Users\\Administrator\\.m2\\settings.xml", "E:\\maven\\apache-maven-3.3.9\\conf\\settings-mtwl.xml");
+                String modifiedLine =line;
+//                modifiedLine=modifiedLine.replace("C:\\maven\\apache-maven-3.6.3\\conf\\settings-mt.xml", "E:\\maven\\apache-maven-3.3.9\\conf\\settings-mtwl.xml");
 
-                modifiedLine = modifiedLine.replace("C:\\maven\\apache-maven-3.6.3", "E:\\maven\\apache-maven-3.3.91");
-                modifiedLine = modifiedLine.replace("E:\\maven\\apache-maven-3.3.91", "E:\\maven\\apache-maven-3.3.9");
+//                modifiedLine = modifiedLine.replace("C:\\Users\\Administrator\\.m2\\settings.xml", "E:\\maven\\apache-maven-3.3.9\\conf\\settings-mtwl.xml");
+//
+//                modifiedLine = modifiedLine.replace("C:\\maven\\apache-maven-3.6.3", "E:\\maven\\apache-maven-3.3.91");
+//                modifiedLine = modifiedLine.replace("E:\\maven\\apache-maven-3.3.91", "E:\\maven\\apache-maven-3.3.9");
+//
+//                modifiedLine = modifiedLine.replace("C:\\maven\\maven_store", "E:\\maven\\Maven_Repositorydashuju4");
+//                modifiedLine = modifiedLine.replace("C:\\maven\\maven_store", "E:\\maven\\Maven_Repositorydashuju4");
+                modifiedLine = modifiedLine.replace("E:\\maven\\apache-maven-3.3.9\\conf\\settings-mtwl.xml","E:\\maven\\apache-maven-3.3.9\\conf\\settings.xml");
 
-                modifiedLine = modifiedLine.replace("C:\\maven\\maven_store", "E:\\maven\\Maven_Repositorydashuju4");
-                modifiedLine = modifiedLine.replace("C:\\maven\\maven_store", "E:\\maven\\Maven_Repositorydashuju4");
                 newlines.add(modifiedLine);
             }
 
