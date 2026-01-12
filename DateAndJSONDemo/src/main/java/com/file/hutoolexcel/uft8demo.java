@@ -22,15 +22,24 @@ public class uft8demo {
         List<Map<String, Object>> maps2 = ExcelUtil.getReader(fileName, 1).readAll();
         HashMap<String, String> stringStringHashMap = new HashMap<>();
         maps2.forEach(map -> {
+//            System.out.println(map.get("车牌号").toString());
+//            System.out.println(map.get("车牌颜色").toString());
+//            System.out.println(map.get("车主电话").toString());
+//            System.out.println(map.get("欠费金额(元)").toString());
 //            System.out.println( map);
             if(map.get("车牌号")==null){
                 return;
             }
-            String s = map.get("车牌号").toString().replaceAll("-", "") + map.get("颜色").toString();
+            String s = map.get("车牌号").toString().replaceAll("-", "") + map.get("车牌颜色").toString();
 //            System.out.println( s);
             stringStringHashMap.put(s,map.get("欠费金额(元)").toString());
         });
         maps1.forEach(map -> {
+//            System.out.println(map);
+//            System.out.println(map.get("车牌号").toString());
+//            System.out.println(map.get("车牌颜色").toString());
+//            System.out.println(map.get("车主电话").toString());
+//            System.out.println(map.get("欠费金额(元)").toString());
             String s = map.get("车牌号").toString().replaceAll("-", "") + map.get("车牌颜色").toString();
 
             System.out.println( map.get("车牌号").toString() + "\t" + map.get("车牌颜色").toString() + "\t" + map.get("车主电话").toString() + "\t" + map.get("欠费金额(元)").toString() + "\t" + stringStringHashMap.get( s));
