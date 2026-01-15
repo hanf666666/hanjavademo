@@ -55,6 +55,7 @@ public class WorkspaceMavenDemo {
 //                modifiedLine=modifiedLine.replace("C:\\maven\\apache-maven-3.6.3\\conf\\settings-mt.xml", "E:\\maven\\apache-maven-3.3.9\\conf\\settings-mtwl.xml");
 
                 modifiedLine = modifiedLine.replace("C:\\Users\\Administrator\\.m2\\settings.xml", "E:\\maven\\apache-maven-3.3.9\\conf\\settings.xml");
+                modifiedLine = modifiedLine.replace("E:\\maven\\apache-maven-3.2.1\\conf\\settings.xml", "E:\\maven\\apache-maven-3.3.9\\conf\\settings.xml");
 //
 //                modifiedLine = modifiedLine.replace("C:\\maven\\apache-maven-3.6.3", "E:\\maven\\apache-maven-3.3.91");
 //                modifiedLine = modifiedLine.replace("E:\\maven\\apache-maven-3.3.91", "E:\\maven\\apache-maven-3.3.9");

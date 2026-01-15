@@ -20,12 +20,15 @@ public class ScanDemo {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\zijidemo\\springboot_Set", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\zijidemo", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getPath().indexOf(".git") > -1
                         || pathname.getPath().indexOf("sql") > -1
                         || pathname.getPath().indexOf("target") > -1
                         || pathname.getPath().indexOf(".idea") > -1
+                        || pathname.getPath().indexOf(".js") > -1
+                        || pathname.getPath().indexOf(".xml") > -1
 //                        || pathname.getPath().indexOf("application") > -1
 //                        || pathname.getPath().indexOf("java") > -1
 //                        || pathname.getPath().indexOf(".java") > -1
@@ -46,7 +49,7 @@ public class ScanDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("helloDemoSpringbootStarter")) {
+                if ( line.contains("ApplicationListener")) {
                     lineMap.put(i, line);
                 }
 
