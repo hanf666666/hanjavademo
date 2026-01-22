@@ -30,9 +30,12 @@ public class uft8demo {
             if(map.get("车牌号")==null){
                 return;
             }
-            String s = map.get("车牌号").toString().replaceAll("-", "") + map.get("车牌颜色").toString();
+//            String s = map.get("车牌号").toString().replaceAll("-", "") + map.get("车牌颜色").toString();
+            String s = map.get("车牌号").toString().replaceAll("-", "") ;
+
 //            System.out.println( s);
-            stringStringHashMap.put(s,map.get("欠费金额(元)").toString());
+//            stringStringHashMap.put(s,map.get("欠费金额(元)").toString()+map.get("欠费金额(元)").toString());
+            stringStringHashMap.put(s,map.get("车牌号").toString() + "\t" + map.get("车牌颜色").toString() + "\t" + map.get("车主电话").toString() + "\t" + map.get("欠费金额(元)").toString());
         });
         maps1.forEach(map -> {
 //            System.out.println(map);
@@ -40,9 +43,11 @@ public class uft8demo {
 //            System.out.println(map.get("车牌颜色").toString());
 //            System.out.println(map.get("车主电话").toString());
 //            System.out.println(map.get("欠费金额(元)").toString());
-            String s = map.get("车牌号").toString().replaceAll("-", "") + map.get("车牌颜色").toString();
+//            String s = map.get("车牌号").toString().replaceAll("-", "") + map.get("车牌颜色").toString();
+            String s = map.get("车牌号").toString().replaceAll("-", "") ;
 
-            System.out.println( map.get("车牌号").toString() + "\t" + map.get("车牌颜色").toString() + "\t" + map.get("车主电话").toString() + "\t" + map.get("欠费金额(元)").toString() + "\t" + stringStringHashMap.get( s));
+//            System.out.println( map.get("车牌号").toString() + "\t" + map.get("车牌颜色").toString() + "\t" + map.get("车主电话").toString() + "\t" + map.get("欠费金额(元)").toString() + "\t" + stringStringHashMap.get( s));
+            System.out.println( map.get("车牌号").toString() + "\t" + map.get("车主电话").toString() + "\t" + stringStringHashMap.get( s));
 
         });
 
