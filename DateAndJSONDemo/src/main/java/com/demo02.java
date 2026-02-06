@@ -20,6 +20,8 @@ public class demo02 {
         BigDecimal profitRate = new BigDecimal(0.18+"");
         BigDecimal subtract = new BigDecimal(0).subtract(refund.multiply(profitRate).setScale(0, RoundingMode.HALF_UP));
         System.out.println(subtract);
+        System.out.println(new BigDecimal("-0.4").setScale(0, RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal("-0.4").setScale(0, RoundingMode.HALF_DOWN));
 
 
         try {
