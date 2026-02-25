@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class splicingSqlmain3 {
     public static void main(String[] args) {
-        String fieldsSql = "'”ÂA023SZ','”ÂAGY763','”ÂBR906K','”ÂB5B620','”ÂD5E225','”ÂAU3C50','”ÂAAS1038','”ÂDX6628','”ÂDZ9183','”ÂCDT806','”ÂD1P879','”ÂB206PH','”ÂC86L53','”ÂAAD0904','”ÂDGQ991','”ÂDGQ991','”ÂA3716V','”ÂA8BQ86','”ÂAA01982','”ÂA5MH76','”ÂAC45995','”ÂADT8936','”ÂDA0979','”ÂFCR825','”ÂA13T0F','”ÂCSL679','”ÂAK663E','”ÂAC05239','”ÂCLK758','”ÂABN3290','”ÂA0S3L9','”ÂAK9R17','”ÂAF20007','”ÂAD62887','”ÂB896TD','”ÂAA7U79','”ÂAX900D','”ÂA5Q70J','”ÂBBD896','”ÂA0RY35','”ÂBE372S','”ÂA7273C','”ÂBH938Q','”ÂANF368'";
+        String fieldsSql = "'”ÂA9964B','”ÂA617Y8','”ÂAG72300','”ÂC3N569','”ÂA12U8Y','”ÂAY713P','”ÂBB326L','”ÂAFR3197','”ÂABU2883','”ÂAC257U','”ÂA70K9E','”ÂAR3Y97','”ÂDBV805','”ÂB7E880','”ÂAL0Y89','”ÂAAF9943','”ÂADD1019','”ÂB987LZ','”ÂAC29517','”ÂB0780P','”ÂA156RL','”ÂDL2337','”ÂA607JE'";
         //∑¿÷π÷ÿ∏¥≥µ≈∆
         AtomicReference<String> rowStr= new AtomicReference<>("");
         //¥Ê‘⁄µƒ∞◊√˚µ•
@@ -31,7 +31,7 @@ public class splicingSqlmain3 {
                 rowStr.set(rowStr.get()+","+row);
 //                System.out.println(row);
                 System.out.println(String.format(" INSERT INTO meisoodev.user_white_list(white_list_id, created_by, created_dt, deleted, deleted_by, deleted_dt, plate_no, remark, plate_no_colour, phone, name, white_list_type) " +
-                        "VALUES(null, 1, '2026-01-01 00:00:00', 0, 1, '2036-01-01 00:00:00', %s, '≤–º≤≥µÕ≥“ª5¬º»Î20260122', %s, '19163154356', '∫´æ≤', 2);"
+                        "VALUES(null, 1, '2026-02-01 00:00:00', 0, 1, '2036-02-01 00:00:00', %s, '+ ', %s, '19163154356', '∫´æ≤', 2);"
                         ,row,row.length()==10?4:0));
 
             }
