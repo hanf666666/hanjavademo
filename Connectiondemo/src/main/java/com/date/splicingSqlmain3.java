@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class splicingSqlmain3 {
     public static void main(String[] args) {
-        String fieldsSql = "'”ÂA9964B','”ÂA617Y8','”ÂAG72300','”ÂC3N569','”ÂA12U8Y','”ÂAY713P','”ÂBB326L','”ÂAFR3197','”ÂABU2883','”ÂAC257U','”ÂA70K9E','”ÂAR3Y97','”ÂDBV805','”ÂB7E880','”ÂAL0Y89','”ÂAAF9943','”ÂADD1019','”ÂB987LZ','”ÂAC29517','”ÂB0780P','”ÂA156RL','”ÂDL2337','”ÂA607JE'";
+        String fieldsSql = "'”ÂAD670Q','”ÂBVS269','”ÂACB1798','”ÂAG57E6','”ÂDH2766','”ÂABU8150','”ÂB075R8','”ÂA3T06H','”ÂAGJ5081','”ÂAA56155','”ÂAC77008','”ÂAFQ0218','”ÂB288CW','”ÂAWW669','”ÂAC86508','”ÂAF36819','”ÂAD75380','”ÂG83C52','”ÂG8X603','”ÂA5Q20S','”ÂAYG097','”ÂBK7132','”ÂDA0367'";
         //∑¿÷π÷ÿ∏¥≥µ≈∆
         AtomicReference<String> rowStr= new AtomicReference<>("");
         //¥Ê‘⁄µƒ∞◊√˚µ•
@@ -31,7 +31,7 @@ public class splicingSqlmain3 {
                 rowStr.set(rowStr.get()+","+row);
 //                System.out.println(row);
                 System.out.println(String.format(" INSERT INTO meisoodev.user_white_list(white_list_id, created_by, created_dt, deleted, deleted_by, deleted_dt, plate_no, remark, plate_no_colour, phone, name, white_list_type) " +
-                        "VALUES(null, 1, '2026-02-01 00:00:00', 0, 1, '2036-02-01 00:00:00', %s, '+ ', %s, '19163154356', '∫´æ≤', 2);"
+                        "VALUES(null, 1, '2026-03-01 00:00:00', 0, 1, '2036-03-01 00:00:00', %s, '≤–º≤≥µÕ≥“ª114¬º»Î20260311', %s, '19163154356', '∫´æ≤', 2);"
                         ,row,row.length()==10?4:0));
 
             }

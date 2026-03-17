@@ -1,0 +1,12 @@
+<xml>
+    <appid><![CDATA[wx28fe4aa914528fe1]]></appid>
+    <mch_id><![CDATA[1569290561]]></mch_id>
+    <nonce_str><![CDATA[c33bXsbWNxa1AjQAEx63VKd8LaU7N5SZ]]></nonce_str>
+    <notify_url><![CDATA[http://api.meitianiot.com:80/api/order/v1/callback/refund/wxrefundNoAuth]]></notify_url>
+    <out_refund_no><![CDATA[wxRefund_2603031419470460113]]></out_refund_no>
+    <out_trade_no><![CDATA[arrearPay_2602261318236602934]]></out_trade_no>
+    <refund_fee><![CDATA[300]]></refund_fee>
+    <sign><![CDATA[68246DC3ECBD61C34C59D43380806659]]></sign>
+    <sub_mch_id><![CDATA[1608865669]]></sub_mch_id>
+    <total_fee><![CDATA[87700]]></total_fee>
+</xml>
