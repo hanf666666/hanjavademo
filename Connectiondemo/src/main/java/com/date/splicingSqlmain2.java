@@ -74,7 +74,11 @@ public class splicingSqlmain2 {
 //            sql.append("AND (pcm.`name` LIKE :name OR ep.`name` LIKE :name) ");
 //            paramMap.put("name","%"+dto.getName()+"%");
 //        }
-
+         sql = "select p.account_code " +
+                "as accountCode,a.app_id as appId,p.api_key as apiKey    \n" +
+                "from meisoodev.pay_route_info r,meisoodev.pay_account_info p ,meisoodev.pay_app_info a\n" +
+                "where r.pay_account_id =p.id and r.pay_app_id =a.id and p.account_code  in ('1705358801','1616069988','1738808991')\n" +
+                "group by p.server_account_code,p.account_code,p.api_key   ";
         String s = sql.toString().replaceAll("]]>", "")
                 .replaceAll("CDATA", "")
                 .replaceAll("<!\\[\\[", "");
