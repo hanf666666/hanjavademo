@@ -1,18 +1,31 @@
 {
-  "flag": true,
-  "data": {
-    "code": true,
-    "resources": "[{\"id\":832,\"systemType\":\"cloudMsParkManager\",\"resourceName\":\"在线监控\",\"resourceType\":\"mod\",\"visitUrl\":\"/subPackages/index/onlineMonitoring\",\"sort\":2,\"icon\":\"\",\"resourceVoList\":[]},{\"id\":833,\"systemType\":\"cloudMsParkManager\",\"resourceName\":\"移动岗亭\",\"resourceType\":\"mod\",\"visitUrl\":\"/subPackages/index/sentryBox\",\"sort\":2,\"icon\":\"\",\"resourceVoList\":[]},{\"id\":834,\"systemType\":\"cloudMsParkManager\",\"resourceName\":\"长租车辆\",\"resourceType\":\"mod\",\"visitUrl\":\"/subPackages/index/longRentCar\",\"sort\":2,\"icon\":\"\",\"resourceVoList\":[]},{\"id\":835,\"systemType\":\"cloudMsParkManager\",\"resourceName\":\"发优惠券\",\"resourceType\":\"mod\",\"visitUrl\":\"/subPackages/index/couponsSend\",\"sort\":2,\"icon\":\"\",\"resourceVoList\":[]}]",
-
-    "accessToken": "40246ffb-4f2b-45fb-8765-60584bb2f418",
-    "userId": 11471,
-    "userButton": "[\"/order/commonParkOrder/export\",\"/order/commonParkOrder/orderDetail\",\"/order/commonParkOrder/img\",\"/order/cloudMsParkOrder/manualEntry\",\"/parkOrder/detail/orderDetail\",\"/order/cloudMsParkOrder/forceCarOut\",\"/order/cloudMsParkOrder/carInImg\",\"/order/tradeOrder/export\",\"/order/tradeOrder/detail\",\"/order/trade/refundExport\",\"/order/trade/refundDetail\",\"/order/longRent/export\",\"/order/longRent/detail\",\"/order/longRent/refundExport\",\"/order/parkHandle/correctPage\",\"/order/gateMonitorRecord/page\",\"/park/cloudMsPark/findCloudMsParkInfo\",\"/park/FeeRule/saveFeeRule/add\",\"/park/FeeRule/getFeeRuleDetail\",\"/park/FeeRule/saveFeeRule/edit\",\"/park/FeeRule/connectParkAndRule\",\"/park/FeeRule/deleteFeeRule\",\"/park/longRentCloudRule/addLongRentRulePage\",\"/park/longRentCloudRule/detailLongRentRules\",\"/park/longRentCloudRule/modifyLongRentRulePage\",\"/park/longRentCloudRule/bindPark\",\"/park/longRentCloudRule/delLongRentRulePage\",\"/park/qrCode/detai\",\"/park/qrCode/create\",\"/park/qrCode/export\",\"/device/carmera/bind\",\"/device/carmera/unbind\",\"/park/longRent/addLongRent/person\",\"/park/longRent/getLongRentInfo/person\",\"/park/longRent/rechargeLongRent/person\",\"/park/longRent/delLongRentInfo/person\",\"/park/longRent/downloadFile\",\"/park/longRent/importPlateNo\",\"/park/longRent/exportPlateNo\",\"/park/longRent/addLongRent/business\",\"/park/longRent/getLongRentInfo/business\",\"/park/longRent/rechargeLongRent/business\",\"/park/longRent/delLongRentInfo/business\",\"/park/blackWhiteList/exportBlackWhiteList/white\",\"/park/blackWhiteList/addBlackWhiteList/white\",\"/park/blackWhiteList/modifyBlackList/white\",\"/park/blackWhiteList/delBlackWhiteList/white\",\"/park/blackWhiteList/exportBlackWhiteList/black\",\"/park/blackWhiteList/addBlackWhiteList/black\",\"/park/blackWhiteList/modifyBlackList/black\",\"/park/blackWhiteList/delBlackWhiteList/black\",\"/finance/statistic/export\",\"/finance/statistic/detail\",\"/system/ms/roleSave\",\"/system/ms/roleUpdate\",\"/system/ms/roleDelete\",\"/system/ms/userSave\",\"/system/ms/userUpdate\",\"/system/ms/userDelete\",\"/system/ms/userResetPassword\",\"/task/export/download\",\"/task/export/remove\",\"/operation/store/add\",\"/operation/store/getStoreDetail\",\"/operation/store/modify\",\"/operation/store/delete\",\"/operation/storeAccount/add\",\"/operation/storeAccount/modify\",\"/operation/storeAccount/resetPwd\",\"/operation/storeAccount/delete\",\"/operation/store/addCoupon\",\"/operation/store/modifyCoupon\",\"/operation/store/deletedCoupon\",\"/teams/getOwnerCheckParkChannelAndUserInfo\",\"/teams/findTeamInfoByTeamId\",\"/teams/deleteTeam\",\"/report/shiftHandoverReport/page/export\",\"/settlement/report/page/export\",\"/settlement/report/detail\",\"/order/cloudMsParkOrder/batchImportParkingOrder\",\"/park/blackWhiteList/batchDelBlackWhiteList\",\"/park/unlicensedVehicles/editUnlicensedVehicles\",\"/park/unlicensedVehicles/delUnlicensedVehicles\",\"/park/box/upgrade\",\"/cloudMs/pushConfig\",\"/park/identifyCarmera/deleted\",\"/park/identifyCarmera/manage\",\"/park/specialCar/addSpecialCar\",\"/park/specialCar/addSpecialType\",\"/park/specialCar/editSpecialCar\",\"/park/specialCar/delSpecialCar\",\"/operationConfig/coupons/exportThirdUsedRecord\",\"/report/income/pageExport\",\"/report/income/detailListExport\"]",
-
-
-
-    "chineseName": "韩静",
-    "projectId": 7,
-    "username": "hanjing"
+  "inRecord": {
+    "type": 1,
+    "carType": 1,
+    "carNumber": "京 A12345",
+    "parkingNo": "PARK001",
+    "parkingSpaceReserved": 200,
+    "parkingLotType": "1",
+    "closeParkChannelName": "北入口通道",
+    "closeParkChannelNumber": "C002",
+    "businessOrder": "BJ0012024032615300001",
+    "inTime": "2024-03-26 15:30:00",
+    "carCategory": 3,
+    "carColor": "白色",
+    "carImage": "park001/image/202403/26/car_in_001.jpg",
+    "pictureOfLicensePlateColor": "http://example.com/license/plate_in_001.jpg",
+    "licensePlateColor": "蓝色",
+    "carBrand": 1053
   },
-  "msg": "登录成功"
+  "parkingSpaceReserved": 150,
+  "type": 1,
+  "orderState": 1,
+  "carImage": "park001/image/202403/26/car_001.jpg",
+  "feePaid": 1500,
+  "feeDiscount": 500,
+  "feeShouldPay": 2000,
+  "outTime": "2024-03-26 15:30:00",
+  "closeParkChannelName": "南出口通道",
+  "closeParkChannelNumber": "C001",
+  "pictureOfLicensePlateColor": "http://example.com/license/plate_001.jpg"
 }

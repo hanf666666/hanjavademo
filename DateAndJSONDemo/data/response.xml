@@ -1,20 +1,24 @@
-<xml>
-    <return_msg><![CDATA[OK]]></return_msg>
+<ap>
+    <head>
+        <tr_code>210201</tr_code>
+        <corp_no>0010027838</corp_no>
+        <req_no>440_1774595901280</req_no>
+        <serial_no>2011000420260327143164362735</serial_no>
+        <ans_no>
 
-    <appid><![CDATA[wx28fe4aa914528fe1]]></appid>
+        </ans_no>
+        <next_no>
 
-    <mch_id><![CDATA[1569290561]]></mch_id>
+        </next_no>
+        <tr_acdt>20260327</tr_acdt>
+        <tr_time>151831</tr_time>
+        <ans_code>0</ans_code>
+        <ans_info>
 
-    <sub_mch_id><![CDATA[1608865669]]></sub_mch_id>
-
-    <nonce_str><![CDATA[K2dcIVQyREe15OKU]]></nonce_str>
-
-    <sign><![CDATA[89742C32A357B8CA6734B9A755335A4D]]></sign>
-
-    <result_code><![CDATA[FAIL]]></result_code>
-
-    <err_code><![CDATA[ERROR]]></err_code>
-
-    <err_code_des><![CDATA[åä¸ç¬è®¢åçéæ¬¾æ°éè¶è¿éå¶]]></err_code_des>
-
-</xml>
+        </ans_info>
+        <particular_code>0000</particular_code>
+        <particular_info>交易成功</particular_info>
+        <atom_tr_count>1</atom_tr_count>
+        <reserved></reserved>
+    </head>
+</ap>

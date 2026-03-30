@@ -1,0 +1,16 @@
+<ap><head>
+    <tr_code>210201</tr_code>
+    <corp_no>0010027838</corp_no>
+    <req_no>1022_1774509242784</req_no>
+    <serial_no></serial_no>
+    <ans_no></ans_no>
+    <next_no></next_no>
+    <tr_acdt>20260326</tr_acdt>
+    <tr_time>151502</tr_time>
+    <ans_code>0</ans_code>
+    <ans_info></ans_info>
+    <particular_code>E6004</particular_code>
+    <particular_info>接收银行返回报文失败</particular_info>
+    <atom_tr_count>1</atom_tr_count>
+    <reserved></reserved>
+</head></ap>
