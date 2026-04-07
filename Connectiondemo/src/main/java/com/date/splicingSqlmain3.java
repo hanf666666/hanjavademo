@@ -13,11 +13,11 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class splicingSqlmain3 {
     public static void main(String[] args) {
-        String fieldsSql = "'”ÂAD670Q','”ÂBVS269','”ÂACB1798','”ÂAG57E6','”ÂDH2766','”ÂABU8150','”ÂB075R8','”ÂA3T06H','”ÂAGJ5081','”ÂAA56155','”ÂAC77008','”ÂAFQ0218','”ÂB288CW','”ÂAWW669','”ÂAC86508','”ÂAF36819','”ÂAD75380','”ÂG83C52','”ÂG8X603','”ÂA5Q20S','”ÂAYG097','”ÂBK7132','”ÂDA0367'";
+        String fieldsSql = "'”ÂD86A61','”ÂC166L0','”ÂA1X33H','”ÂB309A6','”ÂB36016','”ÂADE872','”ÂAGL7866','”ÂA5N6F2','”ÂAD30951','”ÂDKF080','”ÂD58686','”ÂA5MH76','”ÂAC45995','”ÂAB1K21','”ÂA039MR','”ÂA3Z39Q','”ÂA3581P','”ÂA9P38P','”ÂBVB449','”ÂDC3906','”ÂD21B12','”ÂD8J880','”ÂAU363J','”ÂAD9S03','”ÂBR745S','”ÂA660BG','”ÂAHM924','”ÂCQE803','”ÂAG22121','”ÂDE3045','”ÂATH548','”ÂAT53F2','”ÂAL72J9','”ÂAFM9076','”ÂBZ144F','”ÂBVR539','”ÂB81Q85','”ÂCG2908','”ÂBP2756','”ÂAC69277','”ÂDW4972','”ÂG8U295','”ÂAKQ419','”ÂADS7603','”ÂAX69W9','”ÂAGK7817','”ÂA8D677','”ÂAC89091','”ÂD75396','”ÂBEV622'\n";
         //∑¿÷π÷ÿ∏¥≥µ≈∆
         AtomicReference<String> rowStr= new AtomicReference<>("");
         //¥Ê‘⁄µƒ∞◊√˚µ•
-        String filter="";
+        String filter="”ÂA039MR, ”ÂA3581P, ”ÂA5MH76, ”ÂA5MH76, ”ÂA8D677, ”ÂAC45995, ”ÂAC45995, ”ÂAGK7817, ”ÂAGK7817, ”ÂAL72J9, ”ÂBP2756, ”ÂBP2756, ”ÂC166L0, ”ÂD21B12, ”ÂD75396, ”ÂD8J880, ”ÂDC3906, ”ÂDW4972, ”ÂDW4972,";
 
 
         Arrays.stream(fieldsSql.split(",")).forEach(row->{
@@ -31,7 +31,7 @@ public class splicingSqlmain3 {
                 rowStr.set(rowStr.get()+","+row);
 //                System.out.println(row);
                 System.out.println(String.format(" INSERT INTO meisoodev.user_white_list(white_list_id, created_by, created_dt, deleted, deleted_by, deleted_dt, plate_no, remark, plate_no_colour, phone, name, white_list_type) " +
-                        "VALUES(null, 1, '2026-03-01 00:00:00', 0, 1, '2036-03-01 00:00:00', %s, '≤–º≤≥µÕ≥“ª114¬º»Î20260311', %s, '19163154356', '∫´æ≤', 2);"
+                        "VALUES(null, 1, '2026-04-01 00:00:00', 0, 1, '2036-04-01 00:00:00', %s, '≤–º≤≥µÕ≥“ª114¬º»Î20260411', %s, '19163154356', '∫´æ≤', 2);"
                         ,row,row.length()==10?4:0));
 
             }
