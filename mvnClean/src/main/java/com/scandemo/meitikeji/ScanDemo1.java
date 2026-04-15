@@ -1,6 +1,7 @@
 package com.scandemo.meitikeji;
 
 import cn.hutool.core.io.FileUtil;
+import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -37,7 +38,7 @@ public class ScanDemo1 {
                         || pathname.getPath().indexOf("sql") > -1
                         || pathname.getPath().indexOf("target") > -1
                         || pathname.getPath().indexOf(".idea") > -1
-                        || pathname.getPath().indexOf(".java") > -1
+//                        || pathname.getPath().indexOf(".java") > -1
 //                        || pathname.getPath().indexOf("txprod") == -1
 
                 ) {
@@ -56,15 +57,20 @@ public class ScanDemo1 {
             int lineNum = 0;
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if (line.contains("spring-boot-dependencies") || line.contains("spring-boot.version")) {
+//                if (line.contains("pushArrearsOrderToCzEtc") ) {
+//                if (line.contains("getIsShowArrear") ) {
+                if (line.contains("getArrearEnableStatus") ) {
+//                if (line.contains("strategy/assistancePay") ) {
+//                if (line.contains("etc/pay/push") ) {
                     lineNum++;
                 }
 
-                if (lineNum >= 1 && lineNum <= 5) {
+                if (lineNum >= 1 && lineNum <= 1) {
                     if(lineNum==1){
                         System.out.println(file.getPath());
                     }
                     System.out.println(line);
+                    System.out.println("=============================================================================================================");
                     lineNum++;
 
                 }else {

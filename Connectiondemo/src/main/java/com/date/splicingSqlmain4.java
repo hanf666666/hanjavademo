@@ -36,7 +36,45 @@ public class splicingSqlmain4 {
                 " left join idler_package_roadside_effective_record r on o.order_no =r.order_no and  r.start_date <now() and r.end_date>now() and r.effective_type =2 " +
                 "left join idler_package_roadside ipr on o.package_id =ipr.id\n" +
                 " where   o.order_no  = :orderNo";
-        System.out.println(sql222);
+
+
+
+        String sql2221 = "select " +
+                "    a.id as group_id, " +
+                "    b.way_type, " +
+                "    case b.way_type " +
+                "        when 1 then c.cycle_day " +
+                "        when 2 then c.cycle_day " +
+                "        when 3 then d.cycle_day " +
+                "        when 4 then e.cycle_day " +
+                "        when 5 then f.cycle_day " +
+                "        when 6 then c.cycle_day " +
+                "        when 7 then f.cycle_day " +
+                "        when 8 then f.cycle_day " +
+                "        when 9 then f.cycle_day " +
+                "        end as cycle_day ," +
+                "    c.template_id, " +
+                "    c.time_type, " +
+                "    c.time_value, " +
+                "    c.time_day, " +
+                "    c.time_week, " +
+                "    c.time_month  " +
+                "from " +
+                "    strategy_assistance_pay_group a " +
+                "        left join strategy_assistance_pay_way b on a.id = b.group_id " +
+                "        left join strategy_assistance_pay_way_config c on a.id = c.group_id and b.way_type = c.way_type " +
+                "        left join strategy_assistance_pay_task_config d on a.id = d.group_id and b.way_type = 3 " +
+                "        left join strategy_assistance_ms_park_config e on a.id = e.group_id and b.way_type = 4 " +
+                "        left join strategy_assistance_data_push_config f on a.id = f.group_id and b.way_type = f.way_type " +
+                "        left join strategy_assistance_timely_park g on a.id = g.group_id " +
+                "where " +
+                "      a.status = 3 " +
+                "  and a.data_type = 2 " +
+                "  and a.deleted = 0 " +
+                "  and g.park_id = :parkId " +
+                "order by " +
+                "    a.id, b.sort";
+        System.out.println(sql2221);
 
 
     }
