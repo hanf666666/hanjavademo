@@ -19,15 +19,15 @@ import java.util.Date;
 @Data
 @Builder
 public class User {
-    @ExcelProperty(value = "用户编号")
+    @ExcelProperty(value = {"${title}","用户编号"})
     private Integer userId;
-    @ExcelProperty(value = "姓名")
+    @ExcelProperty(value = {"${title}","姓名"})
     private String userName;
-    @ExcelProperty(value = "性别")
+    @ExcelProperty(value = {"${title}","性别"})
     private String gender;
-    @ExcelProperty(value = "工资")
+    @ExcelProperty(value = {"${title}","工资"})
     private Double salary;
-    @ExcelProperty(value = "入职时间")
+    @ExcelProperty(value = {"${title}","入职时间"})
     private Date hireDate;
 
     // lombok 会生成getter/setter方法
