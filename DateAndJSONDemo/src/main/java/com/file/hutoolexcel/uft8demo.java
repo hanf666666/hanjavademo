@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class uft8demo {
     public static void main(String[] args) {
-        String fileName = "C:\\Users\\Administrator\\Desktop\\meisoocity\\aaaa.xls";
+        String fileName = "C:\\Users\\Administrator\\Desktop\\meisoocity\\aaaa.xlsx";
 
         //原始 数据
         List<Map<String, Object>> oldMap1 = ExcelUtil.getReader(fileName, 0).readAll();
