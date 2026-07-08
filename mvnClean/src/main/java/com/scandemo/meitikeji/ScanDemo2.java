@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileFilter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -16,11 +18,14 @@ import java.util.List;
  */
 public class ScanDemo2 {
 
-    /** 匹配行上下各显示的上下文行数 */
+    /**
+     * 匹配行上下各显示的上下文行数
+     */
     private static final int CONTEXT_LINES = 4;
 
     public static void main(String[] args) {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\CloudMsManage\\meisoo-service-core\\src\\main\\resources\\mappers\\ParkOrderMapper.xml", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 String path = pathname.getPath();
@@ -33,28 +38,43 @@ public class ScanDemo2 {
 
         for (File file : files) {
             List<String> lines = FileUtil.readLines(file, StandardCharsets.UTF_8);
-            int count=0;
-            int tempLine=0;
+
+            HashMap<String, Integer> matchMap = new HashMap<>();
+            matchMap.put("opo.start_date startTime,", -1);
+            matchMap.put("opo.end_date endTime,", -1);
+            matchMap.put("opo.park_id parkId,", -1);
 
             for (int i = 0; i < lines.size(); i++) {
                 String line = lines.get(i);
-                List<String> matchMap = new ArrayList<>();
-                matchMap.add("opoi.channel_order channelOrder");
-                matchMap.add("opoi.plate_no plateNo,");
-                matchMap.add("opoi.park_id parkId,");
-
-                // 条件1: parkOrder.setStatus(  且  条件2: OrderStatusEnum.PAID 或 3
-                if (matchMap.stream().anyMatch(s -> line.contains(s)) ) {
-                    tempLine=i;
-                    count++;
-                }
-                if (matchMap.size()==count && i-tempLine<4){
+                int finalI = i;
+                matchMap.forEach((k, v) -> {
+                    if (line.contains(k)) {
+                        matchMap.put(k, finalI);
+                    }
+                });
+                Integer rangeWithin = isRangeWithin(matchMap.values());
+                if (rangeWithin!=-1&& rangeWithin<6) {
                     printWithContext(file.getPath(), lines, i);
-                    count=0;
-                    tempLine=0;
+                    matchMap.forEach((k, v) -> {
+                                matchMap.put(k, -1);
+                            }
+                    );
                 }
+
             }
         }
+    }
+
+
+    public static Integer isRangeWithin(Collection<Integer> numbers) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int num : numbers) {
+            if (num == -1) return -1;
+            if (num < min) min = num;
+            if (num > max) max = num;
+        }
+        return max - min;
     }
 
     /**
