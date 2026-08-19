@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
  * Netty Echo 客户端 - 发送控制台输入，接收回显
  */
 @Slf4j
-public class EchoClient {
+public class EchoClient2 {
 
     public static void main(String[] args) throws Exception {
         // 客户端只需要一个 EventLoopGroup
@@ -33,7 +33,7 @@ public class EchoClient {
                             ChannelPipeline pipeline = ch.pipeline();
                             pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-                            pipeline.addLast(new EchoClientHandler());
+                            pipeline.addLast(new EchoClientHandler2());
                         }
                     });
 
@@ -49,7 +49,6 @@ public class EchoClient {
                 if ("exit".equalsIgnoreCase(line)) {
                     break;
                 }
-//                channel.writeAndFlush(line);
                 channel.writeAndFlush(line + "\n");
             }
 
@@ -65,7 +64,7 @@ public class EchoClient {
  * 客户端自定义处理器：打印收到的回显消息
  */
 @Slf4j
-class EchoClientHandler extends SimpleChannelInboundHandler<String> {
+class EchoClientHandler2 extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) {
