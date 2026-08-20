@@ -67,6 +67,7 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
 
     /**
      * Attempts to CAS-increment the workerCount field of ctl.
+     * ctl值被更改了,expect是ctl的旧值,第一次是true,第二次是false
      */
     private boolean compareAndIncrementWorkerCount(int expect) {
         return ctl.compareAndSet(expect, expect + 1);
