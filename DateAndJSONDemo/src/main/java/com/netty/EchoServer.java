@@ -20,7 +20,7 @@ public class EchoServer {
     public static void main(String[] args) throws Exception {
         // ① 创建两个线程组：bossGroup 负责接收连接，workerGroup 负责处理读写
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);   // 通常1个线程即可
-        EventLoopGroup workerGroup = new NioEventLoopGroup();  // 默认 CPU核数*2
+        EventLoopGroup workerGroup = new NioEventLoopGroup(2);  // 默认 CPU核数*2
 
         try {
             // ② 服务端引导类

@@ -10,14 +10,14 @@ public class demo01 {
             int num = 1000;
             String s = "";
             for (int i = 0; i < num; i++) {
-                s += "Java";
+                try {
+                    queue.put("OK"+i);//在队列中加入数据
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             System.out.println("t Over");
-            try {
-                queue.put("OK");//在队列中加入数据
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
         });
         long start = System.currentTimeMillis();
         System.out.println("start = " + start);
