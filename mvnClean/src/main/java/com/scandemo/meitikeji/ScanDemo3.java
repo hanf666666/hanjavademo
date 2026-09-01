@@ -34,8 +34,8 @@ public class ScanDemo3 {
 //        }
 
 
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getPath().indexOf(".git") > -1
@@ -59,7 +59,7 @@ public class ScanDemo3 {
             List<String> lines = FileUtil.readLines(file, StandardCharsets.UTF_8);
 
             HashMap<String, Integer> matchMap = new HashMap<>();
-            matchMap.put("open.keytop.cn", -1);
+            matchMap.put("@EnableConfigServer", -1);
 
 
             for (int i = 0; i < lines.size(); i++) {
