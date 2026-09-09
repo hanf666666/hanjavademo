@@ -53,21 +53,35 @@ public class NioEchoServer {
                 }
 
                 // 处理 READ 事件
+                // 处理 READ 事件
                 if (key.isReadable()) {
                     SocketChannel client = (SocketChannel) key.channel();
-                    ByteBuffer buffer = ByteBuffer.allocate(1024);  // 创建缓冲区
-                    int bytesRead = client.read(buffer);   // 关键方法：read()
+                    ByteBuffer buffer = ByteBuffer.allocate(1024);
+                    int bytesRead = client.read(buffer);
+
                     if (bytesRead == -1) {
-                        // 客户端关闭
                         client.close();
                         key.cancel();
+                        System.out.println("客户端断开连接");
                         continue;
                     }
-                    // 切换为读模式为写模式（flip）
-                    buffer.flip();   // 关键方法：flip()
-                    // 回显数据（写入客户端）
-                    client.write(buffer); // 关键方法：write()
-                    buffer.clear();  // 清空缓冲区准备下一次读取
+
+                    // 切换到读模式，准备读取数据
+                    buffer.flip();
+
+                    // ========== 新增：打印读取到的内容 ==========
+                    byte[] data = new byte[buffer.remaining()];
+                    buffer.get(data);
+                    String received = new String(data);
+                    System.out.println("服务端收到: " + received);
+
+                    // ========== 关键修复：循环写入，确保全部发完 ==========
+                    buffer.rewind(); // 重置 position 到 0，准备重新发送
+                    while (buffer.hasRemaining()) {
+                        client.write(buffer); // 非阻塞下循环直到全部写入
+                    }
+
+                    buffer.clear();
                 }
             }
         }
