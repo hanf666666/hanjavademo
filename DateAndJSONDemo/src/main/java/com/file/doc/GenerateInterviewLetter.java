@@ -20,6 +20,8 @@ public class GenerateInterviewLetter {
     public static void main(String[] args) throws IOException {
         List<String> docList = new ArrayList<>();
         docList.add("Îäºº");
+        docList.add("Äþ²¨");
+        docList.add("º¼ÖÝ");
 
 
         docList.forEach((k -> {
