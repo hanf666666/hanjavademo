@@ -1,7 +1,9 @@
-package com.regular;
+package com.regex;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /**
  * to do
@@ -10,7 +12,13 @@ import java.util.regex.Pattern;
  * @date 2024/6/11
  */
 public class OtherDemo02 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        String s = bf.readLine();
+        System.out.println(s);
+        Arrays.stream("aaa              aaa".split("\\s+")).forEach(System.out::println);
+
+
         String test = "a<tr>aava</tr>abb";
         String reg = "<.+>";
         //1. 贪婪型（Greedy） 发现尽可能多的匹配
@@ -22,6 +30,7 @@ public class OtherDemo02 {
         System.out.println(test.replaceAll(reg2, " #")); // 输出: a #<tr> aava #<tr> abb
 
         //3. 占有型（Possessive）java不存在 不能回溯
+
 
     }
 
