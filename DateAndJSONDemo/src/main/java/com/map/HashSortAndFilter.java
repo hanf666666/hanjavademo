@@ -21,7 +21,7 @@ public class HashSortAndFilter {
         // 按值排序并过滤
         Map<Object, Integer> sortedMap = map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
-                .filter(entry -> (int) entry.getValue() > 2) // 过滤值大于2的项
+                .filter(entry -> (int) entry.getValue() >= 2) // 过滤值大于2的项
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
@@ -30,6 +30,21 @@ public class HashSortAndFilter {
                 ));
 
         System.out.println(sortedMap);
+
+
+
+  /*      Map<String, Integer> map1 = Map.of("a", 3, "b", 1);
+        Map<String, Integer> map2 = Map.of("a", 2, "b", 4, "c", 5);
+        Map<String, Integer> result = Stream.concat(map1.entrySet().stream(), map2.entrySet().stream())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (a, b) -> a + b,
+                        LinkedHashMap::new
+                ));
+//        System.out.println(result); // {a=5, b=5, c=5}
+*/
+
     }
 }
 
