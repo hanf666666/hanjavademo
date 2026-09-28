@@ -5,6 +5,8 @@ import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -30,8 +32,8 @@ public class ScanDemo1 {
 //        }
 
 
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getPath().indexOf(".git") > -1
@@ -59,7 +61,8 @@ public class ScanDemo1 {
                 String line = stringList.get(i);
 //                if (line.contains("pushArrearsOrderToCzEtc") ) {
 //                if (line.contains("getIsShowArrear") ) {
-                if (line.contains("getArrearEnableStatus") ) {
+
+                if (line.contains("@ConditionalOnBean") ) {
 //                if (line.contains("strategy/assistancePay") ) {
 //                if (line.contains("etc/pay/push") ) {
                     lineNum++;
