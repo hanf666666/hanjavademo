@@ -8,8 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * to do
- *
+ 能用1个条件
  * @author Hj
  * @date 2021/8/6
  */
@@ -45,7 +44,7 @@ public class ScanConnectedRowsDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("47.95.216.113")) {
+                if ( line.contains("nacos")) {
                     lineMap.put(i, line);
                 }
 
