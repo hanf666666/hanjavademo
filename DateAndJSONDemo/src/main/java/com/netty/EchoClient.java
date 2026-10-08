@@ -15,13 +15,14 @@ import java.io.InputStreamReader;
 
 /**
  * Netty Echo 客户端 - 发送控制台输入，接收回显
+ * D:\ideaspace\javaspace\zijidemo\springboot_Set\nettydemo\src\test\java\test 防止debug是串了
  */
 @Slf4j
 public class EchoClient {
 
     public static void main(String[] args) throws Exception {
         // 客户端只需要一个 EventLoopGroup
-        EventLoopGroup group = new NioEventLoopGroup();
+        EventLoopGroup group = new NioEventLoopGroup(1);
 
         try {
             Bootstrap client = new Bootstrap();

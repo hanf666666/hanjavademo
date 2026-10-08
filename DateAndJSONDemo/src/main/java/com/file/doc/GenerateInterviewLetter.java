@@ -39,7 +39,7 @@ public class GenerateInterviewLetter {
             }
             // 2. 执行替换
             String templatePath = "G:\\学习资料\\aaaa\\czbk2\\大数据\\面试宝典\\简历\\简历大数据\\可用版本\\202610\\韩静-男-8年-大数据开发工程师原版202610.docx";
-            String outputPath = "G:\\学习资料\\aaaa\\czbk2\\大数据\\面试宝典\\简历\\简历大数据\\可用版本\\202610\\韩静-男-8年-大数据开发工程师"+ k +"202610.pdf";
+            String outputPath = "G:\\学习资料\\aaaa\\czbk2\\大数据\\面试宝典\\简历\\简历大数据\\可用版本\\202610\\pdf\\韩静-男-8年-大数据开发工程师"+ k +"202610.pdf";
             outputPath=outputPath.replaceAll(" ","");
             try {
                 DocxTemplateReplacer.replaceAndSaveAsPdf(templatePath, outputPath, replacements);

@@ -40,7 +40,7 @@ public class EchoServer {
                             pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
                             // ④ 添加自定义的业务处理器（Echo逻辑）
-                            pipeline.addLast(new EchoServerHandler());
+                            pipeline.addLast(new EchoServerHandler2222());
                         }
                     });
 
@@ -62,7 +62,7 @@ public class EchoServer {
  * 自定义处理器：收到消息后直接原样写回
  */
 @Slf4j
-class EchoServerHandler extends SimpleChannelInboundHandler<String> {
+class EchoServerHandler2222 extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) {
