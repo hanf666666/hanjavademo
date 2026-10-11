@@ -22,6 +22,14 @@
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.calcite</groupId>
+            <artifactId>calcite-core</artifactId>
+            <version>1.36.0</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/de.jollyday/jollyday -->
         <dependency>
             <groupId>de.jollyday</groupId>

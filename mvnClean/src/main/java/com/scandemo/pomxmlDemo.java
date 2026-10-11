@@ -40,7 +40,7 @@ public class pomxmlDemo {
             List<String> lines = FileUtil.readLines(file, StandardCharsets.UTF_8);
 
             HashMap<String, Integer> matchMap = new HashMap<>();
-            matchMap.put("spring-boot-dependencies", -1);
+            matchMap.put("org.apache.spark", -1);
 
 
             for (int i = 0; i < lines.size(); i++) {
