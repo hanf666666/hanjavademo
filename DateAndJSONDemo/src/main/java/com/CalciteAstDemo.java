@@ -6,7 +6,7 @@ import org.apache.calcite.sql.parser.SqlParser;
 
 public class CalciteAstDemo {
     public static void main(String[] args) throws SqlParseException {
-        String sql = "select id,name from dw.order where id>100";
+        String sql = "select id11,name from dw.order where id11>100";
 
         // ´´½¨½âÎöÆ÷
         SqlParser parser = SqlParser.create(sql);
