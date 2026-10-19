@@ -26,6 +26,7 @@ public class GenerateInterviewLetter {
         docList.add("深圳");
         docList.add("上海");
         docList.add("重庆");
+        docList.add("成都");
 
 
         docList.forEach((k -> {

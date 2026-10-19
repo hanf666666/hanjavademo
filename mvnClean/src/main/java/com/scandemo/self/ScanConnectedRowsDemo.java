@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- ÄÜÓÃ1¸öÌõ¼þ
+ ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author Hj
  * @date 2021/8/6
  */
@@ -17,7 +17,7 @@ public class ScanConnectedRowsDemo {
     public static void main(String[] args) {
 
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if (pathname.getPath().indexOf(".git") > -1
@@ -44,7 +44,7 @@ public class ScanConnectedRowsDemo {
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("nacos")) {
+                if ( line.contains("com.rabbitmq")) {
                     lineMap.put(i, line);
                 }
 
