@@ -23,6 +23,11 @@ public class JavaGenerateInterviewLetter {
         docList.add("上海");
         docList.add("重庆");
         docList.add("成都");
+        docList.add("合肥");
+        docList.add("厦门");
+        docList.add("北京");
+        docList.add("郑州");
+        docList.add("广州");
 
 
         docList.forEach((k -> {
