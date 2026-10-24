@@ -1,51 +1,61 @@
 package com.huawei.demo01;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.function.ToIntFunction;
+import java.util.function.ToLongBiFunction;
+import java.util.function.ToLongFunction;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
  */
 public class Main {
     public static void main(String[] args) {
-        // 测试用例直接写入代码
-        int[] h = {186, 186, 150, 200, 160, 130, 197, 200};
-        int n = h.length;
+            Scanner scanner = new Scanner(System.in);
+            Long s = scanner.nextLong();
+            HashSet<Long> longs = new HashSet<>();
+            for (int i = 0; i < s; i++) {
 
-        // inc[i]：以 i 结尾的最长严格递增子序列长度
-        int[] inc = new int[n];
-        for (int i = 0; i < n; i++) {
-            inc[i] = 1;
-            for (int j = 0; j < i; j++) {
-                if (h[j] < h[i]) {
-                    inc[i] = Math.max(inc[i], inc[j] + 1);
+                Long aa = scanner.nextLong();
+                longs.add(aa);
+            }
+        System.out.println();
+            longs.stream().sorted(new Comparator<Long>() {
+                @Override
+                public int compare(Long o1, Long o2) {
+                    return o2.compareTo(o1);
+//                    return o1.compareTo(o2);
                 }
+            }).forEach(row -> {
+                        System.out.println(row);
+                    }
+
+            );
+
+//            longs.toArray()
+        Long[] array = longs.toArray(new Long[0]);
+
+        Arrays.stream(array).sorted(Comparator.comparingLong(new ToLongFunction<Long>() {
+            @Override
+            public long applyAsLong(Long value) {
+                return value;
             }
+        }).reversed());
+        System.out.println();
+        Arrays.sort(array,Comparator.reverseOrder());
+        System.out.println();
+
+        System.out.println(Arrays.toString(array));
+        Arrays.stream(array).forEach(System.out::println);
+
+
+
         }
 
-        // dec[i]：以 i 开头的最长严格递减子序列长度
-        int[] dec = new int[n];
-        for (int i = n - 1; i >= 0; i--) {
-            dec[i] = 1;
-            for (int j = i + 1; j < n; j++) {
-                if (h[j] < h[i]) {
-                    dec[i] = Math.max(dec[i], dec[j] + 1);
-                }
-            }
-        }
 
-        int maxLen = 0;
-        for (int i = 1; i < n - 1; i++) {
-            if (inc[i] >= 2 && dec[i] >= 2) {
-                maxLen = Math.max(maxLen, inc[i] + dec[i] - 1);
-            }
-        }
-
-        int result = (maxLen == 0) ? n : n - maxLen;
-
-        // 打印中间结果，方便验证
-        System.out.println("inc = " + Arrays.toString(inc));
-        System.out.println("dec = " + Arrays.toString(dec));
-        System.out.println("maxLen = " + maxLen);
-        System.out.println("最少出列人数 = " + result);
     }
-}
+
