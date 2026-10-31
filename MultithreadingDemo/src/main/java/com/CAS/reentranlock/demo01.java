@@ -7,6 +7,8 @@ public class demo01 {
         ReentrantLock reentrantLock = new ReentrantLock();
         Thread thread1 = new Thread(() -> {
             reentrantLock.lock();
+            reentrantLock.lock();
+            reentrantLock.lock();
             moneychange();
             reentrantLock.unlock();
 

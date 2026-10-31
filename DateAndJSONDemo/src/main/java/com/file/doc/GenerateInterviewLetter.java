@@ -30,7 +30,12 @@ public class GenerateInterviewLetter {
 //        docList.add("南阳");
 //        docList.add("南京");
 //        docList.add("广州");
-        docList.add("无锡");
+//        docList.add("无锡");
+//        docList.add("北京");
+        docList.add("福州");
+        docList.add("苏州");
+        docList.add("长沙");
+        docList.add("常州");
 
 
         docList.forEach((k -> {
@@ -46,8 +51,8 @@ public class GenerateInterviewLetter {
                 replacements.put("目标地点：重庆", "\t\t\t\t\t\t\t \t      " + k + "");
             }
             // 2. 执行替换
-            String templatePath = "G:\\学习资料\\aaaa\\czbk2\\大数据\\面试宝典\\简历\\简历大数据\\可用版本\\202610\\韩静-男-8年-大数据开发工程师原版202610.docx";
-            String outputPath = "G:\\学习资料\\aaaa\\czbk2\\大数据\\面试宝典\\简历\\简历大数据\\可用版本\\202610\\pdf\\韩静-男-8年-大数据开发工程师"+ k +"202610.pdf";
+            String templatePath = "G:\\学习资料\\aaaa\\czbk2\\大数据\\面试宝典\\简历\\简历大数据\\可用版本\\202610\\韩静-男-大数据开发工程师重庆202610.docx";
+            String outputPath = "G:\\学习资料\\aaaa\\czbk2\\大数据\\面试宝典\\简历\\简历大数据\\可用版本\\202610\\pdf\\韩静-男-大数据开发工程师"+ k +"202610.pdf";
             outputPath=outputPath.replaceAll(" ","");
             try {
                 DocxTemplateReplacer.replaceAndSaveAsPdf(templatePath, outputPath, replacements);
