@@ -35,7 +35,7 @@ public class EchoServer {
                             ChannelPipeline pipeline = ch.pipeline();
                             // 1. 【新增】第一步：解决粘包拆包（以换行符作为消息结束标志）
                             // 1024 表示单条消息最大长度，防止内存溢出
-                            pipeline.addLast(new LineBasedFrameDecoder(1024));
+//                            pipeline.addLast(new LineBasedFrameDecoder(1024));
                             // ③ 添加编解码器（字符串形式，方便测试）
                             pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
@@ -69,6 +69,8 @@ class EchoServerHandler2222 extends SimpleChannelInboundHandler<String> {
         log.info("收到客户端消息: " + msg);
         // 直接写回（原样回显）
         ctx.writeAndFlush("【服务端回显】" + msg);
+        NettyMemoryMonitor.printMemory();
+
     }
 
     @Override

@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * Netty Echo 客户端 - 发送控制台输入，接收回显
@@ -51,7 +52,11 @@ public class EchoClient {
                     break;
                 }
 //                channel.writeAndFlush(line);
-                channel.writeAndFlush(line + "\n");
+                ArrayList<String> strings = new ArrayList<>();
+                for (int i = 0; i < 10000; i++) {
+                    strings.add(line);
+                }
+                channel.writeAndFlush(strings + "\n");
             }
 
             // 等待连接关闭
