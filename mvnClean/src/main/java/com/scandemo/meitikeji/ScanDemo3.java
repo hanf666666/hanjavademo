@@ -34,7 +34,8 @@ public class ScanDemo3 {
 //        }
 
 
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
+        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\xinlianzhilianwang", new FileFilter() {
 //        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
@@ -42,7 +43,7 @@ public class ScanDemo3 {
                         || pathname.getPath().indexOf("sql") > -1
                         || pathname.getPath().indexOf("target") > -1
                         || pathname.getPath().indexOf(".idea") > -1
-//                        || pathname.getPath().indexOf(".java") > -1
+                        || pathname.getPath().indexOf(".java") > -1
 //                        || pathname.getPath().indexOf("txprod") == -1
 
                 ) {
@@ -59,7 +60,7 @@ public class ScanDemo3 {
             List<String> lines = FileUtil.readLines(file, StandardCharsets.UTF_8);
 
             HashMap<String, Integer> matchMap = new HashMap<>();
-            matchMap.put("@EnableConfigServer", -1);
+            matchMap.put("xxl-job-core", -1);
 
 
             for (int i = 0; i < lines.size(); i++) {

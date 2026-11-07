@@ -32,10 +32,12 @@ public class GenerateInterviewLetter {
 //        docList.add("广州");
 //        docList.add("无锡");
 //        docList.add("北京");
-        docList.add("福州");
-        docList.add("苏州");
-        docList.add("长沙");
-        docList.add("常州");
+//        docList.add("福州");
+//        docList.add("苏州");
+//        docList.add("长沙");
+//        docList.add("常州");
+//        docList.add("郑州");
+        docList.add("天津");
 
 
         docList.forEach((k -> {
