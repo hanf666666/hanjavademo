@@ -22,11 +22,19 @@ public class SourceDemo2 {
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\sourcecodespace", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-//                if (pathname.getName().indexOf("xml") > -1 ) {
-//                    return true;
-//                } else {
-//                    return false;
-//                }
+                if (pathname.getPath().indexOf(".git") > -1
+                        || pathname.getPath().indexOf("sql") > -1
+                        || pathname.getPath().indexOf("target") > -1
+                        || pathname.getPath().indexOf(".idea") > -1
+//                        || pathname.getPath().indexOf(".java") > -1
+//                        || pathname.getPath().indexOf("txprod") == -1
+
+                ) {
+                    //选中就不搜索
+                    return false;
+
+
+                }
                 return true;
             }
         });

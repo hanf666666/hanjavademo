@@ -26,12 +26,20 @@ public class SourceDemo1 {
             //        List<File> files = FileUtil.loopFiles("E:\\资料\\盘古美天科技\\20220920封闭平台\\20220922yum3.0\\2024061102处理6月1号数据和重复在停\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                if (pathname.getPath().indexOf(".git") > -1) {
-                    return false;
-                } else {
-                    return true;
-                }
+                if (pathname.getPath().indexOf(".git") > -1
+                        || pathname.getPath().indexOf("sql") > -1
+                        || pathname.getPath().indexOf("target") > -1
+                        || pathname.getPath().indexOf(".idea") > -1
+//                        || pathname.getPath().indexOf(".java") > -1
+//                        || pathname.getPath().indexOf("txprod") == -1
 
+                ) {
+                    //选中就不搜索
+                    return false;
+
+
+                }
+                return true;
             }
         });
         files.parallelStream().forEach(file -> {

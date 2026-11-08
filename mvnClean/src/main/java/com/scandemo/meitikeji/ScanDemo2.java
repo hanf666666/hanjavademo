@@ -28,11 +28,20 @@ public class ScanDemo2 {
         List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\meitikeji\\java-bj\\CloudMsManage\\meisoo-service-core\\src\\main\\resources\\mappers\\ParkOrderMapper.xml", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                String path = pathname.getPath();
-                return path.indexOf(".git") == -1
-                        && path.indexOf("sql") == -1
-                        && path.indexOf("target") == -1
-                        && path.indexOf(".idea") == -1;
+                if (pathname.getPath().indexOf(".git") > -1
+                        || pathname.getPath().indexOf("sql") > -1
+                        || pathname.getPath().indexOf("target") > -1
+                        || pathname.getPath().indexOf(".idea") > -1
+//                        || pathname.getPath().indexOf(".java") > -1
+//                        || pathname.getPath().indexOf("txprod") == -1
+
+                ) {
+                    //选中就不搜索
+                    return false;
+
+
+                }
+                return true;
             }
         });
 

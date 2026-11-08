@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * to do
+ * 条件是一个
  *
  * @author Hj
  * @date 2021/8/6
@@ -17,39 +17,31 @@ public class ScanDemo {
 
     public static void main(String[] args) {
 
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace", new FileFilter() {
-        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\zijidemo\\springboot_Set", new FileFilter() {
-//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\zijidemo", new FileFilter() {
+
+        //递归遍历目录以及子目录中的所有文件 可以加过滤条件
+//                    List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\zijidemo\\springboot_Set", new FileFilter() {
+                    List<File> files = FileUtil.loopFiles("D:\\ideaspace\\javaspace\\zijidemo\\springCloud_Set", new FileFilter() {
+//        List<File> files = FileUtil.loopFiles("D:\\ideaspace\\sourcecodespace\\springcloud_Set\\", new FileFilter() {
+            //        List<File> files = FileUtil.loopFiles("E:\\资料\\盘古美天科技\\20220920封闭平台\\20220922yum3.0\\2024061102处理6月1号数据和重复在停\\", new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                if (pathname.getPath().indexOf(".git") > -1
-                        || pathname.getPath().indexOf("sql") > -1
-                        || pathname.getPath().indexOf("target") > -1
-                        || pathname.getPath().indexOf(".idea") > -1
-                        || pathname.getPath().indexOf(".js") > -1
-                        || pathname.getPath().indexOf(".xml") > -1
-//                        || pathname.getPath().indexOf("application") > -1
-//                        || pathname.getPath().indexOf("java") > -1
-//                        || pathname.getPath().indexOf(".java") > -1
-//                        || pathname.getPath().indexOf("txprod") == -1
-
-                ) {
-                    {
-                        return false;
-                    }
-
+                if (pathname.getPath().indexOf(".git") > -1) {
+                    return false;
+                } else {
+                    return true;
                 }
-                return true;
+
             }
         });
-        for (File file : files) {
-//            List<String> stringList = FileUtil.readLines(file, Charset.defaultCharset());
+        files.parallelStream().forEach(file -> {
+
+            //            List<String> stringList = FileUtil.readLines(file, Charset.defaultCharset());
             List<String> stringList = FileUtil.readLines(file, "UTF-8");
+
             HashMap<Integer, String> lineMap = new HashMap<>();
             for (int i = 0; i < stringList.size(); i++) {
                 String line = stringList.get(i);
-                if ( line.contains("ApplicationListener")) {
+                if (line.contains("senti")) {
                     lineMap.put(i, line);
                 }
 
@@ -61,9 +53,11 @@ public class ScanDemo {
 
             }
 
-        }
+        });
+
 
     }
+
 
 
 }

@@ -44,9 +44,9 @@ public class ScanDemo1 {
 //                        || pathname.getPath().indexOf("txprod") == -1
 
                 ) {
-                    {
+                        //选中就不搜索
                         return false;
-                    }
+
 
                 }
                 return true;

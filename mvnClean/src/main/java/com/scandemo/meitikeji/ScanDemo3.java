@@ -43,16 +43,17 @@ public class ScanDemo3 {
                         || pathname.getPath().indexOf("sql") > -1
                         || pathname.getPath().indexOf("target") > -1
                         || pathname.getPath().indexOf(".idea") > -1
-                        || pathname.getPath().indexOf(".java") > -1
+//                        || pathname.getPath().indexOf(".java") > -1
 //                        || pathname.getPath().indexOf("txprod") == -1
 
                 ) {
-                    {
-                        return false;
-                    }
+                    //选中就不搜索
+                    return false;
+
 
                 }
                 return true;
+
             }
         });
 
