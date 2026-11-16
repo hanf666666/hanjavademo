@@ -1,5 +1,6 @@
 package com.scandemo.xinglian;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 
 import java.io.File;
@@ -16,6 +17,7 @@ import java.util.List;
 public class ScanDemo1 {
 
     public static void main(String[] args) {
+        System.out.println(DateUtil.date().toString("yyyyMMddHHmmssSSS"));
 
 //        String line2 = " parkOrder.setStatus(OrderStatusEnum.PAID.getValue());";
 //        if (
@@ -60,7 +62,7 @@ public class ScanDemo1 {
 //                if (line.contains("pushArrearsOrderToCzEtc") ) {
 //                if (line.contains("getIsShowArrear") ) {
 
-                if (line.contains("@ConditionalOnBean") ) {
+                if (line.contains("IdentifierGenerator") ) {
 //                if (line.contains("strategy/assistancePay") ) {
 //                if (line.contains("etc/pay/push") ) {
                     lineNum++;

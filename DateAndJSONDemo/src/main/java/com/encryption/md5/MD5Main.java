@@ -1,7 +1,7 @@
 package com.encryption.md5;
 
 /**
- * to do
+ * MD5Main —È÷§
  *
  * @author Hj
  * @date 2022/10/20

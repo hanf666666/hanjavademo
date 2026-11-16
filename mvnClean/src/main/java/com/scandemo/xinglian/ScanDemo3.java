@@ -60,7 +60,8 @@ public class ScanDemo3 {
             List<String> lines = FileUtil.readLines(file, StandardCharsets.UTF_8);
 
             HashMap<String, Integer> matchMap = new HashMap<>();
-            matchMap.put("xxl-job-core", -1);
+//            matchMap.put("DriverOnlineRecord", -1);
+            matchMap.put("lineRecordService.save", -1);
 
 
             for (int i = 0; i < lines.size(); i++) {

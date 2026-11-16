@@ -8,3 +8,4 @@ target/
 *.log
 .cache/
 .DS_Store
+DEFAULT_GROUP
